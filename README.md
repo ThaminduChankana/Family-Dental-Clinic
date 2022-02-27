@@ -1,2 +1,1 @@
-# Family-Dental-Clinic
-Automated System For A Dental Clinic
+# Family_Dental_Clinic
