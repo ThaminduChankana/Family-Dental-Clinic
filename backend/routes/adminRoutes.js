@@ -33,10 +33,9 @@ router.route("/doctors").get(protect, getDoctors);
 
 //Routes for Patient account operations admin end
 router.route("/patient/register").post(protect, registerPatient);
-router
-	.route("/patient/profile/view/:_id")
-	.get(protect, getPatientProfileById)
-	.delete(protect, deletePatientProfileById);
+router.route("/patient/profile/view/:_id")
+			.get(protect, getPatientProfileById)
+			.delete(protect, deletePatientProfileById);
 router.route("/patient/profile/edit/:_id").put(protect, updatePatientProfileById);
 router.route("/patients").get(protect, getPatients);
 
