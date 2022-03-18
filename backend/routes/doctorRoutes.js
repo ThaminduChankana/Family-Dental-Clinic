@@ -6,10 +6,7 @@ const {
 	getDoctorProfile,
 	deleteDoctorProfile,
 } = require("../controllers/doctorController");
-const {
-	getPatients,
-	getPatientProfileById,
-} = require("../controllers/patientController");
+const { getPatients, getPatientProfileById } = require("../controllers/patientController");
 const { protect } = require("../middlewares/authDoctorMiddleware");
 const router = express.Router();
 

@@ -1,6 +1,6 @@
 const asyncHandler = require("express-async-handler");
 const Doctor = require("../models/doctorModel");
-const { } = require("../routes/doctorRoutes");
+const {} = require("../routes/doctorRoutes");
 const {} = require("../routes/patientRoutes");
 const generateToken = require("../utils/generateToken");
 

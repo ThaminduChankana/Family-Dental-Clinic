@@ -1,7 +1,7 @@
 const asyncHandler = require("express-async-handler");
 const Patient = require("../models/patientModel");
-const { } = require("../routes/patientRoutes");
-const { } = require("../routes/doctorRoutes");
+const {} = require("../routes/patientRoutes");
+const {} = require("../routes/doctorRoutes");
 const generateToken = require("../utils/generateToken");
 
 const registerPatient = asyncHandler(async (req, res) => {
