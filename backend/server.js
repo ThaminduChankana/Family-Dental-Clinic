@@ -7,6 +7,7 @@ const adminRoutes = require("./routes/adminRoutes");
 const doctorRoutes = require("./routes/doctorRoutes");
 const patientRoutes = require("./routes/patientRoutes");
 const connectDB = require("./config/db");
+const appointmentRoutes = require('./routes/appointmentRoutes');
 
 dotenv.config();
 connectDB();
@@ -19,6 +20,6 @@ app.get("/", (req, res) => {
 app.use("/user/admin", adminRoutes);
 app.use("/user/doctor", doctorRoutes);
 app.use("/user/patient", patientRoutes);
-
+app.use('/appointment', appointmentRoutes);
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, console.log(`Server Started on port ${PORT}..`));
