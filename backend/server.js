@@ -6,6 +6,7 @@ const app = express();
 const adminRoutes = require("./routes/adminRoutes");
 const doctorRoutes = require("./routes/doctorRoutes");
 const patientRoutes = require("./routes/patientRoutes");
+
 const connectDB = require("./config/db");
 
 dotenv.config();
