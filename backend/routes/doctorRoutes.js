@@ -31,20 +31,27 @@ const {
 const { protect } = require("../middlewares/authDoctorMiddleware");
 const router = express.Router();
 
-//Routes for Doctor account operations
+//Routes for Doctor account operations by doctor
 router.route("/register").post(registerDoctor);
 router.route("/login").post(authDoctor);
 router.route("/edit").put(protect, updateDoctorProfile);
 router.route("/view").get(protect, getDoctorProfile);
 router.route("/delete").delete(protect, deleteDoctorProfile);
 
-router.route("/treatment/basic-treatment/get").get(protect, getBasicTreatments);
-router.route("/treatment/basic-treatment/create").post(protect, CreateBasicTreatment);
+//Routes for Patient account operations by doctor
+router.route("/patients").get(protect, getPatients);
+router.route("/patient/profile/view/:_id").get(protect, getPatientProfileById);
+
+//Routes for basic treatment configuration by doctor
+router.route("/treatment/basic_treatment/get").get(protect, getBasicTreatments);
+router.route("/treatment/basic_treatment/create").post(protect, CreateBasicTreatment);
 router
 	.route("/treatment/basic-treatment/get/:id")
 	.get(protect, getBasicTreatmentById)
 	.put(protect, UpdateBasicTreatment)
 	.delete(protect, DeleteBasicTreatment);
+
+//Routes for orthodontic treatment configuration by doctor
 router.route("/treatment/orthodontic/get").get(protect, getOrthodontics);
 router.route("/treatment/orthodontic/create").post(protect, CreateOrthodontic);
 router
@@ -52,6 +59,8 @@ router
 	.get(protect, getOrthodonticById)
 	.put(protect, UpdateOrthodontic)
 	.delete(protect, DeleteOrthodontic);
+
+//Routes for filling treatment configuration by doctor
 router.route("/treatment/filling/get").get(protect, getFillings);
 router.route("/treatment/filling/create").post(protect, CreateFilling);
 router
@@ -60,8 +69,5 @@ router
 	.put(protect, UpdateFilling)
 	.delete(protect, DeleteFilling);
 
-//Routes for Patient account operations
-router.route("/patients").get(protect, getPatients);
-router.route("/patient/profile/view/:_id").get(protect, getPatientProfileById);
 
 module.exports = router;
