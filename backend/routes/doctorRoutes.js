@@ -46,7 +46,7 @@ router.route("/patient/profile/view/:_id").get(protect, getPatientProfileById);
 router.route("/treatment/basic_treatment/get").get(protect, getBasicTreatments);
 router.route("/treatment/basic_treatment/create").post(protect, CreateBasicTreatment);
 router
-	.route("/treatment/basic-treatment/get/:id")
+	.route("/treatment/basic_treatment/get/:id")
 	.get(protect, getBasicTreatmentById)
 	.put(protect, UpdateBasicTreatment)
 	.delete(protect, DeleteBasicTreatment);
