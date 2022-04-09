@@ -28,6 +28,7 @@ const {
 	UpdateFilling,
 	DeleteFilling,
 } = require("../controllers/fillingController");
+const { getBlogs, createBlog, getBlogById, UpdateBlog, DeleteBlog } = require("../controllers/blogController");
 const { protect } = require("../middlewares/authDoctorMiddleware");
 const router = express.Router();
 
@@ -46,7 +47,7 @@ router.route("/patient/profile/view/:_id").get(protect, getPatientProfileById);
 router.route("/treatment/basic_treatment/get").get(protect, getBasicTreatments);
 router.route("/treatment/basic_treatment/create").post(protect, CreateBasicTreatment);
 router
-	.route("/treatment/basic-treatment/get/:id")
+	.route("/treatment/basic_treatment/get/:id")
 	.get(protect, getBasicTreatmentById)
 	.put(protect, UpdateBasicTreatment)
 	.delete(protect, DeleteBasicTreatment);
@@ -69,5 +70,9 @@ router
 	.put(protect, UpdateFilling)
 	.delete(protect, DeleteFilling);
 
+//Routes for blog management by doctor
+router.route("/blogs/").get(protect, getBlogs);
+router.route("/blogs/create").post(protect, createBlog);
+router.route("/blogs/:id").get(getBlogById).put(protect, UpdateBlog).delete(protect, DeleteBlog);
 
 module.exports = router;
