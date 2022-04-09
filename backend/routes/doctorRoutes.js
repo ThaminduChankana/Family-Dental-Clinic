@@ -28,6 +28,7 @@ const {
 	UpdateFilling,
 	DeleteFilling,
 } = require("../controllers/fillingController");
+const { getBlogs, createBlog, getBlogById, UpdateBlog, DeleteBlog } = require("../controllers/blogController");
 const { protect } = require("../middlewares/authDoctorMiddleware");
 const router = express.Router();
 
@@ -69,5 +70,9 @@ router
 	.put(protect, UpdateFilling)
 	.delete(protect, DeleteFilling);
 
+//Routes for blog management by doctor
+router.route("/blogs/").get(protect, getBlogs);
+router.route("/blogs/create").post(protect, createBlog);
+router.route("/blogs/:id").get(getBlogById).put(protect, UpdateBlog).delete(protect, DeleteBlog);
 
 module.exports = router;
