@@ -1,0 +1,126 @@
+import React, { useEffect, useState } from "react";
+import { Button, Card, Form } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { createBasicTreatmentAction } from "../../actions/basicTreatmentAction";
+import Loading from "../../components/Loading";
+import ErrorMessage from "../../components/ErrorMessage";
+
+export default function BasicTreatmentCreate({ history }) {
+	const [nic, setNic] = useState("");
+	const [cost, setCost] = useState("");
+	const [treatmentType, setTreatmentType] = useState("");
+	const [date, setDate] = useState("");
+	const [checkup, setCheckup] = useState("");
+	const [procedure, setProcedure] = useState("");
+	const [remark, setRemark] = useState("");
+
+	const dispatch = useDispatch();
+
+	const basicTreatmentCreate = useSelector((state) => state.basicTreatmentCreate);
+	const { loading, error, basicTreatment } = basicTreatmentCreate;
+
+	console.log(basicTreatment);
+
+	const resetHandler = () => {
+		setNic("");
+		setCost("");
+		setTreatmentType("");
+		setDate("");
+		setCheckup("");
+		setProcedure("");
+		setRemark("");
+	};
+
+	const submitHandler = (e) => {
+		e.preventDefault();
+
+		if (!nic || !cost || !treatmentType || !date || !checkup || !procedure || !remark) return;
+		dispatch(createBasicTreatmentAction(nic, cost, treatmentType, date, checkup, procedure, remark));
+
+		resetHandler();
+		history.push("/treatment-dashboard");
+	};
+
+	useEffect(() => {}, []);
+	return (
+		<Card>
+			<Card.Header>Diagnosis Card For Basic Treatment</Card.Header>
+			<Card.Body>
+				<Form onSubmit={submitHandler}>
+					{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
+					<Form.Group controlId="nic">
+						<Form.Label>NIC</Form.Label>
+						<Form.Control type="nic" value={nic} placeholder="Enter the NIC" onChange={(e) => setNic(e.target.value)} />
+					</Form.Group>
+
+					<Form.Group controlId="cost">
+						<Form.Label>Cost</Form.Label>
+						<Form.Control
+							value={cost}
+							placeholder="Enter the Cost"
+							rows={4}
+							onChange={(e) => setCost(e.target.value)}
+						/>
+					</Form.Group>
+
+					<Form.Group controlId="treatmentType">
+						<Form.Label>Treatment Type</Form.Label>
+						<Form.Control
+							type="treatmentType"
+							value={treatmentType}
+							placeholder="Enter the Treatment Type"
+							onChange={(e) => setTreatmentType(e.target.value)}
+						/>
+					</Form.Group>
+					<Form.Group controlId="date">
+						<Form.Label>Date</Form.Label>
+						<Form.Control
+							type="date"
+							value={date}
+							placeholder="Enter the date"
+							onChange={(e) => setDate(e.target.value)}
+						/>
+					</Form.Group>
+					<Form.Group controlId="checkup">
+						<Form.Label>Checkup</Form.Label>
+						<Form.Control
+							as="textarea"
+							type="checkup"
+							value={checkup}
+							placeholder="Enter the Checkup"
+							onChange={(e) => setCheckup(e.target.value)}
+						/>
+					</Form.Group>
+					<Form.Group controlId="procedure">
+						<Form.Label>Procedure</Form.Label>
+						<Form.Control
+							as="textarea"
+							type="procedure"
+							value={procedure}
+							placeholder="Enter the Procedure"
+							onChange={(e) => setProcedure(e.target.value)}
+						/>
+					</Form.Group>
+					<Form.Group controlId="remark">
+						<Form.Label>Remark</Form.Label>
+						<Form.Control
+							as="textarea"
+							type="reamark"
+							value={remark}
+							placeholder="Enter the Remark"
+							onChange={(e) => setRemark(e.target.value)}
+						/>
+					</Form.Group>
+
+					{loading && <Loading size={50} />}
+					<Button type="submit" variant="primary">
+						Submit
+					</Button>
+					<Button className="mx-2" onClick={resetHandler} variant="danger">
+						Reset
+					</Button>
+				</Form>
+			</Card.Body>
+		</Card>
+	);
+}
