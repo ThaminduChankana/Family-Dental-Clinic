@@ -11,7 +11,7 @@ const CreateInventory = asyncHandler(async(req, res) => {
 
     if (!productName || !quantity || !description) {
         res.status(400);
-        throw new Error("Please input details to all the feilds");
+        throw new Error("Please input details to all the fields");
     } else {
         const inventory = new Inventory({
             productName,
