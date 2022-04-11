@@ -1,32 +1,32 @@
 const express = require("express");
 const { registerAdmin, authAdmin, updateAdminProfile, getAdminProfile } = require("../controllers/adminController");
 const {
-    registerDoctor,
-    getDoctors,
-    getDoctorProfileById,
-    deleteDoctorProfileById,
-    updateDoctorProfileById,
+	registerDoctor,
+	getDoctors,
+	getDoctorProfileById,
+	deleteDoctorProfileById,
+	updateDoctorProfileById,
 } = require("../controllers/doctorController");
 const {
-    registerPatient,
-    getPatients,
-    getPatientProfileById,
-    deletePatientProfileById,
-    updatePatientProfileById,
+	registerPatient,
+	getPatients,
+	getPatientProfileById,
+	deletePatientProfileById,
+	updatePatientProfileById,
 } = require("../controllers/patientController");
 const {
-    getInventory,
-    CreateInventory,
-    getInventoryById,
-    UpdateInventory,
-    DeleteInventory,
+	getInventory,
+	CreateInventory,
+	getInventoryById,
+	UpdateInventory,
+	DeleteInventory,
 } = require("../controllers/InventoryController");
 const {
-    getMedicalHistory,
-    createMedicalHistory,
-    getMedicalHistoryById,
-    UpdateMedicalHistory,
-    DeleteMedicalHistory,
+	getMedicalHistory,
+	createMedicalHistory,
+	getMedicalHistoryById,
+	UpdateMedicalHistory,
+	DeleteMedicalHistory,
 } = require("../controllers/medicalHistoryController");
 
 const { protect } = require("../middlewares/authAdminMiddleware");
@@ -48,9 +48,9 @@ router.route("/doctors").get(protect, getDoctors);
 //Routes for Patient account operations admin end
 router.route("/patient/register").post(protect, registerPatient);
 router
-    .route("/patient/profile/view/:_id")
-    .get(protect, getPatientProfileById)
-    .delete(protect, deletePatientProfileById);
+	.route("/patient/profile/view/:_id")
+	.get(protect, getPatientProfileById)
+	.delete(protect, deletePatientProfileById);
 router.route("/patient/profile/edit/:_id").put(protect, updatePatientProfileById);
 router.route("/patients").get(protect, getPatients);
 
@@ -63,9 +63,9 @@ router.route("/get/:id").get(protect, getInventoryById).put(protect, UpdateInven
 router.route("/medical_history").get(protect, getMedicalHistory);
 router.route("/medical_history/create").post(protect, createMedicalHistory);
 router
-    .route("/medical_history/:id")
-    .get(protect, getMedicalHistoryById)
-    .put(protect, UpdateMedicalHistory)
-    .delete(protect, DeleteMedicalHistory);
+	.route("/medical_history/:id")
+	.get(protect, getMedicalHistoryById)
+	.put(protect, UpdateMedicalHistory)
+	.delete(protect, DeleteMedicalHistory);
 
 module.exports = router;
