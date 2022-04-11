@@ -14,6 +14,20 @@ const {
 	deletePatientProfileById,
 	updatePatientProfileById,
 } = require("../controllers/patientController");
+const {
+	getInventory,
+	CreateInventory,
+	getInventoryById,
+	UpdateInventory,
+	DeleteInventory,
+} = require("../controllers/InventoryController");
+const {
+	getMedicalHistory,
+	createMedicalHistory,
+	getMedicalHistoryById,
+	UpdateMedicalHistory,
+	DeleteMedicalHistory,
+} = require("../controllers/medicalHistoryController");
 
 const {
 	UpdateFeedbackforAdmin,
@@ -63,5 +77,23 @@ router.route("/question/update/:id").put(protect, UpdateQuestionforAdmin);
 router.route("/question/view").get(protect, getQuestion);
 router.route("/question/view/:id").get(protect, getQuestionById);
 router.route("/question/delete/:id").put(protect, DeleteQuestion);
+
+//Routes for Inventory control operations
+router.route("/inventory/get").get(protect, getInventory);
+router.route("/inventory/create").post(protect, CreateInventory);
+router
+	.route("/inventory/get/:id")
+	.get(protect, getInventoryById)
+	.put(protect, UpdateInventory)
+	.delete(protect, DeleteInventory);
+
+//Routes for medical history management admin end
+router.route("/medical_history").get(protect, getMedicalHistory);
+router.route("/medical_history/create").post(protect, createMedicalHistory);
+router
+	.route("/medical_history/:id")
+	.get(protect, getMedicalHistoryById)
+	.put(protect, UpdateMedicalHistory)
+	.delete(protect, DeleteMedicalHistory);
 
 module.exports = router;

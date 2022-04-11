@@ -6,6 +6,7 @@ const {
 	updatePatientProfile,
 	deletePatientProfile,
 } = require("../controllers/patientController");
+
 const {
 	createFeedback,
 	UpdateFeedback,
@@ -20,6 +21,9 @@ const {
 	getQuestionById,
 	DeleteQuestion,
 } = require("../controllers/qestionController");
+
+const { getMedicalHistoryById } = require("../controllers/medicalHistoryController");
+
 const { protect } = require("../middlewares/authPatientMiddleware");
 const router = express.Router();
 
@@ -43,5 +47,8 @@ router.route("/question/update/:id").put(protect, UpdateQuestion);
 router.route("/question/view").get(protect, getQuestion);
 router.route("/question/view/:id").get(protect, getQuestionById);
 router.route("/question/delete/:id").delete(protect, DeleteQuestion);
+
+//Routes for patient to get medical history
+router.route("/medical_history/:id").get(protect, getMedicalHistoryById);
 
 module.exports = router;
