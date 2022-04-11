@@ -21,6 +21,13 @@ const {
     UpdateInventory,
     DeleteInventory,
 } = require("../controllers/InventoryController");
+const {
+    getMedicalHistory,
+    createMedicalHistory,
+    getMedicalHistoryById,
+    UpdateMedicalHistory,
+    DeleteMedicalHistory,
+} = require("../controllers/medicalHistoryController");
 
 const { protect } = require("../middlewares/authAdminMiddleware");
 const { post } = require("./doctorRoutes");
@@ -51,5 +58,14 @@ router.route("/patients").get(protect, getPatients);
 router.route("/get").get(protect, getInventory);
 router.route("/create").post(protect, CreateInventory);
 router.route("/get/:id").get(protect, getInventoryById).put(protect, UpdateInventory).delete(protect, DeleteInventory);
+
+//Routes for medical history management admin end
+router.route("/medical_history").get(protect, getMedicalHistory);
+router.route("/medical_history/create").post(protect, createMedicalHistory);
+router
+    .route("/medical_history/:id")
+    .get(protect, getMedicalHistoryById)
+    .put(protect, UpdateMedicalHistory)
+    .delete(protect, DeleteMedicalHistory);
 
 module.exports = router;
