@@ -56,12 +56,13 @@ const UpdateQuestion = asyncHandler(async (req, res) => {
 });
 
 const UpdateQuestionforAdmin = asyncHandler(async (req, res) => {
-	const { isAdmin } = req.body;
+	const { isAdmin, answer } = req.body;
 
 	const question = await Question.findById(req.params.id);
 
 	if (question) {
 		question.isAdmin = isAdmin;
+		question.answer = answer;
 
 		const UpdateQuestion = await question.save();
 		res.json(UpdateQuestion);

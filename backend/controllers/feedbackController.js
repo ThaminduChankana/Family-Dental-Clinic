@@ -55,6 +55,22 @@ const UpdateFeedback = asyncHandler(async (req, res) => {
 	}
 });
 
+const UpdateFeedbackforAdmin = asyncHandler(async (req, res) => {
+	const { isAdmin } = req.body;
+
+	const feedback = await Feedback.findById(req.params.id);
+
+	if (feedback) {
+		feedback.isAdmin = isAdmin;
+
+		const UpdateFeedback = await feedback.save();
+		res.json(UpdateFeedback);
+	} else {
+		res.status(404);
+		throw new Error("Feedback not found");
+	}
+});
+
 const DeleteFeedback = asyncHandler(async (req, res) => {
 	const feedback = await Feedback.findById(req.params.id);
 
@@ -73,4 +89,5 @@ module.exports = {
 	getFeedbackById,
 	UpdateFeedback,
 	DeleteFeedback,
+	UpdateFeedbackforAdmin,
 };
