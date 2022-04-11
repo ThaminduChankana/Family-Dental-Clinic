@@ -15,16 +15,13 @@ connectDB();
 app.use(express.json());
 
 app.get("/", (req, res) => {
-	res.send("API is Running");
+    res.send("API is Running");
 });
 
 app.use("/user", commonRoutes);
 app.use("/user/admin", adminRoutes);
 app.use("/user/doctor", doctorRoutes);
 app.use("/user/patient", patientRoutes);
-
-//Importing the Inventory Route
-app.use("/user/inventory", adminRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, console.log(`Server Started on port ${PORT}..`));
