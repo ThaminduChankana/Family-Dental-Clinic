@@ -42,7 +42,9 @@ const PatientRegisterScreen = ({ history }) => {
 			setMessage("Passwords do not match");
 		} else {
 			dispatch(patientRegister(name, dob, gender, nic, telephone, address, password, pic, dataEntry, regDate));
-			setMessage("Patient Registration Successful");
+			if (!error) {
+				setMessage("Patient Registration Successful");
+			}
 		}
 	};
 	const postDetails = (pics) => {

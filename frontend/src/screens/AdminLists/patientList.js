@@ -16,7 +16,11 @@ const PatientListForAdmin = () => {
 	const admin_Login = useSelector((state) => state.admin_Login);
 	const { adminInfo } = admin_Login;
 
+	const patientUpdate = useSelector((state) => state.patientUpdate);
+	const { success: successUpdate } = patientUpdate;
+
 	const patientDelete = useSelector((state) => state.patientDelete);
+	const { error: errorDelete, success: successDelete } = patientDelete;
 
 	console.log(patients);
 	const history = useHistory();
@@ -27,7 +31,7 @@ const PatientListForAdmin = () => {
 		if (!adminInfo) {
 			history.push("/");
 		}
-	}, [dispatch, history, adminInfo, patientDelete]);
+	}, [dispatch, history, adminInfo, patientDelete,successDelete, successUpdate]);
 
 	const deleteHandler = (id) => {
 		if (window.confirm("Are You Sure?")) {
@@ -124,4 +128,3 @@ const PatientListForAdmin = () => {
 
 export default PatientListForAdmin;
 
-/* eventKey is an identifier like what you want to trigger with accordion.collapse */
