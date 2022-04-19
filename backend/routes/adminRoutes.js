@@ -1,33 +1,34 @@
 const express = require("express");
 const { registerAdmin, authAdmin, updateAdminProfile, getAdminProfile } = require("../controllers/adminController");
 const {
-    registerDoctor,
-    getDoctors,
-    getDoctorProfileById,
-    deleteDoctorProfileById,
-    updateDoctorProfileById,
+	registerDoctor,
+	getDoctors,
+	getDoctorProfileById,
+	deleteDoctorProfileById,
+	updateDoctorProfileById,
 } = require("../controllers/doctorController");
 const {
-    registerPatient,
-    getPatients,
-    getPatientProfileById,
-    deletePatientProfileById,
-    updatePatientProfileById,
+	registerPatient,
+	getPatients,
+	getPatientProfileById,
+	deletePatientProfileById,
+	updatePatientProfileById,
 } = require("../controllers/patientController");
 const {
-    getInventory,
-    CreateInventory,
-    getInventoryById,
-    UpdateInventory,
-    DeleteInventory,
+	getInventory,
+	CreateInventory,
+	getInventoryById,
+	UpdateInventory,
+	DeleteInventory,
 } = require("../controllers/InventoryController");
 const {
-    getMedicalHistory,
-    createMedicalHistory,
-    getMedicalHistoryById,
-    UpdateMedicalHistory,
-    DeleteMedicalHistory,
+	getMedicalHistory,
+	createMedicalHistory,
+	getMedicalHistoryById,
+	UpdateMedicalHistory,
+	DeleteMedicalHistory,
 } = require("../controllers/medicalHistoryController");
+
 const { 
     getAppointments, 
     createAppointment, 
@@ -35,6 +36,16 @@ const {
     deleteAppointment, 
     getAppointmentById 
 } = require("../controllers/appointmentController");
+
+// schedule handling route
+const {
+	getScheduleHandling,
+	getScheduleHandlingId,
+	CreateScheduleHandling,
+	UpdateScheduleHandling,
+	DeleteScheduleHandling,
+} = require("../controllers/scheduleHandlingController");
+
 
 const { protect } = require("../middlewares/authAdminMiddleware");
 const { post } = require("./doctorRoutes");
@@ -55,9 +66,9 @@ router.route("/doctors").get(protect, getDoctors);
 //Routes for Patient account operations admin end
 router.route("/patient/register").post(protect, registerPatient);
 router
-    .route("/patient/profile/view/:_id")
-    .get(protect, getPatientProfileById)
-    .delete(protect, deletePatientProfileById);
+	.route("/patient/profile/view/:_id")
+	.get(protect, getPatientProfileById)
+	.delete(protect, deletePatientProfileById);
 router.route("/patient/profile/edit/:_id").put(protect, updatePatientProfileById);
 router.route("/patients").get(protect, getPatients);
 
@@ -65,19 +76,29 @@ router.route("/patients").get(protect, getPatients);
 router.route("/inventory/get").get(protect, getInventory);
 router.route("/inventory/create").post(protect, CreateInventory);
 router
-    .route("/inventory/get/:id")
-    .get(protect, getInventoryById)
-    .put(protect, UpdateInventory)
-    .delete(protect, DeleteInventory);
+	.route("/inventory/get/:id")
+	.get(protect, getInventoryById)
+	.put(protect, UpdateInventory)
+	.delete(protect, DeleteInventory);
 
 //Routes for medical history management admin end
 router.route("/medical_history").get(protect, getMedicalHistory);
 router.route("/medical_history/create").post(protect, createMedicalHistory);
 router
-    .route("/medical_history/:id")
-    .get(protect, getMedicalHistoryById)
-    .put(protect, UpdateMedicalHistory)
-    .delete(protect, DeleteMedicalHistory);
+	.route("/medical_history/:id")
+	.get(protect, getMedicalHistoryById)
+	.put(protect, UpdateMedicalHistory)
+	.delete(protect, DeleteMedicalHistory);
+
+//Routes for Schedule handling
+router.route("/schedule/get").get(protect, getScheduleHandling);
+router.route("/schedule/create").post(protect, CreateScheduleHandling);
+router
+	.route("/schedule/get/:id")
+	.get(protect, getScheduleHandlingId)
+	.put(protect, UpdateScheduleHandling)
+	.delete(protect, DeleteScheduleHandling);
+
 
 // Routes for appointment management
 router.route("/appointment/:id").get(protect, getAppointmentById);
