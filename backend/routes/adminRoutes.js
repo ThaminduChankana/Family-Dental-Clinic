@@ -28,6 +28,14 @@ const {
     UpdateMedicalHistory,
     DeleteMedicalHistory,
 } = require("../controllers/medicalHistoryController");
+// schedule handling route
+const {
+	getScheduleHandling,
+	getScheduleHandlingId,
+	createScheduleHandling,
+	UpdatescheduleHandling,
+	DeletescheduleHandling,
+} = require("../controllers/scheduleHandlingController");
 
 const { protect } = require("../middlewares/authAdminMiddleware");
 const { post } = require("./doctorRoutes");
@@ -71,5 +79,14 @@ router
     .get(protect, getMedicalHistoryById)
     .put(protect, UpdateMedicalHistory)
     .delete(protect, DeleteMedicalHistory);
+
+    //Routes for Schedule handling
+router.route("/schedule/get").get(protect, getScheduleHandling);
+router.route("/schedule/create").post(protect, createScheduleHandling);
+router
+	.route("/schedule/get/:id")
+	.get(protect, getScheduleHandlingId)
+	.put(protect, UpdatescheduleHandling)
+	.delete(protect, DeletescheduleHandling);
 
 module.exports = router;
