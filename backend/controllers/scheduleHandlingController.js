@@ -5,7 +5,7 @@ const getScheduleHandling = asyncHandler(async (req, res) => {
 	const schedule = await scheduleHandling.find();
 	res.json(schedule);
 });
-const createScheduleHandling = asyncHandler(async (req, res) => {
+const CreateScheduleHandling = asyncHandler(async (req, res) => {
 	const { nic, name, date, time, description, addedBy } = req.body;
 	if (!nic || !name || !date || !time || !description || !addedBy) {
 		res.status(400);
@@ -19,9 +19,9 @@ const createScheduleHandling = asyncHandler(async (req, res) => {
 			description,
 			addedBy,
 		});
-		const createScheduleHandling = await schedule.save();
+		const CreateScheduleHandling = await schedule.save();
 
-		res.status(201).json(createScheduleHandling);
+		res.status(201).json(CreateScheduleHandling);
 	}
 });
 const getScheduleHandlingId = asyncHandler(async (req, res) => {
@@ -34,7 +34,7 @@ const getScheduleHandlingId = asyncHandler(async (req, res) => {
 	}
 });
 
-const UpdatescheduleHandling = asyncHandler(async (req, res) => {
+const UpdateScheduleHandling = asyncHandler(async (req, res) => {
 	const { nic, name, date, time, description, addedBy } = req.body;
 
 	const schedule = await scheduleHandling.findById(req.params.id);
@@ -46,14 +46,14 @@ const UpdatescheduleHandling = asyncHandler(async (req, res) => {
 		schedule.description = description;
 		schedule.addedBy = addedBy;
 
-		const UpdatescheduleHandling = await schedule.save();
-		res.json(UpdatescheduleHandling);
+		const UpdateScheduleHandling = await schedule.save();
+		res.json(UpdateScheduleHandling);
 	} else {
 		res.status(404);
 		throw new Error("Schedule not found");
 	}
 });
-const DeletescheduleHandling = asyncHandler(async (req, res) => {
+const DeleteScheduleHandling = asyncHandler(async (req, res) => {
 	const schedule = await scheduleHandling.findById(req.params.id);
 
 	if (schedule) {
@@ -66,8 +66,8 @@ const DeletescheduleHandling = asyncHandler(async (req, res) => {
 });
 module.exports = {
 	getScheduleHandling,
-	createScheduleHandling,
+	CreateScheduleHandling,
 	getScheduleHandlingId,
-	UpdatescheduleHandling,
-	DeletescheduleHandling,
+	UpdateScheduleHandling,
+	DeleteScheduleHandling,
 };
