@@ -28,6 +28,13 @@ const {
     UpdateMedicalHistory,
     DeleteMedicalHistory,
 } = require("../controllers/medicalHistoryController");
+const { 
+    getAppointments, 
+    createAppointment, 
+    updateAppointment, 
+    deleteAppointment, 
+    getAppointmentById 
+} = require("../controllers/appointmentController");
 
 const { protect } = require("../middlewares/authAdminMiddleware");
 const { post } = require("./doctorRoutes");
@@ -71,5 +78,12 @@ router
     .get(protect, getMedicalHistoryById)
     .put(protect, UpdateMedicalHistory)
     .delete(protect, DeleteMedicalHistory);
+
+// Routes for appointment management
+router.route("/appointment/:id").get(protect, getAppointmentById);
+router.route("/appointment/").get(protect, getAppointments);
+router.route("/appointment/").post(protect, createAppointment);
+router.route("/appointment/:id").put(protect, updateAppointment);
+router.route("/appointment/:id").delete(protect, deleteAppointment);
 
 module.exports = router;
