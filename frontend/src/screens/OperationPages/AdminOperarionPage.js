@@ -59,7 +59,7 @@ const AdminOperationPage = ({ history }) => {
 								</a>
 							</div>
 							<div className="buttonContainer">
-								<a href="/">
+								<a href="/appointments">
 									<Button size="lg" className="landingbutton">
 										Appointment Management
 									</Button>

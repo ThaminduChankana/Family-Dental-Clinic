@@ -28,6 +28,7 @@ import {
 	patientUpdateByIdReducer,
 	patientDeleteReducer,
 } from "./reducers/patientReducers";
+import appointmentReducer from "./reducers/appointmentReducer";
 
 const reducer = combineReducers({
 	admin_Login: adminLoginReducer,
@@ -50,6 +51,7 @@ const reducer = combineReducers({
 	patientDelete: patientDeleteReducer,
 	patientViewById: patientViewByIdReducer,
 	patientUpdateById: patientUpdateByIdReducer,
+	appointments:  appointmentReducer
 });
 
 const adminInfoFromStorage = localStorage.getItem("adminInfo") ? JSON.parse(localStorage.getItem("adminInfo")) : null;
