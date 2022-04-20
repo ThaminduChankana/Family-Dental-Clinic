@@ -11,16 +11,16 @@ const {
 	createFeedback,
 	updateFeedback,
 	getFeedback,
-	DeleteFeedback,
+	deleteFeedback,
 	getFeedbackById,
 } = require("../controllers/feedbackController");
 
 const {
 	createQuestion,
-	UpdateQuestion,
+	updateQuestion,
 	getQuestion,
 	getQuestionById,
-	DeleteQuestion,
+	deleteQuestion,
 } = require("../controllers/questionController");
 
 const { getMedicalHistoryById } = require("../controllers/medicalHistoryController");
@@ -42,13 +42,12 @@ router.route("/feedback/create").post(protect, createFeedback);
 router.route("/feedback/update/:id").put(protect, updateFeedback);
 router.route("/feedback/view/:id").get(protect, getFeedbackById);
 router.route("/feedback/view").get(protect, getFeedback);
-router.route("/feedback/delete/:id").delete(protect, DeleteFeedback);
+router.route("/feedback/delete/:id").delete(protect, deleteFeedback);
 
 //Routes for Q&A operations
 router.route("/question/create").post(protect, createQuestion);
-router.route("/question/update/:id").put(protect, UpdateQuestion);
+router.route("/question/update/:id").put(protect, updateQuestion);
 router.route("/question/view").get(protect, getQuestion);
 router.route("/question/view/:id").get(protect, getQuestionById);
-router.route("/question/delete/:id").delete(protect, DeleteQuestion);
-
+router.route("/question/delete/:id").delete(protect, deleteQuestion);
 module.exports = router;

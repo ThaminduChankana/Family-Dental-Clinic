@@ -42,7 +42,7 @@ const getQuestionById = asyncHandler(async (req, res) => {
 	}
 });
 
-const UpdateQuestion = asyncHandler(async (req, res) => {
+const updateQuestion = asyncHandler(async (req, res) => {
 	const { name, email, question_type, question_description } = req.body;
 
 	const question = await Question.findById(req.params.id);
@@ -78,7 +78,7 @@ const UpdateQuestionforAdmin = asyncHandler(async (req, res) => {
 	}
 });
 
-const DeleteQuestion = asyncHandler(async (req, res) => {
+const deleteQuestion = asyncHandler(async (req, res) => {
 	const question = await Question.findById(req.params.id);
 
 	if (question) {
@@ -94,8 +94,8 @@ module.exports = {
 	getQuestion,
 	createQuestion,
 	getQuestionById,
-	UpdateQuestion,
-	DeleteQuestion,
+	updateQuestion,
+	deleteQuestion,
 	UpdateQuestionforAdmin,
 	getQuestionForAdmin,
 };
