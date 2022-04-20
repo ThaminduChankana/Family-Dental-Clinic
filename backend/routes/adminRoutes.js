@@ -28,6 +28,14 @@ const {
 	UpdateMedicalHistory,
 	DeleteMedicalHistory,
 } = require("../controllers/medicalHistoryController");
+// schedule handling route
+const {
+	getScheduleHandling,
+	getScheduleHandlingId,
+	CreateScheduleHandling,
+	UpdateScheduleHandling,
+	DeleteScheduleHandling,
+} = require("../controllers/scheduleHandlingController");
 
 const {
 	UpdateFeedbackforAdmin,
@@ -97,5 +105,14 @@ router.route("/question/update/:id").put(protect, UpdateQuestionforAdmin);
 router.route("/question/view").get(protect, getQuestionForAdmin);
 router.route("/question/view/:id").get(protect, getQuestionById);
 router.route("/question/delete/:id").put(protect, deleteQuestion);
+
+//Routes for Schedule handling
+router.route("/schedule/get").get(protect, getScheduleHandling);
+router.route("/schedule/create").post(protect, CreateScheduleHandling);
+router
+	.route("/schedule/get/:id")
+	.get(protect, getScheduleHandlingId)
+	.put(protect, UpdateScheduleHandling)
+	.delete(protect, DeleteScheduleHandling);
 
 module.exports = router;
