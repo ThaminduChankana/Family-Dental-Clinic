@@ -1,7 +1,7 @@
 const asyncHandler = require("express-async-handler");
 const Feedback = require("../models/feedbackModel");
 
-const getFeedbackForAdmin = asyncHandler(async (req, res) => {
+const getFeedbackforAdmin = asyncHandler(async (req, res) => {
 	const feedback = await Feedback.find();
 	res.json(feedback);
 });
@@ -78,7 +78,7 @@ const UpdateFeedbackforAdmin = asyncHandler(async (req, res) => {
 	}
 });
 
-const DeleteFeedback = asyncHandler(async (req, res) => {
+const deleteFeedback = asyncHandler(async (req, res) => {
 	const feedback = await Feedback.findById(req.params.id);
 
 	if (feedback) {
@@ -95,7 +95,7 @@ module.exports = {
 	createFeedback,
 	getFeedbackById,
 	updateFeedback,
-	DeleteFeedback,
+	deleteFeedback,
 	UpdateFeedbackforAdmin,
-	getFeedbackForAdmin,
+	getFeedbackforAdmin,
 };

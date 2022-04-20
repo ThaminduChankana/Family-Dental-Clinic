@@ -39,15 +39,15 @@ const {
 
 const {
 	UpdateFeedbackforAdmin,
-	DeleteFeedback,
+	deleteFeedback,
 	getFeedbackById,
-	getFeedbackForAdmin,
+	getFeedbackforAdmin,
 } = require("../controllers/feedbackController");
 
 const {
 	getQuestionById,
 	UpdateQuestionforAdmin,
-	DeleteQuestion,
+	deleteQuestion,
 	getQuestionForAdmin,
 } = require("../controllers/questionController");
 
@@ -96,15 +96,15 @@ router
 
 //Routes for feedback operations
 router.route("/feedback/update/:id").put(protect, UpdateFeedbackforAdmin);
-router.route("/feedback/view").get(protect, getFeedbackForAdmin);
-router.route("/feedback/delete/:id").delete(protect, DeleteFeedback);
+router.route("/feedback/view").get(protect, getFeedbackforAdmin);
+router.route("/feedback/delete/:id").delete(protect, deleteFeedback);
 router.route("/feedback/view/:id").get(protect, getFeedbackById);
 
 //Routes for Q&A operations
 router.route("/question/update/:id").put(protect, UpdateQuestionforAdmin);
 router.route("/question/view").get(protect, getQuestionForAdmin);
 router.route("/question/view/:id").get(protect, getQuestionById);
-router.route("/question/delete/:id").put(protect, DeleteQuestion);
+router.route("/question/delete/:id").put(protect, deleteQuestion);
 
 //Routes for Schedule handling
 router.route("/schedule/get").get(protect, getScheduleHandling);
