@@ -31,7 +31,7 @@ const PatientListForAdmin = () => {
 		if (!adminInfo) {
 			history.push("/");
 		}
-	}, [dispatch, history, adminInfo, patientDelete,successDelete, successUpdate]);
+	}, [dispatch, history, adminInfo, patientDelete, successDelete, successUpdate]);
 
 	const deleteHandler = (id) => {
 		if (window.confirm("Are You Sure?")) {
@@ -127,4 +127,3 @@ const PatientListForAdmin = () => {
 };
 
 export default PatientListForAdmin;
-

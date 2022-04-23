@@ -3,7 +3,7 @@ import MainScreen from "../../../components/MainScreen";
 import axios from "axios";
 import { Button, Form, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import {  doctorUpdateProfileById } from "../../../actions/doctorActions";
+import { doctorUpdateProfileById } from "../../../actions/doctorActions";
 import ErrorMessage from "../../../components/ErrorMessage";
 import Loading from "../../../components/Loading";
 import ReactMarkdown from "react-markdown";
@@ -33,8 +33,7 @@ const DoctorEditByAdmin = ({ match, history }) => {
 	const { adminInfo } = admin_Login;
 
 	const doctorUpdateById = useSelector((state) => state.doctorUpdateById);
-	const { loading, error} = doctorUpdateById;
-
+	const { loading, error } = doctorUpdateById;
 
 	const postDetails = (pics) => {
 		setPicMessage(null);
@@ -59,33 +58,33 @@ const DoctorEditByAdmin = ({ match, history }) => {
 		}
 	};
 
-		const submitHandler = (e) => {
-			e.preventDefault();
-			if (password !== confirmpassword) {
-				setMessage("Passwords do not match");
-			} else {
-				dispatch(
-					doctorUpdateProfileById(
-						match.params.id,
-						name,
-						dob,
-						gender,
-						nic,
-						telephone,
-						address,
-						sldaReg,
-						licenceNo,
-						currentHospital,
-						dataEntry,
-						password,
-						message,
-						pic,
-						regDate
-					)
-				);
-				setMessage("Update Successful");
-			}
-		};
+	const submitHandler = (e) => {
+		e.preventDefault();
+		if (password !== confirmpassword) {
+			setMessage("Passwords do not match");
+		} else {
+			dispatch(
+				doctorUpdateProfileById(
+					match.params.id,
+					name,
+					dob,
+					gender,
+					nic,
+					telephone,
+					address,
+					sldaReg,
+					licenceNo,
+					currentHospital,
+					dataEntry,
+					password,
+					message,
+					pic,
+					regDate
+				)
+			);
+			setMessage("Update Successful");
+		}
+	};
 
 	useEffect(() => {
 		if (adminInfo != null) {
