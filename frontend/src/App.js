@@ -26,7 +26,7 @@ import DiagnosisInfo from "./screens/Treatment/TreatmentDashBoard/DiagnosisInfo"
 import TreatmentNavBar from "./screens/Treatment/TreatmentDashBoard/TreatmentNavBar";
 import BasicTreatmentView from "./screens/Treatment/TreatmentLists/BasicTreatmentView";
 import FillingView from "./screens/Treatment/TreatmentLists/FillingView";
-
+import OrthodonticView from "./screens/Treatment/TreatmentLists/OrthodonticView";
 const App = () => {
 	return (
 		<BrowserRouter>
@@ -55,6 +55,7 @@ const App = () => {
 				<Route path="/treatment-navbar" component={TreatmentNavBar} exact />
 				<Route path="/treatment-basicTreatment-view" component={BasicTreatmentView} exact />
 				<Route path="/treatment-filling-view" component={FillingView} exact />
+				<Route path="/treatment-orthodontic-view" component={OrthodonticView} exact />
 			</main>
 		</BrowserRouter>
 	);
