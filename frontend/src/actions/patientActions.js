@@ -27,8 +27,6 @@ import {
 } from "../constants/patientConstants";
 import axios from "axios";
 
-//name,dob,gender,nic,telephone,address,password,pic,dataentry,reg date
-
 export const patientLogin = (nic, password) => async (dispatch) => {
 	try {
 		dispatch({ type: PATIENT_LOGIN_REQUEST });
@@ -51,6 +49,16 @@ export const patientLogin = (nic, password) => async (dispatch) => {
 		});
 	}
 };
+
+export function authHeader() {
+	let patient = JSON.parse(localStorage.getItem("patientInfo"));
+
+	if (patient && patient.token) {
+		return { Authorization: `Bearer ${patient.token}` };
+	} else {
+		return {};
+	}
+}
 
 export const patientLogout = () => async (dispatch) => {
 	localStorage.removeItem("patientInfo");
