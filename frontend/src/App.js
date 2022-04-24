@@ -16,6 +16,7 @@ import AdminEditScreen from "./screens/UserManagement/EditScreens/AdminEditScree
 import PatientEditScreen from "./screens/UserManagement/EditScreens/PatientEditScreen";
 import DoctorEditScreen from "./screens/UserManagement/EditScreens/DoctorEditScreen";
 import AdminOperationPage from "./screens/OperationPages/AdminOperarionPage";
+import DoctorOperationPage from "./screens/OperationPages/DoctorOperationPage";
 import DoctorListForAdmin from "./screens/AdminLists/doctorList";
 import PatientListForAdmin from "./screens/AdminLists/patientList";
 import PatientListForDoctor from "./screens/DoctorLists/patientList";
@@ -40,6 +41,7 @@ const App = () => {
 				<Route path="/doctor-edit" component={DoctorEditScreen} exact />
 				<Route path="/patient-edit" component={PatientEditScreen} exact />
 				<Route path="/admin" component={AdminOperationPage} exact />
+				<Route path="/doctor" component={DoctorOperationPage} exact />
 				<Route path="/admin-doctors" component={DoctorListForAdmin} exact />
 				<Route path="/admin-patients" component={PatientListForAdmin} exact />
 				<Route path="/doctor-patients" component={PatientListForDoctor} exact />
