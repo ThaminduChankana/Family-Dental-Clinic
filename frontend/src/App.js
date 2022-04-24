@@ -28,6 +28,8 @@ import BasicTreatmentView from "./screens/Treatment/TreatmentLists/BasicTreatmen
 import FillingView from "./screens/Treatment/TreatmentLists/FillingView";
 import OrthodonticView from "./screens/Treatment/TreatmentLists/OrthodonticView";
 import BasicTreatmentCreate from "./screens/Treatment/TreatmentCreateScreens/BasicTreatmentCreate";
+import FillingCreate from "./screens/Treatment/TreatmentCreateScreens/FillingCreate";
+import OrthodonticCreate from "./screens/Treatment/TreatmentCreateScreens/OrthodonticCreate";
 const App = () => {
 	return (
 		<BrowserRouter>
@@ -58,6 +60,8 @@ const App = () => {
 				<Route path="/treatment-filling-view" component={FillingView} exact />
 				<Route path="/treatment-orthodontic-view" component={OrthodonticView} exact />
 				<Route path="/treatment-basicTreatment-create" component={BasicTreatmentCreate} exact />
+				<Route path="/treatment-filling-create" component={FillingCreate} exact />
+				<Route path="/treatment-orthodontic-create" component={OrthodonticCreate} exact />
 			</main>
 		</BrowserRouter>
 	);
