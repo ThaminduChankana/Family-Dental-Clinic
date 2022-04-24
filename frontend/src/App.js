@@ -22,6 +22,8 @@ import PatientListForAdmin from "./screens/AdminLists/patientList";
 import PatientListForDoctor from "./screens/DoctorLists/patientList";
 import DoctorEditByAdmin from "./screens/UserManagement/AdminUserEditScreens/DoctorEditByAdmin";
 import PatientEditByAdmin from "./screens/UserManagement/AdminUserEditScreens/PatientEditByAdmin";
+import DiagnosisInfo from "./screens/Treatment/TreatmentDashBoard/DiagnosisInfo";
+import TreatmentNavBar from "./screens/Treatment/TreatmentDashBoard/TreatmentNavBar";
 
 const App = () => {
 	return (
@@ -47,6 +49,8 @@ const App = () => {
 				<Route path="/doctor-patients" component={PatientListForDoctor} exact />
 				<Route path="/admin-doctor-edit/:id" component={DoctorEditByAdmin} exact />
 				<Route path="/admin-patient-edit/:id" component={PatientEditByAdmin} exact />
+				<Route path="/treatment-dashboard" component={DiagnosisInfo} exact />
+				<Route path="/treatment-navbar" component={TreatmentNavBar} exact />
 			</main>
 		</BrowserRouter>
 	);
