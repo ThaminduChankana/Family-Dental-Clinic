@@ -31,6 +31,7 @@ import BasicTreatmentCreate from "./screens/Treatment/TreatmentCreateScreens/Bas
 import FillingCreate from "./screens/Treatment/TreatmentCreateScreens/FillingCreate";
 import OrthodonticCreate from "./screens/Treatment/TreatmentCreateScreens/OrthodonticCreate";
 import SingleBasicTreatment from "./screens/Treatment/TreatmentEditScreens/SingleBasicTreatment";
+import SingleFilling from "./screens/Treatment/TreatmentEditScreens/SingleFilling";
 
 const App = () => {
 	return (
@@ -65,6 +66,7 @@ const App = () => {
 				<Route path="/treatment-filling-create" component={FillingCreate} exact />
 				<Route path="/treatment-orthodontic-create" component={OrthodonticCreate} exact />
 				<Route path="/basicTreatment/:id" component={SingleBasicTreatment} exact />
+				<Route path="/filling/:id" component={SingleFilling} exact />
 			</main>
 		</BrowserRouter>
 	);

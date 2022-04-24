@@ -1,43 +1,75 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { Button, Card, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { createFillingAction } from "../../../actions/fillingAction";
-import Loading from "../../../components/Loading";
+import { deleteFillingAction, updateFillingAction } from "../../../actions/fillingAction";
 import ErrorMessage from "../../../components/ErrorMessage";
+import Loading from "../../../components/Loading";
+import { authHeader } from "../../../actions/doctorActions";
 import TreatmentNavBar from "../TreatmentDashBoard/TreatmentNavBar";
 
-export default function FillingCreate({ history }) {
-	const [nic, setNic] = useState("");
-	const [cost, setCost] = useState("");
-	const [anestheticStatus, setAnestheticStatus] = useState("");
-	const [fillingMaterial, setFillingMaterial] = useState("");
+export default function SingleFilling({ match, history }) {
+	const [nic, setNic] = useState();
+	const [cost, setCost] = useState();
+	const [fillingMaterial, setFillingMaterial] = useState();
 	const [fillingType, setFillingType] = useState("");
+	const [anestheticStatus, setAnestheticStatus] = useState();
 	const [date, setDate] = useState("");
-	const [checkup, setCheckup] = useState("");
-	const [procedure, setProcedure] = useState("");
+	const [checkup, setCheckup] = useState();
+	const [procedure, setProcedure] = useState();
 	const [remark, setRemark] = useState("");
 
 	const dispatch = useDispatch();
 
-	const fillingCreate = useSelector((state) => state.fillingCreate);
-	const { loading, error, filling } = fillingCreate;
+	const fillingUpdate = useSelector((state) => state.fillingUpdate);
+	const { loading, error } = fillingUpdate;
 
-	console.log(filling);
+	const fillingDelete = useSelector((state) => state.fillingDelete);
+	const { loading: loadingDelete, error: errorDelete } = fillingDelete;
 
-	const resetHandler = () => {
-		setNic("");
-		setCost("");
-		setAnestheticStatus("");
-		setDate("");
-		setCheckup("");
-		setCheckup("");
-		setProcedure("");
-		setRemark("");
+	const deleteHandler = (id) => {
+		if (window.confirm("Are you sure?")) {
+			dispatch(deleteFillingAction(id));
+		}
+		history.push("/treatment-dashboard");
 	};
 
-	const submitHandler = (e) => {
-		e.preventDefault();
+	useEffect(() => {
+		const fetching = async () => {
+			const { data } = await axios.get(`http://localhost:5000/user/doctor/treatment/filling/get/${match.params.id}`, {
+				headers: authHeader(),
+			});
 
+			setNic(data.nic);
+			setCost(data.cost);
+			setFillingMaterial(data.fillingMaterial);
+			setFillingType(data.fillingType);
+			setAnestheticStatus(data.anestheticStatus);
+			setDate(data.date);
+			setCheckup(data.checkup);
+			setProcedure(data.procedure);
+			setRemark(data.remark);
+		};
+
+		fetching();
+	}, [match.params.id, date]);
+
+	const updateHandler = (e) => {
+		e.preventDefault();
+		dispatch(
+			updateFillingAction(
+				match.params.id,
+				nic,
+				cost,
+				anestheticStatus,
+				fillingMaterial,
+				fillingType,
+				date,
+				checkup,
+				procedure,
+				remark
+			)
+		);
 		if (
 			!nic ||
 			!cost ||
@@ -50,23 +82,19 @@ export default function FillingCreate({ history }) {
 			!remark
 		)
 			return;
-		dispatch(
-			createFillingAction(nic, cost, anestheticStatus, fillingMaterial, fillingType, date, checkup, procedure, remark)
-		);
 
-		resetHandler();
 		history.push("/treatment-dashboard");
 	};
-
-	useEffect(() => {}, []);
 	return (
 		<div>
 			<TreatmentNavBar />
 			<Card style={{ margin: 50, left: "30%", width: "40%" }}>
-				<Card.Header>Diagnosis Card For Filling Treatment</Card.Header>
+				<Card.Header>Update Diagnosis Card For Filling Treatment</Card.Header>
 				<Card.Body>
-					<Form onSubmit={submitHandler}>
+					<Form onSubmit={updateHandler}>
+						{loadingDelete && <Loading />}
 						{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
+						{errorDelete && <ErrorMessage variant="danger">{errorDelete}</ErrorMessage>}
 						<Form.Group controlId="nic">
 							<Form.Label>NIC</Form.Label>
 							<Form.Control
@@ -76,16 +104,17 @@ export default function FillingCreate({ history }) {
 								onChange={(e) => setNic(e.target.value)}
 							/>
 						</Form.Group>
+
 						<Form.Group controlId="cost">
 							<Form.Label>Cost</Form.Label>
 							<Form.Control
 								value={cost}
-								type="number"
 								placeholder="Enter the Cost"
 								rows={4}
 								onChange={(e) => setCost(e.target.value)}
 							/>
 						</Form.Group>
+
 						<Form.Group controlId="anestheticStatus">
 							<Form.Label>Anesthetic Status</Form.Label>
 							<Form.Control
@@ -98,29 +127,21 @@ export default function FillingCreate({ history }) {
 						</Form.Group>
 						<Form.Group controlId="fillingMaterial">
 							<Form.Label>Filling Material</Form.Label>
-							<br />
-							<select
-								style={{ height: "35px", width: "100%", borderRadius: 5, borderColor: "#808080", borderWidth: 0.5 }}
+							<Form.Control
+								type="fillingMaterial"
+								value={fillingMaterial}
+								placeholder="Enter the Filling Material"
 								onChange={(e) => setFillingMaterial(e.target.value)}
-							>
-								<option value="Filling Material">Filling Material</option>
-								<option value="Gold">Gold</option>
-								<option value="Porcelain">Porcelain</option>
-								<option value="Silver Amalgam">Silver Amalgam</option>
-								<option value="Composite Resin">Composite Resin</option>
-							</select>
+							/>
 						</Form.Group>
 						<Form.Group controlId="fillingType">
 							<Form.Label>Filling Type</Form.Label>
-							<br />
-							<select
-								style={{ height: "35px", width: "100%", borderRadius: 5, borderColor: "#808080", borderWidth: 0.5 }}
+							<Form.Control
+								type="fillingType"
+								value={fillingType}
+								placeholder="Enter the Filling Type"
 								onChange={(e) => setFillingType(e.target.value)}
-							>
-								<option value="Filling Type">Filling Type</option>
-								<option value="Direct">Direct</option>
-								<option value="Indirect">Indirect</option>
-							</select>
+							/>
 						</Form.Group>
 						<Form.Group controlId="date">
 							<Form.Label>Date</Form.Label>
@@ -157,11 +178,16 @@ export default function FillingCreate({ history }) {
 							/>
 						</Form.Group>
 						{loading && <Loading size={50} />}
-						<Button style={{ width: "20%" }} type="submit" variant="primary">
+						<Button style={{ width: "30%" }} type="submit" variant="primary">
 							Submit
 						</Button>
-						<Button style={{ width: "20%" }} className="mx-2" onClick={resetHandler} variant="danger">
-							Reset
+						<Button
+							style={{ width: "30%" }}
+							className="mx-2"
+							variant="danger"
+							onClick={() => deleteHandler(match.params.id)}
+						>
+							Delete
 						</Button>
 					</Form>
 				</Card.Body>
