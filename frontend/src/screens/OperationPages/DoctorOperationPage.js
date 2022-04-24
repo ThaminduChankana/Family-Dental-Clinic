@@ -30,12 +30,12 @@ const DoctorOperationPage = ({ history }) => {
 										My Account
 									</Button>
 								</a>
-								<a href="">
+								<a href="/">
 									<Button size="lg" className="landingbutton">
 										Doctor's Schedule Management
 									</Button>
 								</a>
-								<a href="">
+								<a href="/doctor-patients">
 									<Button size="lg" className="landingbutton">
 										Patient Management
 									</Button>
@@ -47,19 +47,19 @@ const DoctorOperationPage = ({ history }) => {
 										Patient Diagnosis Management
 									</Button>
 								</a>
-								<a href="">
+								<a href="/">
 									<Button size="lg" className="landingbutton">
 										Appointment Management
 									</Button>
 								</a>
-								<a href="">
+								<a href="/">
 									<Button size="lg" className="landingbutton">
 										Patient Medical History Management
 									</Button>
 								</a>
 							</div>
 							<div className="buttonContainer">
-								<a href="">
+								<a href="/">
 									<Button size="lg" className="landingbutton">
 										Doctor's Blog Management
 									</Button>
