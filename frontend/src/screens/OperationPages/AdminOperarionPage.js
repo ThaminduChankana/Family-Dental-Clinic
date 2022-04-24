@@ -16,65 +16,77 @@ const AdminOperationPage = ({ history }) => {
 	};
 
 	return (
-		<MainScreen title={`Welcome Back ${adminInfo && adminInfo.name}..`}>
-			<div>
-				<Container>
-					<Row>
-						<Button variant="primary" onClick={logoutHandler} className="logoutBtn">
-							Logout
-						</Button>
-						<div className="intro-text">
-							<div className="buttonContainer">
-								<a href="/admin-view">
-									<Button size="lg" className="landingbutton">
-										My Account
-									</Button>
-								</a>
-								<a href="/admin-patients">
-									<Button size="lg" className="landingbutton">
-										Patient Account Management
-									</Button>
-								</a>
-								<a href="/admin-doctors">
-									<Button size="lg" className="landingbutton">
-										Doctor Account Management
-									</Button>
-								</a>
+		<div className="bg">
+			<MainScreen title={`Welcome Back ${adminInfo && adminInfo.name}..`}>
+				<div>
+					<Container>
+						<Row>
+							<Button variant="primary" onClick={logoutHandler} className="logoutBtn">
+								Logout
+							</Button>
+							<div className="intro-text">
+								<div className="buttonContainer">
+									<Link to="/admin-view">
+										<Button size="lg" className="landingbutton">
+											My Account
+										</Button>
+									</Link>
+									<Link to="/admin-register">
+										<Button size="lg" className="landingbutton">
+											Create New Admin Account
+										</Button>
+									</Link>
+									<Link to="/admin-patients">
+										<Button size="lg" className="landingbutton">
+											Patient Account Management
+										</Button>
+									</Link>
+									<Link to="/admin-doctors">
+										<Button size="lg" className="landingbutton">
+											Doctor Account Management
+										</Button>
+									</Link>
+								</div>
+								<div className="buttonContainer">
+									<Link to="/">
+										<Button size="lg" className="landingbutton">
+											Inventory Management
+										</Button>
+									</Link>
+									<Link to="/">
+										<Button size="lg" className="landingbutton">
+											Feedback Management
+										</Button>
+									</Link>
+									<Link to="/">
+										<Button size="lg" className="landingbutton">
+											Q & A Management
+										</Button>
+									</Link>
+									<Link to="/">
+										<Button size="lg" className="landingbutton">
+											Patient Medical History Management
+										</Button>
+									</Link>
+								</div>
+								<div className="buttonContainer">
+									<Link to="/">
+										<Button size="lg" className="landingbutton">
+											Appointment Management
+										</Button>
+									</Link>
+									<Link to="/">
+										<Button size="lg" className="landingbutton">
+											Doctor's Schedule Management
+										</Button>
+									</Link>
+								</div>
 							</div>
-							<div className="buttonContainer">
-								<a href="/">
-									<Button size="lg" className="landingbutton">
-										Inventory Management
-									</Button>
-								</a>
-								<a href="/">
-									<Button size="lg" className="landingbutton">
-										Feedback And Q & A Management
-									</Button>
-								</a>
-								<a href="/">
-									<Button size="lg" className="landingbutton">
-										Patient Medical History Management
-									</Button>
-								</a>
-							</div>
-							<div className="buttonContainer">
-								<a href="/">
-									<Button size="lg" className="landingbutton">
-										Appointment Management
-									</Button>
-								</a>
-								<a href="/">
-									<Button size="lg" className="landingbutton">
-										Doctor's Schedule Management
-									</Button>
-								</a>
-							</div>
-						</div>
-					</Row>
-				</Container>
-			</div>
-		</MainScreen>
+						</Row>
+					</Container>
+				</div>
+			</MainScreen>
+		</div>
 	);
 };
 
