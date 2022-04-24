@@ -25,6 +25,7 @@ import PatientEditByAdmin from "./screens/UserManagement/AdminUserEditScreens/Pa
 import DiagnosisInfo from "./screens/Treatment/TreatmentDashBoard/DiagnosisInfo";
 import TreatmentNavBar from "./screens/Treatment/TreatmentDashBoard/TreatmentNavBar";
 import BasicTreatmentView from "./screens/Treatment/TreatmentLists/BasicTreatmentView";
+import FillingView from "./screens/Treatment/TreatmentLists/FillingView";
 
 const App = () => {
 	return (
@@ -53,6 +54,7 @@ const App = () => {
 				<Route path="/treatment-dashboard" component={DiagnosisInfo} exact />
 				<Route path="/treatment-navbar" component={TreatmentNavBar} exact />
 				<Route path="/treatment-basicTreatment-view" component={BasicTreatmentView} exact />
+				<Route path="/treatment-filling-view" component={FillingView} exact />
 			</main>
 		</BrowserRouter>
 	);
