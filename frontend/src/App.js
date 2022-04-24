@@ -35,6 +35,8 @@ import SingleFilling from "./screens/Treatment/TreatmentEditScreens/SingleFillin
 import SingleOrthodontic from "./screens/Treatment/TreatmentEditScreens/SingleOrthodontic";
 
 const App = () => {
+	const [search, setSearch] = useState("");
+
 	return (
 		<BrowserRouter>
 			<main>
