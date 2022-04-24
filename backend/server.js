@@ -13,6 +13,7 @@ const connectDB = require("./config/db");
 dotenv.config();
 connectDB();
 app.use(express.json());
+app.use("*", cors());
 
 app.get("/", (req, res) => {
 	res.send("API is Running");

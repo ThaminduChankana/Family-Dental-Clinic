@@ -28,6 +28,26 @@ import {
 	patientUpdateByIdReducer,
 	patientDeleteReducer,
 } from "./reducers/patientReducers";
+import {
+	basicTreatmentListReducer,
+	basicTreatmentCreateReducer,
+	basicTreatmentUpdateReducer,
+	basicTreatmentDeleteReducer,
+} from "./reducers/basicTreatmentReducer";
+
+import {
+	fillingListReducer,
+	fillingCreateReducer,
+	fillingUpdateReducer,
+	fillingDeleteReducer,
+} from "./reducers/fillingReducer";
+
+import {
+	orthodonticListReducer,
+	orthodonticCreateReducer,
+	orthodonticUpdateReducer,
+	orthodonticDeleteReducer,
+} from "./reducers/orthodonticReducer";
 
 const reducer = combineReducers({
 	admin_Login: adminLoginReducer,
@@ -50,6 +70,18 @@ const reducer = combineReducers({
 	patientDelete: patientDeleteReducer,
 	patientViewById: patientViewByIdReducer,
 	patientUpdateById: patientUpdateByIdReducer,
+	basicTreatmentList: basicTreatmentListReducer,
+	basicTreatmentCreate: basicTreatmentCreateReducer,
+	basicTreatmentUpdate: basicTreatmentUpdateReducer,
+	basicTreatmentDelete: basicTreatmentDeleteReducer,
+	fillingList: fillingListReducer,
+	fillingCreate: fillingCreateReducer,
+	fillingUpdate: fillingUpdateReducer,
+	fillingDelete: fillingDeleteReducer,
+	orthodonticList: orthodonticListReducer,
+	orthodonticCreate: orthodonticCreateReducer,
+	orthodonticUpdate: orthodonticUpdateReducer,
+	orthodonticDelete: orthodonticDeleteReducer,
 });
 
 const adminInfoFromStorage = localStorage.getItem("adminInfo") ? JSON.parse(localStorage.getItem("adminInfo")) : null;
