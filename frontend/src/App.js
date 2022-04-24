@@ -23,6 +23,8 @@ import DoctorEditByAdmin from "./screens/UserManagement/AdminUserEditScreens/Doc
 import PatientEditByAdmin from "./screens/UserManagement/AdminUserEditScreens/PatientEditByAdmin";
 
 const App = () => {
+	const [search, setSearch] = useState("");
+
 	return (
 		<BrowserRouter>
 			<main>

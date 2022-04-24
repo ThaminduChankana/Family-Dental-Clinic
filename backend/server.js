@@ -15,7 +15,7 @@ connectDB();
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.send("API is Running");
+	res.send("API is Running");
 });
 
 app.use("/user", commonRoutes);

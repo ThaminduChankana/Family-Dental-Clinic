@@ -50,6 +50,13 @@ const DoctorListForAdmin = () => {
 			>
 				Doctors List
 			</h1>
+			<br></br>
+			<Link to="/doctor-register">
+				<Button style={{ marginLeft: 10, marginBottom: 6 }} size="lg">
+					Create New doctor Account
+				</Button>
+			</Link>
+			<br></br>
 
 			{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
 			{errorDelete && <ErrorMessage variant="danger">{errorDelete}</ErrorMessage>}
@@ -73,8 +80,14 @@ const DoctorListForAdmin = () => {
 									}}
 								>
 									<Accordion.Toggle as={Card.Text} variant="link" eventKey="0">
-										Doctor Name : &emsp;
-										{doctorList.name}
+										<p className="nic">
+											Doctor NIC : &emsp;
+											{doctorList.nic}&emsp;
+										</p>{" "}
+										<p className="name">
+											Doctor Name : &emsp;
+											{doctorList.name}
+										</p>
 									</Accordion.Toggle>
 								</span>
 								<div>
