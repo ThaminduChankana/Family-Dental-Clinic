@@ -6,7 +6,6 @@ const {} = require("../routes/patientRoutes");
 const generateToken = require("../utils/generateToken");
 
 const registerAdmin = asyncHandler(async (req, res) => {
-
 	const { name, dob, nic, telephone, address, previousRef, password, pic, dataEntry } = req.body;
 
 	const adminExists = await Admin.findOne({ nic });

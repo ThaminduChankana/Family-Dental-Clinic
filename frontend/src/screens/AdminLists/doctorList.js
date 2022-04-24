@@ -52,7 +52,7 @@ const DoctorListForAdmin = () => {
 			</h1>
 			<br></br>
 			<Link to="/doctor-register">
-				<Button  style={{ marginLeft: 10, marginBottom: 6 }} size="lg">
+				<Button style={{ marginLeft: 10, marginBottom: 6 }} size="lg">
 					Create New doctor Account
 				</Button>
 			</Link>
