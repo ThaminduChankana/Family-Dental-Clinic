@@ -45,7 +45,7 @@ export const doctorLogin = (nic, password) => async (dispatch) => {
 	} catch (error) {
 		dispatch({
 			type: DOCTOR_LOGIN_FAIL,
-			payload: "Invalid NIC Or Password",
+			payload: "Invalid NIC Or Password !!!",
 		});
 	}
 };
@@ -123,7 +123,7 @@ export const doctorRegister =
 		} catch (error) {
 			dispatch({
 				type: DOCTOR_REGISTER_FAIL,
-				payload: error.response && error.response.data.message ? error.response.data.message : error.message,
+				payload: "Doctor Registration Failed !!!",
 			});
 		}
 	};
@@ -186,7 +186,7 @@ export const doctorUpdateProfile = (doctor) => async (dispatch, getState) => {
 	} catch (error) {
 		dispatch({
 			type: DOCTOR_UPDATE_FAIL,
-			payload: error.response && error.response.data.message ? error.response.data.message : error.message,
+			payload: "Doctor Update Failed !!!",
 		});
 	}
 };
@@ -245,7 +245,7 @@ export const doctorDeleteProfile = (id) => async (dispatch, getState) => {
 			payload: data,
 		});
 	} catch (error) {
-		const message = error.response && error.response.data.message ? error.response.data.message : error.message;
+		const message = "Doctor Delete Failed !!!";
 		dispatch({
 			type: DOCTOR_DELETE_FAIL,
 			payload: message,
@@ -387,7 +387,7 @@ export const doctorUpdateProfileById =
 				window.location.href = "/admin-doctors";
 			}, 1000);
 		} catch (error) {
-			const message = error.response && error.response.data.message ? error.response.data.message : error.message;
+			const message = "Doctor Update Failed !!!";
 			dispatch({
 				type: DOCTOR_UPDATE_BY_ID_FAIL,
 				payload: message,

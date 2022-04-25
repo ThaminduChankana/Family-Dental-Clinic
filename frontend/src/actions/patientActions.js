@@ -103,7 +103,7 @@ export const patientRegister =
 		} catch (error) {
 			dispatch({
 				type: PATIENT_REGISTER_FAIL,
-				payload: error.response && error.response.data.message ? error.response.data.message : error.message,
+				payload: "Patient Registration Failed !!!",
 			});
 		}
 	};
@@ -165,7 +165,7 @@ export const patientUpdateProfile = (patient) => async (dispatch, getState) => {
 	} catch (error) {
 		dispatch({
 			type: PATIENT_UPDATE_FAIL,
-			payload: error.response && error.response.data.message ? error.response.data.message : error.message,
+			payload: "Patient Update Failed !!!",
 		});
 	}
 };
@@ -223,7 +223,7 @@ export const patientDeleteProfile = (id) => async (dispatch, getState) => {
 			payload: data,
 		});
 	} catch (error) {
-		const message = error.response && error.response.data.message ? error.response.data.message : error.message;
+		const message = "Patient Delete Failed !!!";
 		dispatch({
 			type: PATIENT_DELETE_FAIL,
 			payload: message,
@@ -312,7 +312,7 @@ export const patientUpdateProfileById =
 				window.location.href = "/admin-patients";
 			}, 2000);
 		} catch (error) {
-			const message = error.response && error.response.data.message ? error.response.data.message : error.message;
+			const message = "Patient Update Failed !!!";
 			dispatch({
 				type: PATIENT_UPDATE_BY_ID_FAIL,
 				payload: message,

@@ -40,7 +40,6 @@ const AdminRegisterScreen = ({ history }) => {
 			setMessage("Passwords do not match");
 		} else {
 			dispatch(adminRegister(name, dob, nic, telephone, address, previousRef, password, pic));
-			setMessage("Admin Registration Successful");
 		}
 	};
 	const postDetails = (pics) => {
@@ -78,17 +77,17 @@ const AdminRegisterScreen = ({ history }) => {
 				<Form onSubmit={submitHandler}>
 					<Form.Group controlId="adminName">
 						<Form.Label>Name</Form.Label>
-						<Form.Control type="name" value={name} placeholder="Enter name" onChange={(e) => setName(e.target.value)} />
+						<Form.Control type="name" value={name} placeholder="Enter name" onChange={(e) => setName(e.target.value)} required/>
 					</Form.Group>
 
 					<Form.Group controlId="adminDob">
 						<Form.Label>Date Of Birth</Form.Label>
-						<Form.Control type="date" value={dob} onChange={(e) => setDob(e.target.value)} />
+						<Form.Control type="date" value={dob} onChange={(e) => setDob(e.target.value)} required/>
 					</Form.Group>
 
 					<Form.Group controlId="adminFormBasicNic">
 						<Form.Label>NIC Number</Form.Label>
-						<Form.Control type="text" value={nic} placeholder="Enter NIC" onChange={(e) => setNic(e.target.value)} />
+						<Form.Control type="text" value={nic} placeholder="Enter NIC" onChange={(e) => setNic(e.target.value)} required/>
 					</Form.Group>
 
 					<Form.Group controlId="adminFormBasicTelephone">
@@ -98,6 +97,7 @@ const AdminRegisterScreen = ({ history }) => {
 							value={telephone}
 							placeholder="Enter Telephone Number"
 							onChange={(e) => setTelephone(e.target.value)}
+							required
 						/>
 					</Form.Group>
 
@@ -108,6 +108,7 @@ const AdminRegisterScreen = ({ history }) => {
 							value={address}
 							placeholder="Enter Address"
 							onChange={(e) => setAddress(e.target.value)}
+							required
 						/>
 					</Form.Group>
 
@@ -118,6 +119,7 @@ const AdminRegisterScreen = ({ history }) => {
 							value={previousRef}
 							placeholder="Enter Previous References"
 							onChange={(e) => setPreviousRef(e.target.value)}
+							required
 						/>
 					</Form.Group>
 
@@ -128,6 +130,7 @@ const AdminRegisterScreen = ({ history }) => {
 							value={password}
 							placeholder="Password"
 							onChange={(e) => setPassword(e.target.value)}
+							required
 						/>
 					</Form.Group>
 
@@ -138,6 +141,7 @@ const AdminRegisterScreen = ({ history }) => {
 							value={confirmpassword}
 							placeholder="Confirm Password"
 							onChange={(e) => setConfirmPassword(e.target.value)}
+							required
 						/>
 					</Form.Group>
 

@@ -33,7 +33,7 @@ export const adminLogin = (nic, password) => async (dispatch) => {
 	} catch (error) {
 		dispatch({
 			type: ADMIN_LOGIN_FAIL,
-			payload: "Invalid NIC Or Password",
+			payload: "Invalid NIC Or Password !!!",
 		});
 	}
 };
@@ -90,7 +90,7 @@ export const adminRegister =
 		} catch (error) {
 			dispatch({
 				type: ADMIN_REGISTER_FAIL,
-				payload: error.response && error.response.data.message ? error.response.data.message : error.message,
+				payload: "Admin Registration Failed !!!",
 			});
 		}
 	};
@@ -152,7 +152,7 @@ export const adminUpdateProfile = (admin) => async (dispatch, getState) => {
 	} catch (error) {
 		dispatch({
 			type: ADMIN_UPDATE_FAIL,
-			payload: error.response && error.response.data.message ? error.response.data.message : error.message,
+			payload: "Admin Update Failed !!!",
 		});
 	}
 };
