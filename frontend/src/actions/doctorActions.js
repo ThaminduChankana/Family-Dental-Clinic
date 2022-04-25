@@ -40,6 +40,7 @@ export const doctorLogin = (nic, password) => async (dispatch) => {
 		const { data } = await axios.post("/user/doctor/login", { nic, password, isAdmin: false }, config);
 
 		dispatch({ type: DOCTOR_LOGIN_SUCCESS, payload: data });
+
 		window.location.href = "/doctor";
 		localStorage.setItem("doctorInfo", JSON.stringify(data));
 	} catch (error) {

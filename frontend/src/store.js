@@ -28,6 +28,7 @@ import {
 	patientUpdateByIdReducer,
 	patientDeleteReducer,
 } from "./reducers/patientReducers";
+
 import {
 	basicTreatmentListReducer,
 	basicTreatmentCreateReducer,
@@ -48,6 +49,9 @@ import {
 	orthodonticUpdateReducer,
 	orthodonticDeleteReducer,
 } from "./reducers/orthodonticReducer";
+
+import appointmentReducer from "./reducers/appointmentReducer";
+
 
 const reducer = combineReducers({
 	admin_Login: adminLoginReducer,
@@ -82,6 +86,7 @@ const reducer = combineReducers({
 	orthodonticCreate: orthodonticCreateReducer,
 	orthodonticUpdate: orthodonticUpdateReducer,
 	orthodonticDelete: orthodonticDeleteReducer,
+	appointments:  appointmentReducer
 });
 
 const adminInfoFromStorage = localStorage.getItem("adminInfo") ? JSON.parse(localStorage.getItem("adminInfo")) : null;

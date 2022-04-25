@@ -1,4 +1,6 @@
 import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "react-datepicker/dist/react-datepicker.css";
 import { BrowserRouter, Route } from "react-router-dom";
 import React from "react";
 import { useState } from "react";
@@ -37,6 +39,9 @@ import SingleOrthodontic from "./screens/Treatment/TreatmentEditScreens/SingleOr
 const App = () => {
 	const [search, setSearch] = useState("");
 
+import AppointmentRootContainer from "./screens/appointmentManagement/RootContainer";
+
+const App = () => {
 	return (
 		<BrowserRouter>
 			<main>
@@ -71,6 +76,7 @@ const App = () => {
 				<Route path="/basicTreatment/:id" component={SingleBasicTreatment} exact />
 				<Route path="/filling/:id" component={SingleFilling} exact />
 				<Route path="/orthodontic/:id" component={SingleOrthodontic} exact />
+				<Route path='/appointments' component={AppointmentRootContainer} />
 			</main>
 		</BrowserRouter>
 	);
