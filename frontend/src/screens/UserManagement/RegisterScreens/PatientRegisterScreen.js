@@ -42,9 +42,6 @@ const PatientRegisterScreen = ({ history }) => {
 			setMessage("Passwords do not match");
 		} else {
 			dispatch(patientRegister(name, dob, gender, nic, telephone, address, password, pic, dataEntry, regDate));
-			if (!error) {
-				setMessage("Patient Registration Successful");
-			}
 		}
 	};
 	const postDetails = (pics) => {
@@ -82,15 +79,27 @@ const PatientRegisterScreen = ({ history }) => {
 				<Form onSubmit={submitHandler}>
 					<Form.Group controlId="patientName">
 						<Form.Label>Name</Form.Label>
-						<Form.Control type="name" value={name} placeholder="Enter name" onChange={(e) => setName(e.target.value)} />
+						<Form.Control
+							type="name"
+							value={name}
+							placeholder="Enter name"
+							onChange={(e) => setName(e.target.value)}
+							required
+						/>
 					</Form.Group>
 					<Form.Group controlId="patientDob">
 						<Form.Label>Date Of Birth</Form.Label>
-						<Form.Control type="date" value={dob} onChange={(e) => setDob(e.target.value)} />
+						<Form.Control type="date" value={dob} onChange={(e) => setDob(e.target.value)} required />
 					</Form.Group>
 					<div class="form-group">
 						<label for="patientGender">Gender</label>
-						<select class="form-control" id="patientGender" value={gender} onChange={(e) => setGender(e.target.value)}>
+						<select
+							class="form-control"
+							id="patientGender"
+							value={gender}
+							onChange={(e) => setGender(e.target.value)}
+							required
+						>
 							<option>Select Gender</option>
 							<option value={gender.Male}>Male</option>
 							<option value={gender.Female}>Female</option>
@@ -98,7 +107,13 @@ const PatientRegisterScreen = ({ history }) => {
 					</div>
 					<Form.Group controlId="patientFormBasicNic">
 						<Form.Label>NIC Number</Form.Label>
-						<Form.Control type="text" value={nic} placeholder="Enter NIC" onChange={(e) => setNic(e.target.value)} />
+						<Form.Control
+							type="text"
+							value={nic}
+							placeholder="Enter NIC"
+							onChange={(e) => setNic(e.target.value)}
+							required
+						/>
 					</Form.Group>
 					<Form.Group controlId="patientFormBasicTelephone">
 						<Form.Label>Telephone</Form.Label>
@@ -107,6 +122,7 @@ const PatientRegisterScreen = ({ history }) => {
 							value={telephone}
 							placeholder="Enter Telephone Number"
 							onChange={(e) => setTelephone(e.target.value)}
+							required
 						/>
 					</Form.Group>
 					<Form.Group controlId="patientFormBasicAddress">
@@ -116,6 +132,7 @@ const PatientRegisterScreen = ({ history }) => {
 							value={address}
 							placeholder="Enter Address"
 							onChange={(e) => setAddress(e.target.value)}
+							required
 						/>
 					</Form.Group>
 					<Form.Group controlId="formBasicPassword">
@@ -125,6 +142,7 @@ const PatientRegisterScreen = ({ history }) => {
 							value={password}
 							placeholder="Password"
 							onChange={(e) => setPassword(e.target.value)}
+							required
 						/>
 					</Form.Group>
 					<Form.Group controlId="confirmPassword">
@@ -149,7 +167,7 @@ const PatientRegisterScreen = ({ history }) => {
 					</Form.Group>
 					<Form.Group controlId="patientRegDate">
 						<Form.Label>Registration Date</Form.Label>
-						<Form.Control type="date" value={regDate} onChange={(e) => setRegDate(e.target.value)} />
+						<Form.Control type="date" value={regDate} onChange={(e) => setRegDate(e.target.value)} required />
 					</Form.Group>
 					<Form.Group controlId="patientFormBasicDataEntryBy">
 						<Form.Label>Data Entry By</Form.Label>
@@ -158,6 +176,7 @@ const PatientRegisterScreen = ({ history }) => {
 							value={dataEntry}
 							placeholder="Enter Data Entering Person Name"
 							onChange={(e) => setDataEntry(e.target.value)}
+							required
 						/>
 					</Form.Group>
 					<Button variant="primary" type="submit">
