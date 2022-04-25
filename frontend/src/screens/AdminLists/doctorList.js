@@ -16,15 +16,12 @@ const DoctorListForAdmin = () => {
 	const admin_Login = useSelector((state) => state.admin_Login);
 	const { adminInfo } = admin_Login;
 
-
 	const doctorUpdate = useSelector((state) => state.doctorUpdate);
 	const { success: successUpdate } = doctorUpdate;
 
 	const doctorDelete = useSelector((state) => state.doctorDelete);
 	const { error: errorDelete, success: successDelete } = doctorDelete;
 	console.log();
-
-
 
 	const history = useHistory();
 
@@ -34,7 +31,7 @@ const DoctorListForAdmin = () => {
 		if (!adminInfo) {
 			history.push("/");
 		}
-	}, [dispatch, history, adminInfo, doctorDelete,successDelete,successUpdate]);
+	}, [dispatch, history, adminInfo, doctorDelete, successDelete, successUpdate]);
 
 	const deleteHandler = (id) => {
 		if (window.confirm("Are You Sure?")) {
@@ -53,11 +50,18 @@ const DoctorListForAdmin = () => {
 			>
 				Doctors List
 			</h1>
+			<br></br>
+			<Link to="/doctor-register">
+				<Button style={{ marginLeft: 10, marginBottom: 6 }} size="lg">
+					Create New doctor Account
+				</Button>
+			</Link>
+			<br></br>
 
 			{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
 			{errorDelete && <ErrorMessage variant="danger">{errorDelete}</ErrorMessage>}
 			{loading && <Loading />}
-		
+
 			<br></br>
 			{doctors?.map((doctorList) => (
 				<div key={doctorList._id}>
@@ -76,8 +80,14 @@ const DoctorListForAdmin = () => {
 									}}
 								>
 									<Accordion.Toggle as={Card.Text} variant="link" eventKey="0">
-										Doctor Name : &emsp;
-										{doctorList.name}
+										<p className="nic">
+											Doctor NIC : &emsp;
+											{doctorList.nic}&emsp;
+										</p>{" "}
+										<p className="name">
+											Doctor Name : &emsp;
+											{doctorList.name}
+										</p>
 									</Accordion.Toggle>
 								</span>
 								<div>

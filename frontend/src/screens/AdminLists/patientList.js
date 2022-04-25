@@ -31,7 +31,7 @@ const PatientListForAdmin = () => {
 		if (!adminInfo) {
 			history.push("/");
 		}
-	}, [dispatch, history, adminInfo, patientDelete,successDelete, successUpdate]);
+	}, [dispatch, history, adminInfo, patientDelete, successDelete, successUpdate]);
 
 	const deleteHandler = (id) => {
 		if (window.confirm("Are You Sure?")) {
@@ -50,17 +50,22 @@ const PatientListForAdmin = () => {
 			>
 				Patients List
 			</h1>
-			{console.log(patients)}
+			<br></br>
+			<Link to="/doctor-register">
+				<Button style={{ marginLeft: 10, marginBottom: 6 }} size="lg">
+					Create New Patient Account
+				</Button>
+			</Link>
+			<br></br>
 			{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
 			{loading && <Loading />}
 			<br></br>
 			{patients?.map((patientList) => (
-				<div key={patientList._id}>
+				<div key={patientList._id} className="listContainer">
 					<Accordion>
 						<Card style={{ margin: 10 }}>
 							<Card.Header style={{ display: "flex" }}>
 								<span
-									// onClick={() => ModelShow(note)}
 									style={{
 										color: "black",
 										textDecoration: "none",
@@ -71,8 +76,14 @@ const PatientListForAdmin = () => {
 									}}
 								>
 									<Accordion.Toggle as={Card.Text} variant="link" eventKey="0">
-										Patient Name : &emsp;
-										{patientList.name}
+										<p className="nic">
+											Patient NIC : &emsp;
+											{patientList.nic}{" "}
+										</p>{" "}
+										<p className="name">
+											Patient Name : &emsp;
+											{patientList.name}
+										</p>
 									</Accordion.Toggle>
 								</span>
 								<div>
@@ -127,4 +138,3 @@ const PatientListForAdmin = () => {
 };
 
 export default PatientListForAdmin;
-

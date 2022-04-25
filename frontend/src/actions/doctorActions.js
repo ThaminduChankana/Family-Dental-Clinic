@@ -27,8 +27,6 @@ import {
 } from "../constants/doctorConstants";
 import axios from "axios";
 
-//name,dob,gender,nic,telephone,address,sldareg,licenceNo,currentHospital,password,pic,dataEntry,regDate
-
 export const doctorLogin = (nic, password) => async (dispatch) => {
 	try {
 		dispatch({ type: DOCTOR_LOGIN_REQUEST });
@@ -42,7 +40,8 @@ export const doctorLogin = (nic, password) => async (dispatch) => {
 		const { data } = await axios.post("/user/doctor/login", { nic, password, isAdmin: false }, config);
 
 		dispatch({ type: DOCTOR_LOGIN_SUCCESS, payload: data });
-		window.location.href = "/doctor-view";
+
+		window.location.href = "/doctor";
 		localStorage.setItem("doctorInfo", JSON.stringify(data));
 	} catch (error) {
 		dispatch({
@@ -51,6 +50,16 @@ export const doctorLogin = (nic, password) => async (dispatch) => {
 		});
 	}
 };
+
+export function authHeader() {
+	let doctor = JSON.parse(localStorage.getItem("doctorInfo"));
+
+	if (doctor && doctor.token) {
+		return { Authorization: `Bearer ${doctor.token}` };
+	} else {
+		return {};
+	}
+}
 
 export const doctorLogout = () => async (dispatch) => {
 	localStorage.removeItem("doctorInfo");
