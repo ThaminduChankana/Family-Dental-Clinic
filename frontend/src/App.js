@@ -33,6 +33,8 @@ import OrthodonticCreate from "./screens/Treatment/TreatmentCreateScreens/Orthod
 import SingleBasicTreatment from "./screens/Treatment/TreatmentEditScreens/SingleBasicTreatment";
 import SingleFilling from "./screens/Treatment/TreatmentEditScreens/SingleFilling";
 import SingleOrthodontic from "./screens/Treatment/TreatmentEditScreens/SingleOrthodontic";
+import Footer from "./components/footer/footer";
+
 
 const App = () => {
 	const [search, setSearch] = useState("");
@@ -72,6 +74,7 @@ const App = () => {
 				<Route path="/filling/:id" component={SingleFilling} exact />
 				<Route path="/orthodontic/:id" component={SingleOrthodontic} exact />
 			</main>
+			<Footer />
 		</BrowserRouter>
 	);
 };
