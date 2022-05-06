@@ -21,6 +21,10 @@ import PatientListForAdmin from "./screens/AdminLists/patientList";
 import PatientListForDoctor from "./screens/DoctorLists/patientList";
 import DoctorEditByAdmin from "./screens/UserManagement/AdminUserEditScreens/DoctorEditByAdmin";
 import PatientEditByAdmin from "./screens/UserManagement/AdminUserEditScreens/PatientEditByAdmin";
+import DoctorArticles from "./screens/Blogs/DoctorArticles";
+import CreateArticle from "./screens/Blogs/CreateArticle";
+import SingleArticle from "./screens/Blogs/SingleArticle";
+import Footer from "./components/footer/footer";
 
 const App = () => {
 	return (
@@ -45,7 +49,11 @@ const App = () => {
 				<Route path="/doctor-patients" component={PatientListForDoctor} exact />
 				<Route path="/admin-doctor-edit/:id" component={DoctorEditByAdmin} exact />
 				<Route path="/admin-patient-edit/:id" component={PatientEditByAdmin} exact />
+				<Route path="/doctor-articles" component={DoctorArticles} exact />
+				<Route path="/doctor-create-article" component={CreateArticle} exact />
+				<Route path="/doctor-single-article/:id" component={SingleArticle} exact />
 			</main>
+			<Footer />
 		</BrowserRouter>
 	);
 };
