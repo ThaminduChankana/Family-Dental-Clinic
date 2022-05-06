@@ -80,15 +80,27 @@ const PatientRegisterScreen = ({ history }) => {
 				<Form onSubmit={submitHandler}>
 					<Form.Group controlId="patientName">
 						<Form.Label>Name</Form.Label>
-						<Form.Control type="name" value={name} placeholder="Enter name" onChange={(e) => setName(e.target.value)} required />
+						<Form.Control
+							type="name"
+							value={name}
+							placeholder="Enter name"
+							onChange={(e) => setName(e.target.value)}
+							required
+						/>
 					</Form.Group>
 					<Form.Group controlId="patientDob">
 						<Form.Label>Date Of Birth</Form.Label>
-						<Form.Control type="date" value={dob} onChange={(e) => setDob(e.target.value)} required/>
+						<Form.Control type="date" value={dob} onChange={(e) => setDob(e.target.value)} required />
 					</Form.Group>
 					<div class="form-group">
 						<label for="patientGender">Gender</label>
-						<select class="form-control" id="patientGender" value={gender} onChange={(e) => setGender(e.target.value)} required>
+						<select
+							class="form-control"
+							id="patientGender"
+							value={gender}
+							onChange={(e) => setGender(e.target.value)}
+							required
+						>
 							<option>Select Gender</option>
 							<option value={gender.Male}>Male</option>
 							<option value={gender.Female}>Female</option>
@@ -96,7 +108,13 @@ const PatientRegisterScreen = ({ history }) => {
 					</div>
 					<Form.Group controlId="patientFormBasicNic">
 						<Form.Label>NIC Number</Form.Label>
-						<Form.Control type="text" value={nic} placeholder="Enter NIC" onChange={(e) => setNic(e.target.value)} required />
+						<Form.Control
+							type="text"
+							value={nic}
+							placeholder="Enter NIC"
+							onChange={(e) => setNic(e.target.value)}
+							required
+						/>
 					</Form.Group>
 					<Form.Group controlId="patientFormBasicTelephone">
 						<Form.Label>Telephone</Form.Label>
@@ -150,7 +168,7 @@ const PatientRegisterScreen = ({ history }) => {
 					</Form.Group>
 					<Form.Group controlId="patientRegDate">
 						<Form.Label>Registration Date</Form.Label>
-						<Form.Control type="date" value={regDate} onChange={(e) => setRegDate(e.target.value)} required/>
+						<Form.Control type="date" value={regDate} onChange={(e) => setRegDate(e.target.value)} required />
 					</Form.Group>
 					<Form.Group controlId="patientFormBasicDataEntryBy">
 						<Form.Label>Data Entry By</Form.Label>
