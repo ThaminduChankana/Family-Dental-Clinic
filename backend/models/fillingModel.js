@@ -22,7 +22,7 @@ const fillingSchema = mongoose.Schema({
 		required: true,
 	},
 	date: {
-		type: Date,
+		type: String,
 		required: true,
 	},
 	checkup: {

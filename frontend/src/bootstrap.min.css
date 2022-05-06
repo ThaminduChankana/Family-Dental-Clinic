@@ -10,6 +10,13 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+.nic {
+	font-weight: bold;
+	font-style: oblique;
+}
+.name {
+	font-style: oblique;
+}
 @import url(https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap);
 :root {
 	--blue: #158cba;

@@ -61,7 +61,7 @@ const PatientEditByAdmin = ({ match, history }) => {
 			setMessage("Passwords do not match");
 		} else {
 			dispatch(
-			  patientUpdateProfileById(
+				patientUpdateProfileById(
 					match.params.id,
 					name,
 					dob,
@@ -208,7 +208,6 @@ const PatientEditByAdmin = ({ match, history }) => {
 							<Button variant="primary" type="submit">
 								Update
 							</Button>
-
 							&emsp;
 						</Form>
 						&emsp;

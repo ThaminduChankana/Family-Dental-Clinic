@@ -15,8 +15,6 @@ import {
 } from "../constants/adminConstants";
 import axios from "axios";
 
-//name, dob, nic,telephone,address,previousRef,password,pic,dataEntry
-
 export const adminLogin = (nic, password) => async (dispatch) => {
 	try {
 		dispatch({ type: ADMIN_LOGIN_REQUEST });
