@@ -94,9 +94,7 @@ export const patientRegister =
 			);
 
 			dispatch({ type: PATIENT_REGISTER_SUCCESS, payload: data });
-			setTimeout(function () {
-				window.location.href = "/patient-login";
-			}, 2000);
+			alert("Patient Registration Successful !!!");
 			dispatch({ type: PATIENT_LOGIN_SUCCESS, payload: data });
 
 			localStorage.setItem("patientInfo", JSON.stringify(data));

@@ -27,7 +27,7 @@ const PatientRegisterScreen = ({ history }) => {
 
 	const dispatch = useDispatch();
 	const patientRegistration = useSelector((state) => state.patientRegistration);
-	const { loading, error, patientInfo } = patientRegistration;
+	const { loading, error, patientInfo, success } = patientRegistration;
 
 	/*useEffect(() => {
 		if (patientInfo) {
@@ -74,6 +74,7 @@ const PatientRegisterScreen = ({ history }) => {
 		<MainScreen title="REGISTER - PATIENT">
 			<div className="loginContainer">
 				{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
+				{success && <ErrorMessage variant="danger">{success}</ErrorMessage>}
 				{message && <ErrorMessage variant="danger">{message}</ErrorMessage>}
 				{loading && <Loading />}
 				<Form onSubmit={submitHandler}>

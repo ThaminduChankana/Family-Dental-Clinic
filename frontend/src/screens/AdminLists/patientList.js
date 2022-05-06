@@ -51,7 +51,7 @@ const PatientListForAdmin = () => {
 				Patients List
 			</h1>
 			<br></br>
-			<Link to="/doctor-register">
+			<Link to="/patient-register">
 				<Button style={{ marginLeft: 10, marginBottom: 6 }} size="lg">
 					Create New Patient Account
 				</Button>

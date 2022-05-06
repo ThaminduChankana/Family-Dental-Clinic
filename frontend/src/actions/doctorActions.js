@@ -112,12 +112,10 @@ export const doctorRegister =
 			);
 
 			dispatch({ type: DOCTOR_REGISTER_SUCCESS, payload: data });
-			setTimeout(function () {
-				window.location.href = "/doctor-login";
-			}, 2000);
+			alert("Doctor Registration Successful !!!");
 			localStorage.setItem("doctorInfo", JSON.stringify(data));
 
-			dispatch({ type: DOCTOR_LOGIN_SUCCESS, payload: data });
+			dispatch({ type: DOCTOR_LOGIN_SUCCESS, payload: data  });
 
 			localStorage.setItem("doctorInfo", JSON.stringify(data));
 		} catch (error) {
