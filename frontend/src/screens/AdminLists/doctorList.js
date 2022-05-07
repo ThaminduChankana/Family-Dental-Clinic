@@ -51,11 +51,23 @@ const DoctorListForAdmin = () => {
 				Doctors List
 			</h1>
 			<br></br>
-			<Link to="/doctor-register">
-				<Button style={{ marginLeft: 10, marginBottom: 6 }} size="lg">
-					Create New doctor Account
-				</Button>
-			</Link>
+			<div>
+				<Col>
+					<Link to="/admin">
+						<Button style={{ marginLeft: 10, marginBottom: 6, float: "left", fontSize: 15 }} size="lg">
+							Back to operations page
+						</Button>
+					</Link>
+				</Col>
+				<Col>
+					<Link to="/doctor-register">
+						<Button style={{ marginRight: 10, marginBottom: 6, float: "right", fontSize: 15 }} size="lg">
+							+ Create New Doctor Account
+						</Button>
+					</Link>
+				</Col>
+			</div>
+			<br></br>
 			<br></br>
 
 			{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
@@ -140,7 +152,7 @@ const DoctorListForAdmin = () => {
 					</Accordion>
 				</div>
 			))}
-			{console.log(doctors)}
+			<br></br>
 		</MainScreen>
 	);
 };

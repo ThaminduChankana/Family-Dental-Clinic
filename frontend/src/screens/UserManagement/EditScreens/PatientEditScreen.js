@@ -104,11 +104,12 @@ const PatientEditScreen = () => {
 									value={name}
 									placeholder="Enter name"
 									onChange={(e) => setName(e.target.value)}
+									required
 								/>
 							</Form.Group>
 							<Form.Group controlId="patientDob">
 								<Form.Label>Date Of Birth</Form.Label>
-								<Form.Control type="date" value={dob} onChange={(e) => setDob(e.target.value)} />
+								<Form.Control type="date" value={dob} onChange={(e) => setDob(e.target.value)} required />
 							</Form.Group>
 							<div className="form-group">
 								<label className="patientGender">Gender</label>
@@ -117,6 +118,7 @@ const PatientEditScreen = () => {
 									id="patientGender"
 									value={gender}
 									onChange={(e) => setGender(e.target.value)}
+									required
 								>
 									<option>Select Gender</option>
 									<option value={gender.Male}>Male</option>
@@ -130,6 +132,7 @@ const PatientEditScreen = () => {
 									value={nic}
 									placeholder="Enter NIC"
 									onChange={(e) => setNic(e.target.value)}
+									required
 								/>
 							</Form.Group>
 							<Form.Group controlId="patientFormBasicTelephone">
@@ -139,6 +142,7 @@ const PatientEditScreen = () => {
 									value={telephone}
 									placeholder="Enter Telephone Number"
 									onChange={(e) => setTelephone(e.target.value)}
+									required
 								/>
 							</Form.Group>
 							<Form.Group controlId="patientFormBasicAddress">
@@ -148,6 +152,7 @@ const PatientEditScreen = () => {
 									value={address}
 									placeholder="Enter Address"
 									onChange={(e) => setAddress(e.target.value)}
+									required
 								/>
 							</Form.Group>
 							<Form.Group controlId="formBasicPassword">
@@ -157,6 +162,7 @@ const PatientEditScreen = () => {
 									value={password}
 									placeholder="Password"
 									onChange={(e) => setPassword(e.target.value)}
+									required
 								/>
 							</Form.Group>
 							<Form.Group controlId="confirmPassword">
@@ -166,6 +172,7 @@ const PatientEditScreen = () => {
 									value={confirmpassword}
 									placeholder="Confirm Password"
 									onChange={(e) => setConfirmPassword(e.target.value)}
+									required
 								/>
 							</Form.Group>
 							{picMessage && <ErrorMessage variant="danger">{picMessage}</ErrorMessage>}
@@ -190,8 +197,10 @@ const PatientEditScreen = () => {
 									value={dataEntry}
 									placeholder="Enter Data Entering Person Name"
 									onChange={(e) => setDataEntry(e.target.value)}
+									required
 								/>
 							</Form.Group>
+							<br></br>
 							<Button variant="primary" type="submit">
 								Update
 							</Button>

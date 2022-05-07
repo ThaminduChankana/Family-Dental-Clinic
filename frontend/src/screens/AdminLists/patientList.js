@@ -51,11 +51,25 @@ const PatientListForAdmin = () => {
 				Patients List
 			</h1>
 			<br></br>
-			<Link to="/patient-register">
-				<Button style={{ marginLeft: 10, marginBottom: 6 }} size="lg">
-					Create New Patient Account
-				</Button>
-			</Link>
+
+			<div>
+				<Col>
+					<Link to="/admin">
+						<Button style={{ marginLeft: 10, marginBottom: 6, float: "left", fontSize: 15 }} size="lg">
+							Back to operations page
+						</Button>
+					</Link>
+				</Col>
+				<Col>
+					<Link to="/patient-register">
+						<Button style={{ marginRight: 10, marginBottom: 6, float: "right", fontSize: 15 }} size="lg">
+							+ Create New Patient Account
+						</Button>
+					</Link>
+				</Col>
+			</div>
+			<br></br>
+
 			<br></br>
 			{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
 			{loading && <Loading />}
@@ -133,6 +147,7 @@ const PatientListForAdmin = () => {
 					</Accordion>
 				</div>
 			))}
+			<br></br>
 		</MainScreen>
 	);
 };

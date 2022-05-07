@@ -35,7 +35,6 @@ import SingleFilling from "./screens/Treatment/TreatmentEditScreens/SingleFillin
 import SingleOrthodontic from "./screens/Treatment/TreatmentEditScreens/SingleOrthodontic";
 import Footer from "./components/footer/footer";
 
-
 const App = () => {
 	const [search, setSearch] = useState("");
 

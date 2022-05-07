@@ -115,7 +115,7 @@ export const doctorRegister =
 			alert("Doctor Registration Successful !!!");
 			localStorage.setItem("doctorInfo", JSON.stringify(data));
 
-			dispatch({ type: DOCTOR_LOGIN_SUCCESS, payload: data  });
+			dispatch({ type: DOCTOR_LOGIN_SUCCESS, payload: data });
 
 			localStorage.setItem("doctorInfo", JSON.stringify(data));
 		} catch (error) {

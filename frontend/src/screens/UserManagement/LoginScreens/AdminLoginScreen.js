@@ -30,7 +30,13 @@ const AdminLoginScreen = ({ history }) => {
 				<Form onSubmit={submitHandler}>
 					<Form.Group controlId="formBasicEmail">
 						<Form.Label>NIC Number</Form.Label>
-						<Form.Control type="text" value={nic} placeholder="Enter NIC" onChange={(e) => setNic(e.target.value)} />
+						<Form.Control
+							type="text"
+							value={nic}
+							placeholder="Enter NIC"
+							onChange={(e) => setNic(e.target.value)}
+							required
+						/>
 					</Form.Group>
 
 					<Form.Group controlId="formBasicPassword">
@@ -40,6 +46,7 @@ const AdminLoginScreen = ({ history }) => {
 							value={password}
 							placeholder="Password"
 							onChange={(e) => setPassword(e.target.value)}
+							required
 						/>
 					</Form.Group>
 

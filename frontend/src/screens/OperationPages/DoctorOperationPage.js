@@ -16,7 +16,7 @@ const DoctorOperationPage = ({ history }) => {
 	};
 
 	return (
-		<MainScreen title={`Welcome Back ${doctorInfo && doctorInfo.name}..`}>
+		<MainScreen title={`Welcome Back ${doctorInfo && doctorInfo.name} ...`}>
 			<div>
 				<Container>
 					<Row>

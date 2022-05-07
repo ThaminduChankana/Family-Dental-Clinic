@@ -113,11 +113,12 @@ const DoctorEditScreen = () => {
 									value={name}
 									placeholder="Enter name"
 									onChange={(e) => setName(e.target.value)}
+									required
 								/>
 							</Form.Group>
 							<Form.Group controlId="doctorDob">
 								<Form.Label>Date Of Birth</Form.Label>
-								<Form.Control type="date" value={dob} onChange={(e) => setDob(e.target.value)} />
+								<Form.Control type="date" value={dob} onChange={(e) => setDob(e.target.value)} required />
 							</Form.Group>
 							<div class="form-group">
 								<label for="doctorGender">Gender</label>
@@ -126,6 +127,7 @@ const DoctorEditScreen = () => {
 									id="doctorGender"
 									value={gender}
 									onChange={(e) => setGender(e.target.value)}
+									required
 								>
 									<option>Select Gender</option>
 									<option value={gender.Male}>Male</option>
@@ -139,6 +141,7 @@ const DoctorEditScreen = () => {
 									value={nic}
 									placeholder="Enter NIC"
 									onChange={(e) => setNic(e.target.value)}
+									required
 								/>
 							</Form.Group>
 							<Form.Group controlId="doctorFormBasicTelephone">
@@ -148,6 +151,7 @@ const DoctorEditScreen = () => {
 									value={telephone}
 									placeholder="Enter Telephone Number"
 									onChange={(e) => setTelephone(e.target.value)}
+									required
 								/>
 							</Form.Group>
 							<Form.Group controlId="patientFormBasicAddress">
@@ -157,6 +161,7 @@ const DoctorEditScreen = () => {
 									value={address}
 									placeholder="Enter Address"
 									onChange={(e) => setAddress(e.target.value)}
+									required
 								/>
 							</Form.Group>
 							<Form.Group controlId="doctorFormBasicSldaRegNo">
@@ -166,6 +171,7 @@ const DoctorEditScreen = () => {
 									value={sldaReg}
 									placeholder="Enter SLDA Register Number"
 									onChange={(e) => setSldaReg(e.target.value)}
+									required
 								/>
 							</Form.Group>
 							<Form.Group controlId="doctorFormBasicLicenceNo">
@@ -175,6 +181,7 @@ const DoctorEditScreen = () => {
 									value={licenceNo}
 									placeholder="Enter Licence Number"
 									onChange={(e) => setLicenceNo(e.target.value)}
+									required
 								/>
 							</Form.Group>
 							<Form.Group controlId="doctorFormBasicCurrentHospital">
@@ -184,6 +191,7 @@ const DoctorEditScreen = () => {
 									value={currentHospital}
 									placeholder="Enter Currently Working Hospital"
 									onChange={(e) => setCurrentHospital(e.target.value)}
+									required
 								/>
 							</Form.Group>
 							<Form.Group controlId="formBasicPassword">
@@ -193,6 +201,7 @@ const DoctorEditScreen = () => {
 									value={password}
 									placeholder="Password"
 									onChange={(e) => setPassword(e.target.value)}
+									required
 								/>
 							</Form.Group>
 							<Form.Group controlId="confirmPassword">
@@ -202,6 +211,7 @@ const DoctorEditScreen = () => {
 									value={confirmpassword}
 									placeholder="Confirm Password"
 									onChange={(e) => setConfirmPassword(e.target.value)}
+									required
 								/>
 							</Form.Group>
 							{picMessage && <ErrorMessage variant="danger">{picMessage}</ErrorMessage>}
@@ -217,7 +227,7 @@ const DoctorEditScreen = () => {
 							</Form.Group>
 							<Form.Group controlId="doctorRegDate">
 								<Form.Label>Registration Date</Form.Label>
-								<Form.Control type="date" value={regDate} onChange={(e) => setRegDate(e.target.value)} />
+								<Form.Control type="date" value={regDate} onChange={(e) => setRegDate(e.target.value)} required />
 							</Form.Group>
 							<Form.Group controlId="doctorFormBasicDataEntryBy">
 								<Form.Label>Data Entry By</Form.Label>
@@ -226,8 +236,10 @@ const DoctorEditScreen = () => {
 									value={dataEntry}
 									placeholder="Enter Data Entering Person Name"
 									onChange={(e) => setDataEntry(e.target.value)}
+									required
 								/>
 							</Form.Group>
+							<br></br>
 							<Button variant="primary" type="submit">
 								Update
 							</Button>

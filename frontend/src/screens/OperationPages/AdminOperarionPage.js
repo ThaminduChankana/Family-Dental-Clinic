@@ -21,7 +21,7 @@ const AdminOperationPage = ({ history }) => {
 				<div>
 					<Container>
 						<Row>
-							<Button variant="primary" onClick={logoutHandler} className="logoutBtn">
+							<Button variant="primary" onClick={logoutHandler} className="logoutBtn" style={{ float: "right" }}>
 								Logout
 							</Button>
 							<div className="intro-text">

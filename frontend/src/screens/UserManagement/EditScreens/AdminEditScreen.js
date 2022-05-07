@@ -98,11 +98,12 @@ const AdminEditScreen = () => {
 									value={name}
 									placeholder="Enter name"
 									onChange={(e) => setName(e.target.value)}
+									required
 								/>
 							</Form.Group>
 							<Form.Group controlId="adminDob">
 								<Form.Label>Date Of Birth</Form.Label>
-								<Form.Control type="date" value={dob} onChange={(e) => setDob(e.target.value)} />
+								<Form.Control type="date" value={dob} onChange={(e) => setDob(e.target.value)} required />
 							</Form.Group>
 							<Form.Group controlId="adminFormBasicNic">
 								<Form.Label>NIC Number</Form.Label>
@@ -111,6 +112,7 @@ const AdminEditScreen = () => {
 									value={nic}
 									placeholder="Enter NIC"
 									onChange={(e) => setNic(e.target.value)}
+									required
 								/>
 							</Form.Group>
 							<Form.Group controlId="adminFormBasicTelephone">
@@ -120,6 +122,7 @@ const AdminEditScreen = () => {
 									value={telephone}
 									placeholder="Enter Telephone Number"
 									onChange={(e) => setTelephone(e.target.value)}
+									required
 								/>
 							</Form.Group>
 							<Form.Group controlId="adminFormBasicAddress">
@@ -129,6 +132,7 @@ const AdminEditScreen = () => {
 									value={address}
 									placeholder="Enter Address"
 									onChange={(e) => setAddress(e.target.value)}
+									required
 								/>
 							</Form.Group>
 							<Form.Group controlId="adminFormBasicPreviousRef">
@@ -138,6 +142,7 @@ const AdminEditScreen = () => {
 									value={previousRef}
 									placeholder="Enter Previous References"
 									onChange={(e) => setPreviousRef(e.target.value)}
+									required
 								/>
 							</Form.Group>
 							<Form.Group controlId="formBasicPassword">
@@ -147,6 +152,7 @@ const AdminEditScreen = () => {
 									value={password}
 									placeholder="Password"
 									onChange={(e) => setPassword(e.target.value)}
+									required
 								/>
 							</Form.Group>
 							<Form.Group controlId="confirmPassword">
@@ -156,6 +162,7 @@ const AdminEditScreen = () => {
 									value={confirmpassword}
 									placeholder="Confirm Password"
 									onChange={(e) => setConfirmPassword(e.target.value)}
+									required
 								/>
 							</Form.Group>
 							{picMessage && <ErrorMessage variant="danger">{picMessage}</ErrorMessage>}
@@ -169,6 +176,7 @@ const AdminEditScreen = () => {
 									custom
 								/>
 							</Form.Group>
+							<br></br>
 							<Button variant="primary" type="submit">
 								Update
 							</Button>
@@ -190,6 +198,7 @@ const AdminEditScreen = () => {
 					</Col>
 				</Row>
 			</div>
+			<br></br>
 		</MainScreen>
 	);
 };

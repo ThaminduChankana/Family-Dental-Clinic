@@ -81,7 +81,7 @@ export const adminRegister =
 			);
 
 			dispatch({ type: ADMIN_REGISTER_SUCCESS, payload: data });
-			alert("Admin Registration Successful !!!")
+			alert("Admin Registration Successful !!!");
 			dispatch({ type: ADMIN_LOGIN_SUCCESS, payload: data });
 
 			localStorage.setItem("adminRegInfo", JSON.stringify(data));
