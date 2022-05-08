@@ -6,7 +6,8 @@ const generateToken = require("../utils/generateToken");
 
 const registerPatient = asyncHandler(async (req, res) => {
 	//Name, dob,gender,nic,telephone,address,password,pic,dataentry,reg date
-	const { name, dob, gender, nic, telephone, address, password, pic, dataEntry, regDate } = req.body;
+	const { name, dob, gender, nic, telephone, address, email, password, pic, referringDoctor, dataEntry, regDate } =
+		req.body;
 
 	const patientExists = await Patient.findOne({ nic });
 	if (patientExists) {
@@ -21,8 +22,10 @@ const registerPatient = asyncHandler(async (req, res) => {
 		nic,
 		telephone,
 		address,
+		email,
 		password,
 		pic,
+		referringDoctor,
 		dataEntry,
 		regDate,
 	});
@@ -37,7 +40,9 @@ const registerPatient = asyncHandler(async (req, res) => {
 			nic: patient.nic,
 			telephone: patient.telephone,
 			address: patient.address,
+			email: patient.email,
 			pic: patient.pic,
+			referringDoctor: patient.referringDoctor,
 			dataEntry: patient.dataEntry,
 			regDate: patient.regDate,
 			token: generateToken(patient._id),
@@ -61,7 +66,9 @@ const authPatient = asyncHandler(async (req, res) => {
 			nic: patient.nic,
 			telephone: patient.telephone,
 			address: patient.address,
+			email: patient.email,
 			pic: patient.pic,
+			referringDoctor: patient.referringDoctor,
 			dataEntry: patient.dataEntry,
 			regDate: patient.regDate,
 			token: generateToken(patient._id),
@@ -105,7 +112,9 @@ const updatePatientProfile = asyncHandler(async (req, res) => {
 		patient.nic = req.body.nic || patient.nic;
 		patient.telephone = req.body.telephone || patient.telephone;
 		patient.address = req.body.address || patient.address;
+		patient.email = req.body.email || patient.email;
 		patient.pic = req.body.pic || patient.pic;
+		patient.referringDoctor = req.body.referringDoctor || patient.referringDoctor;
 		patient.dataEntry = req.body.dataEntry || patient.dataEntry;
 		if (req.body.password) {
 			patient.password = req.body.password;
@@ -122,7 +131,9 @@ const updatePatientProfile = asyncHandler(async (req, res) => {
 			nic: updatedPatient.nic,
 			telephone: updatedPatient.telephone,
 			address: updatedPatient.address,
+			email: updatedPatient.email,
 			pic: updatedPatient.pic,
+			referringDoctor: updatedPatient.referringDoctor,
 			dataEntry: updatedPatient.dataEntry,
 			regDate: updatedPatient.regDate,
 			token: generateToken(updatedPatient._id),
@@ -143,7 +154,9 @@ const updatePatientProfileById = asyncHandler(async (req, res) => {
 		patient.nic = req.body.nic || patient.nic;
 		patient.telephone = req.body.telephone || patient.telephone;
 		patient.address = req.body.address || patient.address;
+		patient.email = req.body.email || patient.email;
 		patient.pic = req.body.pic || patient.pic;
+		patient.referringDoctor = req.body.referringDoctor || patient.referringDoctor;
 		patient.dataEntry = req.body.dataEntry || patient.dataEntry;
 		if (req.body.password) {
 			patient.password = req.body.password;
@@ -160,7 +173,9 @@ const updatePatientProfileById = asyncHandler(async (req, res) => {
 			nic: updatedPatient.nic,
 			telephone: updatedPatient.telephone,
 			address: updatedPatient.address,
+			email: updatedPatient.email,
 			pic: updatedPatient.pic,
+			referringDoctor: updatedPatient.referringDoctor,
 			dataEntry: updatedPatient.dataEntry,
 			regDate: updatedPatient.regDate,
 			token: generateToken(updatedPatient._id),
