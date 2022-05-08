@@ -15,6 +15,7 @@ const DoctorRegisterScreen = ({ history }) => {
 	const [nic, setNic] = useState("");
 	const [telephone, setTelephone] = useState("");
 	const [address, setAddress] = useState("");
+	const [email, setEmail] = useState("");
 	const [sldaReg, setSldaReg] = useState("");
 	const [licenceNo, setLicenceNo] = useState("");
 	const [currentHospital, setCurrentHospital] = useState("");
@@ -103,7 +104,7 @@ const DoctorRegisterScreen = ({ history }) => {
 			</Button>
 			<br></br>
 			<br></br>
-			<Card style={{ borderRadius: 45, borderColor: "#808080", borderWidth: 1.0, marginTop: 20 }}>
+			<Card style={{ borderRadius: 45, borderColor: "#808080", borderWidth: 2.0, marginTop: 20,paddingInline: 10, }}>
 				<div className="loginContainer">
 					<Row className="DoctorProfileContainer">
 						<Col md={6}>
@@ -159,13 +160,23 @@ const DoctorRegisterScreen = ({ history }) => {
 										required
 									/>
 								</Form.Group>
-								<Form.Group controlId="patientFormBasicAddress">
+								<Form.Group controlId="doctorFormBasicAddress">
 									<Form.Label>Address</Form.Label>
 									<Form.Control
 										type="textArea"
 										value={address}
 										placeholder="Enter Address"
 										onChange={(e) => setAddress(e.target.value)}
+										required
+									/>
+								</Form.Group>
+								<Form.Group controlId="doctorFormBasicEmail">
+									<Form.Label>Email</Form.Label>
+									<Form.Control
+										type="email"
+										value={email}
+										placeholder="Enter Email Address"
+										onChange={(e) => setEmail(e.target.value)}
 										required
 									/>
 								</Form.Group>
@@ -243,7 +254,10 @@ const DoctorRegisterScreen = ({ history }) => {
 										required
 									/>
 								</Form.Group>
-								<Button variant="primary" type="submit">
+								<br></br>
+								<Button variant="primary" type="submit" style={{
+									fontSize: 15,
+								}}>
 									Register
 								</Button>
 							</Form>

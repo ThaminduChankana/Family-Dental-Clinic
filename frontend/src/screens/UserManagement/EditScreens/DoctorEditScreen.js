@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Form, Button, Row, Col } from "react-bootstrap";
+import { Form, Button, Row, Col, Card } from "react-bootstrap";
 import MainScreen from "../../../components/MainScreen";
 import "./EditScreen.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -99,6 +99,29 @@ const DoctorEditScreen = () => {
 
 	return (
 		<MainScreen title="EDIT PROFILE - DOCTOR">
+			<Button
+				style={{
+					float: "left",
+					marginTop: 5,
+					fontSize: 15,
+				}}
+				href="/doctor"
+			>
+				{" "}
+				Back to Operations Page
+			</Button>
+			<br></br>
+			<br></br>
+			<Card
+				style={{
+					borderRadius: 45,
+					borderColor: "#808080",
+					borderWidth: 2.0,
+					marginTop: 20,
+					paddingInline: 10,
+				}}
+			>
+
 			<div className="loginContainer">
 				<Row className="DoctorProfileContainer">
 					<Col md={6}>
@@ -240,11 +263,15 @@ const DoctorEditScreen = () => {
 								/>
 							</Form.Group>
 							<br></br>
-							<Button variant="primary" type="submit">
+							<Button variant="primary" type="submit" style={{
+									fontSize: 15,
+								}} >
 								Update
 							</Button>
 							&emsp;
-							<Button variant="primary" href="/doctor-view">
+							<Button variant="primary" href="/doctor-view" style={{
+									fontSize: 15,
+								}} >
 								View Profile
 							</Button>
 							&emsp;
@@ -262,6 +289,8 @@ const DoctorEditScreen = () => {
 					</Col>
 				</Row>
 			</div>
+			</Card>
+			<br></br>
 		</MainScreen>
 	);
 };

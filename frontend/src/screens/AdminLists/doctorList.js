@@ -122,6 +122,7 @@ const DoctorListForAdmin = () => {
 											<h5>NIC - {doctorList.nic}</h5>
 											<h5>Telephone - {doctorList.telephone}</h5>
 											<h5>Address - {doctorList.address}</h5>
+											<h5>Email - {doctorList.email}</h5>
 											<h5>SLDA Reg No. - {doctorList.sldaReg}</h5>
 											<h5>Licence No. - {doctorList.licenceNo}</h5>
 											<h5>Current Hospital - {doctorList.currentHospital}</h5>

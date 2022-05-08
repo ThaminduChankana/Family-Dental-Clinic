@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Form, Button, Row, Col } from "react-bootstrap";
+import { Form, Button, Row, Col, Card } from "react-bootstrap";
 import MainScreen from "../../../components/MainScreen";
 import "./EditScreen.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,6 +14,7 @@ const AdminEditScreen = () => {
 	const [nic, setNic] = useState("");
 	const [telephone, setTelephone] = useState("");
 	const [address, setAddress] = useState("");
+	const [email, setEmail] = useState("");
 	const [previousRef, setPreviousRef] = useState("");
 	const [password, setPassword] = useState("");
 	const [confirmpassword, setConfirmPassword] = useState("");
@@ -35,6 +36,7 @@ const AdminEditScreen = () => {
 		setNic(adminInfo.nic);
 		setTelephone(adminInfo.telephone);
 		setAddress(adminInfo.address);
+		setEmail(adminInfo.email);
 		setPreviousRef(adminInfo.previousRef);
 		setPic(adminInfo.pic);
 	}, [adminInfo]);
@@ -84,6 +86,28 @@ const AdminEditScreen = () => {
 
 	return (
 		<MainScreen title="EDIT PROFILE - ADMIN">
+			<Button
+				style={{
+					float: "left",
+					marginTop: 5,
+					fontSize: 15,
+				}}
+				href="/admin"
+			>
+				{" "}
+				Back to Operations Page
+			</Button>
+			<br></br>
+			<br></br>
+			<Card
+				style={{
+					borderRadius: 45,
+					borderColor: "#808080",
+					borderWidth: 2.0,
+					marginTop: 20,
+					paddingInline: 10,
+				}}
+			>
 			<div className="loginContainer">
 				<Row className="AdminProfileContainer">
 					<Col md={6}>
@@ -135,6 +159,16 @@ const AdminEditScreen = () => {
 									required
 								/>
 							</Form.Group>
+							<Form.Group controlId="adminFormBasicEmail">
+									<Form.Label>Email</Form.Label>
+									<Form.Control
+										type="email"
+										value={email}
+										placeholder="Enter Email Address"
+										onChange={(e) => setEmail(e.target.value)}
+										required
+									/>
+								</Form.Group>
 							<Form.Group controlId="adminFormBasicPreviousRef">
 								<Form.Label>Previous References</Form.Label>
 								<Form.Control
@@ -177,11 +211,15 @@ const AdminEditScreen = () => {
 								/>
 							</Form.Group>
 							<br></br>
-							<Button variant="primary" type="submit">
+							<Button variant="primary" type="submit" style={{
+									fontSize: 15,
+								}} >
 								Update
 							</Button>
 							&emsp;
-							<Button variant="primary" href="/admin-view">
+							<Button variant="primary" href="/admin-view" style={{
+									fontSize: 15,
+								}}>
 								View Profile
 							</Button>
 						</Form>
@@ -197,8 +235,9 @@ const AdminEditScreen = () => {
 						<img src={pic} alt={name} className="profilePic" />
 					</Col>
 				</Row>
-			</div>
+			</div></Card>
 			<br></br>
+			
 		</MainScreen>
 	);
 };

@@ -120,6 +120,8 @@ const PatientListForAdmin = () => {
 											<h5>NIC - {patientList.nic}</h5>
 											<h5>Telephone - {patientList.telephone}</h5>
 											<h5>Address - {patientList.address}</h5>
+											<h5>Email - {patientList.email}</h5>
+											<h5>Referring Doctor - {patientList.referringDoctor}</h5>
 											<h5>Data Entry By - {patientList.dataEntry}</h5>
 											<h5>Registered Date - {patientList.regDate}</h5>
 											<br></br>

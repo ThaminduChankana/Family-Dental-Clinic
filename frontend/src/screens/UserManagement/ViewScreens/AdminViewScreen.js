@@ -11,6 +11,7 @@ const AdminViewScreen = ({ history }) => {
 	const [nic, setNic] = useState("");
 	const [telephone, setTelephone] = useState("");
 	const [address, setAddress] = useState("");
+	const [email, setEmail] = useState("");
 	const [previousRef, setPreviousRef] = useState("");
 	const [pic, setPic] = useState();
 	const admin_Login = useSelector((state) => state.admin_Login);
@@ -22,6 +23,7 @@ const AdminViewScreen = ({ history }) => {
 		setNic(adminInfo.nic);
 		setTelephone(adminInfo.telephone);
 		setAddress(adminInfo.address);
+		setEmail(adminInfo.email);
 		setPreviousRef(adminInfo.previousRef);
 		setPic(adminInfo.pic);
 	}, [adminInfo]);
@@ -36,12 +38,25 @@ const AdminViewScreen = ({ history }) => {
 	return (
 		<MainScreen title="VIEW PROFILE - ADMIN">
 			<Button
-				variant="primary"
-				onClick={logoutHandler}
 				style={{
 					float: "left",
 					marginTop: 5,
 					fontSize: 15,
+					marginLeft:10,
+				}}
+				href="/admin"
+			>
+				{" "}
+				Back to Operations Page
+			</Button>
+			<Button
+				variant="primary"
+				onClick={logoutHandler}
+				style={{
+					float: "right",
+					marginTop: 5,
+					fontSize: 15,
+					marginRight:10,
 				}}
 			>
 				Logout
@@ -52,7 +67,7 @@ const AdminViewScreen = ({ history }) => {
 				style={{
 					borderRadius: 45,
 					borderColor: "#808080",
-					borderWidth: 1.0,
+					borderWidth: 2.0,
 					marginTop: 20,
 					paddingInline: 10,
 				}}
@@ -88,6 +103,16 @@ const AdminViewScreen = ({ history }) => {
 								<Form.Group controlId="adminFormBasicAddress">
 									<Form.Label>Address</Form.Label>
 									<Form.Control type="textArea" value={address} onChange={(e) => setAddress(e.target.value)} readOnly />
+								</Form.Group>
+
+								<Form.Group controlId="adminFormBasicEmail">
+									<Form.Label>Email</Form.Label>
+									<Form.Control
+										type="email"
+										value={email}
+										onChange={(e) => setEmail(e.target.value)}
+										readOnly
+									/>
 								</Form.Group>
 
 								<Form.Group controlId="adminFormBasicPreviousRef">

@@ -54,7 +54,7 @@ export const adminLogout = () => async (dispatch) => {
 };
 
 export const adminRegister =
-	(name, dob, nic, telephone, address, previousRef, password, pic, dataEntry) => async (dispatch) => {
+	(name, dob, nic, telephone, address, email, previousRef, password, pic, dataEntry) => async (dispatch) => {
 		try {
 			dispatch({ type: ADMIN_REGISTER_REQUEST });
 
@@ -71,6 +71,7 @@ export const adminRegister =
 					dob,
 					nic,
 					telephone,
+					email,
 					address,
 					previousRef,
 					password,

@@ -12,6 +12,7 @@ const DoctorViewScreen = ({ history }) => {
 	const [nic, setNic] = useState("");
 	const [telephone, setTelephone] = useState("");
 	const [address, setAddress] = useState("");
+	const [email, setEmail] = useState("");
 	const [sldaReg, setSldaReg] = useState("");
 	const [licenceNo, setLicenceNo] = useState("");
 	const [currentHospital, setCurrentHospital] = useState("");
@@ -29,6 +30,7 @@ const DoctorViewScreen = ({ history }) => {
 		setNic(doctorInfo.nic);
 		setTelephone(doctorInfo.telephone);
 		setAddress(doctorInfo.address);
+		setEmail(doctorInfo.email);
 		setPic(doctorInfo.pic);
 		setSldaReg(doctorInfo.sldaReg);
 		setLicenceNo(doctorInfo.licenceNo);
@@ -47,12 +49,25 @@ const DoctorViewScreen = ({ history }) => {
 	return (
 		<MainScreen title="VIEW PROFILE - DOCTOR">
 			<Button
-				variant="primary"
-				onClick={logoutHandler}
 				style={{
 					float: "left",
 					marginTop: 5,
 					fontSize: 15,
+					marginLeft:10,
+				}}
+				href="/doctor"
+			>
+				{" "}
+				Back to Operations Page
+			</Button>
+			<Button
+				variant="primary"
+				onClick={logoutHandler}
+				style={{
+					float: "right",
+					marginTop: 5,
+					fontSize: 15,
+					marginRight:10,
 				}}
 			>
 				Logout
@@ -63,7 +78,7 @@ const DoctorViewScreen = ({ history }) => {
 				style={{
 					borderRadius: 45,
 					borderColor: "#808080",
-					borderWidth: 1.0,
+					borderWidth: 2.0,
 					marginTop: 20,
 					paddingInline: 10,
 				}}
@@ -104,6 +119,16 @@ const DoctorViewScreen = ({ history }) => {
 								<Form.Group controlId="doctorViewFormBasicAddress">
 									<Form.Label>Address</Form.Label>
 									<Form.Control type="textArea" value={address} onChange={(e) => setAddress(e.target.value)} readOnly />
+								</Form.Group>
+
+								<Form.Group controlId="adminFormBasicEmail">
+									<Form.Label>Email</Form.Label>
+									<Form.Control
+										type="email"
+										value={email}
+										onChange={(e) => setEmail(e.target.value)}
+										readOnly
+									/>
 								</Form.Group>
 
 								<Form.Group controlId="doctorViewFormBasicPreviousRef">

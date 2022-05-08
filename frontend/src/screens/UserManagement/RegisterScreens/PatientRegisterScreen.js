@@ -17,6 +17,8 @@ const PatientRegisterScreen = ({ history }) => {
 	const [nic, setNic] = useState("");
 	const [telephone, setTelephone] = useState("");
 	const [address, setAddress] = useState("");
+	const [email, setEmail] = useState("");
+	const [referringDoctor, setReferringDoctor] = useState("");
 	const [dataEntry, setDataEntry] = useState("");
 	const [pic, setPic] = useState("https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg");
 	const [password, setPassword] = useState("");
@@ -89,8 +91,9 @@ const PatientRegisterScreen = ({ history }) => {
 				style={{
 					borderRadius: 45,
 					borderColor: "#808080",
-					borderWidth: 1.0,
+					borderWidth: 2.0,
 					marginTop: 20,
+					paddingInline: 10,
 				}}
 			>
 				<div className="loginContainer">
@@ -159,6 +162,16 @@ const PatientRegisterScreen = ({ history }) => {
 										required
 									/>
 								</Form.Group>
+								<Form.Group controlId="doctorFormBasicEmail">
+									<Form.Label>Email</Form.Label>
+									<Form.Control
+										type="email"
+										value={email}
+										placeholder="Enter Email Address"
+										onChange={(e) => setEmail(e.target.value)}
+										required
+									/>
+								</Form.Group>
 								<Form.Group controlId="formBasicPassword">
 									<Form.Label>Password</Form.Label>
 									<Form.Control
@@ -193,6 +206,16 @@ const PatientRegisterScreen = ({ history }) => {
 									<Form.Label>Registration Date</Form.Label>
 									<Form.Control type="date" value={regDate} onChange={(e) => setRegDate(e.target.value)} required />
 								</Form.Group>
+								<Form.Group controlId="patientFormBasicReferringDoctor">
+									<Form.Label>Referring Doctor</Form.Label>
+									<Form.Control
+										type="text"
+										value={referringDoctor}
+										placeholder="Enter Referring Doctor's Name"
+										onChange={(e) => setReferringDoctor(e.target.value)}
+										required
+									/>
+								</Form.Group>
 								<Form.Group controlId="patientFormBasicDataEntryBy">
 									<Form.Label>Data Entry By</Form.Label>
 									<Form.Control
@@ -203,7 +226,10 @@ const PatientRegisterScreen = ({ history }) => {
 										required
 									/>
 								</Form.Group>
-								<Button variant="primary" type="submit">
+								<br></br>
+								<Button variant="primary" type="submit" style={{
+									fontSize: 15,
+								}}>
 									Register
 								</Button>
 							</Form>

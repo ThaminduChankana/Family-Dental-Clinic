@@ -38,7 +38,16 @@ const PatientListForDoctor = () => {
 			>
 				Patients List
 			</h1>
-			{console.log(patients)}
+			<br></br>
+			<div>
+			<Link to="/doctor">
+						<Button style={{ marginLeft: 25, marginBottom: 6, float: "left", fontSize: 15 }} size="lg">
+							Back to operations page
+						</Button>
+					</Link>
+					</div>
+				<br></br>
+				<br></br>
 			{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
 			{loading && <Loading />}
 			<br></br>
@@ -75,10 +84,12 @@ const PatientListForDoctor = () => {
 									<Col md={6}>
 										<h5>Name - {patientList.name}</h5>
 										<h5>Date of Birth - {patientList.dob}</h5>
-										<h5>Genger - {patientList.gender}</h5>
+										<h5>Gender - {patientList.gender}</h5>
 										<h5>NIC - {patientList.nic}</h5>
 										<h5>Telephone - {patientList.telephone}</h5>
 										<h5>Address - {patientList.address}</h5>
+										<h5>Email - {patientList.email}</h5>
+										<h5>Referring Doctor - {patientList.referringDoctor}</h5>
 										<h5>Data Entry By - {patientList.dataEntry}</h5>
 										<h5>Registered Date - {patientList.regDate}</h5>
 										<br></br>

@@ -66,7 +66,7 @@ export const patientLogout = () => async (dispatch) => {
 };
 
 export const patientRegister =
-	(name, dob, gender, nic, telephone, address, password, pic, dataEntry, regDate) => async (dispatch) => {
+	(name, dob, gender, nic, telephone, address, email, password, pic, referringDoctor, dataEntry, regDate) => async (dispatch) => {
 		try {
 			dispatch({ type: PATIENT_REGISTER_REQUEST });
 
@@ -85,8 +85,10 @@ export const patientRegister =
 					nic,
 					telephone,
 					address,
+					email,
 					password,
 					pic,
+					referringDoctor,
 					dataEntry,
 					regDate,
 				},
@@ -230,7 +232,7 @@ export const patientDeleteProfile = (id) => async (dispatch, getState) => {
 };
 
 export const patientViewProfileById =
-	(id, name, dob, gender, nic, telephone, address, dataEntry, password, message, pic, regDate) =>
+	(id, name, dob, gender, nic, telephone, address,email,referringDoctor, dataEntry, password, message, pic, regDate) =>
 	async (dispatch, getState) => {
 		try {
 			dispatch({
@@ -249,7 +251,7 @@ export const patientViewProfileById =
 
 			const { data } = await axios.get(
 				`/user/admin/patient/profile/view/${id}`,
-				{ id, name, dob, gender, nic, telephone, address, dataEntry, password, message, pic, regDate },
+				{ id, name, dob, gender, nic, telephone, address,email, referringDoctor, dataEntry, password, message, pic, regDate },
 				config
 			);
 
@@ -266,7 +268,7 @@ export const patientViewProfileById =
 		}
 	};
 export const patientUpdateProfileById =
-	(id, name, dob, gender, nic, telephone, address, dataEntry, password, message, pic, regDate) =>
+	(id, name, dob, gender, nic, telephone, address,email, referringDoctor, dataEntry, password, message, pic, regDate) =>
 	async (dispatch, getState) => {
 		console.log(getState());
 		try {
@@ -293,6 +295,8 @@ export const patientUpdateProfileById =
 					nic,
 					telephone,
 					address,
+					email, 
+					referringDoctor,
 					dataEntry,
 					password,
 					message,
