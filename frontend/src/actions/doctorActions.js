@@ -177,6 +177,7 @@ export const doctorUpdateProfile = (doctor) => async (dispatch, getState) => {
 		const { data } = await axios.put("/user/doctor/edit", doctor, config);
 
 		dispatch({ type: DOCTOR_UPDATE_SUCCESS, payload: data });
+		alert("Doctor Account Update Successful !!!");
 		setTimeout(function () {
 			window.location.href = "/doctor-view";
 		}, 2000);

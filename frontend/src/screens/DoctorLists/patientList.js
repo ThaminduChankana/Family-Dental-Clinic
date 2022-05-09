@@ -40,14 +40,14 @@ const PatientListForDoctor = () => {
 			</h1>
 			<br></br>
 			<div>
-			<Link to="/doctor">
-						<Button style={{ marginLeft: 25, marginBottom: 6, float: "left", fontSize: 15 }} size="lg">
-							Back to operations page
-						</Button>
-					</Link>
-					</div>
-				<br></br>
-				<br></br>
+				<Link to="/doctor">
+					<Button style={{ marginLeft: 25, marginBottom: 6, float: "left", fontSize: 15 }} size="lg">
+						Back to operations page
+					</Button>
+				</Link>
+			</div>
+			<br></br>
+			<br></br>
 			{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
 			{loading && <Loading />}
 			<br></br>

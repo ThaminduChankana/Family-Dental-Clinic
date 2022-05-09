@@ -53,7 +53,7 @@ const DoctorViewScreen = ({ history }) => {
 					float: "left",
 					marginTop: 5,
 					fontSize: 15,
-					marginLeft:10,
+					marginLeft: 10,
 				}}
 				href="/doctor"
 			>
@@ -67,7 +67,7 @@ const DoctorViewScreen = ({ history }) => {
 					float: "right",
 					marginTop: 5,
 					fontSize: 15,
-					marginRight:10,
+					marginRight: 10,
 				}}
 			>
 				Logout
@@ -123,12 +123,7 @@ const DoctorViewScreen = ({ history }) => {
 
 								<Form.Group controlId="adminFormBasicEmail">
 									<Form.Label>Email</Form.Label>
-									<Form.Control
-										type="email"
-										value={email}
-										onChange={(e) => setEmail(e.target.value)}
-										readOnly
-									/>
+									<Form.Control type="email" value={email} onChange={(e) => setEmail(e.target.value)} readOnly />
 								</Form.Group>
 
 								<Form.Group controlId="doctorViewFormBasicPreviousRef">

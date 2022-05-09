@@ -17,12 +17,13 @@ const DoctorOperationPage = ({ history }) => {
 
 	return (
 		<MainScreen title={`Welcome Back ${doctorInfo && doctorInfo.name} ...`}>
-			<div>
+			<Button variant="danger" onClick={logoutHandler} className="logoutBtn" style={{ float: "right" }}>
+				Logout
+			</Button>
+			<br></br>
+			<div className="loginContainer">
 				<Container>
 					<Row>
-						<Button variant="primary" onClick={logoutHandler} className="logoutBtn">
-							Logout
-						</Button>
 						<div className="intro-text">
 							<div className="buttonContainer">
 								<a href="/doctor-view">

@@ -49,7 +49,7 @@ const PatientViewScreen = ({ history }) => {
 					float: "left",
 					marginTop: 5,
 					fontSize: 15,
-					marginLeft:10,
+					marginLeft: 10,
 				}}
 				href="/patient"
 			>
@@ -63,7 +63,7 @@ const PatientViewScreen = ({ history }) => {
 					float: "right",
 					marginTop: 5,
 					fontSize: 15,
-					marginRight:10,
+					marginRight: 10,
 				}}
 			>
 				Logout
@@ -124,7 +124,7 @@ const PatientViewScreen = ({ history }) => {
 										value={email}
 										placeholder="Enter Email Address"
 										onChange={(e) => setEmail(e.target.value)}
-										required
+										readOnly
 									/>
 								</Form.Group>
 
@@ -140,25 +140,16 @@ const PatientViewScreen = ({ history }) => {
 										value={referringDoctor}
 										placeholder="Enter Referring Doctor's Name"
 										onChange={(e) => setReferringDoctor(e.target.value)}
-										required
+										readOnly
 									/>
 								</Form.Group>
-								
+
 								<Form.Group controlId="patientViewFormBasicDataEntryBy">
 									<Form.Label>Data Entry By</Form.Label>
 									<Form.Control type="text" value={dataEntry} onChange={(e) => setDataEntry(e.target.value)} readOnly />
 								</Form.Group>
 							</Form>
 							<br></br>
-							<Button
-								variant="primary"
-								href="/patient-edit"
-								style={{
-									fontSize: 15,
-								}}
-							>
-								Edit profile
-							</Button>
 						</Col>
 						<Col
 							style={{

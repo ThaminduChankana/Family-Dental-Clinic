@@ -142,7 +142,7 @@ export const adminUpdateProfile = (admin) => async (dispatch, getState) => {
 		const { data } = await axios.put("/user/admin/edit", admin, config);
 
 		dispatch({ type: ADMIN_UPDATE_SUCCESS, payload: data });
-
+		alert("Admin Account Update Successful !!!");
 		dispatch({ type: ADMIN_LOGIN_SUCCESS, payload: data });
 		setTimeout(function () {
 			window.location.href = "/admin-view";

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
-import { Container, Row, Button, Col } from "react-bootstrap";
+import { Container, Row, Button, Col, Card } from "react-bootstrap";
 import { adminLogout } from "../../actions/adminActions";
 import "./OperationPages.css";
 import MainScreen from "../../components/MainScreen";
@@ -16,16 +16,17 @@ const AdminOperationPage = ({ history }) => {
 	};
 
 	return (
-		<div className="bg">
+		<div className="background">
 			<MainScreen title={`Welcome Back ${adminInfo && adminInfo.name}..`}>
-				<div>
+				<Button variant="danger" onClick={logoutHandler} className="logoutBtn" style={{ float: "right", marginTop: 7 }}>
+					Logout
+				</Button>
+
+				<div className="loginContainer">
 					<Container>
 						<Row>
-							<Button variant="primary" onClick={logoutHandler} className="logoutBtn" style={{ float: "right" }}>
-								Logout
-							</Button>
 							<div className="intro-text">
-								<div className="buttonContainer">
+								<div className="buttonContainer" style={{ marginTop: 70 }}>
 									<Link to="/admin-view">
 										<Button size="lg" className="landingbutton">
 											My Account

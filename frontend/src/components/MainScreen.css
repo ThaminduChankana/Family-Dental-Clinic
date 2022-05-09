@@ -31,3 +31,10 @@ h5 {
 	padding-top: 10px;
 	margin-left: 20px;
 }
+hr {
+	position: relative;
+	border: 50px;
+	height: 12px;
+	background: rgba(57, 64, 65, 0.479);
+	margin-bottom: 50px;
+}

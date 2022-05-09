@@ -66,7 +66,8 @@ export const patientLogout = () => async (dispatch) => {
 };
 
 export const patientRegister =
-	(name, dob, gender, nic, telephone, address, email, password, pic, referringDoctor, dataEntry, regDate) => async (dispatch) => {
+	(name, dob, gender, nic, telephone, address, email, password, pic, referringDoctor, dataEntry, regDate) =>
+	async (dispatch) => {
 		try {
 			dispatch({ type: PATIENT_REGISTER_REQUEST });
 
@@ -156,6 +157,7 @@ export const patientUpdateProfile = (patient) => async (dispatch, getState) => {
 		const { data } = await axios.put("/user/patient/edit", patient, config);
 
 		dispatch({ type: PATIENT_UPDATE_SUCCESS, payload: data });
+		alert("Patient Account Update Successful !!!");
 		setTimeout(function () {
 			window.location.href = "/patient-view";
 		}, 2000);
@@ -232,7 +234,22 @@ export const patientDeleteProfile = (id) => async (dispatch, getState) => {
 };
 
 export const patientViewProfileById =
-	(id, name, dob, gender, nic, telephone, address,email,referringDoctor, dataEntry, password, message, pic, regDate) =>
+	(
+		id,
+		name,
+		dob,
+		gender,
+		nic,
+		telephone,
+		address,
+		email,
+		referringDoctor,
+		dataEntry,
+		password,
+		message,
+		pic,
+		regDate
+	) =>
 	async (dispatch, getState) => {
 		try {
 			dispatch({
@@ -251,7 +268,22 @@ export const patientViewProfileById =
 
 			const { data } = await axios.get(
 				`/user/admin/patient/profile/view/${id}`,
-				{ id, name, dob, gender, nic, telephone, address,email, referringDoctor, dataEntry, password, message, pic, regDate },
+				{
+					id,
+					name,
+					dob,
+					gender,
+					nic,
+					telephone,
+					address,
+					email,
+					referringDoctor,
+					dataEntry,
+					password,
+					message,
+					pic,
+					regDate,
+				},
 				config
 			);
 
@@ -268,7 +300,22 @@ export const patientViewProfileById =
 		}
 	};
 export const patientUpdateProfileById =
-	(id, name, dob, gender, nic, telephone, address,email, referringDoctor, dataEntry, password, message, pic, regDate) =>
+	(
+		id,
+		name,
+		dob,
+		gender,
+		nic,
+		telephone,
+		address,
+		email,
+		referringDoctor,
+		dataEntry,
+		password,
+		message,
+		pic,
+		regDate
+	) =>
 	async (dispatch, getState) => {
 		console.log(getState());
 		try {
@@ -295,7 +342,7 @@ export const patientUpdateProfileById =
 					nic,
 					telephone,
 					address,
-					email, 
+					email,
 					referringDoctor,
 					dataEntry,
 					password,
