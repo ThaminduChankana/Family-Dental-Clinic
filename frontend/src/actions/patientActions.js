@@ -18,6 +18,9 @@ import {
 	PATIENT_LIST_FAIL,
 	PATIENT_LIST_REQUEST,
 	PATIENT_LIST_SUCCESS,
+	PATIENT_LIST_FOR_DOCTOR_FAIL,
+	PATIENT_LIST_FOR_DOCTOR_REQUEST,
+	PATIENT_LIST_FOR_DOCTOR_SUCCESS,
 	PATIENT_VIEW_BY_ID_FAIL,
 	PATIENT_VIEW_BY_ID_REQUEST,
 	PATIENT_VIEW_BY_ID_SUCCESS,
@@ -198,6 +201,37 @@ export const patientsList = () => async (dispatch, getState) => {
 		const message = error.response && error.response.data.message ? error.response.data.message : error.message;
 		dispatch({
 			type: PATIENT_LIST_FAIL,
+			payload: message,
+		});
+	}
+};
+
+export const patientsListForDoctor = () => async (dispatch, getState) => {
+	try {
+		dispatch({
+			type: PATIENT_LIST_FOR_DOCTOR_REQUEST,
+		});
+
+		const {
+			doctor_Login: { doctorInfo },
+		} = getState();
+
+		const config = {
+			headers: {
+				Authorization: `Bearer ${doctorInfo.token}`,
+			},
+		};
+
+		const { data } = await axios.get(`/user/doctor/patients`, config);
+
+		dispatch({
+			type: PATIENT_LIST_FOR_DOCTOR_SUCCESS,
+			payload: data,
+		});
+	} catch (error) {
+		const message = error.response && error.response.data.message ? error.response.data.message : error.message;
+		dispatch({
+			type: PATIENT_LIST_FOR_DOCTOR_FAIL,
 			payload: message,
 		});
 	}
