@@ -1,8 +1,19 @@
-.background {
-	background: url("../../Images/admin.jpg");
+.adminBackground {
+	background: url("../../Images/admin.png");
 	background-position: center;
 	background-size: cover;
 }
+.doctorBackground {
+	background: url("../../Images/doctor.png");
+	background-position: center;
+	background-size: cover;
+}
+.patientBackground {
+	background: url("../../Images/patient.png");
+	background-position: center;
+	background-size: cover;
+}
+
 .title {
 	font-size: 95px;
 }

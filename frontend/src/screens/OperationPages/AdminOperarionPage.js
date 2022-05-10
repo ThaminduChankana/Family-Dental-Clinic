@@ -16,17 +16,26 @@ const AdminOperationPage = ({ history }) => {
 	};
 
 	return (
-		<div className="background">
+		<div className="adminBackground">
 			<MainScreen title={`Welcome Back ${adminInfo && adminInfo.name}..`}>
 				<Button variant="danger" onClick={logoutHandler} className="logoutBtn" style={{ float: "right", marginTop: 7 }}>
 					Logout
 				</Button>
 
+				<br></br><br></br>
 				<div className="loginContainer">
-					<Container>
-						<Row>
+					<Card style={{
+						borderRadius: 45,
+						borderWidth: 2.0,
+						marginTop: 20,
+						paddingInline: 10,
+						background: "rgba(231, 238, 238, 0.8)",
+                        marginLeft:"10%",
+                        marginRight:"10%"
+					}}>
 							<div className="intro-text">
-								<div className="buttonContainer" style={{ marginTop: 70 }}>
+							<br></br><br></br>
+								<div>
 									<Link to="/admin-view">
 										<Button size="lg" className="landingbutton">
 											My Account
@@ -37,6 +46,9 @@ const AdminOperationPage = ({ history }) => {
 											Create New Admin Account
 										</Button>
 									</Link>
+									</div>
+									<br></br>
+									<div>
 									<Link to="/admin-patients">
 										<Button size="lg" className="landingbutton">
 											Patient Account Management
@@ -47,8 +59,9 @@ const AdminOperationPage = ({ history }) => {
 											Doctor Account Management
 										</Button>
 									</Link>
-								</div>
-								<div className="buttonContainer">
+									</div>
+									<br></br>
+									<div>
 									<Link to="/">
 										<Button size="lg" className="landingbutton">
 											Inventory Management
@@ -59,6 +72,9 @@ const AdminOperationPage = ({ history }) => {
 											Feedback Management
 										</Button>
 									</Link>
+									</div>
+									<br></br>
+									<div>
 									<Link to="/">
 										<Button size="lg" className="landingbutton">
 											Q & A Management
@@ -70,7 +86,8 @@ const AdminOperationPage = ({ history }) => {
 										</Button>
 									</Link>
 								</div>
-								<div className="buttonContainer">
+								<br></br>
+								<div>
 									<Link to="/">
 										<Button size="lg" className="landingbutton">
 											Appointment Management
@@ -83,10 +100,12 @@ const AdminOperationPage = ({ history }) => {
 									</Link>
 								</div>
 							</div>
-						</Row>
-					</Container>
+							<br></br>
+							<br></br>
+					</Card>
 				</div>
 			</MainScreen>
+			<br></br><br></br>
 		</div>
 	);
 };
