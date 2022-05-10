@@ -34,6 +34,10 @@ const doctorSchema = mongoose.Schema(
 			type: String,
 			required: true,
 		},
+		email: {
+			type: String,
+			required: true,
+		},
 		sldaReg: {
 			type: String,
 			required: true,

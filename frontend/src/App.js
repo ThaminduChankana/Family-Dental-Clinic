@@ -17,6 +17,7 @@ import PatientEditScreen from "./screens/UserManagement/EditScreens/PatientEditS
 import DoctorEditScreen from "./screens/UserManagement/EditScreens/DoctorEditScreen";
 import AdminOperationPage from "./screens/OperationPages/AdminOperarionPage";
 import DoctorOperationPage from "./screens/OperationPages/DoctorOperationPage";
+import PatientOperationPage from "./screens/OperationPages/PatientOperationPage";
 import DoctorListForAdmin from "./screens/AdminLists/doctorList";
 import PatientListForAdmin from "./screens/AdminLists/patientList";
 import PatientListForDoctor from "./screens/DoctorLists/patientList";
@@ -34,10 +35,10 @@ import SingleFilling from "./screens/Treatment/TreatmentEditScreens/SingleFillin
 import SingleOrthodontic from "./screens/Treatment/TreatmentEditScreens/SingleOrthodontic";
 import TreatmentPrint from "./screens/Treatment/TreatmentDashBoard/TreatmentPrint";
 import Header from "./components/header/Header";
+import Footer from "./components/footer/footer";
 
 const App = () => {
 	const [search, setSearch] = useState("");
-	console.log(search);
 	return (
 		<BrowserRouter>
 			<Header setSearch={setSearch} />
@@ -57,6 +58,7 @@ const App = () => {
 				<Route path="/patient-edit" component={PatientEditScreen} exact />
 				<Route path="/admin" component={AdminOperationPage} exact />
 				<Route path="/doctor" component={DoctorOperationPage} exact />
+				<Route path="/patient" component={PatientOperationPage} exact />
 				<Route path="/admin-doctors" component={DoctorListForAdmin} exact />
 				<Route path="/admin-patients" component={PatientListForAdmin} exact />
 				<Route path="/doctor-patients" component={PatientListForDoctor} exact />
@@ -74,6 +76,7 @@ const App = () => {
 				<Route path="/orthodontic/:id" component={SingleOrthodontic} exact />
 				<Route path="/treatment-report" component={TreatmentPrint} exact />
 			</main>
+			<Footer />
 		</BrowserRouter>
 	);
 };

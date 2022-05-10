@@ -30,6 +30,10 @@ const adminSchema = mongoose.Schema(
 			type: String,
 			required: true,
 		},
+		email: {
+			type: String,
+			required: true,
+		},
 		previousRef: {
 			type: String,
 			required: true,
