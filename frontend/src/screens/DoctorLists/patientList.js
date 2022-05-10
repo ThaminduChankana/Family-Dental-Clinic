@@ -29,7 +29,7 @@ const PatientListForDoctor = () => {
 	}, [dispatch, history, doctorInfo]);
 
 	return (
-		<div className="patientList">
+		<div className="doctorPatientList">
 		<MainScreen title={`Welcome Back ${doctorInfo && doctorInfo.name}..`}>
 			<h1
 				style={{

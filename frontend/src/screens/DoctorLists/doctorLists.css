@@ -1,8 +1,4 @@
-.patientList{
-    background: rgb(97, 206, 206);
-    background-repeat: no-repeat;
-}
-.doctorList{
-    background: rgb(118, 176, 190);
+.doctorPatientList{
+    background: rgb(39, 191, 211);
     background-repeat: no-repeat;
 }
