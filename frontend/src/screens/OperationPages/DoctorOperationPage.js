@@ -30,8 +30,8 @@ const DoctorOperationPage = ({ history }) => {
 							marginTop: 20,
 							paddingInline: 10,
 							background: "rgba(231, 238, 238, 0.8)",
-							marginLeft:"10%",
-                        marginRight:"10%",
+							marginLeft: "10%",
+							marginRight: "10%",
 						}}
 					>
 						<div className="intro-text">
@@ -39,52 +39,53 @@ const DoctorOperationPage = ({ history }) => {
 							<br></br>
 							<div>
 								<a href="/doctor-view">
-									<Button size="lg" style={{width:350, height:75}}>
+									<Button size="lg" style={{ width: 350, height: 75 }}>
 										My Account
 									</Button>
-								</a>&emsp;
+								</a>
+								&emsp;
 								<a href="/">
-									<Button size="lg" style={{width:350, height:75}}>
+									<Button size="lg" style={{ width: 350, height: 75 }}>
 										Doctor's Schedule Management
 									</Button>
 								</a>
-							</div>	
+							</div>
 							<br></br>
 							<div>
 								<a href="/doctor-patients">
-									<Button size="lg" style={{width:350, height:75}}>
+									<Button size="lg" style={{ width: 350, height: 75 }}>
 										Patient Management
 									</Button>
 								</a>
 								&emsp;
 								<a href="/treatment-dashboard">
-									<Button size="lg" style={{width:350, height:75}}>
+									<Button size="lg" style={{ width: 350, height: 75 }}>
 										Patient Diagnosis Management
 									</Button>
 								</a>
-								</div>
-								<br></br>
-								<div>
+							</div>
+							<br></br>
+							<div>
 								<a href="/">
-									<Button size="lg" style={{width:350, height:75}}>
+									<Button size="lg" style={{ width: 350, height: 75 }}>
 										Appointment Management
 									</Button>
 								</a>
 								&emsp;
 								<a href="/">
-									<Button size="lg" style={{width:350, height:75}}>
+									<Button size="lg" style={{ width: 350, height: 75 }}>
 										Patient Medical History Management
 									</Button>
 								</a>
-								</div>
-								<br></br>
-								<div>
+							</div>
+							<br></br>
+							<div>
 								<a href="/">
-									<Button size="lg" style={{width:350, height:75}}>
+									<Button size="lg" style={{ width: 350, height: 75 }}>
 										Doctor's Blog Management
 									</Button>
-								</a></div>
-							
+								</a>
+							</div>
 						</div>
 						<br></br>
 						<br></br>
