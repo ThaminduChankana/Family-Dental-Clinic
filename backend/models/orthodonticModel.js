@@ -6,7 +6,7 @@ const orthodonticSchema = mongoose.Schema({
 		required: true,
 	},
 	firstVisit: {
-		type: Date,
+		type: String,
 		required: true,
 	},
 	fullCost: {

@@ -27,8 +27,6 @@ import {
 } from "../constants/doctorConstants";
 import axios from "axios";
 
-//name,dob,gender,nic,telephone,address,sldareg,licenceNo,currentHospital,password,pic,dataEntry,regDate
-
 export const doctorLogin = (nic, password) => async (dispatch) => {
 	try {
 		dispatch({ type: DOCTOR_LOGIN_REQUEST });
@@ -42,15 +40,25 @@ export const doctorLogin = (nic, password) => async (dispatch) => {
 		const { data } = await axios.post("/user/doctor/login", { nic, password, isAdmin: false }, config);
 
 		dispatch({ type: DOCTOR_LOGIN_SUCCESS, payload: data });
-		window.location.href = "/doctor-view";
+		window.location.href = "/doctor";
 		localStorage.setItem("doctorInfo", JSON.stringify(data));
 	} catch (error) {
 		dispatch({
 			type: DOCTOR_LOGIN_FAIL,
-			payload: "Invalid NIC Or Password",
+			payload: "Invalid NIC Or Password !!!",
 		});
 	}
 };
+
+export function authHeader() {
+	let doctor = JSON.parse(localStorage.getItem("doctorInfo"));
+
+	if (doctor && doctor.token) {
+		return { Authorization: `Bearer ${doctor.token}` };
+	} else {
+		return {};
+	}
+}
 
 export const doctorLogout = () => async (dispatch) => {
 	localStorage.removeItem("doctorInfo");
@@ -65,6 +73,7 @@ export const doctorRegister =
 		nic,
 		telephone,
 		address,
+		email,
 		sldaReg,
 		licenceNo,
 		currentHospital,
@@ -92,6 +101,7 @@ export const doctorRegister =
 					nic,
 					telephone,
 					address,
+					email,
 					sldaReg,
 					licenceNo,
 					currentHospital,
@@ -104,9 +114,7 @@ export const doctorRegister =
 			);
 
 			dispatch({ type: DOCTOR_REGISTER_SUCCESS, payload: data });
-			setTimeout(function () {
-				window.location.href = "/doctor-login";
-			}, 2000);
+			alert("Doctor Registration Successful !!!");
 			localStorage.setItem("doctorInfo", JSON.stringify(data));
 
 			dispatch({ type: DOCTOR_LOGIN_SUCCESS, payload: data });
@@ -115,7 +123,7 @@ export const doctorRegister =
 		} catch (error) {
 			dispatch({
 				type: DOCTOR_REGISTER_FAIL,
-				payload: error.response && error.response.data.message ? error.response.data.message : error.message,
+				payload: "Doctor Registration Failed !!!",
 			});
 		}
 	};
@@ -169,6 +177,7 @@ export const doctorUpdateProfile = (doctor) => async (dispatch, getState) => {
 		const { data } = await axios.put("/user/doctor/edit", doctor, config);
 
 		dispatch({ type: DOCTOR_UPDATE_SUCCESS, payload: data });
+		alert("Doctor Account Update Successful !!!");
 		setTimeout(function () {
 			window.location.href = "/doctor-view";
 		}, 2000);
@@ -178,7 +187,7 @@ export const doctorUpdateProfile = (doctor) => async (dispatch, getState) => {
 	} catch (error) {
 		dispatch({
 			type: DOCTOR_UPDATE_FAIL,
-			payload: error.response && error.response.data.message ? error.response.data.message : error.message,
+			payload: "Doctor Update Failed !!!",
 		});
 	}
 };
@@ -237,7 +246,7 @@ export const doctorDeleteProfile = (id) => async (dispatch, getState) => {
 			payload: data,
 		});
 	} catch (error) {
-		const message = error.response && error.response.data.message ? error.response.data.message : error.message;
+		const message = "Doctor Delete Failed !!!";
 		dispatch({
 			type: DOCTOR_DELETE_FAIL,
 			payload: message,
@@ -254,6 +263,7 @@ export const doctorViewProfileById =
 		nic,
 		telephone,
 		address,
+		email,
 		sldaReg,
 		licenceNo,
 		currentHospital,
@@ -289,6 +299,7 @@ export const doctorViewProfileById =
 					nic,
 					telephone,
 					address,
+					email,
 					sldaReg,
 					licenceNo,
 					currentHospital,
@@ -324,6 +335,7 @@ export const doctorUpdateProfileById =
 		nic,
 		telephone,
 		address,
+		email,
 		sldaReg,
 		licenceNo,
 		currentHospital,
@@ -359,6 +371,7 @@ export const doctorUpdateProfileById =
 					nic,
 					telephone,
 					address,
+					email,
 					sldaReg,
 					licenceNo,
 					currentHospital,
@@ -379,7 +392,7 @@ export const doctorUpdateProfileById =
 				window.location.href = "/admin-doctors";
 			}, 1000);
 		} catch (error) {
-			const message = error.response && error.response.data.message ? error.response.data.message : error.message;
+			const message = "Doctor Update Failed !!!";
 			dispatch({
 				type: DOCTOR_UPDATE_BY_ID_FAIL,
 				payload: message,

@@ -6,7 +6,7 @@ const getBasicTreatments = asyncHandler(async (req, res) => {
 	res.json(basicTreatments);
 });
 
-const CreateBasicTreatment = asyncHandler(async (req, res) => {
+const createBasicTreatment = asyncHandler(async (req, res) => {
 	const { nic, cost, treatmentType, date, checkup, procedure, remark } = req.body;
 
 	if (!nic || !cost || !treatmentType || !date || !checkup || !procedure || !remark) {
@@ -39,7 +39,7 @@ const getBasicTreatmentById = asyncHandler(async (req, res) => {
 	}
 });
 
-const UpdateBasicTreatment = asyncHandler(async (req, res) => {
+const updateBasicTreatment = asyncHandler(async (req, res) => {
 	const { nic, cost, treatmentType, date, checkup, procedure, remark } = req.body;
 
 	const basicTreatment = await BasicTreatment.findById(req.params.id);
@@ -61,7 +61,7 @@ const UpdateBasicTreatment = asyncHandler(async (req, res) => {
 	}
 });
 
-const DeleteBasicTreatment = asyncHandler(async (req, res) => {
+const deleteBasicTreatment = asyncHandler(async (req, res) => {
 	const basicTreatment = await BasicTreatment.findById(req.params.id);
 
 	if (basicTreatment) {
@@ -75,8 +75,8 @@ const DeleteBasicTreatment = asyncHandler(async (req, res) => {
 
 module.exports = {
 	getBasicTreatments,
-	CreateBasicTreatment,
+	createBasicTreatment,
 	getBasicTreatmentById,
-	UpdateBasicTreatment,
-	DeleteBasicTreatment,
+	updateBasicTreatment,
+	deleteBasicTreatment,
 };

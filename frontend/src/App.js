@@ -16,17 +16,32 @@ import AdminEditScreen from "./screens/UserManagement/EditScreens/AdminEditScree
 import PatientEditScreen from "./screens/UserManagement/EditScreens/PatientEditScreen";
 import DoctorEditScreen from "./screens/UserManagement/EditScreens/DoctorEditScreen";
 import AdminOperationPage from "./screens/OperationPages/AdminOperarionPage";
+import DoctorOperationPage from "./screens/OperationPages/DoctorOperationPage";
+import PatientOperationPage from "./screens/OperationPages/PatientOperationPage";
 import DoctorListForAdmin from "./screens/AdminLists/doctorList";
 import PatientListForAdmin from "./screens/AdminLists/patientList";
 import PatientListForDoctor from "./screens/DoctorLists/patientList";
 import DoctorEditByAdmin from "./screens/UserManagement/AdminUserEditScreens/DoctorEditByAdmin";
 import PatientEditByAdmin from "./screens/UserManagement/AdminUserEditScreens/PatientEditByAdmin";
+import DiagnosisInfo from "./screens/Treatment/TreatmentDashBoard/DiagnosisInfo";
+import TreatmentNavBar from "./screens/Treatment/TreatmentDashBoard/TreatmentNavBar";
+import BasicTreatmentView from "./screens/Treatment/TreatmentLists/BasicTreatmentView";
+import FillingView from "./screens/Treatment/TreatmentLists/FillingView";
+import OrthodonticView from "./screens/Treatment/TreatmentLists/OrthodonticView";
+import BasicTreatmentCreate from "./screens/Treatment/TreatmentCreateScreens/BasicTreatmentCreate";
+import FillingCreate from "./screens/Treatment/TreatmentCreateScreens/FillingCreate";
+import OrthodonticCreate from "./screens/Treatment/TreatmentCreateScreens/OrthodonticCreate";
+import SingleBasicTreatment from "./screens/Treatment/TreatmentEditScreens/SingleBasicTreatment";
+import SingleFilling from "./screens/Treatment/TreatmentEditScreens/SingleFilling";
+import SingleOrthodontic from "./screens/Treatment/TreatmentEditScreens/SingleOrthodontic";
+import Footer from "./components/footer/footer";
 import DoctorArticles from "./screens/Blogs/DoctorArticles";
 import CreateArticle from "./screens/Blogs/CreateArticle";
 import SingleArticle from "./screens/Blogs/SingleArticle";
-import Footer from "./components/footer/footer";
 
 const App = () => {
+	const [search, setSearch] = useState("");
+
 	return (
 		<BrowserRouter>
 			<main>
@@ -44,11 +59,24 @@ const App = () => {
 				<Route path="/doctor-edit" component={DoctorEditScreen} exact />
 				<Route path="/patient-edit" component={PatientEditScreen} exact />
 				<Route path="/admin" component={AdminOperationPage} exact />
+				<Route path="/doctor" component={DoctorOperationPage} exact />
+				<Route path="/patient" component={PatientOperationPage} exact />
 				<Route path="/admin-doctors" component={DoctorListForAdmin} exact />
 				<Route path="/admin-patients" component={PatientListForAdmin} exact />
 				<Route path="/doctor-patients" component={PatientListForDoctor} exact />
 				<Route path="/admin-doctor-edit/:id" component={DoctorEditByAdmin} exact />
 				<Route path="/admin-patient-edit/:id" component={PatientEditByAdmin} exact />
+				<Route path="/treatment-dashboard" component={DiagnosisInfo} exact />
+				<Route path="/treatment-navbar" component={TreatmentNavBar} exact />
+				<Route path="/treatment-basicTreatment-view" component={BasicTreatmentView} exact />
+				<Route path="/treatment-filling-view" component={FillingView} exact />
+				<Route path="/treatment-orthodontic-view" component={OrthodonticView} exact />
+				<Route path="/treatment-basicTreatment-create" component={BasicTreatmentCreate} exact />
+				<Route path="/treatment-filling-create" component={FillingCreate} exact />
+				<Route path="/treatment-orthodontic-create" component={OrthodonticCreate} exact />
+				<Route path="/basicTreatment/:id" component={SingleBasicTreatment} exact />
+				<Route path="/filling/:id" component={SingleFilling} exact />
+				<Route path="/orthodontic/:id" component={SingleOrthodontic} exact />
 				<Route path="/doctor-articles" component={DoctorArticles} exact />
 				<Route path="/doctor-create-article" component={CreateArticle} exact />
 				<Route path="/doctor-single-article/:id" component={SingleArticle} exact />

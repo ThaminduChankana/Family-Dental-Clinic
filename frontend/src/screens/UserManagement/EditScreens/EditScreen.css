@@ -13,3 +13,8 @@
 		flex-direction: column-reverse;
 	}
 }
+.editBg {
+	background: url("../../../Images/editView.jpg");
+	background-position: center;
+	background-size: cover;
+}

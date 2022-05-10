@@ -7,11 +7,13 @@ const commonRoutes = require("./routes/commonRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 const doctorRoutes = require("./routes/doctorRoutes");
 const patientRoutes = require("./routes/patientRoutes");
+
 const connectDB = require("./config/db");
 
 dotenv.config();
 connectDB();
 app.use(express.json());
+app.use("*", cors());
 
 app.use("*", cors());
 
