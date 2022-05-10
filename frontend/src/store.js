@@ -28,6 +28,7 @@ import {
 	patientUpdateByIdReducer,
 	patientDeleteReducer,
 } from "./reducers/patientReducers";
+import { blogCreateReducer, blogDeleteReducer, blogListReducer, blogUpdateReducer } from "./reducers/blogsReducers";
 
 const reducer = combineReducers({
 	admin_Login: adminLoginReducer,
@@ -50,6 +51,10 @@ const reducer = combineReducers({
 	patientDelete: patientDeleteReducer,
 	patientViewById: patientViewByIdReducer,
 	patientUpdateById: patientUpdateByIdReducer,
+	blogList: blogListReducer,
+	blogCreate: blogCreateReducer,
+	blogUpdate: blogUpdateReducer,
+	blogDelete: blogDeleteReducer,
 });
 
 const adminInfoFromStorage = localStorage.getItem("adminInfo") ? JSON.parse(localStorage.getItem("adminInfo")) : null;
