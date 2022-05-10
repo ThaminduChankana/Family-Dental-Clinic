@@ -213,7 +213,7 @@ const AdminEditScreen = () => {
 									</Form.Group>
 									<br></br>
 									<Button
-										variant="primary"
+										variant="danger"
 										type="submit"
 										style={{
 											fontSize: 15,

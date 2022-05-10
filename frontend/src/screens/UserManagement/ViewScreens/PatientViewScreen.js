@@ -43,129 +43,150 @@ const PatientViewScreen = ({ history }) => {
 	};
 
 	return (
-		<MainScreen title="VIEW PROFILE - PATIENT">
-			<Button
-				style={{
-					float: "left",
-					marginTop: 5,
-					fontSize: 15,
-					marginLeft: 10,
-				}}
-				href="/patient"
-			>
-				{" "}
-				Back to Operations Page
-			</Button>
-			<Button
-				variant="primary"
-				onClick={logoutHandler}
-				style={{
-					float: "right",
-					marginTop: 5,
-					fontSize: 15,
-					marginRight: 10,
-				}}
-			>
-				Logout
-			</Button>
-			<br></br>
-			<br></br>
-			<Card
-				style={{
-					borderRadius: 45,
-					borderColor: "#808080",
-					borderWidth: 2.0,
-					marginTop: 20,
-					paddingInline: 10,
-				}}
-			>
-				<div className="loginContainer">
-					<Row className="PatientProfileContainer">
-						<Col md={6}>
-							<Form>
-								<Form.Group controlId="patientViewName">
-									<Form.Label>Name</Form.Label>
-									<Form.Control
-										type="text"
-										value={name}
-										onChange={(e) => setName(e.target.value)}
-										readOnly
-									></Form.Control>
-								</Form.Group>
-								<Form.Group controlId="patientViewDob">
-									<Form.Label>Date Of Birth</Form.Label>
-									<Form.Control type="date" value={dob} onChange={(e) => setDob(e.target.value)} readOnly />
-								</Form.Group>
-
-								<Form.Group controlId="patientViewFormBasicNic">
-									<Form.Label>Gender</Form.Label>
-									<Form.Control type="text" value={gender} onChange={(e) => setGender(e.target.value)} readOnly />
-								</Form.Group>
-
-								<Form.Group controlId="patientViewFormBasicNic">
-									<Form.Label>NIC Number</Form.Label>
-									<Form.Control type="text" value={nic} onChange={(e) => setNic(e.target.value)} readOnly />
-								</Form.Group>
-
-								<Form.Group controlId="patientViewFormBasicTelephone">
-									<Form.Label>Telephone</Form.Label>
-									<Form.Control type="text" value={telephone} onChange={(e) => setTelephone(e.target.value)} readOnly />
-								</Form.Group>
-
-								<Form.Group controlId="patientViewFormBasicAddress">
-									<Form.Label>Address</Form.Label>
-									<Form.Control type="textArea" value={address} onChange={(e) => setAddress(e.target.value)} readOnly />
-								</Form.Group>
-
-								<Form.Group controlId="doctorFormBasicEmail">
-									<Form.Label>Email</Form.Label>
-									<Form.Control
-										type="email"
-										value={email}
-										placeholder="Enter Email Address"
-										onChange={(e) => setEmail(e.target.value)}
-										readOnly
-									/>
-								</Form.Group>
-
-								<Form.Group controlId="patientViewRegDate">
-									<Form.Label>Registration Date</Form.Label>
-									<Form.Control type="date" value={regDate} onChange={(e) => setRegDate(e.target.value)} readOnly />
-								</Form.Group>
-
-								<Form.Group controlId="patientFormBasicReferringDoctor">
-									<Form.Label>Referring Doctor</Form.Label>
-									<Form.Control
-										type="text"
-										value={referringDoctor}
-										placeholder="Enter Referring Doctor's Name"
-										onChange={(e) => setReferringDoctor(e.target.value)}
-										readOnly
-									/>
-								</Form.Group>
-
-								<Form.Group controlId="patientViewFormBasicDataEntryBy">
-									<Form.Label>Data Entry By</Form.Label>
-									<Form.Control type="text" value={dataEntry} onChange={(e) => setDataEntry(e.target.value)} readOnly />
-								</Form.Group>
-							</Form>
-							<br></br>
-						</Col>
-						<Col
-							style={{
-								display: "flex",
-								alignItems: "center",
-								justifyContent: "center",
-							}}
-						>
-							<img src={pic} alt={name} className="profilePic" />
-						</Col>
-					</Row>
-				</div>
+		<div className="profileViewBg">
+			<MainScreen title="VIEW PROFILE - PATIENT">
+				<Button
+					style={{
+						float: "left",
+						marginTop: 5,
+						fontSize: 15,
+						marginLeft: 10,
+					}}
+					href="/patient"
+				>
+					{" "}
+					Back to Operations Page
+				</Button>
+				<Button
+					variant="danger"
+					onClick={logoutHandler}
+					style={{
+						float: "right",
+						marginTop: 5,
+						fontSize: 15,
+						marginRight: 10,
+					}}
+				>
+					Logout
+				</Button>
 				<br></br>
-			</Card>
-			<br></br>
-		</MainScreen>
+				<br></br>
+				<Card
+					style={{
+						borderRadius: 45,
+						borderWidth: 2.0,
+						marginTop: 20,
+						paddingInline: 10,
+						background: "rgba(231, 238, 238, 0.8)",
+					}}
+				>
+					<div className="loginContainer">
+						<Row className="PatientProfileContainer">
+							<Col md={6}>
+								<Form>
+									<Form.Group controlId="patientViewName">
+										<Form.Label>Name</Form.Label>
+										<Form.Control
+											type="text"
+											value={name}
+											onChange={(e) => setName(e.target.value)}
+											readOnly
+										></Form.Control>
+									</Form.Group>
+									<Form.Group controlId="patientViewDob">
+										<Form.Label>Date Of Birth</Form.Label>
+										<Form.Control type="date" value={dob} onChange={(e) => setDob(e.target.value)} readOnly />
+									</Form.Group>
+
+									<Form.Group controlId="patientViewFormBasicNic">
+										<Form.Label>Gender</Form.Label>
+										<Form.Control type="text" value={gender} onChange={(e) => setGender(e.target.value)} readOnly />
+									</Form.Group>
+
+									<Form.Group controlId="patientViewFormBasicNic">
+										<Form.Label>NIC Number</Form.Label>
+										<Form.Control type="text" value={nic} onChange={(e) => setNic(e.target.value)} readOnly />
+									</Form.Group>
+
+									<Form.Group controlId="patientViewFormBasicTelephone">
+										<Form.Label>Telephone</Form.Label>
+										<Form.Control
+											type="text"
+											value={telephone}
+											onChange={(e) => setTelephone(e.target.value)}
+											readOnly
+										/>
+									</Form.Group>
+
+									<Form.Group controlId="patientViewFormBasicAddress">
+										<Form.Label>Address</Form.Label>
+										<Form.Control
+											type="textArea"
+											value={address}
+											onChange={(e) => setAddress(e.target.value)}
+											readOnly
+										/>
+									</Form.Group>
+
+									<Form.Group controlId="doctorFormBasicEmail">
+										<Form.Label>Email</Form.Label>
+										<Form.Control
+											type="email"
+											value={email}
+											placeholder="Enter Email Address"
+											onChange={(e) => setEmail(e.target.value)}
+											readOnly
+										/>
+									</Form.Group>
+
+									<Form.Group controlId="patientViewRegDate">
+										<Form.Label>Registration Date</Form.Label>
+										<Form.Control type="date" value={regDate} onChange={(e) => setRegDate(e.target.value)} readOnly />
+									</Form.Group>
+
+									<Form.Group controlId="patientFormBasicReferringDoctor">
+										<Form.Label>Referring Doctor</Form.Label>
+										<Form.Control
+											type="text"
+											value={referringDoctor}
+											placeholder="Enter Referring Doctor's Name"
+											onChange={(e) => setReferringDoctor(e.target.value)}
+											readOnly
+										/>
+									</Form.Group>
+
+									<Form.Group controlId="patientViewFormBasicDataEntryBy">
+										<Form.Label>Data Entry By</Form.Label>
+										<Form.Control
+											type="text"
+											value={dataEntry}
+											onChange={(e) => setDataEntry(e.target.value)}
+											readOnly
+										/>
+									</Form.Group>
+								</Form>
+								<br></br>
+							</Col>
+							<Col
+								style={{
+									display: "flex",
+									alignItems: "center",
+									justifyContent: "center",
+								}}
+							>
+								<img
+									src={pic}
+									alt={name}
+									className="profilePic"
+									style={{ boxShadow: "7px 7px 20px ", borderRadius: 250, background: "white" }}
+								/>
+							</Col>
+						</Row>
+					</div>
+				</Card>
+				<br></br>
+			</MainScreen>
+		</div>
 	);
 };
 

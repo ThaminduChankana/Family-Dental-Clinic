@@ -51,7 +51,7 @@ const AdminViewScreen = ({ history }) => {
 					Back to Operations Page
 				</Button>
 				<Button
-					variant="primary"
+					variant="danger"
 					onClick={logoutHandler}
 					style={{
 						float: "right",
