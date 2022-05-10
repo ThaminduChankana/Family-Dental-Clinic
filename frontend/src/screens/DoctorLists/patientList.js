@@ -50,7 +50,6 @@ const PatientListForDoctor = () => {
 							</Button>
 						</Link>
 					</Col>
-					
 				</div>
 				<br></br>
 
