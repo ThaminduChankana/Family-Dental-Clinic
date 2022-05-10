@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { patientDeleteProfile, patientsList } from "../../actions/patientActions";
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
+import "../AdminLists/lists.css"
 
 const PatientListForAdmin = () => {
 	const dispatch = useDispatch();
@@ -40,6 +41,7 @@ const PatientListForAdmin = () => {
 	};
 
 	return (
+		<div className="patientList">
 		<MainScreen title={`Welcome Back ${adminInfo && adminInfo.name}..`}>
 			<h1
 				style={{
@@ -77,8 +79,12 @@ const PatientListForAdmin = () => {
 			{patients?.map((patientList) => (
 				<div key={patientList._id} className="listContainer">
 					<Accordion>
-						<Card style={{ margin: 10 }}>
-							<Card.Header style={{ display: "flex" }}>
+						<Card style={{ margin: 10, borderRadius:25,borderWidth: 1.0, borderColor:"rgb(0,0,0,0.5)",
+						marginTop: 20,
+						paddingInline: 10,
+						background: "rgb(235, 235, 235)" }}>
+							<Card.Header style={{ display: "flex",paddingInline: 10,borderRadius:25,marginTop:10,marginBottom:10,borderColor:"black",
+						background: "rgba(255, 255, 255)" }}>
 								<span
 									style={{
 										color: "black",
@@ -90,22 +96,22 @@ const PatientListForAdmin = () => {
 									}}
 								>
 									<Accordion.Toggle as={Card.Text} variant="link" eventKey="0">
-										<p className="nic">
+										<p className="nic" style={{paddingInline:20,marginTop:10}}>
 											Patient NIC : &emsp;
 											{patientList.nic}{" "}
 										</p>{" "}
-										<p className="name">
+										<p className="name" style={{paddingInline:20,marginTop:10}}>
 											Patient Name : &emsp;
 											{patientList.name}
 										</p>
 									</Accordion.Toggle>
 								</span>
 								<div>
-									<Button href={`/admin-patient-edit/${patientList._id}`}>Edit</Button>
+									<Button style={{marginTop:25,fontSize:15}} href={`/admin-patient-edit/${patientList._id}` }>Edit</Button>
 								</div>
 								&emsp;
 								<div>
-									<Button variant="danger" className="mx-2" onClick={() => deleteHandler(patientList._id)}>
+									<Button style={{marginTop:25,fontSize:15}} variant="danger" className="mx-2" onClick={() => deleteHandler(patientList._id)}>
 										Delete
 									</Button>
 								</div>
@@ -139,7 +145,7 @@ const PatientListForAdmin = () => {
 									</Row>
 
 									<blockquote className="blockquote mb-0">
-										<Card.Footer className="text-muted">
+										<Card.Footer className="text-muted"  style={{borderRadius:20,background:"white"}}>
 											Created on -<cite title="Source Title"> {patientList.createdAt.substring(0, 10)}</cite>
 										</Card.Footer>
 									</blockquote>
@@ -151,6 +157,7 @@ const PatientListForAdmin = () => {
 			))}
 			<br></br>
 		</MainScreen>
+		</div>
 	);
 };
 
