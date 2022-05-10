@@ -12,6 +12,8 @@
 	font-size: 60px;
 	font-family: "Work Sans", sans-serif;
 	padding: 5px 0px;
+	font-weight: bold;
+	font-style: oblique;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -28,4 +30,11 @@ h5 {
 	margin-top: 10px;
 	padding-top: 10px;
 	margin-left: 20px;
+}
+hr {
+	position: relative;
+	border: 50px;
+	height: 12px;
+	background: rgba(57, 64, 65, 0.479);
+	margin-bottom: 50px;
 }

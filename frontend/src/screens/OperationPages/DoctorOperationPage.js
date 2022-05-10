@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
-import { Container, Row, Button, Col } from "react-bootstrap";
+import { Container, Row, Button, Col, Card } from "react-bootstrap";
 import { doctorLogout } from "../../actions/doctorActions";
 import "./OperationPages.css";
 import MainScreen from "../../components/MainScreen";
@@ -16,60 +16,83 @@ const DoctorOperationPage = ({ history }) => {
 	};
 
 	return (
-		<MainScreen title={`Welcome Back ${doctorInfo && doctorInfo.name}..`}>
-			<div>
-				<Container>
-					<Row>
-						<Button variant="primary" onClick={logoutHandler} className="logoutBtn">
-							Logout
-						</Button>
+		<div className="doctorBackground">
+			<MainScreen title={`Welcome Back ${doctorInfo && doctorInfo.name} ...`}>
+				<Button variant="danger" onClick={logoutHandler} className="logoutBtn" style={{ float: "right" }}>
+					Logout
+				</Button>
+				<br></br>
+				<div className="loginContainer">
+					<Card
+						style={{
+							borderRadius: 45,
+							borderWidth: 2.0,
+							marginTop: 20,
+							paddingInline: 10,
+							background: "rgba(231, 238, 238, 0.8)",
+							marginLeft: "10%",
+							marginRight: "10%",
+						}}
+					>
 						<div className="intro-text">
-							<div className="buttonContainer">
+							<br></br>
+							<br></br>
+							<div>
 								<a href="/doctor-view">
-									<Button size="lg" className="landingbutton">
+									<Button size="lg" style={{ width: 350, height: 75 }}>
 										My Account
 									</Button>
 								</a>
+								&emsp;
 								<a href="/">
-									<Button size="lg" className="landingbutton">
+									<Button size="lg" style={{ width: 350, height: 75 }}>
 										Doctor's Schedule Management
 									</Button>
 								</a>
+							</div>
+							<br></br>
+							<div>
 								<a href="/doctor-patients">
-									<Button size="lg" className="landingbutton">
+									<Button size="lg" style={{ width: 350, height: 75 }}>
 										Patient Management
 									</Button>
 								</a>
-							</div>
-							<div className="buttonContainer">
+								&emsp;
 								<a href="/treatment-dashboard">
-									<Button size="lg" className="landingbutton">
+									<Button size="lg" style={{ width: 350, height: 75 }}>
 										Patient Diagnosis Management
 									</Button>
 								</a>
+							</div>
+							<br></br>
+							<div>
 								<a href="/">
-									<Button size="lg" className="landingbutton">
+									<Button size="lg" style={{ width: 350, height: 75 }}>
 										Appointment Management
 									</Button>
 								</a>
+								&emsp;
 								<a href="/">
-									<Button size="lg" className="landingbutton">
+									<Button size="lg" style={{ width: 350, height: 75 }}>
 										Patient Medical History Management
 									</Button>
 								</a>
 							</div>
-							<div className="buttonContainer">
+							<br></br>
+							<div>
 								<a href="/">
-									<Button size="lg" className="landingbutton">
+									<Button size="lg" style={{ width: 350, height: 75 }}>
 										Doctor's Blog Management
 									</Button>
 								</a>
 							</div>
 						</div>
-					</Row>
-				</Container>
-			</div>
-		</MainScreen>
+						<br></br>
+						<br></br>
+					</Card>
+				</div>
+			</MainScreen>
+		</div>
 	);
 };
 

@@ -34,6 +34,10 @@ const patientSchema = mongoose.Schema(
 			type: String,
 			required: true,
 		},
+		email: {
+			type: String,
+			required: true,
+		},
 		password: {
 			type: String,
 			required: true,
@@ -42,6 +46,10 @@ const patientSchema = mongoose.Schema(
 			type: String,
 			required: true,
 			default: "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg", //default image which apply in the user
+		},
+		referringDoctor: {
+			type: String,
+			required: true,
 		},
 		dataEntry: {
 			type: String,
