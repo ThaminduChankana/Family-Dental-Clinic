@@ -22,7 +22,6 @@ import PatientListForAdmin from "./screens/AdminLists/patientList";
 import PatientListForDoctor from "./screens/DoctorLists/patientList";
 import DoctorEditByAdmin from "./screens/UserManagement/AdminUserEditScreens/DoctorEditByAdmin";
 import PatientEditByAdmin from "./screens/UserManagement/AdminUserEditScreens/PatientEditByAdmin";
-import DiagnosisInfo from "./screens/Treatment/TreatmentDashBoard/DiagnosisInfo";
 import TreatmentNavBar from "./screens/Treatment/TreatmentDashBoard/TreatmentNavBar";
 import BasicTreatmentView from "./screens/Treatment/TreatmentLists/BasicTreatmentView";
 import FillingView from "./screens/Treatment/TreatmentLists/FillingView";
@@ -33,10 +32,15 @@ import OrthodonticCreate from "./screens/Treatment/TreatmentCreateScreens/Orthod
 import SingleBasicTreatment from "./screens/Treatment/TreatmentEditScreens/SingleBasicTreatment";
 import SingleFilling from "./screens/Treatment/TreatmentEditScreens/SingleFilling";
 import SingleOrthodontic from "./screens/Treatment/TreatmentEditScreens/SingleOrthodontic";
+import TreatmentPrint from "./screens/Treatment/TreatmentDashBoard/TreatmentPrint";
+import Header from "./components/header/Header";
 
 const App = () => {
+	const [search, setSearch] = useState("");
+	console.log(search);
 	return (
 		<BrowserRouter>
+			<Header setSearch={setSearch} />
 			<main>
 				<Route path="/" component={LandingPage} exact />
 				<Route path="/admin-register" component={AdminRegisterScreen} exact />
@@ -58,17 +62,17 @@ const App = () => {
 				<Route path="/doctor-patients" component={PatientListForDoctor} exact />
 				<Route path="/admin-doctor-edit/:id" component={DoctorEditByAdmin} exact />
 				<Route path="/admin-patient-edit/:id" component={PatientEditByAdmin} exact />
-				<Route path="/treatment-dashboard" component={DiagnosisInfo} exact />
 				<Route path="/treatment-navbar" component={TreatmentNavBar} exact />
-				<Route path="/treatment-basicTreatment-view" component={BasicTreatmentView} exact />
-				<Route path="/treatment-filling-view" component={FillingView} exact />
-				<Route path="/treatment-orthodontic-view" component={OrthodonticView} exact />
+				<Route path="/treatment-basicTreatment-view" component={() => <BasicTreatmentView search={search} />} exact />
+				<Route path="/treatment-filling-view" component={() => <FillingView search={search} />} exact />
+				<Route path="/treatment-orthodontic-view" component={() => <OrthodonticView search={search} />} exact />
 				<Route path="/treatment-basicTreatment-create" component={BasicTreatmentCreate} exact />
 				<Route path="/treatment-filling-create" component={FillingCreate} exact />
 				<Route path="/treatment-orthodontic-create" component={OrthodonticCreate} exact />
 				<Route path="/basicTreatment/:id" component={SingleBasicTreatment} exact />
 				<Route path="/filling/:id" component={SingleFilling} exact />
 				<Route path="/orthodontic/:id" component={SingleOrthodontic} exact />
+				<Route path="/treatment-report" component={TreatmentPrint} exact />
 			</main>
 		</BrowserRouter>
 	);

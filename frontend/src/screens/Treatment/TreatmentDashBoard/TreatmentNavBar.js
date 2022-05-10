@@ -8,16 +8,13 @@ export default function TreatmentNavBar() {
 					Home
 				</Navbar.Brand>
 				<Nav className="me-auto">
-					<Nav.Link style={{ fontSize: 20, color: "black" }} href="/treatment-dashboard">
-						Diagnosis Info
-					</Nav.Link>
-					<Nav.Link style={{ fontSize: 20, color: "black" }} href="/treatment-orthodontic-create">
+					<Nav.Link style={{ fontSize: 20, color: "black" }} href="/treatment-orthodontic-view">
 						Orthodontic
 					</Nav.Link>
-					<Nav.Link style={{ fontSize: 20, color: "black" }} href="/treatment-filling-create">
+					<Nav.Link style={{ fontSize: 20, color: "black" }} href="/treatment-filling-view">
 						Filling
 					</Nav.Link>
-					<Nav.Link style={{ fontSize: 20, color: "black" }} href="/treatment-basicTreatment-create">
+					<Nav.Link style={{ fontSize: 20, color: "black" }} href="/treatment-basicTreatment-view">
 						Basic Treatment
 					</Nav.Link>
 					<Nav.Link style={{ fontSize: 20, color: "black" }} href="">

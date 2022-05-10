@@ -39,7 +39,8 @@ export default function BasicTreatmentCreate({ history }) {
 		dispatch(createBasicTreatmentAction(nic, cost, treatmentType, date, checkup, procedure, remark));
 
 		resetHandler();
-		history.push("/treatment-dashboard");
+		history.push("/treatment-basicTreatment-view");
+		alert("Successfully Created");
 	};
 
 	useEffect(() => {}, []);
@@ -58,6 +59,7 @@ export default function BasicTreatmentCreate({ history }) {
 								value={nic}
 								placeholder="Enter the NIC"
 								onChange={(e) => setNic(e.target.value)}
+								required
 							/>
 						</Form.Group>
 
@@ -69,6 +71,7 @@ export default function BasicTreatmentCreate({ history }) {
 								placeholder="Enter the Cost"
 								rows={4}
 								onChange={(e) => setCost(e.target.value)}
+								required
 							/>
 						</Form.Group>
 
@@ -94,6 +97,7 @@ export default function BasicTreatmentCreate({ history }) {
 								value={date}
 								placeholder="Enter the date"
 								onChange={(e) => setDate(e.target.value)}
+								required
 							/>
 						</Form.Group>
 						<Form.Group controlId="checkup">
@@ -104,6 +108,7 @@ export default function BasicTreatmentCreate({ history }) {
 								value={checkup}
 								placeholder="Enter the Checkup"
 								onChange={(e) => setCheckup(e.target.value)}
+								required
 							/>
 						</Form.Group>
 						<Form.Group controlId="procedure">
@@ -114,6 +119,7 @@ export default function BasicTreatmentCreate({ history }) {
 								value={procedure}
 								placeholder="Enter the Procedure"
 								onChange={(e) => setProcedure(e.target.value)}
+								required
 							/>
 						</Form.Group>
 						<Form.Group controlId="remark">
@@ -124,6 +130,7 @@ export default function BasicTreatmentCreate({ history }) {
 								value={remark}
 								placeholder="Enter the Remark"
 								onChange={(e) => setRemark(e.target.value)}
+								required
 							/>
 						</Form.Group>
 

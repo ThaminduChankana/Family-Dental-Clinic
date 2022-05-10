@@ -83,7 +83,8 @@ export default function SingleFilling({ match, history }) {
 		)
 			return;
 
-		history.push("/treatment-dashboard");
+		history.push("/treatment-filling-view");
+		alert("Successfully Updated");
 	};
 	return (
 		<div>
@@ -102,6 +103,7 @@ export default function SingleFilling({ match, history }) {
 								value={nic}
 								placeholder="Enter the NIC"
 								onChange={(e) => setNic(e.target.value)}
+								required
 							/>
 						</Form.Group>
 
@@ -112,6 +114,7 @@ export default function SingleFilling({ match, history }) {
 								placeholder="Enter the Cost"
 								rows={4}
 								onChange={(e) => setCost(e.target.value)}
+								required
 							/>
 						</Form.Group>
 
@@ -123,6 +126,7 @@ export default function SingleFilling({ match, history }) {
 								value={anestheticStatus}
 								placeholder="Enter the Anesthetic Status"
 								onChange={(e) => setAnestheticStatus(e.target.value)}
+								required
 							/>
 						</Form.Group>
 						<Form.Group controlId="fillingMaterial">
@@ -132,6 +136,7 @@ export default function SingleFilling({ match, history }) {
 								value={fillingMaterial}
 								placeholder="Enter the Filling Material"
 								onChange={(e) => setFillingMaterial(e.target.value)}
+								required
 							/>
 						</Form.Group>
 						<Form.Group controlId="fillingType">
@@ -141,6 +146,7 @@ export default function SingleFilling({ match, history }) {
 								value={fillingType}
 								placeholder="Enter the Filling Type"
 								onChange={(e) => setFillingType(e.target.value)}
+								required
 							/>
 						</Form.Group>
 						<Form.Group controlId="date">
@@ -155,6 +161,7 @@ export default function SingleFilling({ match, history }) {
 								value={checkup}
 								placeholder="Enter the Checkup"
 								onChange={(e) => setCheckup(e.target.value)}
+								required
 							/>
 						</Form.Group>
 						<Form.Group controlId="procedure">
@@ -165,6 +172,7 @@ export default function SingleFilling({ match, history }) {
 								value={procedure}
 								placeholder="Enter the Procedure"
 								onChange={(e) => setProcedure(e.target.value)}
+								required
 							/>
 						</Form.Group>
 						<Form.Group controlId="remark">
@@ -175,6 +183,7 @@ export default function SingleFilling({ match, history }) {
 								value={remark}
 								placeholder="Enter the Remark"
 								onChange={(e) => setRemark(e.target.value)}
+								required
 							/>
 						</Form.Group>
 						{loading && <Loading size={50} />}

@@ -42,7 +42,7 @@ const DoctorOperationPage = ({ history }) => {
 								</a>
 							</div>
 							<div className="buttonContainer">
-								<a href="/treatment-dashboard">
+								<a href="/treatment-orthodontic-view">
 									<Button size="lg" className="landingbutton">
 										Patient Diagnosis Management
 									</Button>

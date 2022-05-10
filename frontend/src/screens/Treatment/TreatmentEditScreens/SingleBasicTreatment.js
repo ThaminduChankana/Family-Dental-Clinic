@@ -59,7 +59,8 @@ export default function SingleBasicTreatment({ match, history }) {
 		dispatch(updateBasicTreatmentAction(match.params.id, nic, cost, treatmentType, date, checkup, procedure, remark));
 		if (!nic || !cost || !treatmentType || !date || !checkup || !procedure || !remark) return;
 
-		history.push("/treatment-dashboard");
+		history.push("/treatment-basicTreatment-view");
+		alert("Successfully Updated");
 	};
 
 	return (
@@ -79,6 +80,7 @@ export default function SingleBasicTreatment({ match, history }) {
 								value={nic}
 								placeholder="Enter the NIC"
 								onChange={(e) => setNic(e.target.value)}
+								required
 							/>
 						</Form.Group>
 
@@ -89,6 +91,7 @@ export default function SingleBasicTreatment({ match, history }) {
 								placeholder="Enter the Cost"
 								rows={4}
 								onChange={(e) => setCost(e.target.value)}
+								required
 							/>
 						</Form.Group>
 
@@ -99,6 +102,7 @@ export default function SingleBasicTreatment({ match, history }) {
 								value={treatmentType}
 								placeholder="Enter the Treatment Type"
 								onChange={(e) => setTreatmentType(e.target.value)}
+								required
 							/>
 						</Form.Group>
 						<Form.Group controlId="date">
@@ -113,6 +117,7 @@ export default function SingleBasicTreatment({ match, history }) {
 								value={checkup}
 								placeholder="Enter the Checkup"
 								onChange={(e) => setCheckup(e.target.value)}
+								required
 							/>
 						</Form.Group>
 						<Form.Group controlId="procedure">
@@ -123,6 +128,7 @@ export default function SingleBasicTreatment({ match, history }) {
 								value={procedure}
 								placeholder="Enter the Procedure"
 								onChange={(e) => setProcedure(e.target.value)}
+								required
 							/>
 						</Form.Group>
 						<Form.Group controlId="remark">
@@ -133,6 +139,7 @@ export default function SingleBasicTreatment({ match, history }) {
 								value={remark}
 								placeholder="Enter the Remark"
 								onChange={(e) => setRemark(e.target.value)}
+								required
 							/>
 						</Form.Group>
 
