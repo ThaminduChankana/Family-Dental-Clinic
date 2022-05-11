@@ -1,0 +1,55 @@
+.adminBackground {
+	background: url("../../Images/admin.png");
+	background-position: center;
+	background-size: cover;
+}
+.doctorBackground {
+	background: url("../../Images/doctor.png");
+	background-position: center;
+	background-size: cover;
+}
+.patientBackground {
+	background: url("../../Images/patient.png");
+	background-position: center;
+	background-size: cover;
+}
+
+.title {
+	font-size: 95px;
+}
+.subtitle {
+	font-size: 25px;
+	padding-top: 10px;
+}
+.intro-text {
+	width: 100%;
+	text-align: center;
+}
+.main {
+	min-height: 93vh;
+	display: flex;
+	align-items: center;
+	background-size: cover;
+}
+
+.buttonContainer {
+	margin-top: 50px;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.landingbutton {
+	width: 350px;
+	height: 75px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+@media only screen and (min-width: 1200px) {
+	.buttonContainer {
+		padding: 0 200px;
+	}
+	.title {
+		padding: 0 100px;
+	}
+}

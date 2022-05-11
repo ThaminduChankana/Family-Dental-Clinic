@@ -1,0 +1,13 @@
+.loginContainer {
+	display: flex;
+	flex-direction: column;
+	margin: 20px;
+}
+.profileCont {
+	background: rgba(231, 238, 238, 0.5);
+}
+.registerBg {
+	background: url("../../../Images/registerView.jpg");
+	background-position: center;
+	background-size: cover;
+}

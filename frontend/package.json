@@ -2,19 +2,26 @@
 	"name": "frontend",
 	"version": "0.1.0",
 	"private": true,
+	"proxy": "http://127.0.0.1:5000",
 	"dependencies": {
 		"@testing-library/jest-dom": "^5.15.1",
 		"@testing-library/react": "^11.2.7",
 		"@testing-library/user-event": "^12.8.3",
 		"axios": "^0.24.0",
+		"concurrently": "^7.0.0",
+		"markdown": "^0.5.0",
 		"prettier": "^2.5.1",
 		"react": "^17.0.2",
-		"react-bootstrap": "1.6",
+		"react-alice-carousel": "^2.6.0",
+		"react-background-slider": "^2.0.0",
+		"react-background-slideshow": "^1.0.4",
+		"react-bootstrap": "^1.6.4",
 		"react-dom": "^17.0.2",
 		"react-markdown": "^7.1.1",
 		"react-redux": "^7.2.6",
 		"react-router-dom": "^5.3.0",
 		"react-scripts": "4.0.3",
+		"react-slideshow-image": "^3.7.5",
 		"redux": "^4.1.2",
 		"redux-devtools-extension": "^2.13.9",
 		"redux-thunk": "^2.4.1",
@@ -25,7 +32,8 @@
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"dev": "concurrently \"npm start\" \"cd ../backend && npm start\""
 	},
 	"eslintConfig": {
 		"extends": [

@@ -1,0 +1,23 @@
+.loginContainer {
+	display: flex;
+	flex-direction: column;
+	margin: 20px;
+}
+.adminLoginBg {
+	background: url("../../../Images/admin-login.png");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.doctorLoginBg {
+	background: url("../../../Images/doctor-login.png");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.patientLoginBg {
+	background: url("../../../Images/patient-login.png");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}

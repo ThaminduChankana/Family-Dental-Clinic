@@ -3,16 +3,17 @@
 .mainback {
 	min-height: 93vh;
 	display: flex;
-	padding: 10px 0;
+	padding: 10px 0px;
 }
 .page {
 	width: 100%;
 }
 .heading {
 	font-size: 60px;
-	/* font-family: "Ubuntu", sans-serif; */
 	font-family: "Work Sans", sans-serif;
-	padding: 5px 10px;
+	padding: 5px 0px;
+	font-weight: bold;
+	font-style: oblique;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -24,4 +25,16 @@
 		display: flex;
 		justify-content: center;
 	}
+}
+h5 {
+	margin-top: 10px;
+	padding-top: 10px;
+	margin-left: 20px;
+}
+hr {
+	position: relative;
+	border: 50px;
+	height: 12px;
+	background: rgba(57, 64, 65, 0.479);
+	margin-bottom: 50px;
 }

@@ -1,0 +1,22 @@
+.profilePic {
+	width: 60%;
+	display: flex;
+	align-items: center;
+}
+.profileContainer {
+	display: flex;
+	margin: 20px;
+}
+@media only screen and (max-width: 768px) {
+	.profileContainer {
+		flex-direction: column-reverse;
+	}
+}
+.profileViewBg {
+	background: url("../../../Images/profileView.jpg");
+	background-position: center;
+	background-size: cover;
+}
+.profileCont {
+	background: rgba(231, 238, 238, 0.5);
+}
