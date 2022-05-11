@@ -38,6 +38,7 @@ import Footer from "./components/footer/footer";
 import DoctorArticles from "./screens/Blogs/DoctorArticles";
 import CreateArticle from "./screens/Blogs/CreateArticle";
 import SingleArticle from "./screens/Blogs/SingleArticle";
+import CommonBlogs from "./screens/Blogs/CommonBlogs";
 
 const App = () => {
 	const [search, setSearch] = useState("");
@@ -80,6 +81,7 @@ const App = () => {
 				<Route path="/doctor-articles" component={DoctorArticles} exact />
 				<Route path="/doctor-create-article" component={CreateArticle} exact />
 				<Route path="/doctor-single-article/:id" component={SingleArticle} exact />
+				<Route path="/common-articles" component={CommonBlogs} exact />
 			</main>
 			<Footer />
 		</BrowserRouter>

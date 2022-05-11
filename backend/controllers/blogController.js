@@ -6,6 +6,11 @@ const getBlogs = asyncHandler(async (req, res) => {
 	res.json(blogs);
 });
 
+const getBlogsForEachDoctor = asyncHandler(async (req, res) => {
+	const blogs = await Blog.find({ doctor: req.doctor._id });
+	res.json(blogs);
+});
+
 const createBlog = asyncHandler(async (req, res) => {
 	const { title, description, image } = req.body;
 
@@ -71,4 +76,4 @@ const DeleteBlog = asyncHandler(async (req, res) => {
 	}
 });
 
-module.exports = { getBlogs, createBlog, getBlogById, UpdateBlog, DeleteBlog };
+module.exports = { getBlogs, getBlogsForEachDoctor, createBlog, getBlogById, UpdateBlog, DeleteBlog };
