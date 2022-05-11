@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter, Route } from "react-router-dom";
 import React from "react";
 import { useState } from "react";
+import Header from "./components/header/Header";
 import LoginSelectorPage from "./screens/LoginSelector/LoginSelectorPage";
 import AdminRegisterScreen from "./screens/UserManagement/RegisterScreens/AdminRegisterScreen";
 import DoctorRegisterScreen from "./screens/UserManagement/RegisterScreens/DoctorRegisterScreen";
@@ -23,6 +24,8 @@ import PatientListForAdmin from "./screens/AdminLists/patientList";
 import PatientListForDoctor from "./screens/DoctorLists/patientList";
 import DoctorEditByAdmin from "./screens/UserManagement/AdminUserEditScreens/DoctorEditByAdmin";
 import PatientEditByAdmin from "./screens/UserManagement/AdminUserEditScreens/PatientEditByAdmin";
+import InventoryCreate from "./screens/Inventory/InventoryCreate";
+import InventoryView from "./screens/Inventory/InventoryView";
 import DiagnosisInfo from "./screens/Treatment/TreatmentDashBoard/DiagnosisInfo";
 import TreatmentNavBar from "./screens/Treatment/TreatmentDashBoard/TreatmentNavBar";
 import BasicTreatmentView from "./screens/Treatment/TreatmentLists/BasicTreatmentView";
@@ -36,11 +39,13 @@ import SingleFilling from "./screens/Treatment/TreatmentEditScreens/SingleFillin
 import SingleOrthodontic from "./screens/Treatment/TreatmentEditScreens/SingleOrthodontic";
 import Footer from "./components/footer/footer";
 
+
 const App = () => {
 	const [search, setSearch] = useState("");
 
 	return (
 		<BrowserRouter>
+			<Header /> 
 			<main>
 				<Route path="/" component={LoginSelectorPage} exact />
 				<Route path="/admin-register" component={AdminRegisterScreen} exact />
@@ -63,6 +68,8 @@ const App = () => {
 				<Route path="/doctor-patients" component={PatientListForDoctor} exact />
 				<Route path="/admin-doctor-edit/:id" component={DoctorEditByAdmin} exact />
 				<Route path="/admin-patient-edit/:id" component={PatientEditByAdmin} exact />
+				<Route path="/inventory-create" component={InventoryCreate} exact></Route>
+				<Route path="/inventory-view" component={InventoryView} exact></Route>
 				<Route path="/treatment-dashboard" component={DiagnosisInfo} exact />
 				<Route path="/treatment-navbar" component={TreatmentNavBar} exact />
 				<Route path="/treatment-basicTreatment-view" component={BasicTreatmentView} exact />
@@ -74,10 +81,13 @@ const App = () => {
 				<Route path="/basicTreatment/:id" component={SingleBasicTreatment} exact />
 				<Route path="/filling/:id" component={SingleFilling} exact />
 				<Route path="/orthodontic/:id" component={SingleOrthodontic} exact />
+
 			</main>
 			<Footer />
 		</BrowserRouter>
 	);
 };
 
+
 export default App;
+
