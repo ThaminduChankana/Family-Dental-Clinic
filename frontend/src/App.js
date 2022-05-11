@@ -39,13 +39,12 @@ import SingleFilling from "./screens/Treatment/TreatmentEditScreens/SingleFillin
 import SingleOrthodontic from "./screens/Treatment/TreatmentEditScreens/SingleOrthodontic";
 import Footer from "./components/footer/footer";
 
-
 const App = () => {
 	const [search, setSearch] = useState("");
 
 	return (
 		<BrowserRouter>
-			<Header /> 
+			<Header setSearch={setSearch} />
 			<main>
 				<Route path="/" component={LoginSelectorPage} exact />
 				<Route path="/admin-register" component={AdminRegisterScreen} exact />
@@ -63,10 +62,10 @@ const App = () => {
 				<Route path="/admin" component={AdminOperationPage} exact />
 				<Route path="/doctor" component={DoctorOperationPage} exact />
 				<Route path="/patient" component={PatientOperationPage} exact />
-				<Route path="/admin-doctors" component={DoctorListForAdmin} exact />
-				<Route path="/admin-patients" component={PatientListForAdmin} exact />
-				<Route path="/doctor-patients" component={PatientListForDoctor} exact />
-				<Route path="/admin-doctor-edit/:id" component={DoctorEditByAdmin} exact />
+				<Route path="/admin-doctors" component={() => <DoctorListForAdmin search={search} />} exact />
+				<Route path="/admin-patients" component={() => <PatientListForAdmin search={search} />} exact />
+				<Route path="/doctor-patients" component={() => <PatientListForDoctor search={search} />} exact />
+				<Route path="/PatientListForDoctor-doctor-edit/:id" component={DoctorEditByAdmin} exact />
 				<Route path="/admin-patient-edit/:id" component={PatientEditByAdmin} exact />
 				<Route path="/inventory-create" component={InventoryCreate} exact></Route>
 				<Route path="/inventory-view" component={InventoryView} exact></Route>
@@ -81,13 +80,10 @@ const App = () => {
 				<Route path="/basicTreatment/:id" component={SingleBasicTreatment} exact />
 				<Route path="/filling/:id" component={SingleFilling} exact />
 				<Route path="/orthodontic/:id" component={SingleOrthodontic} exact />
-
 			</main>
 			<Footer />
 		</BrowserRouter>
 	);
 };
 
-
 export default App;
-

@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export default function InventoryLandingPage() {
-  return (
-    <div>InventoryLandingPage</div>
-  )
+	return <div>InventoryLandingPage</div>;
 }
