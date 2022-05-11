@@ -9,24 +9,24 @@ const {
 const { getPatients, getPatientProfileById } = require("../controllers/patientController");
 const {
 	getBasicTreatments,
-	CreateBasicTreatment,
+	createBasicTreatment,
 	getBasicTreatmentById,
-	UpdateBasicTreatment,
-	DeleteBasicTreatment,
+	updateBasicTreatment,
+	deleteBasicTreatment,
 } = require("../controllers/basicTreatmentController");
 const {
 	getOrthodontics,
-	CreateOrthodontic,
+	createOrthodontic,
 	getOrthodonticById,
-	UpdateOrthodontic,
-	DeleteOrthodontic,
+	updateOrthodontic,
+	deleteOrthodontic,
 } = require("../controllers/orthodonticController");
 const {
 	getFillings,
-	CreateFilling,
+	createFilling,
 	getFillingtById,
-	UpdateFilling,
-	DeleteFilling,
+	updateFilling,
+	deleteFilling,
 } = require("../controllers/fillingController");
 const { getBlogs, createBlog, getBlogById, UpdateBlog, DeleteBlog } = require("../controllers/blogController");
 const { getMedicalHistory, getMedicalHistoryById } = require("../controllers/medicalHistoryController");
@@ -46,30 +46,30 @@ router.route("/patient/profile/view/:_id").get(protect, getPatientProfileById);
 
 //Routes for basic treatment configuration by doctor
 router.route("/treatment/basic_treatment/get").get(protect, getBasicTreatments);
-router.route("/treatment/basic_treatment/create").post(protect, CreateBasicTreatment);
+router.route("/treatment/basic_treatment/create").post(protect, createBasicTreatment);
 router
 	.route("/treatment/basic_treatment/get/:id")
 	.get(protect, getBasicTreatmentById)
-	.put(protect, UpdateBasicTreatment)
-	.delete(protect, DeleteBasicTreatment);
+	.put(protect, updateBasicTreatment)
+	.delete(protect, deleteBasicTreatment);
 
 //Routes for orthodontic treatment configuration by doctor
 router.route("/treatment/orthodontic/get").get(protect, getOrthodontics);
-router.route("/treatment/orthodontic/create").post(protect, CreateOrthodontic);
+router.route("/treatment/orthodontic/create").post(protect, createOrthodontic);
 router
 	.route("/treatment/orthodontic/get/:id")
 	.get(protect, getOrthodonticById)
-	.put(protect, UpdateOrthodontic)
-	.delete(protect, DeleteOrthodontic);
+	.put(protect, updateOrthodontic)
+	.delete(protect, deleteOrthodontic);
 
 //Routes for filling treatment configuration by doctor
 router.route("/treatment/filling/get").get(protect, getFillings);
-router.route("/treatment/filling/create").post(protect, CreateFilling);
+router.route("/treatment/filling/create").post(protect, createFilling);
 router
 	.route("/treatment/filling/get/:id")
 	.get(protect, getFillingtById)
-	.put(protect, UpdateFilling)
-	.delete(protect, DeleteFilling);
+	.put(protect, updateFilling)
+	.delete(protect, deleteFilling);
 
 //Routes for blog management by doctor
 router.route("/blogs/").get(protect, getBlogs);

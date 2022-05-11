@@ -1,3 +1,19 @@
+.adminBackground {
+	background: url("../../Images/admin.png");
+	background-position: center;
+	background-size: cover;
+}
+.doctorBackground {
+	background: url("../../Images/doctor.png");
+	background-position: center;
+	background-size: cover;
+}
+.patientBackground {
+	background: url("../../Images/patient.png");
+	background-position: center;
+	background-size: cover;
+}
+
 .title {
 	font-size: 95px;
 }
@@ -8,11 +24,6 @@
 .intro-text {
 	width: 100%;
 	text-align: center;
-}
-.header {
-	text-align: right;
-	margin-top: 50px;
-	margin-right: 300px;
 }
 .main {
 	min-height: 93vh;
@@ -40,15 +51,5 @@
 	}
 	.title {
 		padding: 0 100px;
-	}
-}
-
-@media only screen and (max-width: 768px) {
-	.title {
-		font-size: 60px;
-	}
-	.landingbutton {
-		width: 150px;
-		height: 50px;
 	}
 }

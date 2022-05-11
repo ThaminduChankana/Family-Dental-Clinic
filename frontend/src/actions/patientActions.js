@@ -18,6 +18,9 @@ import {
 	PATIENT_LIST_FAIL,
 	PATIENT_LIST_REQUEST,
 	PATIENT_LIST_SUCCESS,
+	PATIENT_LIST_FOR_DOCTOR_FAIL,
+	PATIENT_LIST_FOR_DOCTOR_REQUEST,
+	PATIENT_LIST_FOR_DOCTOR_SUCCESS,
 	PATIENT_VIEW_BY_ID_FAIL,
 	PATIENT_VIEW_BY_ID_REQUEST,
 	PATIENT_VIEW_BY_ID_SUCCESS,
@@ -26,8 +29,6 @@ import {
 	PATIENT_UPDATE_BY_ID_SUCCESS,
 } from "../constants/patientConstants";
 import axios from "axios";
-
-//name,dob,gender,nic,telephone,address,password,pic,dataentry,reg date
 
 export const patientLogin = (nic, password) => async (dispatch) => {
 	try {
@@ -42,7 +43,7 @@ export const patientLogin = (nic, password) => async (dispatch) => {
 		const { data } = await axios.post("/user/patient/login", { nic, password, isAdmin: false }, config);
 
 		dispatch({ type: PATIENT_LOGIN_SUCCESS, payload: data });
-		window.location.href = "/patient-view";
+		window.location.href = "/patient";
 		localStorage.setItem("patientInfo", JSON.stringify(data));
 	} catch (error) {
 		dispatch({
@@ -52,13 +53,24 @@ export const patientLogin = (nic, password) => async (dispatch) => {
 	}
 };
 
+export function authHeader() {
+	let patient = JSON.parse(localStorage.getItem("patientInfo"));
+
+	if (patient && patient.token) {
+		return { Authorization: `Bearer ${patient.token}` };
+	} else {
+		return {};
+	}
+}
+
 export const patientLogout = () => async (dispatch) => {
 	localStorage.removeItem("patientInfo");
 	dispatch({ type: PATIENT_LOGOUT });
 };
 
 export const patientRegister =
-	(name, dob, gender, nic, telephone, address, password, pic, dataEntry, regDate) => async (dispatch) => {
+	(name, dob, gender, nic, telephone, address, email, password, pic, referringDoctor, dataEntry, regDate) =>
+	async (dispatch) => {
 		try {
 			dispatch({ type: PATIENT_REGISTER_REQUEST });
 
@@ -77,8 +89,10 @@ export const patientRegister =
 					nic,
 					telephone,
 					address,
+					email,
 					password,
 					pic,
+					referringDoctor,
 					dataEntry,
 					regDate,
 				},
@@ -86,16 +100,14 @@ export const patientRegister =
 			);
 
 			dispatch({ type: PATIENT_REGISTER_SUCCESS, payload: data });
-			setTimeout(function () {
-				window.location.href = "/patient-login";
-			}, 2000);
+			alert("Patient Registration Successful !!!");
 			dispatch({ type: PATIENT_LOGIN_SUCCESS, payload: data });
 
 			localStorage.setItem("patientInfo", JSON.stringify(data));
 		} catch (error) {
 			dispatch({
 				type: PATIENT_REGISTER_FAIL,
-				payload: error.response && error.response.data.message ? error.response.data.message : error.message,
+				payload: "Patient Registration Failed !!!",
 			});
 		}
 	};
@@ -148,6 +160,7 @@ export const patientUpdateProfile = (patient) => async (dispatch, getState) => {
 		const { data } = await axios.put("/user/patient/edit", patient, config);
 
 		dispatch({ type: PATIENT_UPDATE_SUCCESS, payload: data });
+		alert("Patient Account Update Successful !!!");
 		setTimeout(function () {
 			window.location.href = "/patient-view";
 		}, 2000);
@@ -157,7 +170,7 @@ export const patientUpdateProfile = (patient) => async (dispatch, getState) => {
 	} catch (error) {
 		dispatch({
 			type: PATIENT_UPDATE_FAIL,
-			payload: error.response && error.response.data.message ? error.response.data.message : error.message,
+			payload: "Patient Update Failed !!!",
 		});
 	}
 };
@@ -192,6 +205,37 @@ export const patientsList = () => async (dispatch, getState) => {
 		});
 	}
 };
+
+export const patientsListForDoctor = () => async (dispatch, getState) => {
+	try {
+		dispatch({
+			type: PATIENT_LIST_FOR_DOCTOR_REQUEST,
+		});
+
+		const {
+			doctor_Login: { doctorInfo },
+		} = getState();
+
+		const config = {
+			headers: {
+				Authorization: `Bearer ${doctorInfo.token}`,
+			},
+		};
+
+		const { data } = await axios.get(`/user/doctor/patients`, config);
+
+		dispatch({
+			type: PATIENT_LIST_FOR_DOCTOR_SUCCESS,
+			payload: data,
+		});
+	} catch (error) {
+		const message = error.response && error.response.data.message ? error.response.data.message : error.message;
+		dispatch({
+			type: PATIENT_LIST_FOR_DOCTOR_FAIL,
+			payload: message,
+		});
+	}
+};
 export const patientDeleteProfile = (id) => async (dispatch, getState) => {
 	try {
 		dispatch({
@@ -215,7 +259,7 @@ export const patientDeleteProfile = (id) => async (dispatch, getState) => {
 			payload: data,
 		});
 	} catch (error) {
-		const message = error.response && error.response.data.message ? error.response.data.message : error.message;
+		const message = "Patient Delete Failed !!!";
 		dispatch({
 			type: PATIENT_DELETE_FAIL,
 			payload: message,
@@ -224,7 +268,22 @@ export const patientDeleteProfile = (id) => async (dispatch, getState) => {
 };
 
 export const patientViewProfileById =
-	(id, name, dob, gender, nic, telephone, address, dataEntry, password, message, pic, regDate) =>
+	(
+		id,
+		name,
+		dob,
+		gender,
+		nic,
+		telephone,
+		address,
+		email,
+		referringDoctor,
+		dataEntry,
+		password,
+		message,
+		pic,
+		regDate
+	) =>
 	async (dispatch, getState) => {
 		try {
 			dispatch({
@@ -243,7 +302,22 @@ export const patientViewProfileById =
 
 			const { data } = await axios.get(
 				`/user/admin/patient/profile/view/${id}`,
-				{ id, name, dob, gender, nic, telephone, address, dataEntry, password, message, pic, regDate },
+				{
+					id,
+					name,
+					dob,
+					gender,
+					nic,
+					telephone,
+					address,
+					email,
+					referringDoctor,
+					dataEntry,
+					password,
+					message,
+					pic,
+					regDate,
+				},
 				config
 			);
 
@@ -260,7 +334,22 @@ export const patientViewProfileById =
 		}
 	};
 export const patientUpdateProfileById =
-	(id, name, dob, gender, nic, telephone, address, dataEntry, password, message, pic, regDate) =>
+	(
+		id,
+		name,
+		dob,
+		gender,
+		nic,
+		telephone,
+		address,
+		email,
+		referringDoctor,
+		dataEntry,
+		password,
+		message,
+		pic,
+		regDate
+	) =>
 	async (dispatch, getState) => {
 		console.log(getState());
 		try {
@@ -287,6 +376,8 @@ export const patientUpdateProfileById =
 					nic,
 					telephone,
 					address,
+					email,
+					referringDoctor,
 					dataEntry,
 					password,
 					message,
@@ -304,7 +395,7 @@ export const patientUpdateProfileById =
 				window.location.href = "/admin-patients";
 			}, 2000);
 		} catch (error) {
-			const message = error.response && error.response.data.message ? error.response.data.message : error.message;
+			const message = "Patient Update Failed !!!";
 			dispatch({
 				type: PATIENT_UPDATE_BY_ID_FAIL,
 				payload: message,

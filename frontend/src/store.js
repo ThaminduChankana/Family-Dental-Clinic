@@ -25,10 +25,31 @@ import {
 	patientViewReducer,
 	patientUpdateReducer,
 	patientListReducer,
+	patientListForDoctorReducer,
 	patientViewByIdReducer,
 	patientUpdateByIdReducer,
 	patientDeleteReducer,
 } from "./reducers/patientReducers";
+import {
+	basicTreatmentListReducer,
+	basicTreatmentCreateReducer,
+	basicTreatmentUpdateReducer,
+	basicTreatmentDeleteReducer,
+} from "./reducers/basicTreatmentReducer";
+
+import {
+	fillingListReducer,
+	fillingCreateReducer,
+	fillingUpdateReducer,
+	fillingDeleteReducer,
+} from "./reducers/fillingReducer";
+
+import {
+	orthodonticListReducer,
+	orthodonticCreateReducer,
+	orthodonticUpdateReducer,
+	orthodonticDeleteReducer,
+} from "./reducers/orthodonticReducer";
 
 import {
 	inventoryListReducer,
@@ -55,6 +76,7 @@ const reducer = combineReducers({
 	patientView: patientViewReducer,
 	patientUpdate: patientUpdateReducer,
 	patientList: patientListReducer,
+	patientListForDoctor: patientListForDoctorReducer,
 	patientDelete: patientDeleteReducer,
 	patientViewById: patientViewByIdReducer,
 	patientUpdateById: patientUpdateByIdReducer,
@@ -62,6 +84,18 @@ const reducer = combineReducers({
 	inventoryCreate: inventoryCreateReducer,
 	inventoryUpdate: inventoryUpdateReducer,
 	inventoryDelete: inventoryDeleteReducer,
+	basicTreatmentList: basicTreatmentListReducer,
+	basicTreatmentCreate: basicTreatmentCreateReducer,
+	basicTreatmentUpdate: basicTreatmentUpdateReducer,
+	basicTreatmentDelete: basicTreatmentDeleteReducer,
+	fillingList: fillingListReducer,
+	fillingCreate: fillingCreateReducer,
+	fillingUpdate: fillingUpdateReducer,
+	fillingDelete: fillingDeleteReducer,
+	orthodonticList: orthodonticListReducer,
+	orthodonticCreate: orthodonticCreateReducer,
+	orthodonticUpdate: orthodonticUpdateReducer,
+	orthodonticDelete: orthodonticDeleteReducer,
 });
 
 const adminInfoFromStorage = localStorage.getItem("adminInfo") ? JSON.parse(localStorage.getItem("adminInfo")) : null;

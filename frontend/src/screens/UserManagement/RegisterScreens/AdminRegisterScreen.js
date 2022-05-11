@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Form, Button, Row, Col } from "react-bootstrap";
+import { Form, Button, Row, Col, Card } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import Loading from "../../../components/Loading";
@@ -16,6 +16,7 @@ const AdminRegisterScreen = ({ history }) => {
 	const [nic, setNic] = useState("");
 	const [telephone, setTelephone] = useState("");
 	const [address, setAddress] = useState("");
+	const [email, setEmail] = useState("");
 	const [previousRef, setPreviousRef] = useState("");
 	const [pic, setPic] = useState("https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg");
 	const [password, setPassword] = useState("");
@@ -39,8 +40,7 @@ const AdminRegisterScreen = ({ history }) => {
 		if (password !== confirmpassword) {
 			setMessage("Passwords do not match");
 		} else {
-			dispatch(adminRegister(name, dob, nic, telephone, address, previousRef, password, pic));
-			setMessage("Admin Registration Successful");
+			dispatch(adminRegister(name, dob, nic, telephone, address, email, previousRef, password, pic));
 		}
 	};
 	const postDetails = (pics) => {
@@ -70,100 +70,177 @@ const AdminRegisterScreen = ({ history }) => {
 	};
 
 	return (
-		<MainScreen title="REGISTER - ADMIN">
-			<div className="loginContainer">
-				{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
-				{message && <ErrorMessage variant="danger">{message}</ErrorMessage>}
-				{loading && <Loading />}
-				<Form onSubmit={submitHandler}>
-					<Form.Group controlId="adminName">
-						<Form.Label>Name</Form.Label>
-						<Form.Control type="name" value={name} placeholder="Enter name" onChange={(e) => setName(e.target.value)} />
-					</Form.Group>
+		<div className="registerBg">
+			<MainScreen title="REGISTER - ADMIN">
+				<Button
+					style={{
+						float: "left",
+						marginTop: 5,
+						fontSize: 15,
+					}}
+					href="/admin"
+				>
+					{" "}
+					Back to Operations Page
+				</Button>
+				<br></br>
 
-					<Form.Group controlId="adminDob">
-						<Form.Label>Date Of Birth</Form.Label>
-						<Form.Control type="date" value={dob} onChange={(e) => setDob(e.target.value)} />
-					</Form.Group>
+				<br></br>
+				<Card
+					className="profileCont"
+					style={{
+						borderRadius: 45,
+						borderWidth: 2.0,
+						marginTop: 20,
+						paddingInline: 10,
+						background: "rgba(231, 238, 238, 0.8)",
+					}}
+				>
+					<div className="loginContainer">
+						<div>
+							{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
+							{message && <ErrorMessage variant="danger">{message}</ErrorMessage>}
+							{loading && <Loading />}
+						</div>
+						<Row className="AdminProfileContainer">
+							<Col md={6}>
+								<Form onSubmit={submitHandler}>
+									<Form.Group controlId="adminName">
+										<Form.Label>Name</Form.Label>
+										<Form.Control
+											type="name"
+											value={name}
+											placeholder="Enter name"
+											onChange={(e) => setName(e.target.value)}
+											required
+										/>
+									</Form.Group>
 
-					<Form.Group controlId="adminFormBasicNic">
-						<Form.Label>NIC Number</Form.Label>
-						<Form.Control type="text" value={nic} placeholder="Enter NIC" onChange={(e) => setNic(e.target.value)} />
-					</Form.Group>
+									<Form.Group controlId="adminDob">
+										<Form.Label>Date Of Birth</Form.Label>
+										<Form.Control type="date" value={dob} onChange={(e) => setDob(e.target.value)} required />
+									</Form.Group>
 
-					<Form.Group controlId="adminFormBasicTelephone">
-						<Form.Label>Telephone</Form.Label>
-						<Form.Control
-							type="text"
-							value={telephone}
-							placeholder="Enter Telephone Number"
-							onChange={(e) => setTelephone(e.target.value)}
-						/>
-					</Form.Group>
+									<Form.Group controlId="adminFormBasicNic">
+										<Form.Label>NIC Number</Form.Label>
+										<Form.Control
+											type="text"
+											value={nic}
+											placeholder="Enter NIC"
+											onChange={(e) => setNic(e.target.value)}
+											required
+										/>
+									</Form.Group>
 
-					<Form.Group controlId="adminFormBasicAddress">
-						<Form.Label>Address</Form.Label>
-						<Form.Control
-							type="textArea"
-							value={address}
-							placeholder="Enter Address"
-							onChange={(e) => setAddress(e.target.value)}
-						/>
-					</Form.Group>
+									<Form.Group controlId="adminFormBasicTelephone">
+										<Form.Label>Telephone</Form.Label>
+										<Form.Control
+											type="text"
+											value={telephone}
+											placeholder="Enter Telephone Number"
+											onChange={(e) => setTelephone(e.target.value)}
+											required
+										/>
+									</Form.Group>
 
-					<Form.Group controlId="adminFormBasicPreviousRef">
-						<Form.Label>Previous References</Form.Label>
-						<Form.Control
-							type="textArea"
-							value={previousRef}
-							placeholder="Enter Previous References"
-							onChange={(e) => setPreviousRef(e.target.value)}
-						/>
-					</Form.Group>
+									<Form.Group controlId="adminFormBasicAddress">
+										<Form.Label>Address</Form.Label>
+										<Form.Control
+											type="textArea"
+											value={address}
+											placeholder="Enter Address"
+											onChange={(e) => setAddress(e.target.value)}
+											required
+										/>
+									</Form.Group>
+									<Form.Group controlId="adminFormBasicEmail">
+										<Form.Label>Email</Form.Label>
+										<Form.Control
+											type="email"
+											value={email}
+											placeholder="Enter Email Address"
+											onChange={(e) => setEmail(e.target.value)}
+											required
+										/>
+									</Form.Group>
 
-					<Form.Group controlId="formBasicPassword">
-						<Form.Label>Password</Form.Label>
-						<Form.Control
-							type="password"
-							value={password}
-							placeholder="Password"
-							onChange={(e) => setPassword(e.target.value)}
-						/>
-					</Form.Group>
+									<Form.Group controlId="adminFormBasicPreviousRef">
+										<Form.Label>Previous References</Form.Label>
+										<Form.Control
+											type="textArea"
+											value={previousRef}
+											placeholder="Enter Previous References"
+											onChange={(e) => setPreviousRef(e.target.value)}
+											required
+										/>
+									</Form.Group>
 
-					<Form.Group controlId="confirmPassword">
-						<Form.Label>Confirm Password</Form.Label>
-						<Form.Control
-							type="password"
-							value={confirmpassword}
-							placeholder="Confirm Password"
-							onChange={(e) => setConfirmPassword(e.target.value)}
-						/>
-					</Form.Group>
+									<Form.Group controlId="formBasicPassword">
+										<Form.Label>Password</Form.Label>
+										<Form.Control
+											type="password"
+											value={password}
+											placeholder="Password"
+											onChange={(e) => setPassword(e.target.value)}
+											required
+										/>
+									</Form.Group>
 
-					{picMessage && <ErrorMessage variant="danger">{picMessage}</ErrorMessage>}
-					<Form.Group controlId="pic">
-						<Form.Label>Profile Picture</Form.Label>
-						<Form.File
-							onChange={(e) => postDetails(e.target.files[0])}
-							id="custom-file"
-							type="image/png"
-							label="Upload Profile Picture"
-							custom
-						/>
-					</Form.Group>
+									<Form.Group controlId="confirmPassword">
+										<Form.Label>Confirm Password</Form.Label>
+										<Form.Control
+											type="password"
+											value={confirmpassword}
+											placeholder="Confirm Password"
+											onChange={(e) => setConfirmPassword(e.target.value)}
+											required
+										/>
+									</Form.Group>
 
-					<Button variant="primary" type="submit">
-						Register
-					</Button>
-				</Form>
-				<Row className="py-3">
-					<Col>
-						Have an Account ? <Link to="/login">Login</Link>
-					</Col>
-				</Row>
-			</div>
-		</MainScreen>
+									{picMessage && <ErrorMessage variant="danger">{picMessage}</ErrorMessage>}
+									<Form.Group controlId="pic">
+										<Form.Label>Profile Picture</Form.Label>
+										<Form.File
+											onChange={(e) => postDetails(e.target.files[0])}
+											id="custom-file"
+											type="image/png"
+											label="Upload Profile Picture"
+											custom
+										/>
+									</Form.Group>
+
+									<Button
+										variant="primary"
+										type="submit"
+										style={{
+											fontSize: 15,
+											marginTop: 10,
+										}}
+									>
+										Register
+									</Button>
+								</Form>
+							</Col>
+							<Col
+								style={{
+									display: "flex",
+									alignItems: "center",
+									justifyContent: "center",
+								}}
+							>
+								<img
+									src={pic}
+									alt={name}
+									className="profilePic"
+									style={{ boxShadow: "7px 7px 20px ", borderRadius: 250, background: "white" }}
+								/>
+							</Col>
+						</Row>
+					</div>
+				</Card>
+				<br></br>
+			</MainScreen>
+		</div>
 	);
 };
 
