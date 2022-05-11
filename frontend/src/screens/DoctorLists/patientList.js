@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import { Accordion, Badge, Button, Card, Row, Col } from "react-bootstrap";
+import { Accordion, Button, Card, Row, Col } from "react-bootstrap";
 import MainScreen from "../../components/MainScreen";
 import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { patientsList } from "../../actions/patientActions";
+import { patientsListForDoctor } from "../../actions/patientActions";
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 import "./doctorLists.css";
@@ -11,8 +11,8 @@ import "./doctorLists.css";
 const PatientListForDoctor = () => {
 	const dispatch = useDispatch();
 
-	const patientList = useSelector((state) => state.patientList);
-	const { loading, patients, error } = patientList;
+	const patientListForDoctor = useSelector((state) => state.patientListForDoctor);
+	const { loading, patients, error } = patientListForDoctor;
 
 	const doctor_Login = useSelector((state) => state.doctor_Login);
 	const { doctorInfo } = doctor_Login;
@@ -22,7 +22,7 @@ const PatientListForDoctor = () => {
 
 	useEffect(() => {
 		//Function or React hook that is fired off whenever a component is rendered, as soon as pages are rendered the api is called
-		dispatch(patientsList());
+		dispatch(patientsListForDoctor());
 		if (!doctorInfo) {
 			history.push("/");
 		}
@@ -44,16 +44,9 @@ const PatientListForDoctor = () => {
 
 				<div>
 					<Col>
-						<Link to="/admin">
+						<Link to="/doctor">
 							<Button style={{ marginLeft: 10, marginBottom: 6, float: "left", fontSize: 15 }} size="lg">
 								Back to operations page
-							</Button>
-						</Link>
-					</Col>
-					<Col>
-						<Link to="/patient-register">
-							<Button style={{ marginRight: 10, marginBottom: 6, float: "right", fontSize: 15 }} size="lg">
-								+ Create New Patient Account
 							</Button>
 						</Link>
 					</Col>
