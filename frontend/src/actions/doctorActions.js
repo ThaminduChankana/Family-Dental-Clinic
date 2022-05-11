@@ -115,6 +115,10 @@ export const doctorRegister =
 
 			dispatch({ type: DOCTOR_REGISTER_SUCCESS, payload: data });
 			alert("Doctor Registration Successful !!!");
+			setTimeout(function () {
+				window.location.href = "/admin-doctors";
+			}, 2000);
+
 			localStorage.setItem("doctorInfo", JSON.stringify(data));
 
 			dispatch({ type: DOCTOR_LOGIN_SUCCESS, payload: data });

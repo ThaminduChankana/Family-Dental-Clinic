@@ -101,6 +101,10 @@ export const patientRegister =
 
 			dispatch({ type: PATIENT_REGISTER_SUCCESS, payload: data });
 			alert("Patient Registration Successful !!!");
+			setTimeout(function () {
+				window.location.href = "/admin-patients";
+			}, 2000);
+			
 			dispatch({ type: PATIENT_LOGIN_SUCCESS, payload: data });
 
 			localStorage.setItem("patientInfo", JSON.stringify(data));
