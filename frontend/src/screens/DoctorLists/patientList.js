@@ -93,11 +93,12 @@ const PatientListForDoctor = () => {
 										}}
 									>
 										<Accordion.Toggle as={Card.Text} variant="link" eventKey="0">
-											<label className="nic" style={{ paddingInline: 20, marginTop: 10 }}>
+											<label className="nic" style={{ paddingInline: 20}}>
 												Patient NIC : &emsp;
 												{patientList.nic}{" "}
 											</label>{" "}
-											<label className="name" style={{ paddingInline: 20, marginTop: 10 }}>
+											<br></br>
+											<label className="name" style={{ paddingInline: 20 }}>
 												Patient Name : &emsp;
 												{patientList.name}
 											</label>
