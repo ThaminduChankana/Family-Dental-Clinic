@@ -1,6 +1,11 @@
 .title {
 	font-size: 95px;
 }
+.loginSelectBg {
+	background: url("../../Images/loginView.png");
+	background-position: center;
+	background-size: cover;
+}
 .subtitle {
 	font-size: 25px;
 	padding-top: 10px;
@@ -8,12 +13,6 @@
 .intro-text {
 	width: 100%;
 	text-align: center;
-}
-.main {
-	min-height: 93vh;
-	display: flex;
-	align-items: center;
-	background-size: cover;
 }
 .buttonContainer {
 	margin-top: 50px;
