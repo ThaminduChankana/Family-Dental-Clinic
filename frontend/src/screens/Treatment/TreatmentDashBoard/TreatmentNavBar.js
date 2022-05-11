@@ -17,7 +17,7 @@ export default function TreatmentNavBar() {
 					<Nav.Link style={{ fontSize: 20, color: "black" }} href="/treatment-basicTreatment-view">
 						Basic Treatment
 					</Nav.Link>
-					<Nav.Link style={{ fontSize: 20, color: "black" }} href="">
+					<Nav.Link style={{ fontSize: 20, color: "black" }} href="/treatment-report">
 						Report
 					</Nav.Link>
 				</Nav>

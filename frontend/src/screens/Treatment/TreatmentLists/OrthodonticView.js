@@ -33,7 +33,7 @@ function OrthodonticView({ search }) {
 	}, [dispatch, history.push, doctorInfo, successUpdate, successDelete]);
 
 	return (
-		<div>
+		<div style={{ minHeight: 700 }}>
 			<TreatmentNavBar />
 			<br />
 			<Link to="/treatment-orthodontic-create">
@@ -41,6 +41,7 @@ function OrthodonticView({ search }) {
 					New Orthodontic
 				</Button>
 			</Link>
+			<h1 style={{ textAlign: "center" }}>Orthodontic Treatment List</h1>
 			{errorDelete && <ErrorMessage variant="danger">{errorDelete}</ErrorMessage>}
 			{loadingDelete && <Loading />}
 			{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}

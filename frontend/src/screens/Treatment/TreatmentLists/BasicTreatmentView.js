@@ -33,7 +33,7 @@ function BasicTreatmentView({ search }) {
 		dispatch(listBasicTreatments());
 	}, [dispatch, history.push, doctorInfo, successUpdate, successDelete]);
 	return (
-		<div>
+		<div style={{ minHeight: 700 }}>
 			<TreatmentNavBar />
 			<br />
 			<Link to="/treatment-basicTreatment-create">
@@ -41,6 +41,7 @@ function BasicTreatmentView({ search }) {
 					New Basic Treatment
 				</Button>
 			</Link>
+			<h1 style={{ textAlign: "center" }}>Basic Treatment List</h1>
 			{errorDelete && <ErrorMessage variant="danger">{errorDelete}</ErrorMessage>}
 			{loadingDelete && <Loading />}
 			{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}

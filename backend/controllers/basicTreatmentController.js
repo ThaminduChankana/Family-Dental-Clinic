@@ -7,7 +7,8 @@ const getBasicTreatments = asyncHandler(async (req, res) => {
 });
 
 const getBasicTreatmentCount = asyncHandler(async (req, res) => {
-	const basicTreatments = await BasicTreatment.find();
+	//console.log(req.query.year);
+	const basicTreatments = await BasicTreatment.find({ year: new Date().getFullYear() });
 	var i = 0;
 	var a = 0,
 		b = 0,

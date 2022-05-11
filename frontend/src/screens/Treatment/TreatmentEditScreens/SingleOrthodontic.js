@@ -108,7 +108,7 @@ export default function SingleOrthodontic({ match, history }) {
 						<Form.Group controlId="fullCost">
 							<Form.Label>Full Cost</Form.Label>
 							<Form.Control
-								type="fullCost"
+								type="number"
 								value={fullCost}
 								placeholder="Enter the Full Cost"
 								onChange={(e) => setFullCost(e.target.value)}
@@ -118,6 +118,7 @@ export default function SingleOrthodontic({ match, history }) {
 						<Form.Group controlId="paid">
 							<Form.Label>Paid</Form.Label>
 							<Form.Control
+								type="number"
 								value={paid}
 								placeholder="Enter the Paid"
 								onChange={(e) => setPaid(e.target.value)}

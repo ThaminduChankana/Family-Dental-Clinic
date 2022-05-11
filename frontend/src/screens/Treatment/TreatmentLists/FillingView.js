@@ -33,7 +33,7 @@ export default function FillingView({ search }) {
 		dispatch(listFillings());
 	}, [dispatch, history.push, doctorInfo, successUpdate, successDelete]);
 	return (
-		<div>
+		<div style={{ minHeight: 700 }}>
 			<TreatmentNavBar />
 			<br />
 			<Link to="/treatment-filling-create">
@@ -41,6 +41,7 @@ export default function FillingView({ search }) {
 					New Filling
 				</Button>
 			</Link>
+			<h1 style={{ textAlign: "center" }}>Filling Treatment List</h1>
 			{errorDelete && <ErrorMessage variant="danger">{errorDelete}</ErrorMessage>}
 			{loadingDelete && <Loading />}
 			{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}

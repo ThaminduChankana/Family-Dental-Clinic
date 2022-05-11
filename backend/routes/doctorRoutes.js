@@ -49,7 +49,7 @@ router.route("/patient/profile/view/:_id").get(protect, getPatientProfileById);
 
 //Routes for basic treatment configuration by doctor
 router.route("/treatment/basic_treatment/get").get(protect, getBasicTreatments);
-router.route("/treatment/basic_treatment/get/report").get(protect, getBasicTreatmentCount);
+router.route("/treatment/basic_treatment/get/report/").get(protect, getBasicTreatmentCount);
 router.route("/treatment/basic_treatment/create").post(protect, createBasicTreatment);
 router
 	.route("/treatment/basic_treatment/get/:id")

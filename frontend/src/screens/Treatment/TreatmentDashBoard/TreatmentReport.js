@@ -1,15 +1,17 @@
 import React, { useEffect, useState, useRef } from "react";
 import { authHeader } from "../../../actions/doctorActions";
 import axios from "axios";
+import { Button, Form, Table } from "react-bootstrap";
 
 export const TreatmentReport = React.forwardRef((props, ref) => {
-	const [denture, setDenture] = useState();
-	const [paedodontics, setPaedodontics] = useState();
-	const [extraction, setExtraction] = useState();
+	const [denture, setDenture] = useState("");
+	const [paedodontics, setPaedodontics] = useState("");
+	const [extraction, setExtraction] = useState("");
 	const [oralHeigene, setOralHeigene] = useState("");
-	const [fullMouthScaling, setFullMouthScaling] = useState();
+	const [fullMouthScaling, setFullMouthScaling] = useState("");
 	const [fillings, setFillings] = useState("");
 	const [orthodontics, setOrthodontics] = useState("");
+
 	useEffect(() => {
 		const fetchingBasicTreatments = async () => {
 			const { data } = await axios.get(`http://localhost:5000/user/doctor/treatment/basic_treatment/get/report`, {
@@ -44,15 +46,49 @@ export const TreatmentReport = React.forwardRef((props, ref) => {
 		fetchingFillings();
 		fetchingOrthodontics();
 	}, []);
+
 	return (
 		<div ref={ref}>
-			{<h1>Denture : {denture}</h1>}
-			{<h1>Paedodontics : {paedodontics}</h1>}
-			{<h1>Extraction : {extraction}</h1>}
-			{<h1>Oral Heigene : {oralHeigene}</h1>}
-			{<h1>Full Mouth Scaling : {fullMouthScaling}</h1>}
-			{<h1>Fillings : {fillings}</h1>}
-			{<h1>Orthodontics : {orthodontics}</h1>}
+			<h1 style={{ textAlign: "center" }}>Treatment Report Of The Year {new Date().getFullYear()}</h1>
+			<br />
+			<Table striped bordered hover>
+				<thead>
+					<tr>
+						<th>Treatment Category</th>
+						<th>Number Of Treatments</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Dentures</td>
+						<td>{denture}</td>
+					</tr>
+					<tr>
+						<td>Paedodontics</td>
+						<td>{paedodontics}</td>
+					</tr>
+					<tr>
+						<td>Extraction</td>
+						<td> {extraction}</td>
+					</tr>
+					<tr>
+						<td>Oral Heigene</td>
+						<td>{oralHeigene}</td>
+					</tr>
+					<tr>
+						<td>Full Mouth Scaling</td>
+						<td>{fullMouthScaling}</td>
+					</tr>
+					<tr>
+						<td>Fillings</td>
+						<td> {fillings}</td>
+					</tr>
+					<tr>
+						<td>Orthodontics</td>
+						<td>{orthodontics}</td>
+					</tr>
+				</tbody>
+			</Table>
 		</div>
 	);
 });
