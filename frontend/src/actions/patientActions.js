@@ -104,7 +104,7 @@ export const patientRegister =
 			setTimeout(function () {
 				window.location.href = "/admin-patients";
 			}, 2000);
-			
+
 			dispatch({ type: PATIENT_LOGIN_SUCCESS, payload: data });
 
 			localStorage.setItem("patientInfo", JSON.stringify(data));

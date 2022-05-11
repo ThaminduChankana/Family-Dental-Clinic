@@ -7,33 +7,32 @@ import { deleteInventoryAction, listInventory } from "../../actions/InventoryAct
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 
-
 export default function InventoryView() {
-    const dispatch = useDispatch();
-    const admin_Login = useSelector((state) => state.admin_Login);
-    const { adminInfo } = admin_Login;
-    const inventoryList = useSelector((state) => state.inventoryList);
-    const {loading, inventory, error} = inventoryList;
+	const dispatch = useDispatch();
+	const admin_Login = useSelector((state) => state.admin_Login);
+	const { adminInfo } = admin_Login;
+	const inventoryList = useSelector((state) => state.inventoryList);
+	const { loading, inventory, error } = inventoryList;
 
-    const inventoryUpdate = useSelector((state) => state.inventoryUpdate);
-    const {success : successUpdate} = inventoryUpdate;
+	const inventoryUpdate = useSelector((state) => state.inventoryUpdate);
+	const { success: successUpdate } = inventoryUpdate;
 
-    const inventoryDelete = useSelector((state) => state.inventoryDelete);
-    const {loading: loadingDelete, error: errorDelete , success: successDelete} = inventoryDelete;
+	const inventoryDelete = useSelector((state) => state.inventoryDelete);
+	const { loading: loadingDelete, error: errorDelete, success: successDelete } = inventoryDelete;
 
-    const deleteHandler = (id) => {
-        if(window.confirm("Are you Sure?")) {
-            dispatch(deleteInventoryAction(id));
-        }
-    };
+	const deleteHandler = (id) => {
+		if (window.confirm("Are you Sure?")) {
+			dispatch(deleteInventoryAction(id));
+		}
+	};
 
-    const history = useHistory();
-    useEffect (() => {
-        // if (!adminInfo) {
+	const history = useHistory();
+	useEffect(() => {
+		// if (!adminInfo) {
 		// history.pushState("/");
-        dispatch(listInventory());
-        //}
-    }, [dispatch,history.push, adminInfo, successUpdate, successDelete]);
+		dispatch(listInventory());
+		//}
+	}, [dispatch, history.push, adminInfo, successUpdate, successDelete]);
 
     
   return (
@@ -42,11 +41,14 @@ export default function InventoryView() {
            
              <h3 style={{color: "darkgray"}}>INVENTORY CONTROL</h3>
              <div class="align-right">
-                <Button style={{left:"200%", marginLeft: 1400}} href={`/inventory-create`} >Add Product</Button>
+                 {/* <div className="right-side">
+                    <Button style={{left:"200%", marginLeft: 1400}} href={`/inventory-create`} >Add Product</Button>
+                 </div>
+              <div className="left-side">
+                    <Button style={{left:"200%", marginLeft: 1000}} href={``} >Generate Report</Button>
+              </div> */}
              </div>
          </Card.Header>
-
-         
 
         <div style={{padding:"2rem" }} >
             {errorDelete && <ErrorMessage variant="danger">{errorDelete}</ErrorMessage>}

@@ -110,7 +110,6 @@ const initialState = {
 	admin_Login: { adminInfo: adminInfoFromStorage },
 	doctor_Login: { doctorInfo: doctorInfoFromStorage },
 	patient_Login: { patientInfo: patientInfoFromStorage },
-
 };
 
 const middleware = [thunk];
