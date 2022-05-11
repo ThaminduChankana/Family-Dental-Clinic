@@ -20,18 +20,19 @@ export const listInventory = () => async (dispatch, getState) => {
 			type: INVENTORY_LIST_REQUEST,
 		});
 
-		/*const {
-            userLogin: {userInfo},
-        } = getState();
+		const {
+			admin_Login: {adminInfo},
+		} = getState();
 
-        const config = {
-            headers: {
-            Authorization: 'Bearer ${userInfo.token}' ,
-            },
-        };*/
+		const config = {
+			headers: {
+			 "Content-Type": "application/json",
+			 Authorization: `Bearer ${adminInfo.token}`,
+			},
+		   
+		}; 
 
-		//Remove config
-		const { data } = await axios.get("http://localhost:5000/user/admin/inventory/get");
+		const { data } = await axios.get(`http://localhost:5000/user/admin/inventory/get`, config);
 
 		dispatch({
 			type: INVENTORY_LIST_SUCCESS,
@@ -52,24 +53,24 @@ export const createInventoryAction = (productName, quantity, description) => asy
 			type: INVENTORY_CREATE_REQUEST,
 		});
 
-		/* const {
-                userLogin: {userInfo},
+		 const {
+                admin_Login: {adminInfo},
             } = getState();
 
             const config = {
                 headers: {
                  "Content-Type": "application/json",
-                  Authorization: 'Bearer ${userInfo.token}',
+                 Authorization: `Bearer ${adminInfo.token}`,
                 },
                
-            }; */
+            }; 
 
-		//Remove config
-		const { data } = await axios.post("http://localhost:5000/user/admin/inventory/create", {
+	
+		const { data } = await axios.post(`http://localhost:5000/user/admin/inventory/create`, {
 			productName,
 			quantity,
 			description,
-		});
+		}, config); 
 
 		dispatch({
 			type: INVENTORY_CREATE_SUCCESS,
@@ -84,28 +85,28 @@ export const createInventoryAction = (productName, quantity, description) => asy
 	}
 };
 
-export const updateInventoryAction = (productName, quantity, description) => async (dispatch, getState) => {
+export const updateInventoryAction = (id,productName, quantity, description) => async (dispatch, getState) => {
 	try {
 		dispatch({
 			type: INVENTORY_UPDATE_REQUEST,
 		});
 
-		/*const {
-                userLogin: { userInfo },
-            } = getState();
+		const {
+			admin_Login: {adminInfo},
+		} = getState();
 
-            const config = {
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: 'Bearer ${userInfo.token}',
-                },
-            };*/
-
-		const { data } = await axios.put("http://localhost:5000/user/admin/inventory/get/${id}", {
+		const config = {
+			headers: {
+			 "Content-Type": "application/json",
+			 Authorization: `Bearer ${adminInfo.token}`,
+			},
+		   
+		}; 
+		const { data } = await axios.put(`http://localhost:5000/user/admin/inventory/get/${id}`, {
 			productName,
 			quantity,
 			description,
-		});
+		}, config);
 
 		dispatch({
 			type: INVENTORY_UPDATE_SUCCESS,
@@ -125,18 +126,19 @@ export const deleteInventoryAction = (id) => async (dispatch, getState) => {
 		dispatch({
 			type: INVENTORY_DELETE_REQUEST,
 		});
+		const {
+			admin_Login: {adminInfo},
+		} = getState();
 
-		/* const {
-             userLogin: { userInfo },
-         } = getState();
- 
-         const config = {
-             headers: {
-                 Authorization: 'Bearer ${userInfo.token}',
-             },
-         };*/
+		const config = {
+			headers: {
+			 "Content-Type": "application/json",
+			 Authorization: `Bearer ${adminInfo.token}`,
+			},
+		   
+		}; 
 
-		const { data } = await axios.delete("http://localhost:5000/user/admin/inventory/get/${id}");
+		const { data } = await axios.delete(`http://localhost:5000/user/admin/inventory/get/${id}`, config);
 
 		dispatch({
 			type: INVENTORY_DELETE_SUCCESS,

@@ -42,7 +42,7 @@ const AdminOperationPage = ({ history }) => {
 								</a>
 							</div>
 							<div className="buttonContainer">
-								<a href="/">
+								<a href="/inventory-view">
 									<Button size="lg" className="landingbutton">
 										Inventory Management
 									</Button>

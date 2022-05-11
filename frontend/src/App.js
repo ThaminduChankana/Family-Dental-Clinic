@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter, Route } from "react-router-dom";
 import React from "react";
 import { useState } from "react";
+import Header from "./components/header/Header";
 import LandingPage from "./screens/LandingPage/LandingPage";
 import AdminRegisterScreen from "./screens/UserManagement/RegisterScreens/AdminRegisterScreen";
 import DoctorRegisterScreen from "./screens/UserManagement/RegisterScreens/DoctorRegisterScreen";
@@ -25,9 +26,11 @@ import InventoryCreate from "./screens/Inventory/InventoryCreate";
 import InventoryView from "./screens/Inventory/InventoryView";
 
 
+
 const App = () => {
 	return (
 		<BrowserRouter>
+			<Header />
 			<main>
 				<Route path="/" component={LandingPage} exact />
 				<Route path="/admin-register" component={AdminRegisterScreen} exact />
