@@ -112,25 +112,26 @@ const PatientListForAdmin = () => {
 										}}
 									>
 										<Accordion.Toggle as={Card.Text} variant="link" eventKey="0">
-											<p className="nic" style={{ paddingInline: 20, marginTop: 10 }}>
+											<label className="nic" style={{ paddingInline: 20 }}>
 												Patient NIC : &emsp;
 												{patientList.nic}{" "}
-											</p>{" "}
-											<p className="name" style={{ paddingInline: 20, marginTop: 10 }}>
+											</label>{" "}
+											<br></br>
+											<label className="name" style={{ paddingInline: 20}}>
 												Patient Name : &emsp;
 												{patientList.name}
-											</p>
+											</label>
 										</Accordion.Toggle>
 									</span>
 									<div>
-										<Button style={{ marginTop: 25, fontSize: 15 }} href={`/admin-patient-edit/${patientList._id}`}>
+										<Button style={{ marginTop: 20, fontSize: 15 }} href={`/admin-patient-edit/${patientList._id}`}>
 											Edit
 										</Button>
 									</div>
 									&emsp;
 									<div>
 										<Button
-											style={{ marginTop: 25, fontSize: 15 }}
+											style={{ marginTop: 20, fontSize: 15 }}
 											variant="danger"
 											className="mx-2"
 											onClick={() => deleteHandler(patientList._id)}
