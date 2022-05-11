@@ -42,11 +42,14 @@ export default function InventoryView() {
            
              <h3 style={{color: "darkgray"}}>INVENTORY CONTROL</h3>
              <div class="align-right">
-                <Button style={{left:"200%", marginLeft: 1400}} href={`/inventory-create`} >Add Product</Button>
+                 {/* <div className="right-side">
+                    <Button style={{left:"200%", marginLeft: 1400}} href={`/inventory-create`} >Add Product</Button>
+                 </div>
+              <div className="left-side">
+                    <Button style={{left:"200%", marginLeft: 1000}} href={``} >Generate Report</Button>
+              </div> */}
              </div>
          </Card.Header>
-
-         
 
         <div style={{padding:"2rem" }} >
             {errorDelete && <ErrorMessage variant="danger">{errorDelete}</ErrorMessage>}
