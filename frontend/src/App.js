@@ -45,7 +45,7 @@ const App = () => {
 
 	return (
 		<BrowserRouter>
-			<Header />
+			<Header /> 
 			<main>
 				<Route path="/" component={LoginSelectorPage} exact />
 				<Route path="/admin-register" component={AdminRegisterScreen} exact />

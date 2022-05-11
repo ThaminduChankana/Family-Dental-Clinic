@@ -31,6 +31,7 @@ export default function InventoryCreate({history}) {
 
         resetHandler();
         history.push("/inventory-view");
+        alert("Successfully Created.")
     };
 
 

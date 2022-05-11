@@ -64,14 +64,9 @@ const AdminOperationPage = ({ history }) => {
 									</Button>
 								</Link>
 							</div>
-<<<<<<< HEAD
-							<div className="buttonContainer">
-								<a href="/inventory-view">
-=======
 							<br></br>
 							<div>
 								<Link to="/">
->>>>>>> 5f53f0b1bfbc18adaf148704a47e22629a4c1db3
 									<Button size="lg" className="landingbutton">
 										Inventory Management
 									</Button>

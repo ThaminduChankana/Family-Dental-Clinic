@@ -1,20 +1,19 @@
 img{
-    height: 134px;
+    height: 192px;
     padding: 0px;
     margin-left: 20px;
   }
   
-  button:hover{
+   button:hover{
     cursor: pointer;
   }
-  
+   
   .Navbar{
     background-color: #E0FFFF;
     width: 100%;
-    height: 150px;
+    height: 200px;
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
-  
   }
   
   .Navbar .leftSide{
@@ -27,40 +26,34 @@ img{
     display: flex;
     justify-content: space-around;
     align-items: center;
-  
-  
   }
   
-  a {
+  /* .links{
     text-decoration: none;
     color: darkgray;
     font-size: 20px;
     margin-left: 35px;
-  }
+  }  */
   
  .Navbar.rightSide.a:hover{
     color: darkgray;
   
   }
   
- 
-  
 .search input{
     border-radius: 100px;
-    padding: 5px;
+    padding: 10px;
     padding-left: 15px;
-    width: 217px;
-    border-style: hidden;
-
-    
+    width: 250px;
+    border-style: hidden; 
 }
 
-.search button{
+/* .search button{
     border-radius: 100px;
     padding: 9px;
     width: 80px;
     border-style: hidden;
-}
+} */
 
   /*.rightSide input{
     width: 220px;
