@@ -34,6 +34,8 @@ function OrthodonticView({ search }) {
 
 	return (
 		<div style={{ minHeight: 700 }}>
+			<br />
+			<br />
 			<TreatmentNavBar />
 			<br />
 			<Link to="/treatment-orthodontic-create">
@@ -51,7 +53,16 @@ function OrthodonticView({ search }) {
 				.filter((filtered) => filtered.nic.includes(search))
 				.map((orthodontic) => (
 					<Accordion key={orthodontic._id}>
-						<Card style={{ margin: 10, left: "30%", width: "40%" }}>
+						<Card
+							style={{
+								margin: 10,
+								left: "30%",
+								width: "40%",
+								borderRadius: 25,
+								borderWidth: 1.0,
+								borderColor: "rgb(0,0,0,0.5)",
+							}}
+						>
 							<Card.Header style={{ display: "flex" }}>
 								<span
 									style={{

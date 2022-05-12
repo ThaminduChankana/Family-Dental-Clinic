@@ -34,6 +34,8 @@ function BasicTreatmentView({ search }) {
 	}, [dispatch, history.push, doctorInfo, successUpdate, successDelete]);
 	return (
 		<div style={{ minHeight: 700 }}>
+			<br />
+			<br />
 			<TreatmentNavBar />
 			<br />
 			<Link to="/treatment-basicTreatment-create">
@@ -51,7 +53,17 @@ function BasicTreatmentView({ search }) {
 				.filter((filteredB) => filteredB.nic.includes(search))
 				.map((basic) => (
 					<Accordion>
-						<Card style={{ margin: 10, left: "30%", width: "40%" }} key={basic._id}>
+						<Card
+							style={{
+								margin: 10,
+								left: "30%",
+								width: "40%",
+								borderRadius: 25,
+								borderWidth: 1.0,
+								borderColor: "rgb(0,0,0,0.5)",
+							}}
+							key={basic._id}
+						>
 							<Card.Header style={{ display: "flex" }}>
 								<span
 									style={{

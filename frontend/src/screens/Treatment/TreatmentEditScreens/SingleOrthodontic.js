@@ -75,9 +75,30 @@ export default function SingleOrthodontic({ match, history }) {
 
 	return (
 		<div>
+			<br />
+			<br />
 			<TreatmentNavBar />
-			<Card style={{ margin: 50, left: "30%", width: "40%" }}>
-				<Card.Header>Update Diagnosis Card For Orthodontic Treatment</Card.Header>
+			<br />
+			<br />
+			<h1
+				style={{
+					display: "flex",
+					marginLeft: "40%",
+					width: "500px",
+				}}
+			>
+				Update Orthodontic Treatment
+			</h1>
+			<Card
+				style={{
+					margin: 50,
+					left: "28%",
+					width: "40%",
+					borderRadius: 45,
+					borderWidth: 2.0,
+					background: "rgba(231, 238, 238, 0.8)",
+				}}
+			>
 				<Card.Body>
 					<Form onSubmit={updateHandler}>
 						{loadingDelete && <Loading />}
@@ -159,11 +180,11 @@ export default function SingleOrthodontic({ match, history }) {
 							/>
 						</Form.Group>
 						{loading && <Loading size={50} />}
-						<Button style={{ width: "30%" }} type="submit" variant="primary">
+						<Button style={{ width: "20%" }} type="submit" variant="primary">
 							Submit
 						</Button>
 						<Button
-							style={{ width: "30%" }}
+							style={{ width: "20%" }}
 							className="mx-2"
 							variant="danger"
 							onClick={() => deleteHandler(match.params.id)}

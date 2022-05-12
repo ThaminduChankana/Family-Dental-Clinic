@@ -46,9 +46,30 @@ export default function BasicTreatmentCreate({ history }) {
 	useEffect(() => {}, []);
 	return (
 		<div>
+			<br />
+			<br />
 			<TreatmentNavBar />
-			<Card style={{ margin: 50, left: "30%", width: "40%" }}>
-				<Card.Header>Diagnosis Card For Basic Treatment</Card.Header>
+			<br />
+			<br />
+			<h1
+				style={{
+					display: "flex",
+					marginLeft: "40%",
+					width: "500px",
+				}}
+			>
+				Create Basic Treatment
+			</h1>
+			<Card
+				style={{
+					margin: 50,
+					left: "28%",
+					width: "40%",
+					borderRadius: 45,
+					borderWidth: 2.0,
+					background: "rgba(231, 238, 238, 0.8)",
+				}}
+			>
 				<Card.Body>
 					<Form onSubmit={submitHandler}>
 						{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
