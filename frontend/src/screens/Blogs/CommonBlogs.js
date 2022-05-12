@@ -4,11 +4,11 @@ import MainScreen from "../../components/MainScreen";
 import { Link, useHistory } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
-import { commonlistBlogs } from "../../actions/blogsActions";
+import { listBlogsForUsers } from "../../actions/blogsActions";
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 
-const DoctorArticles = () => {
+const CommonBlogs = () => {
 	const dispatch = useDispatch();
 
 	const [num, setNum] = useState(0);
@@ -16,12 +16,14 @@ const DoctorArticles = () => {
 		setNum(num + 1);
 	};
 
-	const blogList = useSelector((state) => state.blogList);
-	const { loading, blogs, error } = blogList;
+	const blogListforUsers = useSelector((state) => state.blogListforUsers);
+	const { loading, blogs, error } = blogListforUsers;
 
 	console.log(blogs);
 
-	const history = useHistory();
+	useEffect(() => {
+		dispatch(listBlogsForUsers());
+	}, dispatch);
 
 	return (
 		<MainScreen title={`Welcome To Blog`}>
@@ -86,4 +88,4 @@ const DoctorArticles = () => {
 	);
 };
 
-export default DoctorArticles;
+export default CommonBlogs;

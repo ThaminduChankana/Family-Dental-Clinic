@@ -11,7 +11,24 @@ import {
 	BLOGS_UPDATE_FAIL,
 	BLOGS_UPDATE_REQUEST,
 	BLOGS_UPDATE_SUCCESS,
+	COMMON_BLOGS_LIST_FAIL,
+	COMMON_BLOGS_LIST_REQUEST,
+	COMMON_BLOGS_LIST_SUCCESS,
 } from "../constants/blogsConstants";
+
+export const blogListForUsersReducer = (state = { blogs: [] }, action) => {
+	switch (action.type) {
+		case COMMON_BLOGS_LIST_REQUEST:
+			return { loading: true };
+		case COMMON_BLOGS_LIST_SUCCESS:
+			return { loading: false, blogs: action.payload };
+		case COMMON_BLOGS_LIST_FAIL:
+			return { loading: false, error: action.payload };
+
+		default:
+			return state;
+	}
+};
 
 export const blogListReducer = (state = { blogs: [] }, action) => {
 	switch (action.type) {

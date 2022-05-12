@@ -49,7 +49,13 @@ import {
 	orthodonticUpdateReducer,
 	orthodonticDeleteReducer,
 } from "./reducers/orthodonticReducer";
-import { blogCreateReducer, blogDeleteReducer, blogListReducer, blogUpdateReducer } from "./reducers/blogsReducers";
+import {
+	blogCreateReducer,
+	blogDeleteReducer,
+	blogListReducer,
+	blogListForUsersReducer,
+	blogUpdateReducer,
+} from "./reducers/blogsReducers";
 
 const reducer = combineReducers({
 	admin_Login: adminLoginReducer,
@@ -86,6 +92,7 @@ const reducer = combineReducers({
 	orthodonticUpdate: orthodonticUpdateReducer,
 	orthodonticDelete: orthodonticDeleteReducer,
 	blogList: blogListReducer,
+	blogListforUsers: blogListForUsersReducer,
 	blogCreate: blogCreateReducer,
 	blogUpdate: blogUpdateReducer,
 	blogDelete: blogDeleteReducer,

@@ -81,7 +81,7 @@ const App = () => {
 				<Route path="/doctor-articles" component={DoctorArticles} exact />
 				<Route path="/doctor-create-article" component={CreateArticle} exact />
 				<Route path="/doctor-single-article/:id" component={SingleArticle} exact />
-				<Route path="/common-articles" component={CommonBlogs} exact />
+				<Route path="/articles" component={CommonBlogs} exact />
 			</main>
 			<Footer />
 		</BrowserRouter>

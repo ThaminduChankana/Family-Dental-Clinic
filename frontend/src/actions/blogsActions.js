@@ -12,7 +12,31 @@ import {
 	BLOGS_UPDATE_FAIL,
 	BLOGS_UPDATE_REQUEST,
 	BLOGS_UPDATE_SUCCESS,
+	COMMON_BLOGS_LIST_FAIL,
+	COMMON_BLOGS_LIST_REQUEST,
+	COMMON_BLOGS_LIST_SUCCESS,
 } from "../constants/blogsConstants";
+
+export const listBlogsForUsers = () => async (dispatch, getState) => {
+	try {
+		dispatch({
+			type: COMMON_BLOGS_LIST_REQUEST,
+		});
+
+		const { data } = await axios.get("/user/blogs");
+
+		dispatch({
+			type: COMMON_BLOGS_LIST_SUCCESS,
+			payload: data,
+		});
+	} catch (error) {
+		const message = error.response && error.response.data.message ? error.response.data.message : error.message;
+		dispatch({
+			type: COMMON_BLOGS_LIST_FAIL,
+			payload: message,
+		});
+	}
+};
 
 export const listBlogs = () => async (dispatch, getState) => {
 	try {
