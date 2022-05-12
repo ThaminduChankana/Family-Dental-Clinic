@@ -83,6 +83,11 @@ export const adminRegister =
 
 			dispatch({ type: ADMIN_REGISTER_SUCCESS, payload: data });
 			alert("Admin Registration Successful !!!");
+
+			setTimeout(function () {
+				window.location.href = "/admin";
+			}, 2000);
+
 			dispatch({ type: ADMIN_LOGIN_SUCCESS, payload: data });
 
 			localStorage.setItem("adminRegInfo", JSON.stringify(data));
