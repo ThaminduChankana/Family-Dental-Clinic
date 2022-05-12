@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter, Route } from "react-router-dom";
 import React from "react";
 import { useState } from "react";
+import Header from "./components/header/Header";
 import LoginSelectorPage from "./screens/LoginSelector/LoginSelectorPage";
 import AdminRegisterScreen from "./screens/UserManagement/RegisterScreens/AdminRegisterScreen";
 import DoctorRegisterScreen from "./screens/UserManagement/RegisterScreens/DoctorRegisterScreen";
@@ -22,7 +23,10 @@ import DoctorListForAdmin from "./screens/AdminLists/doctorList";
 import PatientListForAdmin from "./screens/AdminLists/patientList";
 import PatientListForDoctor from "./screens/DoctorLists/patientList";
 import DoctorEditByAdmin from "./screens/UserManagement/AdminUserEditScreens/DoctorEditByAdmin";
+import PatientPrint from "./screens/Reports/PatientReports/PatientPrint";
 import PatientEditByAdmin from "./screens/UserManagement/AdminUserEditScreens/PatientEditByAdmin";
+import InventoryCreate from "./screens/Inventory/InventoryCreate";
+import InventoryView from "./screens/Inventory/InventoryView";
 import TreatmentNavBar from "./screens/Treatment/TreatmentDashBoard/TreatmentNavBar";
 import BasicTreatmentView from "./screens/Treatment/TreatmentLists/BasicTreatmentView";
 import FillingView from "./screens/Treatment/TreatmentLists/FillingView";
@@ -59,11 +63,14 @@ const App = () => {
 				<Route path="/admin" component={AdminOperationPage} exact />
 				<Route path="/doctor" component={DoctorOperationPage} exact />
 				<Route path="/patient" component={PatientOperationPage} exact />
-				<Route path="/admin-doctors" component={DoctorListForAdmin} exact />
-				<Route path="/admin-patients" component={PatientListForAdmin} exact />
-				<Route path="/doctor-patients" component={PatientListForDoctor} exact />
+				<Route path="/admin-doctors" component={() => <DoctorListForAdmin search={search} />} exact />
+				<Route path="/admin-patients" component={() => <PatientListForAdmin search={search} />} exact />
+				<Route path="/doctor-patients" component={() => <PatientListForDoctor search={search} />} exact />
 				<Route path="/admin-doctor-edit/:id" component={DoctorEditByAdmin} exact />
 				<Route path="/admin-patient-edit/:id" component={PatientEditByAdmin} exact />
+				<Route path="/admin-patient-report" component={PatientPrint} exact />
+				<Route path="/inventory-create" component={InventoryCreate} exact></Route>
+				<Route path="/inventory-view" component={InventoryView} exact></Route>
 				<Route path="/treatment-navbar" component={TreatmentNavBar} exact />
 				<Route path="/treatment-basicTreatment-view" component={() => <BasicTreatmentView search={search} />} exact />
 				<Route path="/treatment-filling-view" component={() => <FillingView search={search} />} exact />

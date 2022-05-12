@@ -1,6 +1,7 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
+
 import {
 	adminLoginReducer,
 	adminRegisterReducer,
@@ -50,6 +51,13 @@ import {
 	orthodonticDeleteReducer,
 } from "./reducers/orthodonticReducer";
 
+import {
+	inventoryListReducer,
+	inventoryCreateReducer,
+	inventoryUpdateReducer,
+	inventoryDeleteReducer,
+} from "./reducers/InventoryReducer";
+
 const reducer = combineReducers({
 	admin_Login: adminLoginReducer,
 	adminRegistration: adminRegisterReducer,
@@ -72,6 +80,10 @@ const reducer = combineReducers({
 	patientDelete: patientDeleteReducer,
 	patientViewById: patientViewByIdReducer,
 	patientUpdateById: patientUpdateByIdReducer,
+	inventoryList: inventoryListReducer,
+	inventoryCreate: inventoryCreateReducer,
+	inventoryUpdate: inventoryUpdateReducer,
+	inventoryDelete: inventoryDeleteReducer,
 	basicTreatmentList: basicTreatmentListReducer,
 	basicTreatmentCreate: basicTreatmentCreateReducer,
 	basicTreatmentUpdate: basicTreatmentUpdateReducer,

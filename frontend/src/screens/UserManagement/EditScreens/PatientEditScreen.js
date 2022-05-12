@@ -283,7 +283,14 @@ const PatientEditScreen = () => {
 									src={pic}
 									alt={name}
 									className="profilePic"
-									style={{ boxShadow: "7px 7px 20px ", borderRadius: 250, background: "white" }}
+									style={{
+										boxShadow: "7px 7px 20px ",
+										borderColor: "black",
+										borderRadius: 250,
+										background: "white",
+										width: "51%",
+										height: "24%",
+									}}
 								/>
 							</Col>
 						</Row>
