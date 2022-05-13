@@ -2,7 +2,7 @@ import React from "react";
 import "./navbar.css";
 import image1 from "./logo4.png";
 import { Button, Form } from "react-bootstrap";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 function Header({ setSearch }) {
@@ -14,7 +14,6 @@ function Header({ setSearch }) {
 
 	const patient_Login = useSelector((state) => state.patient_Login);
 	const { patientInfo } = patient_Login;
-	const dispatch = useDispatch();
 
 	return (
 		<div className="Navbar">

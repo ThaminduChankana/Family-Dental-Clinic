@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import TreatmentNavBar from "../TreatmentDashBoard/TreatmentNavBar";
+import TreatmentNavBar from "../../Treatment/TreatmentDashBoard/TreatmentNavBar";
 import { Card, Button } from "react-bootstrap";
 import { useReactToPrint } from "react-to-print";
 

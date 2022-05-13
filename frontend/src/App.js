@@ -37,7 +37,7 @@ import OrthodonticCreate from "./screens/Treatment/TreatmentCreateScreens/Orthod
 import SingleBasicTreatment from "./screens/Treatment/TreatmentEditScreens/SingleBasicTreatment";
 import SingleFilling from "./screens/Treatment/TreatmentEditScreens/SingleFilling";
 import SingleOrthodontic from "./screens/Treatment/TreatmentEditScreens/SingleOrthodontic";
-import TreatmentPrint from "./screens/Treatment/TreatmentDashBoard/TreatmentPrint";
+import TreatmentPrint from "./screens/Reports/TreatmentReports/TreatmentPrint";
 import Footer from "./components/footer/footer";
 
 const App = () => {

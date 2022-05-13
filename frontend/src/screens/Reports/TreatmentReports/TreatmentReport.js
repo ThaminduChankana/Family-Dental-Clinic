@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { authHeader } from "../../../actions/doctorActions";
 import axios from "axios";
-import { Button, Form, Table } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 
 export const TreatmentReport = React.forwardRef((props, ref) => {
 	const [denture, setDenture] = useState("");

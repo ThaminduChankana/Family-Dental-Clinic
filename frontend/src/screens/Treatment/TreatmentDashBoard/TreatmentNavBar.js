@@ -1,6 +1,5 @@
 import React from "react";
-import { Navbar, Container, Nav, Form, FormControl, Button, Col } from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
+import { Navbar, Container, Nav } from "react-bootstrap";
 export default function TreatmentNavBar() {
 	return (
 		<div>
