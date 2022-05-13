@@ -54,38 +54,38 @@ export const TreatmentReport = React.forwardRef((props, ref) => {
 			<Table striped bordered hover>
 				<thead>
 					<tr>
-						<th>Treatment Category</th>
-						<th>Number Of Treatments</th>
+						<th style={{ fontSize: 22 }}>Treatment Category</th>
+						<th style={{ fontSize: 22 }}>Number Of Treatments</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td>Dentures</td>
-						<td>{denture}</td>
+						<td style={{ fontSize: 20 }}>Dentures</td>
+						<td style={{ fontSize: 20 }}>{denture}</td>
 					</tr>
 					<tr>
-						<td>Paedodontics</td>
-						<td>{paedodontics}</td>
+						<td style={{ fontSize: 20 }}>Paedodontics</td>
+						<td style={{ fontSize: 20 }}>{paedodontics}</td>
 					</tr>
 					<tr>
-						<td>Extraction</td>
-						<td> {extraction}</td>
+						<td style={{ fontSize: 20 }}>Extraction</td>
+						<td style={{ fontSize: 20 }}> {extraction}</td>
 					</tr>
 					<tr>
-						<td>Oral Heigene</td>
-						<td>{oralHeigene}</td>
+						<td style={{ fontSize: 20 }}>Oral Heigene</td>
+						<td style={{ fontSize: 20 }}>{oralHeigene}</td>
 					</tr>
 					<tr>
-						<td>Full Mouth Scaling</td>
-						<td>{fullMouthScaling}</td>
+						<td style={{ fontSize: 20 }}>Full Mouth Scaling</td>
+						<td style={{ fontSize: 20 }}>{fullMouthScaling}</td>
 					</tr>
 					<tr>
-						<td>Fillings</td>
-						<td> {fillings}</td>
+						<td style={{ fontSize: 20 }}>Fillings</td>
+						<td style={{ fontSize: 20 }}> {fillings}</td>
 					</tr>
 					<tr>
-						<td>Orthodontics</td>
-						<td>{orthodontics}</td>
+						<td style={{ fontSize: 20 }}>Orthodontics</td>
+						<td style={{ fontSize: 20 }}>{orthodontics}</td>
 					</tr>
 				</tbody>
 			</Table>

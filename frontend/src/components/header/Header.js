@@ -2,8 +2,20 @@ import React from "react";
 import "./navbar.css";
 import image1 from "./logo4.png";
 import { Button, Form } from "react-bootstrap";
+import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 function Header({ setSearch }) {
+	const doctor_Login = useSelector((state) => state.doctor_Login);
+	const { doctorInfo } = doctor_Login;
+
+	const admin_Login = useSelector((state) => state.admin_Login);
+	const { adminInfo } = admin_Login;
+
+	const patient_Login = useSelector((state) => state.patient_Login);
+	const { patientInfo } = patient_Login;
+	const dispatch = useDispatch();
+
 	return (
 		<div className="Navbar">
 			<div className="leftSide">
@@ -35,36 +47,27 @@ function Header({ setSearch }) {
 						<input type="text" placeholder="Search..." onChange={(e) => setSearch(e.target.value)} />
 					</Form>
 				</div>
-				<Button
-					style={{
-						padding: "8px",
-						fontSize: "15px",
-						fontFamily: `"Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+				{adminInfo || patientInfo || doctorInfo ? (
+					<></>
+				) : (
+					<Link to="/">
+						<Button
+							style={{
+								padding: "8px",
+								fontSize: "15px",
+								fontFamily: `"Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
 									Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
-						width: "100px",
-						backgroundColor: "#1ca9c9",
-						fontWeight: 700,
-					}}
-					variant="primary"
-					className="logoutBtn"
-				>
-					Login
-				</Button>
-				<Button
-					style={{
-						padding: "8px",
-						fontSize: "15px",
-						fontFamily: `"Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
-									Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
-						width: "100px",
-						backgroundColor: "#1ca9c9",
-						fontWeight: 700,
-					}}
-					variant="primary"
-					className="logoutBtn"
-				>
-					Logout
-				</Button>
+								width: "100px",
+								backgroundColor: "#1ca9c9",
+								fontWeight: 700,
+							}}
+							variant="primary"
+							className="logoutBtn"
+						>
+							Login
+						</Button>
+					</Link>
+				)}
 			</div>
 		</div>
 	);
