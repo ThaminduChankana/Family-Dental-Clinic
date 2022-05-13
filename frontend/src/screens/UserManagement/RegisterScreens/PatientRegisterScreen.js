@@ -273,7 +273,7 @@ const PatientRegisterScreen = ({ history }) => {
 										borderColor: "black",
 										borderRadius: 250,
 										background: "white",
-										width: "50%",
+										width: "52%",
 										height: "25%",
 									}}
 								/>

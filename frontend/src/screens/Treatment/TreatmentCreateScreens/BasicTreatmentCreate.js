@@ -39,15 +39,37 @@ export default function BasicTreatmentCreate({ history }) {
 		dispatch(createBasicTreatmentAction(nic, cost, treatmentType, date, checkup, procedure, remark));
 
 		resetHandler();
-		history.push("/treatment-dashboard");
+		history.push("/treatment-basicTreatment-view");
+		alert("Successfully Created");
 	};
 
 	useEffect(() => {}, []);
 	return (
 		<div>
+			<br />
+			<br />
 			<TreatmentNavBar />
-			<Card style={{ margin: 50, left: "30%", width: "40%" }}>
-				<Card.Header>Diagnosis Card For Basic Treatment</Card.Header>
+			<br />
+			<br />
+			<h1
+				style={{
+					display: "flex",
+					marginLeft: "40%",
+					width: "500px",
+				}}
+			>
+				Create Basic Treatment
+			</h1>
+			<Card
+				style={{
+					margin: 50,
+					left: "28%",
+					width: "40%",
+					borderRadius: 45,
+					borderWidth: 2.0,
+					background: "rgba(231, 238, 238, 0.8)",
+				}}
+			>
 				<Card.Body>
 					<Form onSubmit={submitHandler}>
 						{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
@@ -58,6 +80,7 @@ export default function BasicTreatmentCreate({ history }) {
 								value={nic}
 								placeholder="Enter the NIC"
 								onChange={(e) => setNic(e.target.value)}
+								required
 							/>
 						</Form.Group>
 
@@ -69,6 +92,7 @@ export default function BasicTreatmentCreate({ history }) {
 								placeholder="Enter the Cost"
 								rows={4}
 								onChange={(e) => setCost(e.target.value)}
+								required
 							/>
 						</Form.Group>
 
@@ -94,6 +118,7 @@ export default function BasicTreatmentCreate({ history }) {
 								value={date}
 								placeholder="Enter the date"
 								onChange={(e) => setDate(e.target.value)}
+								required
 							/>
 						</Form.Group>
 						<Form.Group controlId="checkup">
@@ -104,6 +129,7 @@ export default function BasicTreatmentCreate({ history }) {
 								value={checkup}
 								placeholder="Enter the Checkup"
 								onChange={(e) => setCheckup(e.target.value)}
+								required
 							/>
 						</Form.Group>
 						<Form.Group controlId="procedure">
@@ -114,6 +140,7 @@ export default function BasicTreatmentCreate({ history }) {
 								value={procedure}
 								placeholder="Enter the Procedure"
 								onChange={(e) => setProcedure(e.target.value)}
+								required
 							/>
 						</Form.Group>
 						<Form.Group controlId="remark">
@@ -124,6 +151,7 @@ export default function BasicTreatmentCreate({ history }) {
 								value={remark}
 								placeholder="Enter the Remark"
 								onChange={(e) => setRemark(e.target.value)}
+								required
 							/>
 						</Form.Group>
 

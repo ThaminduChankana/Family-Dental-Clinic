@@ -155,6 +155,7 @@ const DoctorEditByAdmin = ({ match, history }) => {
 											placeholder="Enter name"
 											value={name}
 											onChange={(e) => setName(e.target.value)}
+											required
 										/>
 									</Form.Group>
 									<Form.Group controlId="doctorDob">
@@ -168,6 +169,7 @@ const DoctorEditByAdmin = ({ match, history }) => {
 											id="doctorGender"
 											value={gender}
 											onChange={(e) => setGender(e.target.value)}
+											required
 										>
 											<option>Select Gender</option>
 											<option value={gender.Male}>Male</option>
@@ -181,6 +183,7 @@ const DoctorEditByAdmin = ({ match, history }) => {
 											value={nic}
 											placeholder="Enter NIC"
 											onChange={(e) => setNic(e.target.value)}
+											required
 										/>
 									</Form.Group>
 									<Form.Group controlId="doctorFormBasicTelephone">
@@ -190,6 +193,7 @@ const DoctorEditByAdmin = ({ match, history }) => {
 											value={telephone}
 											placeholder="Enter Telephone Number"
 											onChange={(e) => setTelephone(e.target.value)}
+											required
 										/>
 									</Form.Group>
 									<Form.Group controlId="patientFormBasicAddress">
@@ -199,6 +203,7 @@ const DoctorEditByAdmin = ({ match, history }) => {
 											value={address}
 											placeholder="Enter Address"
 											onChange={(e) => setAddress(e.target.value)}
+											required
 										/>
 									</Form.Group>
 									<Form.Group controlId="doctorFormBasicEmail">
@@ -208,6 +213,7 @@ const DoctorEditByAdmin = ({ match, history }) => {
 											value={email}
 											placeholder="Enter Email Address"
 											onChange={(e) => setEmail(e.target.value)}
+											required
 										/>
 									</Form.Group>
 									<Form.Group controlId="doctorFormBasicSldaRegNo">
@@ -217,6 +223,7 @@ const DoctorEditByAdmin = ({ match, history }) => {
 											value={sldaReg}
 											placeholder="Enter SLDA Register Number"
 											onChange={(e) => setSldaReg(e.target.value)}
+											required
 										/>
 									</Form.Group>
 									<Form.Group controlId="doctorFormBasicLicenceNo">
@@ -226,6 +233,7 @@ const DoctorEditByAdmin = ({ match, history }) => {
 											value={licenceNo}
 											placeholder="Enter Licence Number"
 											onChange={(e) => setLicenceNo(e.target.value)}
+											required
 										/>
 									</Form.Group>
 									<Form.Group controlId="doctorFormBasicCurrentHospital">
@@ -235,6 +243,7 @@ const DoctorEditByAdmin = ({ match, history }) => {
 											value={currentHospital}
 											placeholder="Enter Currently Working Hospital"
 											onChange={(e) => setCurrentHospital(e.target.value)}
+											required
 										/>
 									</Form.Group>
 									<Form.Group controlId="formBasicPassword">
@@ -268,7 +277,7 @@ const DoctorEditByAdmin = ({ match, history }) => {
 									</Form.Group>
 									<Form.Group controlId="doctorRegDate">
 										<Form.Label>Registration Date</Form.Label>
-										<Form.Control type="date" value={regDate} onChange={(e) => setRegDate(e.target.value)} />
+										<Form.Control type="date" value={regDate} onChange={(e) => setRegDate(e.target.value)} required />
 									</Form.Group>
 									<Form.Group controlId="doctorFormBasicDataEntryBy">
 										<Form.Label>Data Entry By</Form.Label>
@@ -277,6 +286,7 @@ const DoctorEditByAdmin = ({ match, history }) => {
 											value={dataEntry}
 											placeholder="Enter Data Entering Person Name"
 											onChange={(e) => setDataEntry(e.target.value)}
+											required
 										/>
 									</Form.Group>
 									<br></br>

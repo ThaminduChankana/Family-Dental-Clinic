@@ -5,6 +5,16 @@ const getFillings = asyncHandler(async (req, res) => {
 	const fillings = await Filling.find();
 	res.json(fillings);
 });
+const getFillingCount = asyncHandler(async (req, res) => {
+	const fillings = await Filling.find();
+	var i = fillings.length;
+	var loopData = {};
+	var loopData = new Object();
+	var loopData = {
+		filling: i,
+	};
+	res.json(loopData);
+});
 
 const createFilling = asyncHandler(async (req, res) => {
 	const { nic, cost, fillingMaterial, fillingType, anestheticStatus, date, checkup, procedure, remark } = req.body;
@@ -93,4 +103,5 @@ module.exports = {
 	getFillingtById,
 	updateFilling,
 	deleteFilling,
+	getFillingCount,
 };

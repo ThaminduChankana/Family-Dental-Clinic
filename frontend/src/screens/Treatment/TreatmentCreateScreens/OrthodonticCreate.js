@@ -39,15 +39,37 @@ export default function OrthodonticCreate({ history }) {
 		dispatch(createOrthodonticAction(nic, firstVisit, fullCost, paid, facialExamination, followUpVisits, remark));
 
 		resetHandler();
-		history.push("/treatment-dashboard");
+		history.push("/treatment-orthodontic-view");
+		alert("Successfully Created");
 	};
 
 	useEffect(() => {}, []);
 	return (
 		<div>
+			<br />
+			<br />
 			<TreatmentNavBar />
-			<Card style={{ margin: 50, left: "30%", width: "40%" }}>
-				<Card.Header>Diagnosis Card For Orthodontic Treatment</Card.Header>
+			<br />
+			<br />
+			<h1
+				style={{
+					display: "flex",
+					marginLeft: "40%",
+					width: "500px",
+				}}
+			>
+				Create Orthodontic Treatment
+			</h1>
+			<Card
+				style={{
+					margin: 50,
+					left: "28%",
+					width: "40%",
+					borderRadius: 45,
+					borderWidth: 2.0,
+					background: "rgba(231, 238, 238, 0.8)",
+				}}
+			>
 				<Card.Body>
 					<Form onSubmit={submitHandler}>
 						{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
@@ -58,12 +80,19 @@ export default function OrthodonticCreate({ history }) {
 								value={nic}
 								placeholder="Enter the NIC"
 								onChange={(e) => setNic(e.target.value)}
+								required
 							/>
 						</Form.Group>
 
 						<Form.Group controlId="firstVisit">
 							<Form.Label>First Visit Date</Form.Label>
-							<Form.Control type="date" value={firstVisit} rows={4} onChange={(e) => setFirstVisit(e.target.value)} />
+							<Form.Control
+								type="date"
+								value={firstVisit}
+								rows={4}
+								onChange={(e) => setFirstVisit(e.target.value)}
+								required
+							/>
 						</Form.Group>
 
 						<Form.Group controlId="fullCost">
@@ -73,6 +102,7 @@ export default function OrthodonticCreate({ history }) {
 								value={fullCost}
 								placeholder="Enter the Full Cost"
 								onChange={(e) => setFullCost(e.target.value)}
+								required
 							/>
 						</Form.Group>
 						<Form.Group controlId="paid">
@@ -82,6 +112,7 @@ export default function OrthodonticCreate({ history }) {
 								type="number"
 								placeholder="Enter the Paid"
 								onChange={(e) => setPaid(e.target.value)}
+								required
 							/>
 						</Form.Group>
 						<Form.Group controlId="facialExamination">
@@ -92,6 +123,7 @@ export default function OrthodonticCreate({ history }) {
 								value={facialExamination}
 								placeholder="Enter the Facial Examination"
 								onChange={(e) => setFacialExamination(e.target.value)}
+								required
 							/>
 						</Form.Group>
 						<Form.Group controlId="followUpVisits">
@@ -102,6 +134,7 @@ export default function OrthodonticCreate({ history }) {
 								value={followUpVisits}
 								placeholder="Enter the FollowUp Visits"
 								onChange={(e) => setFollowUpVisits(e.target.value)}
+								required
 							/>
 						</Form.Group>
 						<Form.Group controlId="remark">
@@ -112,6 +145,7 @@ export default function OrthodonticCreate({ history }) {
 								value={remark}
 								placeholder="Enter the Remark"
 								onChange={(e) => setRemark(e.target.value)}
+								required
 							/>
 						</Form.Group>
 						{loading && <Loading size={50} />}
