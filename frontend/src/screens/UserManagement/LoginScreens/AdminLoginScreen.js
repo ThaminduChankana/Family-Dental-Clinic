@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
-import { Form, Button, Row, Col, Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Form, Button, Card } from "react-bootstrap";
 import MainScreen from "../../../components/MainScreen";
 import ErrorMessage from "../../../components/ErrorMessage";
 import Loading from "../../../components/Loading";
@@ -8,14 +7,14 @@ import "./LoginScreen.css";
 import { useDispatch, useSelector } from "react-redux";
 import { adminLogin } from "../../../actions/adminActions";
 
-const AdminLoginScreen = ({ history }) => {
+const AdminLoginScreen = () => {
 	const [nic, setNic] = useState("");
 	const [password, setPassword] = useState("");
 
 	const dispatch = useDispatch();
 
 	const admin_Login = useSelector((state) => state.admin_Login);
-	const { loading, error, adminInfo } = admin_Login;
+	const { loading, error } = admin_Login;
 
 	const submitHandler = (e) => {
 		e.preventDefault();
