@@ -3,10 +3,9 @@ import { Form, Button, Row, Col, Card } from "react-bootstrap";
 import MainScreen from "../../../components/MainScreen";
 import "./EditScreen.css";
 import { useDispatch, useSelector } from "react-redux";
-import { adminLogin, adminUpdateProfile } from "../../../actions/adminActions";
+import { adminUpdateProfile } from "../../../actions/adminActions";
 import Loading from "../../../components/Loading";
 import ErrorMessage from "../../../components/ErrorMessage";
-import { useHistory } from "react-router-dom";
 
 const AdminEditScreen = () => {
 	const [name, setName] = useState("");
@@ -28,7 +27,7 @@ const AdminEditScreen = () => {
 	const { adminInfo } = admin_Login;
 
 	const adminUpdate = useSelector((state) => state.adminUpdate);
-	const { loading, error, success } = adminUpdate;
+	const { loading, error } = adminUpdate;
 
 	useEffect(() => {
 		setName(adminInfo.name);

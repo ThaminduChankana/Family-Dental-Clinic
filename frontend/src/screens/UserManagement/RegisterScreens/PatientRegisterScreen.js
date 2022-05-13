@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Form, Button, Row, Col, Card } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useHistory } from "react-router-dom";
 import Loading from "../../../components/Loading";
 import ErrorMessage from "../../../components/ErrorMessage";
 import { patientRegister } from "../../../actions/patientActions";
@@ -10,7 +9,7 @@ import "./RegisterScreen.css";
 
 //name, dob, gender, nic, telephone, address, password, pic, dataEntry, regDate;
 
-const PatientRegisterScreen = ({ history }) => {
+const PatientRegisterScreen = () => {
 	const [name, setName] = useState("");
 	const [dob, setDob] = useState("");
 	const [gender, setGender] = useState("");
@@ -29,7 +28,7 @@ const PatientRegisterScreen = ({ history }) => {
 
 	const dispatch = useDispatch();
 	const patientRegistration = useSelector((state) => state.patientRegistration);
-	const { loading, error, patientInfo } = patientRegistration;
+	const { loading, error } = patientRegistration;
 
 	/*useEffect(() => {
 		if (patientInfo) {

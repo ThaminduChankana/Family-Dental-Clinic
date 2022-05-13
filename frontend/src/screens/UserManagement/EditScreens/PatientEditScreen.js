@@ -3,10 +3,9 @@ import { Form, Button, Row, Col, Card } from "react-bootstrap";
 import MainScreen from "../../../components/MainScreen";
 import "./EditScreen.css";
 import { useDispatch, useSelector } from "react-redux";
-import { patientLogin, patientUpdateProfile } from "../../../actions/patientActions";
+import { patientUpdateProfile } from "../../../actions/patientActions";
 import Loading from "../../../components/Loading";
 import ErrorMessage from "../../../components/ErrorMessage";
-import { useHistory } from "react-router-dom";
 
 const PatientEditScreen = () => {
 	const [name, setName] = useState("");
@@ -31,7 +30,7 @@ const PatientEditScreen = () => {
 	const { patientInfo } = patient_Login;
 
 	const patientUpdate = useSelector((state) => state.patientUpdate);
-	const { loading, error, success } = patientUpdate;
+	const { loading, error } = patientUpdate;
 
 	useEffect(() => {
 		setName(patientInfo.name);

@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Form, Button, Row, Col, Card } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useHistory } from "react-router-dom";
 import Loading from "../../../components/Loading";
 import ErrorMessage from "../../../components/ErrorMessage";
 import { adminRegister } from "../../../actions/adminActions";
@@ -10,7 +9,7 @@ import "./RegisterScreen.css";
 
 //name, dob, nic,telephone,address,previousRef,password,pic,dataEntry
 
-const AdminRegisterScreen = ({ history }) => {
+const AdminRegisterScreen = () => {
 	const [name, setName] = useState("");
 	const [dob, setDob] = useState("");
 	const [nic, setNic] = useState("");
@@ -26,7 +25,7 @@ const AdminRegisterScreen = ({ history }) => {
 
 	const dispatch = useDispatch();
 	const adminRegistration = useSelector((state) => state.adminRegistration);
-	const { loading, error, adminInfo } = adminRegistration;
+	const { loading, error } = adminRegistration;
 
 	/*useEffect(() => {
 		if (adminInfo) {		

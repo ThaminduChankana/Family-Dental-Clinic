@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
-import { Form, Button, Row, Col, Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Form, Button, Card } from "react-bootstrap";
 import MainScreen from "../../../components/MainScreen";
 import ErrorMessage from "../../../components/ErrorMessage";
 import Loading from "../../../components/Loading";
@@ -15,7 +14,7 @@ const PatientLoginScreen = () => {
 	const dispatch = useDispatch();
 
 	const patient_Login = useSelector((state) => state.patient_Login);
-	const { loading, error, patientInfo } = patient_Login;
+	const { loading, error } = patient_Login;
 
 	const submitHandler = (e) => {
 		e.preventDefault();
