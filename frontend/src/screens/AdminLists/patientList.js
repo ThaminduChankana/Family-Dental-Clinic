@@ -58,7 +58,7 @@ const PatientListForAdmin = ({ search }) => {
 
 					<Button href="/patient-register">+ Create New Patient Account</Button>
 
-					<Button href="/admin-patient-report">Patient Registration Report</Button>
+					<Button href="/admin-patient-report">Patient Registrations Report</Button>
 				</ButtonGroup>
 
 				<br></br>

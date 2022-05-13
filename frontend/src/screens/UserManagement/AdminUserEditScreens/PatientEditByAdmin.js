@@ -148,11 +148,12 @@ const PatientEditByAdmin = ({ match, history }) => {
 											value={name}
 											placeholder="Enter name"
 											onChange={(e) => setName(e.target.value)}
+											required
 										/>
 									</Form.Group>
 									<Form.Group controlId="patientDob">
 										<Form.Label>Date Of Birth</Form.Label>
-										<Form.Control type="date" value={dob} onChange={(e) => setDob(e.target.value)} />
+										<Form.Control type="date" value={dob} onChange={(e) => setDob(e.target.value)} required />
 									</Form.Group>
 									<div className="form-group">
 										<label name="patientGender">Gender</label>
@@ -161,6 +162,7 @@ const PatientEditByAdmin = ({ match, history }) => {
 											id="patientGender"
 											value={gender}
 											onChange={(e) => setGender(e.target.value)}
+											required
 										>
 											<option>Select Gender</option>
 											<option value={gender.Male}>Male</option>
@@ -174,6 +176,7 @@ const PatientEditByAdmin = ({ match, history }) => {
 											value={nic}
 											placeholder="Enter NIC"
 											onChange={(e) => setNic(e.target.value)}
+											required
 										/>
 									</Form.Group>
 									<Form.Group controlId="patientFormBasicTelephone">
@@ -183,6 +186,7 @@ const PatientEditByAdmin = ({ match, history }) => {
 											value={telephone}
 											placeholder="Enter Telephone Number"
 											onChange={(e) => setTelephone(e.target.value)}
+											required
 										/>
 									</Form.Group>
 									<Form.Group controlId="patientFormBasicAddress">
@@ -192,6 +196,7 @@ const PatientEditByAdmin = ({ match, history }) => {
 											value={address}
 											placeholder="Enter Address"
 											onChange={(e) => setAddress(e.target.value)}
+											required
 										/>
 									</Form.Group>
 									<Form.Group controlId="patientFormBasicEmail">
@@ -201,6 +206,7 @@ const PatientEditByAdmin = ({ match, history }) => {
 											value={email}
 											placeholder="Enter Email Address"
 											onChange={(e) => setEmail(e.target.value)}
+											required
 										/>
 									</Form.Group>
 									<Form.Group controlId="formBasicPassword">
@@ -234,7 +240,7 @@ const PatientEditByAdmin = ({ match, history }) => {
 									</Form.Group>
 									<Form.Group controlId="patientRegDate">
 										<Form.Label>Registration Date</Form.Label>
-										<Form.Control type="date" value={regDate} onChange={(e) => setRegDate(e.target.value)} />
+										<Form.Control type="date" value={regDate} onChange={(e) => setRegDate(e.target.value)} required />
 									</Form.Group>
 									<Form.Group controlId="patientRefDoc">
 										<Form.Label>Referring Doctor</Form.Label>
@@ -243,6 +249,7 @@ const PatientEditByAdmin = ({ match, history }) => {
 											value={referringDoctor}
 											placeholder="Enter Referring Doctor's Name"
 											onChange={(e) => setReferringDoctor(e.target.value)}
+											required
 										/>
 									</Form.Group>
 									<Form.Group controlId="patientFormBasicDataEntryBy">
@@ -252,6 +259,7 @@ const PatientEditByAdmin = ({ match, history }) => {
 											value={dataEntry}
 											placeholder="Enter Data Entering Person Name"
 											onChange={(e) => setDataEntry(e.target.value)}
+											required
 										/>
 									</Form.Group>
 									<br></br>
