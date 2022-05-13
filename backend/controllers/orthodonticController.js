@@ -6,6 +6,17 @@ const getOrthodontics = asyncHandler(async (req, res) => {
 	res.json(orthodontic);
 });
 
+const getOrthodonticCount = asyncHandler(async (req, res) => {
+	const orthodontic = await Orthodontic.find();
+	var i = orthodontic.length;
+	var loopData = {};
+	var loopData = new Object();
+	var loopData = {
+		orthodontics: i,
+	};
+	res.json(loopData);
+});
+
 const createOrthodontic = asyncHandler(async (req, res) => {
 	const { nic, firstVisit, fullCost, paid, facialExamination, followUpVisits, remark } = req.body;
 
@@ -79,4 +90,5 @@ module.exports = {
 	getOrthodonticById,
 	updateOrthodontic,
 	deleteOrthodontic,
+	getOrthodonticCount,
 };
