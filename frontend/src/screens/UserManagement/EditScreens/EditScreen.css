@@ -1,8 +1,7 @@
 .profilePic {
-	width: 60%;
 	display: flex;
 	align-items: center;
-	padding: 20px;
+	padding: 5px;
 }
 .profileContainer {
 	display: flex;

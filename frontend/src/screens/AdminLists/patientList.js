@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Accordion, Button, Card, Row, Col } from "react-bootstrap";
+import { Accordion, Button, Card, Row, Col, ButtonGroup } from "react-bootstrap";
 import MainScreen from "../../components/MainScreen";
 import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -53,26 +53,16 @@ const PatientListForAdmin = ({ search }) => {
 					Patients List
 				</h1>
 				<br></br>
+				<ButtonGroup className="mb-2" size="lg" style={{ width: "100%" }}>
+					<Button href="/admin">Back to operations page</Button>
 
-				<div>
-					<Col>
-						<Link to="/admin">
-							<Button style={{ marginLeft: 10, marginBottom: 6, float: "left", fontSize: 15 }} size="lg">
-								Back to operations page
-							</Button>
-						</Link>
-					</Col>
-					<Col>
-						<Link to="/patient-register">
-							<Button style={{ marginRight: 10, marginBottom: 6, float: "right", fontSize: 15 }} size="lg">
-								+ Create New Patient Account
-							</Button>
-						</Link>
-					</Col>
-				</div>
-				<br></br>
+					<Button href="/patient-register">+ Create New Patient Account</Button>
+
+					<Button href="/admin-patient-report">Patient Registration Report</Button>
+				</ButtonGroup>
 
 				<br></br>
+
 				{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
 				{loading && <Loading />}
 				<br></br>

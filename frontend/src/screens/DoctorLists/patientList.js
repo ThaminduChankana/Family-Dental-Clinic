@@ -159,5 +159,3 @@ const PatientListForDoctor = ({ search }) => {
 };
 
 export default PatientListForDoctor;
-
-/* eventKey is an identifier like what you want to trigger with accordion.collapse */

@@ -23,6 +23,7 @@ import DoctorListForAdmin from "./screens/AdminLists/doctorList";
 import PatientListForAdmin from "./screens/AdminLists/patientList";
 import PatientListForDoctor from "./screens/DoctorLists/patientList";
 import DoctorEditByAdmin from "./screens/UserManagement/AdminUserEditScreens/DoctorEditByAdmin";
+import PatientPrint from "./screens/Reports/PatientReports/PatientPrint";
 import PatientEditByAdmin from "./screens/UserManagement/AdminUserEditScreens/PatientEditByAdmin";
 import InventoryCreate from "./screens/Inventory/InventoryCreate";
 import InventoryView from "./screens/Inventory/InventoryView";
@@ -65,8 +66,9 @@ const App = () => {
 				<Route path="/admin-doctors" component={() => <DoctorListForAdmin search={search} />} exact />
 				<Route path="/admin-patients" component={() => <PatientListForAdmin search={search} />} exact />
 				<Route path="/doctor-patients" component={() => <PatientListForDoctor search={search} />} exact />
-				<Route path="/PatientListForDoctor-doctor-edit/:id" component={DoctorEditByAdmin} exact />
+				<Route path="/admin-doctor-edit/:id" component={DoctorEditByAdmin} exact />
 				<Route path="/admin-patient-edit/:id" component={PatientEditByAdmin} exact />
+				<Route path="/admin-patient-report" component={PatientPrint} exact />
 				<Route path="/inventory-create" component={InventoryCreate} exact></Route>
 				<Route path="/inventory-view" component={InventoryView} exact></Route>
 				<Route path="/treatment-dashboard" component={DiagnosisInfo} exact />
