@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { Card, Button } from "react-bootstrap";
 import { useReactToPrint } from "react-to-print";
 import MainScreen from "../../../components/MainScreen";
+import { PatientRegistrationChart } from "./PatientRegistrationChart";
 import { PatientReport } from "./PatientReport";
 import "./patientReport.css";
 const PatientPrint = () => {
@@ -43,6 +44,23 @@ const PatientPrint = () => {
 						}}
 					>
 						<PatientReport ref={componentRef} />
+						<br></br>
+						<div>
+							<Card
+								style={{
+									borderRadius: 20,
+									borderColor: "#808080",
+									borderWidth: 0.5,
+									background: "rgba(255, 255, 255, 0.9)",
+								}}
+							>
+								<br></br>
+								<h3 style={{ marginLeft: "32%" }}>Monthly Patient Registrations</h3>
+								<PatientRegistrationChart />
+								<br></br>
+							</Card>
+						</div>
+
 						<br></br>
 						<Button style={{ marginLeft: "80%", width: "20%", height: "20%" }} onClick={handlePrint} variant="primary">
 							Generate PDF
