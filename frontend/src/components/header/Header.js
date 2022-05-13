@@ -68,6 +68,7 @@ function Header({ setSearch }) {
 					</Link>
 				)}
 			</div>
+			<br />
 		</div>
 	);
 }
