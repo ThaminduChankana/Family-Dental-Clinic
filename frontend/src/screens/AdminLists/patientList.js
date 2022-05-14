@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Accordion, Button, Card, Row, Col, ButtonGroup } from "react-bootstrap";
 import MainScreen from "../../components/MainScreen";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { patientDeleteProfile, patientsList } from "../../actions/patientActions";
 import Loading from "../../components/Loading";
@@ -21,7 +21,7 @@ const PatientListForAdmin = ({ search }) => {
 	const { success: successUpdate } = patientUpdate;
 
 	const patientDelete = useSelector((state) => state.patientDelete);
-	const { error: errorDelete, success: successDelete } = patientDelete;
+	const { success: successDelete } = patientDelete;
 
 	console.log(patients);
 	const history = useHistory();
@@ -58,7 +58,7 @@ const PatientListForAdmin = ({ search }) => {
 
 					<Button href="/patient-register">+ Create New Patient Account</Button>
 
-					<Button href="/admin-patient-report">Patient Registration Report</Button>
+					<Button href="/admin-patient-report">Patient Registrations Report</Button>
 				</ButtonGroup>
 
 				<br></br>

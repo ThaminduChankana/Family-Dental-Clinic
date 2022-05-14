@@ -1,7 +1,5 @@
-import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useHistory } from "react-router-dom";
-import { Container, Row, Button, Col, Card } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import { doctorLogout } from "../../actions/doctorActions";
 import "./OperationPages.css";
 import MainScreen from "../../components/MainScreen";
@@ -57,9 +55,10 @@ const DoctorOperationPage = ({ history }) => {
 										Patient Management
 									</Button>
 								</a>
-								&emsp;
-								<a href="/treatment-dashboard">
-									<Button size="lg" style={{ width: 350, height: 75 }}>
+							</div>
+							<div className="buttonContainer">
+								<a href="/treatment-orthodontic-view">
+									<Button size="lg" className="landingbutton">
 										Patient Diagnosis Management
 									</Button>
 								</a>

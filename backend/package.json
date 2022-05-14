@@ -30,6 +30,7 @@
 		"mongoose": "^6.2.3",
 		"nodemon": "^2.0.15",
 		"prettier": "^2.5.1",
+		"query-string": "^7.1.1",
 		"react-router-dom": "^6.1.1"
 	},
 	"devDependencies": {
