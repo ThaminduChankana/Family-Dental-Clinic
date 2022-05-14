@@ -10,12 +10,8 @@
 		"@testing-library/react": "^11.2.7",
 		"@testing-library/user-event": "^12.8.3",
 		"axios": "^0.24.0",
-<<<<<<< HEAD
-		"concurrently": "^7.1.0",
-=======
 		"chart.js": "^3.7.1",
 		"concurrently": "^7.0.0",
->>>>>>> f425f965ed243a1fb9ea24fe5c02b1bd6d6cd7aa
 		"markdown": "^0.5.0",
 		"prettier": "^2.5.1",
 		"query-string": "^7.1.1",
