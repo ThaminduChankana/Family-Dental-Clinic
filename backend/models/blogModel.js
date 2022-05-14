@@ -20,6 +20,10 @@ const BlogSchema = mongoose.Schema(
 			required: true,
 			ref: "Doctor",
 		},
+		year: {
+			default: new Date().getFullYear(),
+			type: String,
+		},
 	},
 	{
 		timestamps: true,

@@ -67,65 +67,87 @@ function CreateBlog({ history }) {
 	useEffect(() => {}, []);
 
 	return (
-		<MainScreen title="Create a Article">
-			<Card>
-				<Card.Header>Create a new Article</Card.Header>
-				<Card.Body>
-					<Form onSubmit={submitHandler}>
-						{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
-						<Form.Group controlId="title">
-							<Form.Label>Title</Form.Label>
-							<Form.Control
-								type="text"
-								value={title}
-								placeholder="Enter the Article Title"
-								onChange={(e) => setTitle(e.target.value)}
-							/>
-						</Form.Group>
+		<div className="createArticles">
+			<MainScreen title="Create a Article">
+				<Card
+					className="createAr"
+					style={{
+						borderRadius: 45,
+						borderWidth: 2.0,
+						marginTop: 20,
+						paddingInline: 10,
+						background: "rgba(231, 238, 238, 0.8)",
+					}}
+				>
+					<Card.Header
+						className="createArHead"
+						style={{
+							borderRadius: 45,
+							borderWidth: 2.0,
+							marginTop: 20,
+							paddingInline: 10,
+							background: "white",
+						}}
+					>
+						Create a new Article
+					</Card.Header>
+					<Card.Body>
+						<Form onSubmit={submitHandler}>
+							{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
+							<Form.Group controlId="title">
+								<Form.Label>Title</Form.Label>
+								<Form.Control
+									type="text"
+									value={title}
+									placeholder="Enter the Article Title"
+									onChange={(e) => setTitle(e.target.value)}
+								/>
+							</Form.Group>
 
-						<Form.Group controlId="description">
-							<Form.Label>Description</Form.Label>
-							<Form.Control
-								as="textarea"
-								value={description}
-								placeholder="Enter the Article Description"
-								rows={10}
-								onChange={(e) => setDescription(e.target.value)}
-							/>
-						</Form.Group>
-						{description && (
-							<Card>
-								<Card.Header>Article Preview</Card.Header>
-								<Card.Body>
-									<ReactMarkdown>{description}</ReactMarkdown>
-								</Card.Body>
-							</Card>
-						)}
+							<Form.Group controlId="description">
+								<Form.Label>Description</Form.Label>
+								<Form.Control
+									as="textarea"
+									value={description}
+									placeholder="Enter the Article Description"
+									rows={10}
+									onChange={(e) => setDescription(e.target.value)}
+								/>
+							</Form.Group>
+							{description && (
+								<Card>
+									<Card.Header>Article Preview</Card.Header>
+									<Card.Body>
+										<ReactMarkdown>{description}</ReactMarkdown>
+									</Card.Body>
+								</Card>
+							)}
 
-						{imageMessage && <ErrorMessage variant="danger">{imageMessage}</ErrorMessage>}
-						<Form.Group controlId="image">
-							<Form.Label>Article Image</Form.Label>
-							<Form.File
-								onChange={(e) => postDetails(e.target.files[0])}
-								id="custom-file"
-								type="image/png"
-								label="Upload Article Image"
-								custom
-							/>
-						</Form.Group>
-						{loading && <Loading size={50} />}
-						<Button type="submit" variant="primary">
-							Create Article
-						</Button>
-						<Button className="mx-2" onClick={resetHandler} variant="danger">
-							Reset Feilds
-						</Button>
-					</Form>
-				</Card.Body>
+							{imageMessage && <ErrorMessage variant="danger">{imageMessage}</ErrorMessage>}
+							<Form.Group controlId="image">
+								<Form.Label>Article Image</Form.Label>
+								<Form.File
+									onChange={(e) => postDetails(e.target.files[0])}
+									id="custom-file"
+									type="image/png"
+									label="Upload Article Image"
+									custom
+								/>
+							</Form.Group>
+							{loading && <Loading size={50} />}
+							<Button type="submit" variant="primary">
+								Create Article
+							</Button>
+							<Button className="mx-2" onClick={resetHandler} variant="danger">
+								Reset Feilds
+							</Button>
+						</Form>
+					</Card.Body>
 
-				<Card.Footer className="text-muted">Creating on - {new Date().toLocaleDateString()}</Card.Footer>
-			</Card>
-		</MainScreen>
+					<Card.Footer className="text-muted">Creating on - {new Date().toLocaleDateString()}</Card.Footer>
+				</Card>
+			</MainScreen>
+		</div>
 	);
 }
 

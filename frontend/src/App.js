@@ -43,6 +43,7 @@ import DoctorArticles from "./screens/Blogs/DoctorArticles";
 import CreateArticle from "./screens/Blogs/CreateArticle";
 import SingleArticle from "./screens/Blogs/SingleArticle";
 import CommonBlogs from "./screens/Blogs/CommonBlogs";
+import BlogPrint from "./screens/Reports/BlogReports/BlogPrint";
 
 const App = () => {
 	const [search, setSearch] = useState("");
@@ -86,10 +87,11 @@ const App = () => {
 				<Route path="/basicTreatment/:id" component={SingleBasicTreatment} exact />
 				<Route path="/filling/:id" component={SingleFilling} exact />
 				<Route path="/orthodontic/:id" component={SingleOrthodontic} exact />
-				<Route path="/doctor-articles" component={DoctorArticles} exact />
+				<Route path="/doctor-articles" component={() => <DoctorArticles search={search} />} exact />
 				<Route path="/doctor-create-article" component={CreateArticle} exact />
 				<Route path="/doctor-single-article/:id" component={SingleArticle} exact />
-				<Route path="/articles" component={CommonBlogs} exact />
+				<Route path="/articles" component={() => <CommonBlogs search={search} />} exact />
+				<Route path="/blog-report" component={BlogPrint} exact />
 			</main>
 			<Footer />
 		</BrowserRouter>

@@ -17,7 +17,10 @@ function Header({ setSearch }) {
 					<a style={{ textDecoration: "none", color: "#0d5875", fontSize: "20px", marginLeft: "35px" }} href="/aboutus">
 						About Us
 					</a>
-					<a style={{ textDecoration: "none", color: "#0d5875", fontSize: "20px", marginLeft: "35px" }} href="/blogs">
+					<a
+						style={{ textDecoration: "none", color: "#0d5875", fontSize: "20px", marginLeft: "35px" }}
+						href="/articles"
+					>
 						Blogs
 					</a>
 					<a style={{ textDecoration: "none", color: "#0d5875", fontSize: "20px", marginLeft: "35px" }} href="/reviews">
