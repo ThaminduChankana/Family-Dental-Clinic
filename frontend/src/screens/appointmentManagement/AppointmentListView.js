@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Row, Col, Form, FloatingLabel, Button, Table, Spinner } from 'react-bootstrap';
+import { Row, Col, Form, Button, Table, Spinner } from 'react-bootstrap';
 import { useHistory } from "react-router-dom";
 import {confirm} from 'react-bootstrap-confirmation';
 import appointmentService from "../../services/appointmentService";
@@ -54,17 +54,12 @@ const AppointmentListView = () => {
     <Col>
       <Row>
         <Col lg={8}>
-          <FloatingLabel
-            controlId="floatingInput"
-            label="Patient's NIC"
-          >
             <Form.Control 
               type="text" 
               placeholder="1xxx" 
               size="sm"
               onChange={(e) => handleOnSearch(e.target.value)}
               />
-          </FloatingLabel>
         </Col>
         <Col lg={4} className='d-flex justify-content-end'>
           <div>

@@ -70,7 +70,7 @@ const AdminOperationPage = ({ history }) => {
 									</Link>
 								</div>
 								<div className="buttonContainer">
-									<Link to="/">
+									<Link to="/appointments">
 										<Button size="lg" className="landingbutton">
 											Appointment Management
 										</Button>

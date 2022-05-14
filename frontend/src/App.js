@@ -35,13 +35,13 @@ import OrthodonticCreate from "./screens/Treatment/TreatmentCreateScreens/Orthod
 import SingleBasicTreatment from "./screens/Treatment/TreatmentEditScreens/SingleBasicTreatment";
 import SingleFilling from "./screens/Treatment/TreatmentEditScreens/SingleFilling";
 import SingleOrthodontic from "./screens/Treatment/TreatmentEditScreens/SingleOrthodontic";
-
+import AppointmentRootContainer from "./screens/appointmentManagement/RootContainer";
 const App = () => {
 	const [search, setSearch] = useState("");
 
-import AppointmentRootContainer from "./screens/appointmentManagement/RootContainer";
 
-const App = () => {
+
+
 	return (
 		<BrowserRouter>
 			<main>
