@@ -29,6 +29,7 @@ import {
 	PATIENT_UPDATE_BY_ID_SUCCESS,
 } from "../constants/patientConstants";
 import axios from "axios";
+import swal from "sweetalert";
 
 export const patientLogin = (nic, password) => async (dispatch) => {
 	try {
@@ -43,7 +44,16 @@ export const patientLogin = (nic, password) => async (dispatch) => {
 		const { data } = await axios.post("/user/patient/login", { nic, password, isAdmin: false }, config);
 
 		dispatch({ type: PATIENT_LOGIN_SUCCESS, payload: data });
-		window.location.href = "/patient";
+		swal({
+			title: "Success !!!",
+			text: "Patient Log In Successful.",
+			icon: "success",
+			timer: 2000,
+			button: false,
+		});
+		setTimeout(function () {
+			window.location.href = "/patient";
+		}, 2000);
 		localStorage.setItem("patientInfo", JSON.stringify(data));
 	} catch (error) {
 		dispatch({
@@ -100,7 +110,13 @@ export const patientRegister =
 			);
 
 			dispatch({ type: PATIENT_REGISTER_SUCCESS, payload: data });
-			alert("Patient Registration Successful !!!");
+			swal({
+				title: "Success !!!",
+				text: "Patient Registration Successful.",
+				icon: "success",
+				timer: 2000,
+				button: false,
+			});
 			setTimeout(function () {
 				window.location.href = "/admin-patients";
 			}, 2000);
@@ -164,7 +180,13 @@ export const patientUpdateProfile = (patient) => async (dispatch, getState) => {
 		const { data } = await axios.put("/user/patient/edit", patient, config);
 
 		dispatch({ type: PATIENT_UPDATE_SUCCESS, payload: data });
-		alert("Patient Account Update Successful !!!");
+		swal({
+			title: "Success !!!",
+			text: "Patient Account Update Successful.",
+			icon: "success",
+			timer: 2000,
+			button: false,
+		});
 		setTimeout(function () {
 			window.location.href = "/patient-view";
 		}, 2000);
@@ -394,6 +416,13 @@ export const patientUpdateProfileById =
 			dispatch({
 				type: PATIENT_UPDATE_BY_ID_SUCCESS,
 				payload: data,
+			});
+			swal({
+				title: "Success !!!",
+				text: "Patient Account Update Successful.",
+				icon: "success",
+				timer: 2000,
+				button: false,
 			});
 			setTimeout(function () {
 				window.location.href = "/admin-patients";
