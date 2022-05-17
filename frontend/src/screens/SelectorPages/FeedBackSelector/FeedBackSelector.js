@@ -1,11 +1,11 @@
 import { Button, Card } from "react-bootstrap";
-import MainScreen from "../../components/MainScreen";
-import "./LoginSelector.css";
+import MainScreen from "../../../components/MainScreen";
+import "./FeedBackSelector.css";
 
-const LoginSelectorPage = () => {
+const FeedbackSelectorPage = () => {
 	return (
-		<div className="loginSelectBg">
-			<MainScreen title={"Log in Here ..."}>
+		<div className="feedBackSelectBg">
+			<MainScreen title={"Feedback And Q&A Management"}>
 				<br></br>
 				<br></br>
 				<Card
@@ -22,21 +22,15 @@ const LoginSelectorPage = () => {
 							<br></br>
 							<br></br>
 
-							<a href="/admin-login">
+							<a href="/">
 								<Button size="lg" className="landingbutton">
-									Admin Login
+									Feedback Management
 								</Button>
 							</a>
 
-							<a href="/doctor-login">
+							<a href="/">
 								<Button size="lg" className="landingbutton">
-									Doctor Login
-								</Button>
-							</a>
-
-							<a href="/patient-login">
-								<Button size="lg" className="landingbutton">
-									Patient Login
+									Q & A Management
 								</Button>
 							</a>
 
@@ -52,4 +46,4 @@ const LoginSelectorPage = () => {
 	);
 };
 
-export default LoginSelectorPage;
+export default FeedbackSelectorPage;
