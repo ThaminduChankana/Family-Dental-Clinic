@@ -84,7 +84,6 @@ const DoctorEditByAdmin = ({ match, history }) => {
 					regDate
 				)
 			);
-			setMessage("Update Successful");
 		}
 	};
 

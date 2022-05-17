@@ -139,10 +139,10 @@ const DoctorRegisterScreen = () => {
 										<Form.Label>Date Of Birth</Form.Label>
 										<Form.Control type="date" value={dob} onChange={(e) => setDob(e.target.value)} required />
 									</Form.Group>
-									<div class="form-group">
-										<label for="doctorGender">Gender</label>
+									<div className="form-group">
+										<label className="doctorGender">Gender</label>
 										<select
-											class="form-control"
+											className="form-control"
 											id="doctorGender"
 											value={gender}
 											onChange={(e) => setGender(e.target.value)}
