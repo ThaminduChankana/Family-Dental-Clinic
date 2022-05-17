@@ -43,15 +43,17 @@ const DoctorListForAdmin = ({ search }) => {
 			buttons: true,
 			dangerMode: true,
 		})
-			.then(() => {
-				dispatch(doctorDeleteProfile(id));
-				swal({
-					title: "Success!",
-					text: "Deleted Account Successfully",
-					icon: "success",
-					timer: 2000,
-					button: false,
-				});
+			.then((willDelete) => {
+				if (willDelete) {
+					dispatch(doctorDeleteProfile(id));
+					swal({
+						title: "Success!",
+						text: "Deleted Account Successfully",
+						icon: "success",
+						timer: 2000,
+						button: false,
+					});
+				}
 			})
 			.catch((err) => {
 				swal({
