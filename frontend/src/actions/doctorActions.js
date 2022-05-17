@@ -415,7 +415,7 @@ export const doctorUpdateProfileById =
 			});
 			swal({
 				title: "Success !!!",
-				text: "Doctor Update Successful.",
+				text: "Doctor Account Update Successful.",
 				icon: "success",
 				timer: 2000,
 				button: false,
