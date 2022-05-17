@@ -1,8 +1,8 @@
 .title {
 	font-size: 95px;
 }
-.loginSelectBg {
-	background: url("../../Images/loginView.png");
+.feedBackSelectBg {
+	background: url("../../../Images/feedBackView.jpg");
 	background-position: center;
 	background-size: cover;
 }
