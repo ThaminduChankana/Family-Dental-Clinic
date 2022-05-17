@@ -16,6 +16,7 @@ import {
 	COMMON_BLOGS_LIST_REQUEST,
 	COMMON_BLOGS_LIST_SUCCESS,
 } from "../constants/blogsConstants";
+import swal from "sweetalert";
 
 export const listBlogsForUsers = () => async (dispatch, getState) => {
 	try {
@@ -92,6 +93,13 @@ export const createBlogAction = (title, description, image) => async (dispatch, 
 			type: BLOGS_CREATE_SUCCESS,
 			payload: data,
 		});
+		swal({
+			title: "Success !!!",
+			text: "Blog Article Created Successfully.",
+			icon: "success",
+			timer: 2000,
+			button: false,
+		});
 	} catch (error) {
 		const message = error.response && error.response.data.message ? error.response.data.message : error.message;
 		dispatch({
@@ -123,6 +131,13 @@ export const updateBlogAction = (id, title, description, image) => async (dispat
 		dispatch({
 			type: BLOGS_UPDATE_SUCCESS,
 			payload: data,
+		});
+		swal({
+			title: "Success !!!",
+			text: "Blog Article Updated Successfully.",
+			icon: "success",
+			timer: 2000,
+			button: false,
 		});
 	} catch (error) {
 		const message = error.response && error.response.data.message ? error.response.data.message : error.message;
