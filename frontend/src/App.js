@@ -3,7 +3,8 @@ import { BrowserRouter, Route } from "react-router-dom";
 import React from "react";
 import { useState } from "react";
 import Header from "./components/header/Header";
-import LoginSelectorPage from "./screens/LoginSelector/LoginSelectorPage";
+import LoginSelectorPage from "./screens/SelectorPages/LoginSelector/LoginSelectorPage";
+import FeedbackSelectorPage from "./screens/SelectorPages/FeedBackSelector/FeedBackSelector";
 import AdminRegisterScreen from "./screens/UserManagement/RegisterScreens/AdminRegisterScreen";
 import DoctorRegisterScreen from "./screens/UserManagement/RegisterScreens/DoctorRegisterScreen";
 import PatientRegisterScreen from "./screens/UserManagement/RegisterScreens/PatientRegisterScreen";
@@ -47,6 +48,7 @@ const App = () => {
 			<Header setSearch={setSearch} />
 			<main>
 				<Route path="/" component={LoginSelectorPage} exact />
+				<Route path="/feedback-Q&A" component={FeedbackSelectorPage} exact />
 				<Route path="/admin-register" component={AdminRegisterScreen} exact />
 				<Route path="/doctor-register" component={DoctorRegisterScreen} exact />
 				<Route path="/patient-register" component={PatientRegisterScreen} exact />
