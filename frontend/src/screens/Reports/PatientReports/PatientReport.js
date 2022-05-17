@@ -1,8 +1,7 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { authHeader } from "../../../actions/adminActions";
 import axios from "axios";
-import { Table, Card } from "react-bootstrap";
-import { PatientRegistrationChart } from "./PatientRegistrationChart";
+import { Table } from "react-bootstrap";
 
 export const PatientReport = React.forwardRef((props, ref) => {
 	const [january, setJanuary] = useState("");

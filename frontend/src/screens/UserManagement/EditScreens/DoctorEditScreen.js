@@ -3,10 +3,9 @@ import { Form, Button, Row, Col, Card } from "react-bootstrap";
 import MainScreen from "../../../components/MainScreen";
 import "./EditScreen.css";
 import { useDispatch, useSelector } from "react-redux";
-import { doctorLogin, doctorUpdateProfile } from "../../../actions/doctorActions";
+import { doctorUpdateProfile } from "../../../actions/doctorActions";
 import Loading from "../../../components/Loading";
 import ErrorMessage from "../../../components/ErrorMessage";
-import { useHistory } from "react-router-dom";
 
 const DoctorEditScreen = () => {
 	const [name, setName] = useState("");
@@ -33,7 +32,7 @@ const DoctorEditScreen = () => {
 	const { doctorInfo } = doctor_Login;
 
 	const doctorUpdate = useSelector((state) => state.doctorUpdate);
-	const { loading, error, success } = doctorUpdate;
+	const { loading, error } = doctorUpdate;
 
 	useEffect(() => {
 		setName(doctorInfo.name);
@@ -147,10 +146,10 @@ const DoctorEditScreen = () => {
 										<Form.Label>Date Of Birth</Form.Label>
 										<Form.Control type="date" value={dob} onChange={(e) => setDob(e.target.value)} required />
 									</Form.Group>
-									<div class="form-group">
-										<label for="doctorGender">Gender</label>
+									<div className="form-group">
+										<label className="doctorGender">Gender</label>
 										<select
-											class="form-control"
+											className="form-control"
 											id="doctorGender"
 											value={gender}
 											onChange={(e) => setGender(e.target.value)}

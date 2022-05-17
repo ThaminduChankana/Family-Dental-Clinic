@@ -7,6 +7,7 @@ import { doctorDeleteProfile, doctorsList } from "../../actions/doctorActions";
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 import "../AdminLists/lists.css";
+import swal from "sweetalert";
 
 const DoctorListForAdmin = ({ search }) => {
 	const dispatch = useDispatch();
@@ -35,9 +36,30 @@ const DoctorListForAdmin = ({ search }) => {
 	}, [dispatch, history, adminInfo, doctorDelete, successDelete, successUpdate]);
 
 	const deleteHandler = (id) => {
-		if (window.confirm("Are You Sure?")) {
-			dispatch(doctorDeleteProfile(id));
-		}
+		swal({
+			title: "Are you sure?",
+			text: "Once deleted, you will not be able to recover these details!",
+			icon: "warning",
+			buttons: true,
+			dangerMode: true,
+		})
+			.then(() => {
+				dispatch(doctorDeleteProfile(id));
+				swal({
+					title: "Success!",
+					text: "Deleted Account Successfully",
+					icon: "success",
+					timer: 2000,
+					button: false,
+				});
+			})
+			.catch((err) => {
+				swal({
+					title: "Error!",
+					text: "Couldn't Delete Account",
+					type: "error",
+				});
+			});
 	};
 
 	return (

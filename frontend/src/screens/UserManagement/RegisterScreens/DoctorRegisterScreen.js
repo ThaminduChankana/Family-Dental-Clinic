@@ -1,14 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Form, Button, Row, Col, Card } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useHistory } from "react-router-dom";
 import Loading from "../../../components/Loading";
 import ErrorMessage from "../../../components/ErrorMessage";
 import { doctorRegister } from "../../../actions/doctorActions";
 import MainScreen from "../../../components/MainScreen";
 import "./RegisterScreen.css";
 
-const DoctorRegisterScreen = ({ history }) => {
+const DoctorRegisterScreen = () => {
 	const [name, setName] = useState("");
 	const [dob, setDob] = useState("");
 	const [gender, setGender] = useState("");
@@ -140,10 +139,10 @@ const DoctorRegisterScreen = ({ history }) => {
 										<Form.Label>Date Of Birth</Form.Label>
 										<Form.Control type="date" value={dob} onChange={(e) => setDob(e.target.value)} required />
 									</Form.Group>
-									<div class="form-group">
-										<label for="doctorGender">Gender</label>
+									<div className="form-group">
+										<label className="doctorGender">Gender</label>
 										<select
-											class="form-control"
+											className="form-control"
 											id="doctorGender"
 											value={gender}
 											onChange={(e) => setGender(e.target.value)}

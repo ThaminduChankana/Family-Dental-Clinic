@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { doctorUpdateProfileById } from "../../../actions/doctorActions";
 import ErrorMessage from "../../../components/ErrorMessage";
 import Loading from "../../../components/Loading";
-import ReactMarkdown from "react-markdown";
 import { authHeader } from "../../../actions/adminActions";
 import "./adminUserEdit.css";
 
@@ -85,7 +84,6 @@ const DoctorEditByAdmin = ({ match, history }) => {
 					regDate
 				)
 			);
-			setMessage("Update Successful");
 		}
 	};
 
