@@ -89,7 +89,7 @@ const AdminOperationPage = ({ history }) => {
 											Doctor Blogs Report
 										</Button>
 									</Link>
-									<Link to="/">
+									<Link to="/admin-medical-history">
 										<Button size="lg" className="landingbutton">
 											Patient Medical History Management
 										</Button>

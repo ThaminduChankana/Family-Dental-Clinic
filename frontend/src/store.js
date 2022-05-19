@@ -58,6 +58,15 @@ import {
 	inventoryDeleteReducer,
 } from "./reducers/InventoryReducer";
 
+import {
+	medicalHistoryCreateReducer,
+	medicalHistoryDeleteReducer,
+	medicalHistoryListReducer,
+	medicalHistoryUpdateReducer,
+	medicalHistoryListDoctorReducer,
+	patientViewMedicalHistoryReducer,
+} from "./reducers/medicalHistoryReducer";
+
 const reducer = combineReducers({
 	admin_Login: adminLoginReducer,
 	adminRegistration: adminRegisterReducer,
@@ -96,6 +105,12 @@ const reducer = combineReducers({
 	orthodonticCreate: orthodonticCreateReducer,
 	orthodonticUpdate: orthodonticUpdateReducer,
 	orthodonticDelete: orthodonticDeleteReducer,
+	medicalHistoryList: medicalHistoryListReducer,
+	medicalHistoryCreate: medicalHistoryCreateReducer,
+	medicalHistoryUpdate: medicalHistoryUpdateReducer,
+	medicalHistoryDelete: medicalHistoryDeleteReducer,
+	medicalHistoryListDoctor: medicalHistoryListDoctorReducer,
+	patientViewMedicalHistory: patientViewMedicalHistoryReducer,
 });
 
 const adminInfoFromStorage = localStorage.getItem("adminInfo") ? JSON.parse(localStorage.getItem("adminInfo")) : null;

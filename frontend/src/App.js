@@ -39,6 +39,11 @@ import SingleBasicTreatment from "./screens/Treatment/TreatmentEditScreens/Singl
 import SingleFilling from "./screens/Treatment/TreatmentEditScreens/SingleFilling";
 import SingleOrthodontic from "./screens/Treatment/TreatmentEditScreens/SingleOrthodontic";
 import TreatmentPrint from "./screens/Reports/TreatmentReports/TreatmentPrint";
+import MedicalHistory from "./screens/MedicalHistory/MedicalHistory";
+import MedicalHistoryCreate from "./screens/MedicalHistory/MedicalHistoryCreate";
+import SingleMedicalHistory from "./screens/MedicalHistory/SingleMedicalHistory";
+import MedicalHistoryListDoctor from "./screens/MedicalHistory/MedicalHistoryListDoctor";
+import SingleMedicalHistoryPatient from "./screens/MedicalHistory/SingleMedicalHistoryPatient";
 import Footer from "./components/footer/footer";
 
 const App = () => {
@@ -83,6 +88,11 @@ const App = () => {
 				<Route path="/filling/:id" component={SingleFilling} exact />
 				<Route path="/orthodontic/:id" component={SingleOrthodontic} exact />
 				<Route path="/treatment-report" component={TreatmentPrint} exact />
+				<Route path="/admin-medical-history" component={MedicalHistory} exact />
+				<Route path="/admin-single-medical-history/:id" component={SingleMedicalHistory} exact />
+				<Route path="/admin-create-medical-history" component={MedicalHistoryCreate} exact />
+				<Route path="/doctor-view-medical-history" component={MedicalHistoryListDoctor} exact />
+				<Route path="/patient-single-medical-history" component={SingleMedicalHistoryPatient} exact />
 			</main>
 			<Footer />
 		</BrowserRouter>
