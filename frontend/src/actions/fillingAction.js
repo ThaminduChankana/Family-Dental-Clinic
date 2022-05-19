@@ -13,6 +13,7 @@ import {
 	FILLING_DELETE_FAIL,
 } from "../constants/fillingConstants";
 import axios from "axios";
+import swal from "sweetalert";
 
 export const listFillings = () => async (dispatch, getState) => {
 	try {
@@ -76,7 +77,17 @@ export const createFillingAction =
 				},
 				config
 			);
+			swal({
+				title: "Success !!!",
+				text: "Filling successfully created.",
+				icon: "success",
+				timer: 2000,
+				button: false,
+			});
 
+			setTimeout(function () {
+				window.location.href = "/treatment-filling-view";
+			}, 2000);
 			dispatch({
 				type: FILLING_CREATE_SUCCESS,
 				payload: data,
@@ -123,6 +134,17 @@ export const updateFillingAction =
 				},
 				config
 			);
+			swal({
+				title: "Success !!!",
+				text: "Filling successfully updated.",
+				icon: "success",
+				timer: 2000,
+				button: false,
+			});
+
+			setTimeout(function () {
+				window.location.href = "/treatment-filling-view";
+			}, 2000);
 
 			dispatch({
 				type: FILLING_UPDATE_SUCCESS,

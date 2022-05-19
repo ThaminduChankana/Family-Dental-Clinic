@@ -7,6 +7,7 @@ import ErrorMessage from "../../../components/ErrorMessage";
 import Loading from "../../../components/Loading";
 import { authHeader } from "../../../actions/doctorActions";
 import TreatmentNavBar from "../TreatmentDashBoard/TreatmentNavBar";
+import swal from "sweetalert";
 
 export default function SingleFilling({ match, history }) {
 	const [nic, setNic] = useState();
@@ -28,10 +29,33 @@ export default function SingleFilling({ match, history }) {
 	const { loading: loadingDelete, error: errorDelete } = fillingDelete;
 
 	const deleteHandler = (id) => {
-		if (window.confirm("Are you sure?")) {
-			dispatch(deleteFillingAction(id));
-		}
-		history.push("/treatment-dashboard");
+		swal({
+			title: "Are you sure?",
+			text: "Once deleted, you will not be able to recover these details!",
+			icon: "warning",
+			buttons: true,
+			dangerMode: true,
+		})
+			.then((willDelete) => {
+				if (willDelete) {
+					dispatch(deleteFillingAction(id));
+					swal({
+						title: "Success!",
+						text: "Deleted Filling Successfully",
+						icon: "success",
+						timer: 2000,
+						button: false,
+					});
+					history.push("/treatment-filling-view");
+				}
+			})
+			.catch((err) => {
+				swal({
+					title: "Error!",
+					text: "Couldn't Delete Filling",
+					type: "error",
+				});
+			});
 	};
 
 	useEffect(() => {
@@ -84,7 +108,6 @@ export default function SingleFilling({ match, history }) {
 			return;
 
 		history.push("/treatment-filling-view");
-		alert("Successfully Updated");
 	};
 	return (
 		<div>

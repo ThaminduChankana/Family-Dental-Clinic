@@ -76,10 +76,6 @@ export const createBasicTreatmentAction =
 				config
 			);
 
-			dispatch({
-				type: BASICTREATMENT_CREATE_SUCCESS,
-				payload: data,
-			});
 			swal({
 				title: "Success !!!",
 				text: "Basic Treatment successfully created.",
@@ -91,6 +87,10 @@ export const createBasicTreatmentAction =
 			setTimeout(function () {
 				window.location.href = "/treatment-basicTreatment-view";
 			}, 2000);
+			dispatch({
+				type: BASICTREATMENT_CREATE_SUCCESS,
+				payload: data,
+			});
 		} catch (error) {
 			const message = error.response && error.response.data.message ? error.response.data.message : error.message;
 			dispatch({

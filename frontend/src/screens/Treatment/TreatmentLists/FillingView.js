@@ -6,6 +6,7 @@ import { deleteFillingAction, listFillings } from "../../../actions/fillingActio
 import Loading from "../../../components/Loading";
 import ErrorMessage from "../../../components/ErrorMessage";
 import TreatmentNavBar from "../TreatmentDashBoard/TreatmentNavBar";
+import swal from "sweetalert";
 
 export default function FillingView({ search }) {
 	const dispatch = useDispatch();
@@ -22,9 +23,33 @@ export default function FillingView({ search }) {
 	const { loading: loadingDelete, error: errorDelete, success: successDelete } = fillingDelete;
 
 	const deleteHandler = (id) => {
-		if (window.confirm("Are you sure")) {
-			dispatch(deleteFillingAction(id));
-		}
+		swal({
+			title: "Are you sure?",
+			text: "Once deleted, you will not be able to recover these details!",
+			icon: "warning",
+			buttons: true,
+			dangerMode: true,
+		})
+			.then((willDelete) => {
+				if (willDelete) {
+					dispatch(deleteFillingAction(id));
+					swal({
+						title: "Success!",
+						text: "Deleted Filling Successfully",
+						icon: "success",
+						timer: 2000,
+						button: false,
+					});
+					history.push("/treatment-filling-view");
+				}
+			})
+			.catch((err) => {
+				swal({
+					title: "Error!",
+					text: "Couldn't Delete Filling",
+					type: "error",
+				});
+			});
 	};
 
 	const history = useHistory();

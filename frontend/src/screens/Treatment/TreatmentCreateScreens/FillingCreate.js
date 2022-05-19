@@ -56,7 +56,6 @@ export default function FillingCreate({ history }) {
 
 		resetHandler();
 		history.push("/treatment-filling-view");
-		alert("Successfully Created");
 	};
 
 	useEffect(() => {}, []);
