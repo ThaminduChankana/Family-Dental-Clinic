@@ -53,7 +53,7 @@ const App = () => {
 			<Header setSearch={setSearch} />
 			<main>
 				<Route path="/" component={LoginSelectorPage} exact />
-				<Route path="/feedback-Q&A" component={FeedbackSelectorPage} exact />
+				<Route path="/admin-feedback-Q&A" component={FeedbackSelectorPage} exact />
 				<Route path="/admin-register" component={AdminRegisterScreen} exact />
 				<Route path="/doctor-register" component={DoctorRegisterScreen} exact />
 				<Route path="/patient-register" component={PatientRegisterScreen} exact />

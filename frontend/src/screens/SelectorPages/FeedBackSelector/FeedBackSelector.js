@@ -6,6 +6,18 @@ const FeedbackSelectorPage = () => {
 	return (
 		<div className="feedBackSelectBg">
 			<MainScreen title={"Feedback And Q&A Management"}>
+			<Button
+						style={{
+							float: "left",
+							marginTop: 5,
+							fontSize: 15,
+							marginLeft:10,
+						}}
+						href="/admin"
+					>
+						{" "}
+						Back to Operations Page
+					</Button>
 				<br></br>
 				<br></br>
 				<Card
