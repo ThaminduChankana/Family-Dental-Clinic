@@ -56,7 +56,7 @@ export default function FillingView({ search }) {
 	useEffect(() => {
 		if (!doctorInfo) history.pushState("/");
 		dispatch(listFillings());
-	}, [dispatch, history.push, doctorInfo, successUpdate, successDelete]);
+	}, [dispatch, history, doctorInfo, successUpdate, successDelete]);
 	return (
 		<div style={{ minHeight: 700 }}>
 			<br />

@@ -55,7 +55,7 @@ function OrthodonticView({ search }) {
 	useEffect(() => {
 		if (!doctorInfo) history.pushState("/");
 		dispatch(listOrthodontics());
-	}, [dispatch, history.push, doctorInfo, successUpdate, successDelete]);
+	}, [dispatch, history, doctorInfo, successUpdate, successDelete]);
 
 	return (
 		<div style={{ minHeight: 700 }}>

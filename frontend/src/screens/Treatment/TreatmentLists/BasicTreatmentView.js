@@ -55,7 +55,7 @@ function BasicTreatmentView({ search }) {
 	useEffect(() => {
 		if (!doctorInfo) history.pushState("/");
 		dispatch(listBasicTreatments());
-	}, [dispatch, history.push, doctorInfo, successUpdate, successDelete]);
+	}, [dispatch, history, doctorInfo, successUpdate, successDelete]);
 	return (
 		<div style={{ minHeight: 700 }}>
 			<br />
