@@ -7,6 +7,7 @@ import ErrorMessage from "../../../components/ErrorMessage";
 import Loading from "../../../components/Loading";
 import { authHeader } from "../../../actions/doctorActions";
 import TreatmentNavBar from "../TreatmentDashBoard/TreatmentNavBar";
+import swal from "sweetalert";
 
 export default function SingleBasicTreatment({ match, history }) {
 	const [nic, setNic] = useState();
@@ -26,10 +27,33 @@ export default function SingleBasicTreatment({ match, history }) {
 	const { loading: loadingDelete, error: errorDelete } = basicTreatmentDelete;
 
 	const deleteHandler = (id) => {
-		if (window.confirm("Are you sure?")) {
-			dispatch(deleteBasicTreatmentAction(id));
-		}
-		history.push("/treatment-dashboard");
+		swal({
+			title: "Are you sure?",
+			text: "Once deleted, you will not be able to recover these details!",
+			icon: "warning",
+			buttons: true,
+			dangerMode: true,
+		})
+			.then((willDelete) => {
+				if (willDelete) {
+					dispatch(deleteBasicTreatmentAction(id));
+					swal({
+						title: "Success!",
+						text: "Deleted Basic Treatment Successfully",
+						icon: "success",
+						timer: 2000,
+						button: false,
+					});
+					history.push("/treatment-basicTreatment-view");
+				}
+			})
+			.catch((err) => {
+				swal({
+					title: "Error!",
+					text: "Couldn't Delete Basic Treatment",
+					type: "error",
+				});
+			});
 	};
 	useEffect(() => {
 		const fetching = async () => {
@@ -60,7 +84,6 @@ export default function SingleBasicTreatment({ match, history }) {
 		if (!nic || !cost || !treatmentType || !date || !checkup || !procedure || !remark) return;
 
 		history.push("/treatment-basicTreatment-view");
-		alert("Successfully Updated");
 	};
 
 	return (

@@ -40,7 +40,6 @@ export default function BasicTreatmentCreate({ history }) {
 
 		resetHandler();
 		history.push("/treatment-basicTreatment-view");
-		alert("Successfully Created");
 	};
 
 	useEffect(() => {}, []);

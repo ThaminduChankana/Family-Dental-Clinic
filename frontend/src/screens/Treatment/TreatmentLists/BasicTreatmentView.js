@@ -6,6 +6,7 @@ import { deleteBasicTreatmentAction, listBasicTreatments } from "../../../action
 import Loading from "../../../components/Loading";
 import ErrorMessage from "../../../components/ErrorMessage";
 import TreatmentNavBar from "../TreatmentDashBoard/TreatmentNavBar";
+import swal from "sweetalert";
 
 function BasicTreatmentView({ search }) {
 	const dispatch = useDispatch();
@@ -21,9 +22,32 @@ function BasicTreatmentView({ search }) {
 	const { loading: loadingDelete, error: errorDelete, success: successDelete } = basicTreatmentDelete;
 
 	const deleteHandler = (id) => {
-		if (window.confirm("Are you sure")) {
-			dispatch(deleteBasicTreatmentAction(id));
-		}
+		swal({
+			title: "Are you sure?",
+			text: "Once deleted, you will not be able to recover these details!",
+			icon: "warning",
+			buttons: true,
+			dangerMode: true,
+		})
+			.then((willDelete) => {
+				if (willDelete) {
+					dispatch(deleteBasicTreatmentAction(id));
+					swal({
+						title: "Success!",
+						text: "Deleted Basic Treatment Successfully",
+						icon: "success",
+						timer: 2000,
+						button: false,
+					});
+				}
+			})
+			.catch((err) => {
+				swal({
+					title: "Error!",
+					text: "Couldn't Delete Basic Treatment",
+					type: "error",
+				});
+			});
 	};
 	console.log(basicTreatments);
 

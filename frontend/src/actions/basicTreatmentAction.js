@@ -13,6 +13,7 @@ import {
 	BASICTREATMENT_DELETE_FAIL,
 } from "../constants/basicTreatmentConstants";
 import axios from "axios";
+import swal from "sweetalert";
 
 export const listBasicTreatments = () => async (dispatch, getState) => {
 	try {
@@ -79,6 +80,17 @@ export const createBasicTreatmentAction =
 				type: BASICTREATMENT_CREATE_SUCCESS,
 				payload: data,
 			});
+			swal({
+				title: "Success !!!",
+				text: "Basic Treatment successfully created.",
+				icon: "success",
+				timer: 2000,
+				button: false,
+			});
+
+			setTimeout(function () {
+				window.location.href = "/treatment-basicTreatment-view";
+			}, 2000);
 		} catch (error) {
 			const message = error.response && error.response.data.message ? error.response.data.message : error.message;
 			dispatch({
@@ -119,6 +131,17 @@ export const updateBasicTreatmentAction =
 				config
 			);
 
+			swal({
+				title: "Success !!!",
+				text: "Basic Treatment successfully updated.",
+				icon: "success",
+				timer: 2000,
+				button: false,
+			});
+
+			setTimeout(function () {
+				window.location.href = "/treatment-basicTreatment-view";
+			}, 2000);
 			dispatch({
 				type: BASICTREATMENT_UPDATE_SUCCESS,
 				payload: data,
