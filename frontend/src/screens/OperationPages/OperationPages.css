@@ -53,3 +53,8 @@
 		padding: 0 100px;
 	}
 }
+.denied {
+	background: url("../../Images/accessDenied.jpg");
+	background-position: center;
+	background-size: cover;
+}

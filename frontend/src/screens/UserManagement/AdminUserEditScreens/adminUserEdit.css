@@ -10,3 +10,8 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 }
+.denied {
+	background: url("../../../Images/accessDenied.jpg");
+	background-position: center;
+	background-size: cover;
+}
