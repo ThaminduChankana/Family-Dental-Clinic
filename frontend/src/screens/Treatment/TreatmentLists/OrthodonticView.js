@@ -6,6 +6,7 @@ import { deleteOrthodonticAction, listOrthodontics } from "../../../actions/orth
 import Loading from "../../../components/Loading";
 import ErrorMessage from "../../../components/ErrorMessage";
 import TreatmentNavBar from "../TreatmentDashBoard/TreatmentNavBar";
+import swal from "sweetalert";
 
 function OrthodonticView({ search }) {
 	const dispatch = useDispatch();
@@ -21,9 +22,33 @@ function OrthodonticView({ search }) {
 	const { loading: loadingDelete, error: errorDelete, success: successDelete } = orthodonticDelete;
 
 	const deleteHandler = (id) => {
-		if (window.confirm("Are you sure")) {
-			dispatch(deleteOrthodonticAction(id));
-		}
+		swal({
+			title: "Are you sure?",
+			text: "Once deleted, you will not be able to recover these details!",
+			icon: "warning",
+			buttons: true,
+			dangerMode: true,
+		})
+			.then((willDelete) => {
+				if (willDelete) {
+					dispatch(deleteOrthodonticAction(id));
+					swal({
+						title: "Success!",
+						text: "Deleted Orthodontic Successfully",
+						icon: "success",
+						timer: 2000,
+						button: false,
+					});
+					history.push("/treatment-orthodontic-view");
+				}
+			})
+			.catch((err) => {
+				swal({
+					title: "Error!",
+					text: "Couldn't Delete Orthodotic",
+					type: "error",
+				});
+			});
 	};
 
 	const history = useHistory();

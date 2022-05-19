@@ -13,6 +13,7 @@ import {
 	ORTHODONTIC_DELETE_FAIL,
 } from "../constants/orthodonticConstants";
 import axios from "axios";
+import swal from "sweetalert";
 
 export const listOrthodontics = () => async (dispatch, getState) => {
 	try {
@@ -73,6 +74,17 @@ export const createOrthodonticAction =
 				},
 				config
 			);
+			swal({
+				title: "Success !!!",
+				text: "Orthodontic successfully created.",
+				icon: "success",
+				timer: 2000,
+				button: false,
+			});
+
+			setTimeout(function () {
+				window.location.href = "/treatment-orthodontic-view";
+			}, 2000);
 
 			dispatch({
 				type: ORTHODONTIC_CREATE_SUCCESS,
@@ -117,6 +129,17 @@ export const updateOrthodonticAction =
 				},
 				config
 			);
+			swal({
+				title: "Success !!!",
+				text: "Orthodontic successfully updated.",
+				icon: "success",
+				timer: 2000,
+				button: false,
+			});
+
+			setTimeout(function () {
+				window.location.href = "/treatment-orthodontic-view";
+			}, 2000);
 
 			dispatch({
 				type: ORTHODONTIC_UPDATE_SUCCESS,

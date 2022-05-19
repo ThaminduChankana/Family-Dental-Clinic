@@ -7,6 +7,7 @@ import ErrorMessage from "../../../components/ErrorMessage";
 import Loading from "../../../components/Loading";
 import { authHeader } from "../../../actions/doctorActions";
 import TreatmentNavBar from "../TreatmentDashBoard/TreatmentNavBar";
+import swal from "sweetalert";
 
 export default function SingleOrthodontic({ match, history }) {
 	const [nic, setNic] = useState();
@@ -26,10 +27,33 @@ export default function SingleOrthodontic({ match, history }) {
 	const { loading: loadingDelete, error: errorDelete } = orthodonticDelete;
 
 	const deleteHandler = (id) => {
-		if (window.confirm("Are you sure?")) {
-			dispatch(deleteOrthodonticAction(id));
-		}
-		history.push("/treatment-dashboard");
+		swal({
+			title: "Are you sure?",
+			text: "Once deleted, you will not be able to recover these details!",
+			icon: "warning",
+			buttons: true,
+			dangerMode: true,
+		})
+			.then((willDelete) => {
+				if (willDelete) {
+					dispatch(deleteOrthodonticAction(id));
+					swal({
+						title: "Success!",
+						text: "Deleted Orthodontic Successfully",
+						icon: "success",
+						timer: 2000,
+						button: false,
+					});
+					history.push("/treatment-orthodontic-view");
+				}
+			})
+			.catch((err) => {
+				swal({
+					title: "Error!",
+					text: "Couldn't Delete Orthodotic",
+					type: "error",
+				});
+			});
 	};
 
 	useEffect(() => {
@@ -68,9 +92,6 @@ export default function SingleOrthodontic({ match, history }) {
 			)
 		);
 		if (!nic || !fullCost || !paid || !firstVisit || !facialExamination || !followUpVisits || !remark) return;
-
-		history.push("/treatment-orthodontic-view");
-		alert("Successfully Updated");
 	};
 
 	return (

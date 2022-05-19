@@ -39,7 +39,6 @@ export default function BasicTreatmentCreate({ history }) {
 		dispatch(createBasicTreatmentAction(nic, cost, treatmentType, date, checkup, procedure, remark));
 
 		resetHandler();
-		history.push("/treatment-basicTreatment-view");
 	};
 
 	useEffect(() => {}, []);

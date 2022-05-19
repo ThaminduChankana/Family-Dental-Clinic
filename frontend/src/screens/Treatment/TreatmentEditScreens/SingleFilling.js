@@ -106,8 +106,6 @@ export default function SingleFilling({ match, history }) {
 			!remark
 		)
 			return;
-
-		history.push("/treatment-filling-view");
 	};
 	return (
 		<div>

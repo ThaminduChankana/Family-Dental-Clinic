@@ -82,8 +82,6 @@ export default function SingleBasicTreatment({ match, history }) {
 		e.preventDefault();
 		dispatch(updateBasicTreatmentAction(match.params.id, nic, cost, treatmentType, date, checkup, procedure, remark));
 		if (!nic || !cost || !treatmentType || !date || !checkup || !procedure || !remark) return;
-
-		history.push("/treatment-basicTreatment-view");
 	};
 
 	return (

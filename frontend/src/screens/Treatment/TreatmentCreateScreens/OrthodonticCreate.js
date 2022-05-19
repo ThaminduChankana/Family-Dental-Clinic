@@ -39,8 +39,6 @@ export default function OrthodonticCreate({ history }) {
 		dispatch(createOrthodonticAction(nic, firstVisit, fullCost, paid, facialExamination, followUpVisits, remark));
 
 		resetHandler();
-		history.push("/treatment-orthodontic-view");
-		alert("Successfully Created");
 	};
 
 	useEffect(() => {}, []);
