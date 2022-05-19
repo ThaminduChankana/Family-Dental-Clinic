@@ -6,3 +6,8 @@
 	background: rgb(118, 176, 190);
 	background-repeat: no-repeat;
 }
+.denied {
+	background: url("../../Images/accessDenied.jpg");
+	background-position: center;
+	background-size: cover;
+}

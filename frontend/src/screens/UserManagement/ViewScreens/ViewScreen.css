@@ -20,3 +20,8 @@
 .profileCont {
 	background: rgba(231, 238, 238, 0.5);
 }
+.denied {
+	background: url("../../../Images/accessDenied.jpg");
+	background-position: center;
+	background-size: cover;
+}
