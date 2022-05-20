@@ -7,6 +7,8 @@ import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 import ReactMarkdown from "react-markdown";
 import axios from "axios";
+import swal from "sweetalert";
+import DoctorArticles from "./DoctorArticles";
 
 function SingleBlog({ match, history }) {
 	const [title, setTitle] = useState();
@@ -24,10 +26,33 @@ function SingleBlog({ match, history }) {
 	const { loading: loadingDelete, error: errorDelete, success: successDelete } = blogDelete;
 
 	const deleteHandler = (id) => {
-		if (window.confirm("Do you want to delete this article?")) {
-			dispatch(deleteBlogAction(id));
-		}
-		history.push("/doctor-articles");
+		swal({
+			title: "Are you sure?",
+			text: "Once deleted, you will not be able to recover these details!",
+			icon: "warning",
+			buttons: true,
+			dangerMode: true,
+		})
+			.then((willDelete) => {
+				if (willDelete) {
+					dispatch(deleteBlogAction(id));
+					swal({
+						title: "Success!",
+						text: "Deleted Article Successfully",
+						icon: "success",
+						timer: 2000,
+						button: false,
+					});
+				}
+				history.push("/doctor-articles");
+			})
+			.catch((err) => {
+				swal({
+					title: "Error!",
+					text: "Couldn't Delete Article",
+					type: "error",
+				});
+			});
 	};
 
 	useEffect(() => {
@@ -112,7 +137,7 @@ function SingleBlog({ match, history }) {
 								background: "white",
 							}}
 						>
-							Edit Your Article
+							<h3 style={{ alignSelf: "center", marginLeft: "40%", marginRight: "40%" }}>Edit Your Article</h3>
 						</Card.Header>
 						<Card.Body>
 							<Form onSubmit={updateHandler}>
@@ -169,7 +194,10 @@ function SingleBlog({ match, history }) {
 							</Form>
 						</Card.Body>
 
-						<Card.Footer className="text-muted"> Updated on - {date.substring(0, 10)}</Card.Footer>
+						<Card.Footer style={{ borderRadius: 20, marginBottom: 30, background: "white" }} className="text-muted">
+							{" "}
+							Updated on - {date.substring(0, 10)}
+						</Card.Footer>
 					</Card>
 				</MainScreen>
 			</div>

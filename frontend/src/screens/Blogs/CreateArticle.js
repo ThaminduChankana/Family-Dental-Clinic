@@ -16,6 +16,15 @@ function CreateBlog({ history }) {
 
 	const dispatch = useDispatch();
 
+	const demoHandler = async (e) => {
+		e.preventDefault();
+		setTitle("Here’s Why Putting Off Root Canal Can Be Dangerous");
+		setDescription(
+			"Root canal therapy basically involves restoring the function, and appearance of a decayed or infected tooth. Many people put off this procedure due to the fear of possible discomfort or about how long it’ll take to recover. The good news is that a root canal treatment is actually quite straightforward and far more comfortable and painless with a very short recovery period, thanks to modern advancements in dental technology. "
+		);
+		setImage("https://www.americandentalclinic.com/wp-content/uploads/2022/05/shutterstock_766328671.jpg");
+	};
+
 	const blogCreate = useSelector((state) => state.blogCreate);
 	const [imageMessage, setImageMessage] = useState(null);
 	const { loading, error, blog } = blogCreate;
@@ -144,6 +153,9 @@ function CreateBlog({ history }) {
 								</Button>
 								<Button className="mx-2" onClick={resetHandler} variant="danger">
 									Reset Feilds
+								</Button>
+								<Button variant="info" onClick={demoHandler}>
+									Demo
 								</Button>
 							</Form>
 						</Card.Body>
