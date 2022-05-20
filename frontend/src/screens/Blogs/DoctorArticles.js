@@ -8,6 +8,7 @@ import { deleteBlogAction, listBlogs } from "../../actions/blogsActions";
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 import "../Blogs/blogs.css";
+import swal from "sweetalert";
 
 const DoctorArticles = ({ search }) => {
 	const dispatch = useDispatch();
@@ -33,9 +34,33 @@ const DoctorArticles = ({ search }) => {
 	const { loading: loadingDelete, error: errorDelete, success: successDelete } = blogDelete;
 
 	const deleteHandler = (id) => {
-		if (window.confirm("Do you want to delete this article?")) {
-			dispatch(deleteBlogAction(id));
-		}
+		swal({
+			title: "Are you sure?",
+			text: "Once deleted, you will not be able to recover these details!",
+			icon: "warning",
+			buttons: true,
+			dangerMode: true,
+		})
+			.then((willDelete) => {
+				if (willDelete) {
+					dispatch(deleteBlogAction(id));
+					swal({
+						title: "Success!",
+						text: "Deleted Article Successfully",
+						icon: "success",
+						timer: 2000,
+						button: false,
+					});
+				}
+				history.push("/doctor-articles");
+			})
+			.catch((err) => {
+				swal({
+					title: "Error!",
+					text: "Couldn't Delete Article",
+					type: "error",
+				});
+			});
 	};
 
 	console.log(blogs);
@@ -62,11 +87,19 @@ const DoctorArticles = ({ search }) => {
 						Family Dental Clinic Blog
 					</h1>
 					<br></br>
-					<Link to="doctor-create-article">
-						<Button style={{ marginLeft: 10, marginBottom: 6 }} size="lg">
-							Create New Article
+					<Link to="doctor">
+						<Button style={{ marginLeft: 10, marginBottom: 6, float: "left" }} size="lg">
+							Back to operations page
 						</Button>
 					</Link>
+					<Link to="doctor-create-article">
+						<Button style={{ marginRight: 10, marginBottom: 6, float: "right" }} size="lg">
+							+ Create New Article
+						</Button>
+					</Link>
+					<br></br>
+					<br></br>
+					<br></br>
 					{error && <ErrorMessage variant="danger">{errorDelete}</ErrorMessage>}
 					{loadingDelete && <Loading />}
 					{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
@@ -126,7 +159,12 @@ const DoctorArticles = ({ search }) => {
 												variant="top"
 												src="https://www.americandentalclinic.com/wp-content/uploads/2022/05/shutterstock_717174625.jpg"
 											></Card.Img>
-											<img src={blog.image} style={{ paddingLeft: 100, width: 900, height: 300 }} variant="top" />
+											<img
+												alt={"blogImg"}
+												src={blog.image}
+												style={{ paddingLeft: 100, width: 900, height: 300 }}
+												variant="top"
+											/>
 											<h4>
 												<Badge varient="success">View Count: {num} </Badge>
 											</h4>
