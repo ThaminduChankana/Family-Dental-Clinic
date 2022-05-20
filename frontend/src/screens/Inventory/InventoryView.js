@@ -40,14 +40,14 @@ export default function InventoryView() {
          <Card.Header>
            
              <h3 style={{color: "darkgray"}}>INVENTORY CONTROL</h3>
-             <div class="align-right">
-                 {/* <div className="right-side">
+             {/* <div class="align-right">
+                 <div className="right-side">
                     <Button style={{left:"200%", marginLeft: 1400}} href={`/inventory-create`} >Add Product</Button>
                  </div>
               <div className="left-side">
                     <Button style={{left:"200%", marginLeft: 1000}} href={``} >Generate Report</Button>
-              </div> */}
-             </div>
+              </div>
+             </div> */}
          </Card.Header>
 
         <div style={{padding:"2rem" }} >
@@ -65,7 +65,7 @@ export default function InventoryView() {
                         <h5>{product.description}</h5>
                             <h5>Quantity: {product.quantity}</h5>
                             
-                            <Button href={`/inventory/${product._id}`}>Edit</Button>
+                            <Button href={`/inventory-update/${product._id}`}>Edit</Button>
                             <Button variant="danger" className="mx-2" onClick={() => deleteHandler(product._id)}>
                                 Delete
                             </Button>

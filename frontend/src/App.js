@@ -26,6 +26,7 @@ import DoctorEditByAdmin from "./screens/UserManagement/AdminUserEditScreens/Doc
 import PatientEditByAdmin from "./screens/UserManagement/AdminUserEditScreens/PatientEditByAdmin";
 import InventoryCreate from "./screens/Inventory/InventoryCreate";
 import InventoryView from "./screens/Inventory/InventoryView";
+import InventoryUpdate from "./screens/Inventory/InventoryUpdate";
 import DiagnosisInfo from "./screens/Treatment/TreatmentDashBoard/DiagnosisInfo";
 import TreatmentNavBar from "./screens/Treatment/TreatmentDashBoard/TreatmentNavBar";
 import BasicTreatmentView from "./screens/Treatment/TreatmentLists/BasicTreatmentView";
@@ -67,8 +68,9 @@ const App = () => {
 				<Route path="/doctor-patients" component={() => <PatientListForDoctor search={search} />} exact />
 				<Route path="/PatientListForDoctor-doctor-edit/:id" component={DoctorEditByAdmin} exact />
 				<Route path="/admin-patient-edit/:id" component={PatientEditByAdmin} exact />
-				<Route path="/inventory-create" component={InventoryCreate} exact></Route>
-				<Route path="/inventory-view" component={InventoryView} exact></Route>
+				<Route path="/inventory-create" component={InventoryCreate} exact />
+				<Route path="/inventory-view" component={InventoryView} exact />
+				<Route path="/inventory-update/:id" component={InventoryUpdate} exact />
 				<Route path="/treatment-dashboard" component={DiagnosisInfo} exact />
 				<Route path="/treatment-navbar" component={TreatmentNavBar} exact />
 				<Route path="/treatment-basicTreatment-view" component={BasicTreatmentView} exact />
