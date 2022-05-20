@@ -4,7 +4,7 @@ import "./AccessDenied.css";
 const AccessDenied = () => {
 	return (
 		<div className="denied">
-			<MainScreen />
+			<MainScreen/>
 			<br></br>
 		</div>
 	);
