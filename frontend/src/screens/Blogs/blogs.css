@@ -1,0 +1,37 @@
+.doctorArticles {
+	background: #c8e8ff;
+	background-position: center;
+	background-size: cover;
+}
+
+.commonArticles {
+	background: #c8e8ff;
+	background-position: center;
+	background-size: cover;
+}
+
+.createArticles {
+	background: url("../../Images/blog-create-background.jpg");
+	background-position: center;
+	background-size: cover;
+}
+
+.singleArticles {
+	background: url("../../Images/blog-edit-background.jpg");
+	background-position: center;
+	background-size: cover;
+}
+
+.createAr {
+	background: rgba(231, 238, 238, 0.5);
+}
+
+.createArHead {
+	background: white;
+}
+
+.denied {
+	background: url("../../Images/accessDenied.jpg");
+	background-position: center;
+	background-size: cover;
+}
