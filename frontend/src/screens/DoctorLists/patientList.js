@@ -24,7 +24,7 @@ const PatientListForDoctor = ({ search }) => {
 		//Function or React hook that is fired off whenever a component is rendered, as soon as pages are rendered the api is called
 		dispatch(patientsListForDoctor());
 		if (!doctorInfo) {
-			history.push("/");
+			history.push("/access-denied");
 		}
 	}, [dispatch, history, doctorInfo]);
 	if (doctorInfo) {
