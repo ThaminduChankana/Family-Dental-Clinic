@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Accordion, Badge, Button, Card } from "react-bootstrap";
+import { Accordion, Badge, Button, Card, Col } from "react-bootstrap";
 import MainScreen from "../../components/MainScreen";
 import { Link, useHistory } from "react-router-dom";
 
@@ -67,21 +67,36 @@ const CommonBlogs = ({ search }) => {
 										background: "rgba(255, 255, 255)",
 									}}
 								>
-									<span
-										style={{
-											color: "black",
-											textDecoration: "none",
-											flex: 1,
-											cursor: "pointer",
-											alignSelf: "center",
-											fontSize: 18,
-										}}
-									>
-										<Accordion.Toggle onClick={incNum} as={Card.Text} variant="link" eventKey="0">
-											{blog.title}
-										</Accordion.Toggle>
-									</span>
-
+									<Col>
+										<span
+											style={{
+												color: "black",
+												textDecoration: "none",
+												flex: 1,
+												cursor: "pointer",
+												alignSelf: "center",
+												fontSize: 18,
+											}}
+										>
+											<Accordion.Toggle onClick={incNum} as={Card.Text} variant="link" eventKey="0">
+												<h4 style={{ alignSelf: "center", marginTop: 48 }}>{blog.title}</h4>
+											</Accordion.Toggle>
+										</span>
+									</Col>
+									<Col>
+										<img
+											src={blog.image}
+											style={{
+												borderRadius: 10,
+												marginRight: 15,
+												marginTop: 15,
+												float: "right",
+												width: 200,
+												height: 100,
+											}}
+											variant="top"
+										/>
+									</Col>
 									<div></div>
 								</Card.Header>
 								<Accordion.Collapse eventKey="0">

@@ -45,6 +45,7 @@ import CreateArticle from "./screens/Blogs/CreateArticle";
 import SingleArticle from "./screens/Blogs/SingleArticle";
 import CommonBlogs from "./screens/Blogs/CommonBlogs";
 import BlogPrint from "./screens/Reports/BlogReports/BlogPrint";
+import AccessDenied from "./components/AccessDenied";
 
 const App = () => {
 	const [search, setSearch] = useState("");
@@ -53,6 +54,7 @@ const App = () => {
 			<Header setSearch={setSearch} />
 			<main>
 				<Route path="/" component={LoginSelectorPage} exact />
+				<Route path="/access-denied" component={AccessDenied} exact />
 				<Route path="/admin-feedback-Q&A" component={FeedbackSelectorPage} exact />
 				<Route path="/admin-register" component={AdminRegisterScreen} exact />
 				<Route path="/doctor-register" component={DoctorRegisterScreen} exact />
@@ -92,7 +94,7 @@ const App = () => {
 				<Route path="/doctor-create-article" component={CreateArticle} exact />
 				<Route path="/doctor-single-article/:id" component={SingleArticle} exact />
 				<Route path="/articles" component={() => <CommonBlogs search={search} />} exact />
-				<Route path="/blog-report" component={BlogPrint} exact />
+				<Route path="/admin-blog-report" component={BlogPrint} exact />
 			</main>
 			<Footer />
 		</BrowserRouter>

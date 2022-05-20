@@ -45,7 +45,7 @@ const DoctorArticles = ({ search }) => {
 	useEffect(() => {
 		dispatch(listBlogs());
 		if (!doctorInfo) {
-			history.pushState("/");
+			history.push("/access-denied");
 		}
 	}, [dispatch, doctorInfo, successCreate, history, successUpdate, successDelete]);
 	if (doctorInfo) {
