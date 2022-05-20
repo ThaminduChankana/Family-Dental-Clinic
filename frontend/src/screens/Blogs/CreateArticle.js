@@ -82,6 +82,19 @@ function CreateBlog({ history }) {
 		return (
 			<div className="createArticles">
 				<MainScreen title="Create a Article">
+					<Button
+						style={{
+							float: "left",
+							marginTop: 5,
+							fontSize: 15,
+						}}
+						href="/doctor-articles"
+					>
+						{" "}
+						Back to Article List
+					</Button>
+					<br></br>
+					<br></br>
 					<Card
 						className="createAr"
 						style={{
@@ -102,7 +115,7 @@ function CreateBlog({ history }) {
 								background: "white",
 							}}
 						>
-							Create a new Article
+							<h3 style={{ alignSelf: "center", marginLeft: "40%", marginRight: "40%" }}>Create a new Article</h3>
 						</Card.Header>
 						<Card.Body>
 							<Form onSubmit={submitHandler}>
@@ -160,8 +173,11 @@ function CreateBlog({ history }) {
 							</Form>
 						</Card.Body>
 
-						<Card.Footer className="text-muted">Creating on - {new Date().toLocaleDateString()}</Card.Footer>
+						<Card.Footer style={{ borderRadius: 20, marginBottom: 30, background: "white" }} className="text-muted">
+							Created on - {new Date().toLocaleDateString()}
+						</Card.Footer>
 					</Card>
+					<br></br>
 				</MainScreen>
 			</div>
 		);
