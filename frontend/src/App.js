@@ -40,7 +40,6 @@ import SingleFilling from "./screens/Treatment/TreatmentEditScreens/SingleFillin
 import SingleOrthodontic from "./screens/Treatment/TreatmentEditScreens/SingleOrthodontic";
 import TreatmentPrint from "./screens/Reports/TreatmentReports/TreatmentPrint";
 import Footer from "./components/footer/footer";
-import AccessDenied from "./components/AccessDenied";
 
 const App = () => {
 	const [search, setSearch] = useState("");
@@ -49,7 +48,6 @@ const App = () => {
 			<Header setSearch={setSearch} />
 			<main>
 				<Route path="/" component={LoginSelectorPage} exact />
-				<Route path="/access-denied" component={AccessDenied} exact />
 				<Route path="/admin-feedback-Q&A" component={FeedbackSelectorPage} exact />
 				<Route path="/admin-register" component={AdminRegisterScreen} exact />
 				<Route path="/doctor-register" component={DoctorRegisterScreen} exact />
