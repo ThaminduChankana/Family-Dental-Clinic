@@ -117,6 +117,19 @@ function SingleBlog({ match, history }) {
 		return (
 			<div className="singleArticles">
 				<MainScreen title="Update Article">
+					<Button
+						style={{
+							float: "left",
+							marginTop: 5,
+							fontSize: 15,
+						}}
+						href="/doctor-articles"
+					>
+						{" "}
+						Back to Article List
+					</Button>
+					<br></br>
+					<br></br>
 					<Card
 						className="createAr"
 						style={{
@@ -199,6 +212,7 @@ function SingleBlog({ match, history }) {
 							Updated on - {date.substring(0, 10)}
 						</Card.Footer>
 					</Card>
+					<br></br>
 				</MainScreen>
 			</div>
 		);

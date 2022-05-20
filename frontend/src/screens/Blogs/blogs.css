@@ -11,13 +11,13 @@
 }
 
 .createArticles {
-	background: url("../../Images/blogs-background.jpg");
+	background: url("../../Images/blog-create-background.jpg");
 	background-position: center;
 	background-size: cover;
 }
 
 .singleArticles {
-	background: url("../../Images/blogs-background.jpg");
+	background: url("../../Images/blog-edit-background.jpg");
 	background-position: center;
 	background-size: cover;
 }
