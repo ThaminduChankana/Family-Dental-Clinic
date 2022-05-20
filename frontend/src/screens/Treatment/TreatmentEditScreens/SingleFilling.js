@@ -229,7 +229,6 @@ export default function SingleFilling({ match, history }) {
 									value={remark}
 									placeholder="Enter the Remark"
 									onChange={(e) => setRemark(e.target.value)}
-									required
 								/>
 							</Form.Group>
 							{loading && <Loading size={50} />}

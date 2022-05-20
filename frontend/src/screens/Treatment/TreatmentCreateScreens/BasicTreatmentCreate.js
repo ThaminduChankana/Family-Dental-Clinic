@@ -38,7 +38,7 @@ export default function BasicTreatmentCreate({ history }) {
 	const submitHandler = (e) => {
 		e.preventDefault();
 
-		if (!nic || !cost || !treatmentType || !date || !checkup || !procedure || !remark) return;
+		// if (!nic || !cost || !treatmentType || !date || !checkup || !procedure || !remark) return;
 		dispatch(createBasicTreatmentAction(nic, cost, treatmentType, date, checkup, procedure, remark));
 
 		resetHandler();
@@ -153,7 +153,6 @@ export default function BasicTreatmentCreate({ history }) {
 									value={remark}
 									placeholder="Enter the Remark"
 									onChange={(e) => setRemark(e.target.value)}
-									required
 								/>
 							</Form.Group>
 

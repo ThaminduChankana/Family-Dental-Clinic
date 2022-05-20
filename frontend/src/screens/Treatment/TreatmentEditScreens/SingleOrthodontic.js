@@ -190,7 +190,6 @@ export default function SingleOrthodontic({ match, history }) {
 									value={followUpVisits}
 									placeholder="Enter the FollowUp Visits"
 									onChange={(e) => setFollowUpVisits(e.target.value)}
-									required
 								/>
 							</Form.Group>
 							<Form.Group controlId="remark">
@@ -201,7 +200,6 @@ export default function SingleOrthodontic({ match, history }) {
 									value={remark}
 									placeholder="Enter the Remark"
 									onChange={(e) => setRemark(e.target.value)}
-									required
 								/>
 							</Form.Group>
 							{loading && <Loading size={50} />}

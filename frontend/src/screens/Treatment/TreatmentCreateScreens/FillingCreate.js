@@ -41,18 +41,18 @@ export default function FillingCreate({ history }) {
 	const submitHandler = (e) => {
 		e.preventDefault();
 
-		if (
-			!nic ||
-			!cost ||
-			!anestheticStatus ||
-			!fillingMaterial ||
-			!fillingType ||
-			!date ||
-			!checkup ||
-			!procedure ||
-			!remark
-		)
-			return;
+		// if (
+		// 	!nic ||
+		// 	!cost ||
+		// 	!anestheticStatus ||
+		// 	!fillingMaterial ||
+		// 	!fillingType ||
+		// 	!date ||
+		// 	!checkup ||
+		// 	!procedure ||
+		// 	!remark
+		// )
+		// 	return;
 		dispatch(
 			createFillingAction(nic, cost, anestheticStatus, fillingMaterial, fillingType, date, checkup, procedure, remark)
 		);
@@ -151,7 +151,7 @@ export default function FillingCreate({ history }) {
 							</Form.Group>
 							<Form.Group controlId="date">
 								<Form.Label>Date</Form.Label>
-								<Form.Control type="date" value={date} onChange={(e) => setDate(e.target.value)} />
+								<Form.Control type="date" required value={date} onChange={(e) => setDate(e.target.value)} />
 							</Form.Group>
 							<Form.Group controlId="checkup">
 								<Form.Label>Checkup</Form.Label>
@@ -183,7 +183,6 @@ export default function FillingCreate({ history }) {
 									value={remark}
 									placeholder="Enter the Remark"
 									onChange={(e) => setRemark(e.target.value)}
-									required
 								/>
 							</Form.Group>
 							{loading && <Loading size={50} />}

@@ -184,7 +184,6 @@ export default function SingleBasicTreatment({ match, history }) {
 									value={remark}
 									placeholder="Enter the Remark"
 									onChange={(e) => setRemark(e.target.value)}
-									required
 								/>
 							</Form.Group>
 

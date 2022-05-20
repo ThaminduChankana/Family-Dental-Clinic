@@ -103,6 +103,7 @@ function OrthodonticView({ search }) {
 										<Accordion.Toggle as={Card.Text} variant="link" eventKey="0">
 											NIC : &emsp;
 											{orthodontic.nic}
+											&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;&emsp; &emsp; Date : {orthodontic.firstVisit}
 										</Accordion.Toggle>
 									</span>
 									<div>

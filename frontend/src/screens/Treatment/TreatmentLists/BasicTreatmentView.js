@@ -103,6 +103,7 @@ function BasicTreatmentView({ search }) {
 										<Accordion.Toggle as={Card.Text} variant="link" eventKey="0">
 											NIC : &emsp;
 											{basic.nic}
+											&emsp; &emsp;&emsp; Date : {basic.date}&emsp; &emsp;&emsp; Type : {basic.treatmentType}
 										</Accordion.Toggle>
 									</span>
 									<div>
@@ -126,9 +127,7 @@ function BasicTreatmentView({ search }) {
 									<Card.Body>
 										<Row>
 											<Col md={20}>
-												<h5>Basic Treatment Type : {basic.treatmentType}</h5>
 												<h5>Cost : {basic.cost}</h5>
-												<h5>Date : {basic.date}</h5>
 												<h5>CheckUp : {basic.checkup}</h5>
 												<h5>Procedure : {basic.procedure}</h5>
 												<h5>Remark : {basic.remark}</h5>

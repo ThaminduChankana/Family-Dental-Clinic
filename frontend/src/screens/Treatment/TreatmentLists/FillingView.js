@@ -104,6 +104,7 @@ export default function FillingView({ search }) {
 										<Accordion.Toggle as={Card.Text} variant="link" eventKey="0">
 											NIC : &emsp;
 											{filling.nic}
+											&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;&emsp; &emsp; Date : {filling.date}
 										</Accordion.Toggle>
 									</span>
 									<div>
@@ -131,7 +132,6 @@ export default function FillingView({ search }) {
 												<h5>Filling Material : {filling.fillingMaterial}</h5>
 												<h5>Filling Type : {filling.fillingType}</h5>
 												<h5>Anesthetic Status : {filling.anestheticStatus}</h5>
-												<h5>Date : {filling.date}</h5>
 												<h5>Checkup : {filling.checkup}</h5>
 												<h5>Procedure : {filling.procedure}</h5>
 												<h5>Remark : {filling.remark}</h5>

@@ -38,7 +38,7 @@ export default function OrthodonticCreate({ history }) {
 	const submitHandler = (e) => {
 		e.preventDefault();
 
-		if (!nic || !firstVisit || !fullCost || !paid || !facialExamination || !followUpVisits || !remark) return;
+		//if (!nic || !firstVisit || !fullCost || !paid || !facialExamination || !followUpVisits || !remark) return;
 		dispatch(createOrthodonticAction(nic, firstVisit, fullCost, paid, facialExamination, followUpVisits, remark));
 
 		resetHandler();
@@ -136,7 +136,6 @@ export default function OrthodonticCreate({ history }) {
 									value={followUpVisits}
 									placeholder="Enter the FollowUp Visits"
 									onChange={(e) => setFollowUpVisits(e.target.value)}
-									required
 								/>
 							</Form.Group>
 							<Form.Group controlId="remark">
@@ -147,7 +146,6 @@ export default function OrthodonticCreate({ history }) {
 									value={remark}
 									placeholder="Enter the Remark"
 									onChange={(e) => setRemark(e.target.value)}
-									required
 								/>
 							</Form.Group>
 							{loading && <Loading size={50} />}

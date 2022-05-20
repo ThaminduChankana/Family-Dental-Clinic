@@ -24,7 +24,6 @@ const orthodonticSchema = mongoose.Schema(
 		},
 		followUpVisits: {
 			type: String,
-			required: true,
 		},
 		remark: {
 			type: String,

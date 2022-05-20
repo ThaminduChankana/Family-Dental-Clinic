@@ -20,7 +20,7 @@ const getOrthodonticCount = asyncHandler(async (req, res) => {
 const createOrthodontic = asyncHandler(async (req, res) => {
 	const { nic, firstVisit, fullCost, paid, facialExamination, followUpVisits, remark } = req.body;
 
-	if (!nic || !firstVisit || !fullCost || !paid || !facialExamination || !followUpVisits || !remark) {
+	if (!nic || !firstVisit || !fullCost || !paid || !facialExamination) {
 		res.status(400);
 		throw new Error("Please Fill all the feilds");
 	} else {
