@@ -61,7 +61,7 @@ const App = () => {
 		<BrowserRouter>
 			<Header setSearch={setSearch} />
 			<main>
-				<Route path="/home" component={HomePage} exact />
+				<Route path="/" component={HomePage} exact />
 				<Route path="/login-select" component={LoginSelectorPage} exact />
 				<Route path="/access-denied" component={AccessDenied} exact />
 				<Route path="/admin-feedback-Q&A" component={FeedbackSelectorPage} exact />
