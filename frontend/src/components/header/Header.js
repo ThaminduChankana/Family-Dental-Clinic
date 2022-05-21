@@ -52,7 +52,7 @@ function Header({ setSearch }) {
 				{adminInfo || patientInfo || doctorInfo ? (
 					<></>
 				) : (
-					<Link to="/">
+					<Link to="/login-select">
 						<Button
 							style={{
 								padding: "8px",

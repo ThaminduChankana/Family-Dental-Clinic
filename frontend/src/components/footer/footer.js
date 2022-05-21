@@ -18,31 +18,37 @@ function Footer() {
 					{/* Column2 */}
 					<div className="col">
 						<h4>QUICK LINKS</h4>
-						<ui className="list-unstyled">
-							<li>HOME</li>
-							<li>ABOUT US</li>
-							<li>DOCTORS BLOG</li>
-							<li>SHEDULE</li>
-						</ui>
+						<li className="list-unstyled">
+							<a href="/home">HOME</a>
+							<br></br>
+							<a href="/home">ABOUT US</a>
+							<br></br>
+							<a href="/articles">DOCTORS BLOG</a>
+							<br></br>
+							<a href="/home">SCHEDULE</a>
+						</li>
 					</div>
 					{/* Column3 */}
 					<div className="col">
 						<h4>POPULAR LINKS</h4>
-						<ui className="list-unstyled">
-							<li>REVEIWS</li>
-							<li>Q & A</li>
-							<li>TERMS & CONDITIONS</li>
-							<li>SERVICES</li>
-						</ui>
+						<li className="list-unstyled">
+							<a href="/home">REVEIWS</a>
+							<br></br>
+							<a href="/home">Q & A</a>
+							<br></br>
+							<a href="/home">TERMS & CONDITIONS</a>
+							<br></br>
+							<a href="/home">SERVICES</a>
+						</li>
 					</div>
 					{/* Column4 */}
 					<div className="col">
 						<h4>CONTACT</h4>
-						<ui className="list-unstyled">
+						<ul className="list-unstyled">
 							<li>ADDRESS : 276/2F, Wackwalla Road, Galle</li>
 							<li>PHONE : 071 818 7288</li>
 							<li>EMAIL : familydentalclinic@gmail.com</li>
-						</ui>
+						</ul>
 					</div>
 				</div>
 				<hr />
