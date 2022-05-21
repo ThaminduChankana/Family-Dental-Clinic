@@ -39,7 +39,7 @@ function Header({ setSearch }) {
 					</a>
 					<a
 						style={{ textDecoration: "none", color: "#0d5875", fontSize: "20px", marginLeft: "35px" }}
-						href="/contactus"
+						href="/inquiries"
 					>
 						Contact Us
 					</a>

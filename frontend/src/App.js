@@ -60,6 +60,7 @@ import AccessDenied from "./components/AccessDenied";
 import HomePage from "./screens/Static/Home/HomePage";
 import AboutUs from "./screens/Static/AboutUs/AboutUs";
 import TermsAndCondtions from "./screens/Static/TermsAndConditions/TermsAndCondition"
+import Inquiries from "./screens/Static/Inquiries/Inquiries";
 
 const App = () => {
 	const [search, setSearch] = useState("");
@@ -68,6 +69,7 @@ const App = () => {
 			<Header setSearch={setSearch} />
 			<main>
 				<Route path="/" component={HomePage} exact />
+				<Route path="/inquiries" component={Inquiries} exact />
 				<Route path="/login-select" component={LoginSelectorPage} exact />
 				<Route path="/access-denied" component={AccessDenied} exact />
 				<Route path="/admin-feedback-Q&A" component={FeedbackSelectorPage} exact />
