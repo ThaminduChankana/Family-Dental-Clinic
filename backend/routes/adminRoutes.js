@@ -22,6 +22,20 @@ const {
 	DeleteMedicalHistory,
 } = require("../controllers/medicalHistoryController");
 
+const {
+	UpdateFeedbackforAdmin,
+	deleteFeedback,
+	getFeedbackById,
+	getFeedbackforAdmin,
+} = require("../controllers/feedbackController");
+
+const {
+	getQuestionById,
+	UpdateQuestionforAdmin,
+	deleteQuestion,
+	getQuestionForAdmin,
+} = require("../controllers/questionController");
+
 const { protect } = require("../middlewares/authAdminMiddleware");
 const { post } = require("./doctorRoutes");
 const router = express.Router();
@@ -35,7 +49,7 @@ router.route("/view").get(protect, getAdminProfile);
 //Routes for Doctor account operations admin end
 router.route("/doctor/register").post(protect, registerDoctor);
 router.route("/doctor/profile/view/:_id").get(protect, getDoctorProfileById).delete(protect, deleteDoctorProfileById);
-router.route("/doctor/profile/edit/:_id").put(protect, updateDoctorProfileById)
+router.route("/doctor/profile/edit/:_id").put(protect, updateDoctorProfileById);
 router.route("/doctors").get(protect, getDoctors);
 
 //Routes for Patient account operations admin end
@@ -55,5 +69,17 @@ router
 	.get(protect, getMedicalHistoryById)
 	.put(protect, UpdateMedicalHistory)
 	.delete(protect, DeleteMedicalHistory);
+
+//Routes for feedback operations
+router.route("/feedback/update/:id").put(protect, UpdateFeedbackforAdmin);
+router.route("/feedback/view").get(protect, getFeedbackforAdmin);
+router.route("/feedback/delete/:id").delete(protect, deleteFeedback);
+router.route("/feedback/view/:id").get(protect, getFeedbackById);
+
+//Routes for Q&A operations
+router.route("/question/update/:id").put(protect, UpdateQuestionforAdmin);
+router.route("/question/view").get(protect, getQuestionForAdmin);
+router.route("/question/view/:id").get(protect, getQuestionById);
+router.route("/question/delete/:id").put(protect, deleteQuestion);
 
 module.exports = router;

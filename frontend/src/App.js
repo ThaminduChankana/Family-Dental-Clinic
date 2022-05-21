@@ -21,6 +21,17 @@ import PatientListForAdmin from "./screens/AdminLists/patientList";
 import PatientListForDoctor from "./screens/DoctorLists/patientList";
 import DoctorEditByAdmin from "./screens/UserManagement/AdminUserEditScreens/DoctorEditByAdmin";
 import PatientEditByAdmin from "./screens/UserManagement/AdminUserEditScreens/PatientEditByAdmin";
+import FeedbackCreate from "./screens/Feedback/FeedbackCreateSreens/FeedbackCreate";
+import QuestionCreate from "./screens/Question/QuestionCreateScreens/QuestionCreate";
+import FeedbackViewforAdmin from "./screens/Feedback/FeedbackLists/FeedbackViewforAdmin";
+import QuestionViewforAdmin from "./screens/Question/QuestionLists/QuestionViewforAdmin";
+import PatientFeedbackEdit from "./screens/Feedback/FeedbackEditScreens/PatientFeedbackEdit";
+import PaitentQuestionEdit from "./screens/Question/QuestionEditScreens/PatientQuestionEdit";
+import SingleFeedback from "./screens/Feedback/FeedbackEditScreens/SingleFeedback";
+import FeedbackViewforPatient from "./screens/Feedback/FeedbackLists/FeedbackViewForPatient";
+import CommonViewFeedback from "./screens/Feedback/FeedbackLists/CommonViewFeedback";
+import QuestionViewforPatient from "./screens/Question/QuestionLists/QuestionViewforPatient";
+import AdminQuestionEdit from "./screens/Question/QuestionEditScreens/AdminQuestionEdit";
 
 const App = () => {
 	return (
@@ -45,6 +56,17 @@ const App = () => {
 				<Route path="/doctor-patients" component={PatientListForDoctor} exact />
 				<Route path="/admin-doctor-edit/:id" component={DoctorEditByAdmin} exact />
 				<Route path="/admin-patient-edit/:id" component={PatientEditByAdmin} exact />
+				<Route path="/feedback-create" component={FeedbackCreate} exact />
+				<Route path="/question-create" component={QuestionCreate} exact />
+				<Route path="/feedback-adminview" component={FeedbackViewforAdmin} exact />
+				<Route path="/question-adminview" component={QuestionViewforAdmin} exact />
+				<Route path="/feedback-update-patient/:id" component={PatientFeedbackEdit} exact />
+				<Route path="/question-update-patient/:id" component={PaitentQuestionEdit} exact />
+				<Route path="/feedback-update-admin/:id" component={SingleFeedback} exact />
+				<Route path="/feedback-view-patient" component={FeedbackViewforPatient} exact />
+				<Route path="/common-view-feedback" component={CommonViewFeedback} exact />
+				<Route path="/question-view-patient" component={QuestionViewforPatient} exact />
+				<Route path="/question-update-admin/:id" component={AdminQuestionEdit} exact />
 			</main>
 		</BrowserRouter>
 	);

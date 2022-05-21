@@ -47,9 +47,10 @@ const AdminOperationPage = ({ history }) => {
 										Inventory Management
 									</Button>
 								</a>
-								<a href="/">
+
+								<a href="/question-adminview">
 									<Button size="lg" className="landingbutton">
-										Feedback And Q & A Management
+										Q & A Management
 									</Button>
 								</a>
 								<a href="/">
@@ -67,6 +68,11 @@ const AdminOperationPage = ({ history }) => {
 								<a href="/">
 									<Button size="lg" className="landingbutton">
 										Doctor's Schedule Management
+									</Button>
+								</a>
+								<a href="/feedback-adminview">
+									<Button size="lg" className="landingbutton">
+										Feedback Management
 									</Button>
 								</a>
 							</div>

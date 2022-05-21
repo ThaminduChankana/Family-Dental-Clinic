@@ -19,6 +19,27 @@ import {
 } from "./reducers/doctorReducers";
 
 import {
+	createFeedbackReducer,
+	deleteFeedbackforAdminReducer,
+	deleteFeedbackReducer,
+	getFeedbackCommonReviewPageReducer,
+	getFeedbackforAdminReducer,
+	getFeedbackReducer,
+	UpdateFeedbackforAdminReducer,
+	updateFeedbackReducer,
+} from "./reducers/feedbackReducer";
+
+import {
+	createQuestionReducer,
+	deleteQuestionforAdminReducer,
+	deleteQuestionReducer,
+	getQuestionForAdminReducer,
+	getQuestionReducer,
+	UpdateQuestionforAdminReducer,
+	updateQuestionReducer,
+} from "./reducers/questionReducer";
+
+import {
 	patientLoginReducer,
 	patientRegisterReducer,
 	patientViewReducer,
@@ -50,6 +71,21 @@ const reducer = combineReducers({
 	patientDelete: patientDeleteReducer,
 	patientViewById: patientViewByIdReducer,
 	patientUpdateById: patientUpdateByIdReducer,
+	getFeedback: getFeedbackReducer,
+	createFeedback: createFeedbackReducer,
+	updateFeedback: updateFeedbackReducer,
+	deleteFeedback: deleteFeedbackReducer,
+	getFeedbackforAdmin: getFeedbackforAdminReducer,
+	UpdateFeedbackforAdmin: UpdateFeedbackforAdminReducer,
+	deleteFeedbackforAdmin: deleteFeedbackforAdminReducer,
+	getQuestion: getQuestionReducer,
+	createQuestion: createQuestionReducer,
+	updateQuestion: updateQuestionReducer,
+	deleteQuestion: deleteQuestionReducer,
+	getQuestionForAdmin: getQuestionForAdminReducer,
+	UpdateQuestionforAdmin: UpdateQuestionforAdminReducer,
+	deleteQuestionforAdmin: deleteQuestionforAdminReducer,
+	getFeedbackCommonReviewPage: getFeedbackCommonReviewPageReducer,
 });
 
 const adminInfoFromStorage = localStorage.getItem("adminInfo") ? JSON.parse(localStorage.getItem("adminInfo")) : null;
