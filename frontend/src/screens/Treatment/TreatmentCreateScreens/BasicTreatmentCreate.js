@@ -105,7 +105,6 @@ export default function BasicTreatmentCreate({ history }) {
 									style={{ height: "35px", width: "100%", borderRadius: 5, borderColor: "#808080", borderWidth: 0.5 }}
 									onChange={(e) => setTreatmentType(e.target.value)}
 								>
-									<option value="Treatment Type">Treatment Type</option>
 									<option value="Paedodontics">Paedodontics</option>
 									<option value="Dentures">Dentures</option>
 									<option value="Extraction">Extraction</option>

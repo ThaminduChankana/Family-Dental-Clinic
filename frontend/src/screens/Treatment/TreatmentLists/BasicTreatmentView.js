@@ -59,97 +59,96 @@ function BasicTreatmentView({ search }) {
 	if (doctorInfo) {
 		return (
 			<div style={{ minHeight: 700 }}>
-				<br />
-				<br />
-				<TreatmentNavBar />
-				<br />
-				<Link to="/treatment-basicTreatment-create">
-					<Button style={{ marginLeft: 1500, marginBottom: 6 }} size="lg">
-						New Basic Treatment
-					</Button>
-				</Link>
-				<h1 style={{ textAlign: "center" }}>Basic Treatment List</h1>
-				{errorDelete && <ErrorMessage variant="danger">{errorDelete}</ErrorMessage>}
-				{loadingDelete && <Loading />}
-				{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
-				{loading && <Loading />}
-				{basicTreatments
-					?.reverse()
-					.filter((filteredB) => filteredB.nic.includes(search))
-					.map((basic) => (
-						<Accordion>
-							<Card
-								style={{
-									marginLeft: "20%",
-									borderRadius: 25,
-									borderWidth: 1.0,
-									borderColor: "rgb(0,0,0,0.5)",
-									marginTop: 20,
-									paddingInline: 10,
-									background: "rgb(235, 235, 235)",
-									width: "60%",
-								}}
-								key={basic._id}
-							>
-								<Card.Header
+				<MainScreen title={`Welcome Back ${doctorInfo && doctorInfo.name}..`}>
+					<TreatmentNavBar />
+					<br />
+					<Link to="/treatment-basicTreatment-create">
+						<Button style={{ marginLeft: 920, marginBottom: 6 }} size="lg">
+							New Basic Treatment
+						</Button>
+					</Link>
+					<h1>Basic Treatment List</h1>
+					{errorDelete && <ErrorMessage variant="danger">{errorDelete}</ErrorMessage>}
+					{loadingDelete && <Loading />}
+					{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
+					{loading && <Loading />}
+					{basicTreatments
+						?.reverse()
+						.filter((filteredB) => filteredB.nic.includes(search))
+						.map((basic) => (
+							<Accordion>
+								<Card
 									style={{
-										display: "flex",
-										paddingInline: 10,
 										borderRadius: 25,
-										marginTop: 10,
-										marginBottom: 10,
-										borderColor: "black",
-										background: "rgba(255, 255, 255)",
+										borderWidth: 1.0,
+										borderColor: "rgb(0,0,0,0.5)",
+										marginTop: 20,
+										paddingInline: 10,
+										background: "rgb(235, 235, 235)",
 									}}
+									key={basic._id}
 								>
-									<span
+									<Card.Header
 										style={{
-											color: "black",
-											textDecoration: "none",
-											flex: 1,
-											cursor: "pointer",
-											alignSelf: "center",
-											fontSize: 18,
+											display: "flex",
+											paddingInline: 10,
+											borderRadius: 25,
+											marginTop: 10,
+											marginBottom: 10,
+											borderColor: "black",
+											background: "rgba(255, 255, 255)",
 										}}
 									>
-										<Accordion.Toggle as={Card.Text} variant="link" eventKey="0">
-											NIC : &emsp;
-											{basic.nic}
-											&emsp; &emsp;&emsp; Date : {basic.date}&emsp; &emsp;&emsp; Type : {basic.treatmentType}
-										</Accordion.Toggle>
-									</span>
-									<div>
-										<Button style={{ width: "70px" }} href={`/basicTreatment/${basic._id}`}>
-											Edit
-										</Button>
-									</div>
-									&emsp;
-									<div>
-										<Button
-											style={{ width: "70px" }}
-											variant="danger"
-											className="mx-2"
-											onClick={() => deleteHandler(basic._id)}
+										<span
+											style={{
+												color: "black",
+												textDecoration: "none",
+												flex: 1,
+												cursor: "pointer",
+												alignSelf: "center",
+												fontSize: 18,
+											}}
 										>
-											Delete
-										</Button>
-									</div>
-								</Card.Header>
-								<Accordion.Collapse eventKey="0">
-									<Card.Body>
-										<Row>
-											<Col md={20}>
-												<h5>Cost : {basic.cost}</h5>
-												<h5>CheckUp : {basic.checkup}</h5>
-												<h5>Procedure : {basic.procedure}</h5>
-												<h5>Remark : {basic.remark}</h5>
-											</Col>
-										</Row>
-									</Card.Body>
-								</Accordion.Collapse>
-							</Card>
-						</Accordion>
-					))}
+											<Accordion.Toggle as={Card.Text} variant="link" eventKey="0">
+												NIC : &emsp;
+												{basic.nic}
+												&emsp; &emsp;&emsp; Date : {basic.date}&emsp; &emsp;&emsp; Type : {basic.treatmentType}
+											</Accordion.Toggle>
+										</span>
+										<div>
+											<Button style={{ width: "70px" }} href={`/basicTreatment/${basic._id}`}>
+												Edit
+											</Button>
+										</div>
+										&emsp;
+										<div>
+											<Button
+												style={{ width: "70px" }}
+												variant="danger"
+												className="mx-2"
+												onClick={() => deleteHandler(basic._id)}
+											>
+												Delete
+											</Button>
+										</div>
+									</Card.Header>
+									<Accordion.Collapse eventKey="0">
+										<Card.Body>
+											<Row>
+												<Col md={20}>
+													<h5>Cost : {basic.cost}</h5>
+													<h5>CheckUp : {basic.checkup}</h5>
+													<h5>Procedure : {basic.procedure}</h5>
+													<h5>Remark : {basic.remark}</h5>
+												</Col>
+											</Row>
+										</Card.Body>
+									</Accordion.Collapse>
+								</Card>
+							</Accordion>
+						))}
+					<br></br>
+				</MainScreen>
 			</div>
 		);
 	} else {

@@ -60,98 +60,97 @@ function OrthodonticView({ search }) {
 	if (doctorInfo) {
 		return (
 			<div style={{ minHeight: 700 }}>
-				<br />
-				<br />
-				<TreatmentNavBar />
-				<br />
-				<Link to="/treatment-orthodontic-create">
-					<Button style={{ marginLeft: 1500, marginBottom: 6 }} size="lg">
-						New Orthodontic
-					</Button>
-				</Link>
-				<h1 style={{ textAlign: "center" }}>Orthodontic Treatment List</h1>
-				{errorDelete && <ErrorMessage variant="danger">{errorDelete}</ErrorMessage>}
-				{loadingDelete && <Loading />}
-				{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
-				{loading && <Loading />}
-				{orthodontics
-					?.reverse()
-					.filter((filtered) => filtered.nic.includes(search))
-					.map((orthodontic) => (
-						<Accordion key={orthodontic._id}>
-							<Card
-								style={{
-									marginLeft: "20%",
-									borderRadius: 25,
-									borderWidth: 1.0,
-									borderColor: "rgb(0,0,0,0.5)",
-									marginTop: 20,
-									paddingInline: 10,
-									background: "rgb(235, 235, 235)",
-									width: "60%",
-								}}
-							>
-								<Card.Header
+				<MainScreen title={`Welcome Back ${doctorInfo && doctorInfo.name}..`}>
+					<TreatmentNavBar />
+					<br />
+					<Link to="/treatment-orthodontic-create">
+						<Button style={{ marginLeft: 950, marginBottom: 6 }} size="lg">
+							New Orthodontic
+						</Button>
+					</Link>
+					<h1>Orthodontic Treatment List</h1>
+					{errorDelete && <ErrorMessage variant="danger">{errorDelete}</ErrorMessage>}
+					{loadingDelete && <Loading />}
+					{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
+					{loading && <Loading />}
+					{orthodontics
+						?.reverse()
+						.filter((filtered) => filtered.nic.includes(search))
+						.map((orthodontic) => (
+							<Accordion key={orthodontic._id}>
+								<Card
 									style={{
-										display: "flex",
-										paddingInline: 10,
 										borderRadius: 25,
-										marginTop: 10,
-										marginBottom: 10,
-										borderColor: "black",
-										background: "rgba(255, 255, 255)",
+										borderWidth: 1.0,
+										borderColor: "rgb(0,0,0,0.5)",
+										marginTop: 20,
+										paddingInline: 10,
+										background: "rgb(235, 235, 235)",
 									}}
 								>
-									<span
+									<Card.Header
 										style={{
-											color: "black",
-											textDecoration: "none",
-											flex: 1,
-											cursor: "pointer",
-											alignSelf: "center",
-											fontSize: 18,
+											display: "flex",
+											paddingInline: 10,
+											borderRadius: 25,
+											marginTop: 10,
+											marginBottom: 10,
+											borderColor: "black",
+											background: "rgba(255, 255, 255)",
 										}}
 									>
-										<Accordion.Toggle as={Card.Text} variant="link" eventKey="0">
-											NIC : &emsp;
-											{orthodontic.nic}
-											&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;&emsp; &emsp; Date : {orthodontic.firstVisit}
-										</Accordion.Toggle>
-									</span>
-									<div>
-										<Button style={{ width: "70px" }} href={`/orthodontic/${orthodontic._id}`}>
-											Edit
-										</Button>
-									</div>
-									&emsp;
-									<div>
-										<Button
-											style={{ width: "70px" }}
-											variant="danger"
-											className="mx-2"
-											onClick={() => deleteHandler(orthodontic._id)}
+										<span
+											style={{
+												color: "black",
+												textDecoration: "none",
+												flex: 1,
+												cursor: "pointer",
+												alignSelf: "center",
+												fontSize: 18,
+											}}
 										>
-											Delete
-										</Button>
-									</div>
-								</Card.Header>
-								<Accordion.Collapse eventKey="0">
-									<Card.Body>
-										<Row>
-											<Col md={20}>
-												<h5>First Visit Date : {orthodontic.firstVisit}</h5>
-												<h5>Full Cost : {orthodontic.fullCost}</h5>
-												<h5>Paid : {orthodontic.paid}</h5>
-												<h5>Facial Examination : {orthodontic.facialExamination}</h5>
-												<h5>Follow Up Visits : {orthodontic.followUpVisits}</h5>
-												<h5>Remark : {orthodontic.remark}</h5>
-											</Col>
-										</Row>
-									</Card.Body>
-								</Accordion.Collapse>
-							</Card>
-						</Accordion>
-					))}
+											<Accordion.Toggle as={Card.Text} variant="link" eventKey="0">
+												NIC : &emsp;
+												{orthodontic.nic}
+												&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;&emsp; &emsp; Date : {orthodontic.firstVisit}
+											</Accordion.Toggle>
+										</span>
+										<div>
+											<Button style={{ width: "70px" }} href={`/orthodontic/${orthodontic._id}`}>
+												Edit
+											</Button>
+										</div>
+										&emsp;
+										<div>
+											<Button
+												style={{ width: "70px" }}
+												variant="danger"
+												className="mx-2"
+												onClick={() => deleteHandler(orthodontic._id)}
+											>
+												Delete
+											</Button>
+										</div>
+									</Card.Header>
+									<Accordion.Collapse eventKey="0">
+										<Card.Body>
+											<Row>
+												<Col md={20}>
+													<h5>First Visit Date : {orthodontic.firstVisit}</h5>
+													<h5>Full Cost : {orthodontic.fullCost}</h5>
+													<h5>Paid : {orthodontic.paid}</h5>
+													<h5>Facial Examination : {orthodontic.facialExamination}</h5>
+													<h5>Follow Up Visits : {orthodontic.followUpVisits}</h5>
+													<h5>Remark : {orthodontic.remark}</h5>
+												</Col>
+											</Row>
+										</Card.Body>
+									</Accordion.Collapse>
+								</Card>
+							</Accordion>
+						))}
+					<br></br>
+				</MainScreen>
 			</div>
 		);
 	} else {
