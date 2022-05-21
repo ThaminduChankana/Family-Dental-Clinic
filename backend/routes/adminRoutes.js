@@ -28,6 +28,7 @@ const {
 	getMedicalHistoryById,
 	UpdateMedicalHistory,
 	DeleteMedicalHistory,
+	getMedicalHistoryCount,
 } = require("../controllers/medicalHistoryController");
 // schedule handling route
 const {
@@ -90,6 +91,7 @@ router
 //Routes for medical history management admin end
 router.route("/medical_history").get(protect, getMedicalHistory);
 router.route("/medical_history/create").post(protect, createMedicalHistory);
+router.route("/medical_history/report").get(protect, getMedicalHistoryCount);
 router
 	.route("/medical_history/:id")
 	.get(protect, getMedicalHistoryById)
