@@ -6,7 +6,7 @@ const {} = require("../routes/patientRoutes");
 const generateToken = require("../utils/generateToken");
 
 const registerAdmin = asyncHandler(async (req, res) => {
-	const { name, dob, nic, telephone, address, previousRef, password, pic, dataEntry } = req.body;
+	const { name, dob, nic, telephone, address, email, previousRef, password, pic, dataEntry } = req.body;
 
 	const adminExists = await Admin.findOne({ nic });
 	if (adminExists) {
@@ -20,6 +20,7 @@ const registerAdmin = asyncHandler(async (req, res) => {
 		nic,
 		telephone,
 		address,
+		email,
 		previousRef,
 		password,
 		pic,
@@ -35,6 +36,7 @@ const registerAdmin = asyncHandler(async (req, res) => {
 			nic: admin.nic,
 			telephone: admin.telephone,
 			address: admin.address,
+			email: admin.email,
 			previousRef: admin.previousRef,
 			pic: admin.pic,
 			dataEntry: admin.dataEntry,
@@ -59,6 +61,7 @@ const authAdmin = asyncHandler(async (req, res) => {
 			nic: admin.nic,
 			telephone: admin.telephone,
 			address: admin.address,
+			email: admin.email,
 			previousRef: admin.previousRef,
 			pic: admin.pic,
 			dataEntry: admin.dataEntry,
@@ -79,6 +82,7 @@ const updateAdminProfile = asyncHandler(async (req, res) => {
 		admin.nic = req.body.nic || admin.nic;
 		admin.telephone = req.body.telephone || admin.telephone;
 		admin.address = req.body.address || admin.address;
+		admin.email = req.body.email || admin.email;
 		admin.previousRef = req.body.previousRef || admin.previousRef;
 		admin.pic = req.body.pic || admin.pic;
 		admin.dataEntry = req.body.dataEntry || admin.dataEntry;
@@ -96,6 +100,7 @@ const updateAdminProfile = asyncHandler(async (req, res) => {
 			nic: updatedAdmin.nic,
 			telephone: updatedAdmin.telephone,
 			address: updatedAdmin.address,
+			email: updatedAdmin.email,
 			previousRef: updatedAdmin.previousRef,
 			pic: updatedAdmin.pic,
 			dataEntry: updatedAdmin.dataEntry,
@@ -116,6 +121,7 @@ const getAdminProfile = asyncHandler(async (req, res) => {
 			nic: admin.nic,
 			telephone: admin.telephone,
 			address: admin.address,
+			email: admin.email,
 			previousRef: admin.previousRef,
 			pic: admin.pic,
 			dataEntry: admin.dataEntry,

@@ -1,0 +1,13 @@
+.patientList {
+	background: rgba(90, 141, 141, 0.5);
+	background-repeat: no-repeat;
+}
+.doctorList {
+	background: rgb(118, 176, 190);
+	background-repeat: no-repeat;
+}
+.denied {
+	background: url("../../Images/accessDenied.jpg");
+	background-position: center;
+	background-size: cover;
+}

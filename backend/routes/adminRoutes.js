@@ -13,6 +13,7 @@ const {
 	getPatientProfileById,
 	deletePatientProfileById,
 	updatePatientProfileById,
+	getPatientCount,
 } = require("../controllers/patientController");
 const {
 	getInventory,
@@ -59,6 +60,8 @@ const {
 	getQuestionForAdmin,
 } = require("../controllers/questionController");
 
+const { getBlogCount } = require("../controllers/blogController");
+
 const { protect } = require("../middlewares/authAdminMiddleware");
 const { post } = require("./doctorRoutes");
 const router = express.Router();
@@ -83,6 +86,7 @@ router
 	.delete(protect, deletePatientProfileById);
 router.route("/patient/profile/edit/:_id").put(protect, updatePatientProfileById);
 router.route("/patients").get(protect, getPatients);
+router.route("/patients/count").get(protect, getPatientCount);
 
 //Routes for Inventory control operations
 router.route("/inventory/get").get(protect, getInventory);
@@ -130,5 +134,7 @@ router.route("/appointment/").get(protect, getAppointments);
 router.route("/appointment/").post(protect, createAppointment);
 router.route("/appointment/:id").put(protect, updateAppointment);
 router.route("/appointment/:id").delete(protect, deleteAppointment);
+//Routes for Blogs
+router.route("/blog/report").get(protect, getBlogCount);
 
 module.exports = router;

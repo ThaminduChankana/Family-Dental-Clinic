@@ -1,8 +1,7 @@
 .profilePic {
-	width: 60%;
 	display: flex;
 	align-items: center;
-	padding: 20px;
+	padding: 5px;
 }
 .profileContainer {
 	display: flex;
@@ -12,4 +11,17 @@
 	.profileContainer {
 		flex-direction: column-reverse;
 	}
+}
+.profileViewBg {
+	background: url("../../../Images/profileView.jpg");
+	background-position: center;
+	background-size: cover;
+}
+.profileCont {
+	background: rgba(231, 238, 238, 0.5);
+}
+.denied {
+	background: url("../../../Images/accessDenied.jpg");
+	background-position: center;
+	background-size: cover;
 }

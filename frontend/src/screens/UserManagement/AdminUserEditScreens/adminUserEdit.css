@@ -1,0 +1,17 @@
+.patientEditBg {
+	background: url("../../../Images/admin-patient-edit.png");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.doctorEditBg {
+	background: url("../../../Images/admin-doctor-edit.png");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.denied {
+	background: url("../../../Images/accessDenied.jpg");
+	background-position: center;
+	background-size: cover;
+}

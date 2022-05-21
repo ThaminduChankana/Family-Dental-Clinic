@@ -1,6 +1,7 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
+
 import {
 	adminLoginReducer,
 	adminRegisterReducer,
@@ -24,6 +25,7 @@ import {
 	patientViewReducer,
 	patientUpdateReducer,
 	patientListReducer,
+	patientListForDoctorReducer,
 	patientViewByIdReducer,
 	patientUpdateByIdReducer,
 	patientDeleteReducer,
@@ -49,6 +51,20 @@ import {
 	orthodonticUpdateReducer,
 	orthodonticDeleteReducer,
 } from "./reducers/orthodonticReducer";
+import {
+	blogCreateReducer,
+	blogDeleteReducer,
+	blogListReducer,
+	blogListForUsersReducer,
+	blogUpdateReducer,
+} from "./reducers/blogsReducers";
+
+import {
+	inventoryListReducer,
+	inventoryCreateReducer,
+	inventoryUpdateReducer,
+	inventoryDeleteReducer,
+} from "./reducers/InventoryReducer";
 
 import appointmentReducer from "./reducers/appointmentReducer";
 
@@ -71,9 +87,14 @@ const reducer = combineReducers({
 	patientView: patientViewReducer,
 	patientUpdate: patientUpdateReducer,
 	patientList: patientListReducer,
+	patientListForDoctor: patientListForDoctorReducer,
 	patientDelete: patientDeleteReducer,
 	patientViewById: patientViewByIdReducer,
 	patientUpdateById: patientUpdateByIdReducer,
+	inventoryList: inventoryListReducer,
+	inventoryCreate: inventoryCreateReducer,
+	inventoryUpdate: inventoryUpdateReducer,
+	inventoryDelete: inventoryDeleteReducer,
 	basicTreatmentList: basicTreatmentListReducer,
 	basicTreatmentCreate: basicTreatmentCreateReducer,
 	basicTreatmentUpdate: basicTreatmentUpdateReducer,
@@ -86,7 +107,12 @@ const reducer = combineReducers({
 	orthodonticCreate: orthodonticCreateReducer,
 	orthodonticUpdate: orthodonticUpdateReducer,
 	orthodonticDelete: orthodonticDeleteReducer,
-	appointments:  appointmentReducer
+	appointments:  appointmentReducer,
+	blogList: blogListReducer,
+	blogListforUsers: blogListForUsersReducer,
+	blogCreate: blogCreateReducer,
+	blogUpdate: blogUpdateReducer,
+	blogDelete: blogDeleteReducer,
 });
 
 const adminInfoFromStorage = localStorage.getItem("adminInfo") ? JSON.parse(localStorage.getItem("adminInfo")) : null;

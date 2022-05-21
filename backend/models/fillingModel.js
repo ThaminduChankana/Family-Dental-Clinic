@@ -1,41 +1,46 @@
 const mongoose = require("mongoose");
 
-const fillingSchema = mongoose.Schema({
-	nic: {
-		type: String,
-		required: true,
+const fillingSchema = mongoose.Schema(
+	{
+		nic: {
+			type: String,
+			required: true,
+		},
+		cost: {
+			type: String,
+			required: true,
+		},
+		fillingMaterial: {
+			type: String,
+			required: true,
+		},
+		fillingType: {
+			type: String,
+			required: true,
+		},
+		anestheticStatus: {
+			type: String,
+			required: true,
+		},
+		date: {
+			type: String,
+			required: true,
+		},
+		checkup: {
+			type: String,
+		},
+		procedure: {
+			type: String,
+			required: true,
+		},
+		remark: {
+			type: String,
+		},
 	},
-	cost: {
-		type: String,
-		required: true,
-	},
-	fillingMaterial: {
-		type: String,
-		required: true,
-	},
-	fillingType: {
-		type: String,
-		required: true,
-	},
-	anestheticStatus: {
-		type: String,
-		required: true,
-	},
-	date: {
-		type: String,
-		required: true,
-	},
-	checkup: {
-		type: String,
-	},
-	procedure: {
-		type: String,
-		required: true,
-	},
-	remark: {
-		type: String,
-	},
-});
+	{
+		timestamps: true,
+	}
+);
 
 const Filling = mongoose.model("Filling", fillingSchema);
 

@@ -1,5 +1,15 @@
+.denied {
+	background: url("../../../Images/accessDenied.jpg");
+	background-position: center;
+	background-size: cover;
+}
 .title {
 	font-size: 95px;
+}
+.feedBackSelectBg {
+	background: url("../../../Images/feedBackView.jpg");
+	background-position: center;
+	background-size: cover;
 }
 .subtitle {
 	font-size: 25px;
@@ -8,12 +18,6 @@
 .intro-text {
 	width: 100%;
 	text-align: center;
-}
-.main {
-	min-height: 93vh;
-	display: flex;
-	align-items: center;
-	background-size: cover;
 }
 .buttonContainer {
 	margin-top: 50px;
