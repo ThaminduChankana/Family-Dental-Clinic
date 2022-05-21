@@ -19,7 +19,7 @@ function Footer() {
 					<div className="col">
 						<h4>QUICK LINKS</h4>
 						<li className="list-unstyled">
-							<a href="/home">HOME</a>
+							<a href="/">HOME</a>
 							<br></br>
 							<a href="/home">ABOUT US</a>
 							<br></br>
