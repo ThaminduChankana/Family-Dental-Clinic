@@ -44,6 +44,15 @@ export default function OrthodonticCreate({ history }) {
 
 		resetHandler();
 	};
+	const demoHandler = async (e) => {
+		e.preventDefault();
+		setNic("997193245V");
+		setFullCost("65000.00");
+		setPaid("20000.00");
+		setFacialExamination("Need to correct the gap between fron teeth");
+		setFollowUpVisits("Not yet");
+		setRemark("No");
+	};
 
 	useEffect(() => {}, []);
 	if (doctorInfo) {
@@ -144,6 +153,15 @@ export default function OrthodonticCreate({ history }) {
 								</Button>
 								<Button style={{ width: "15%" }} className="mx-2" onClick={resetHandler} variant="danger">
 									Reset
+								</Button>
+								<Button
+									variant="info"
+									onClick={demoHandler}
+									style={{
+										width: "15%",
+									}}
+								>
+									Demo
 								</Button>
 							</Form>
 						</Card.Body>

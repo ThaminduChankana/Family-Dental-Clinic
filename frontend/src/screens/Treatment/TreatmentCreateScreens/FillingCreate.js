@@ -12,8 +12,8 @@ export default function FillingCreate({ history }) {
 	const [nic, setNic] = useState("");
 	const [cost, setCost] = useState("");
 	const [anestheticStatus, setAnestheticStatus] = useState("");
-	const [fillingMaterial, setFillingMaterial] = useState("");
-	const [fillingType, setFillingType] = useState("");
+	const [fillingMaterial, setFillingMaterial] = useState("Gold");
+	const [fillingType, setFillingType] = useState("Direct");
 	const [date, setDate] = useState("");
 	const [checkup, setCheckup] = useState("");
 	const [procedure, setProcedure] = useState("");
@@ -34,9 +34,17 @@ export default function FillingCreate({ history }) {
 		setAnestheticStatus("");
 		setDate("");
 		setCheckup("");
-		setCheckup("");
 		setProcedure("");
 		setRemark("");
+	};
+	const demoHandler = async (e) => {
+		e.preventDefault();
+		setNic("997193245V");
+		setCost("5000.00");
+		setAnestheticStatus("No need of anesthetic");
+		setCheckup("No problem in x-ray");
+		setProcedure("Need to fill both 2-4,2-5");
+		setRemark("No");
 	};
 
 	const submitHandler = (e) => {
@@ -179,6 +187,15 @@ export default function FillingCreate({ history }) {
 								</Button>
 								<Button style={{ width: "15%" }} className="mx-2" onClick={resetHandler} variant="danger">
 									Reset
+								</Button>
+								<Button
+									variant="info"
+									onClick={demoHandler}
+									style={{
+										width: "15%",
+									}}
+								>
+									Demo
 								</Button>
 							</Form>
 						</Card.Body>

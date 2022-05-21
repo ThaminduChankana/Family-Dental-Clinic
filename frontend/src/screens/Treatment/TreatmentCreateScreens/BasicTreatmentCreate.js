@@ -11,7 +11,7 @@ import "./treatmentCreate.css";
 export default function BasicTreatmentCreate({ history }) {
 	const [nic, setNic] = useState("");
 	const [cost, setCost] = useState("");
-	const [treatmentType, setTreatmentType] = useState("");
+	const [treatmentType, setTreatmentType] = useState("Paedodontics");
 	const [date, setDate] = useState("");
 	const [checkup, setCheckup] = useState("");
 	const [procedure, setProcedure] = useState("");
@@ -44,6 +44,14 @@ export default function BasicTreatmentCreate({ history }) {
 
 		resetHandler();
 	};
+	const demoHandler = async (e) => {
+		e.preventDefault();
+		setNic("997193245V");
+		setCost("8000.00");
+		setCheckup("No matter in the x-ray");
+		setProcedure("Need to remove dead tissues around 2-4");
+		setRemark("No");
+	};
 
 	useEffect(() => {}, []);
 	if (doctorInfo) {
@@ -74,7 +82,6 @@ export default function BasicTreatmentCreate({ history }) {
 										required
 									/>
 								</Form.Group>
-
 								<Form.Group controlId="cost">
 									<Form.Label>Cost</Form.Label>
 									<Form.Control
@@ -86,7 +93,6 @@ export default function BasicTreatmentCreate({ history }) {
 										required
 									/>
 								</Form.Group>
-
 								<Form.Group controlId="treatmentType">
 									<Form.Label>Treatment Type</Form.Label>
 									<br />
@@ -143,13 +149,21 @@ export default function BasicTreatmentCreate({ history }) {
 										onChange={(e) => setRemark(e.target.value)}
 									/>
 								</Form.Group>
-
 								{loading && <Loading size={50} />}
 								<Button style={{ width: "15%" }} type="submit" variant="primary">
 									Submit
 								</Button>
 								<Button style={{ width: "15%" }} className="mx-2" onClick={resetHandler} variant="danger">
 									Reset
+								</Button>
+								<Button
+									variant="info"
+									onClick={demoHandler}
+									style={{
+										width: "15%",
+									}}
+								>
+									Demo
 								</Button>
 							</Form>
 						</Card.Body>
