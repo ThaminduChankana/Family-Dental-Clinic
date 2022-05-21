@@ -22,7 +22,7 @@ function Header({ setSearch }) {
 			</div>
 			<div className="rightSide">
 				<div className="links">
-					<a style={{ textDecoration: "none", color: "#0d5875", fontSize: "20px", marginLeft: "35px" }} href="/home">
+					<a style={{ textDecoration: "none", color: "#0d5875", fontSize: "20px", marginLeft: "35px" }} href="/">
 						Home
 					</a>
 					<a style={{ textDecoration: "none", color: "#0d5875", fontSize: "20px", marginLeft: "35px" }} href="/aboutus">
