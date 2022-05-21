@@ -1,5 +1,5 @@
-import { useHistory } from "react-router-dom";
-import { Accordion, Card, Button, Row, Col } from "react-bootstrap";
+
+import { Accordion, Card, Row, Col } from "react-bootstrap";
 import MainScreen from "../../components/MainScreen";
 //import { Link,useHistory } from "react-router-dom";
 import { useEffect } from "react";
@@ -86,12 +86,10 @@ export default function CommonSchedules({ search }) {
 									<Card.Body>
 										<Row>
 											<Col md={6}>
-												<h2> NIC : {schedule.nic}</h2>
 												<h5>Name : {schedule.name}</h5>
 												<h5>Date : {schedule.date}</h5>
 												<h5>Time : {schedule.time}</h5>
 												<h5>Description : {schedule.description}</h5>
-												<h5>Added By : {schedule.addedBy}</h5>
 												<br></br>
 											</Col>
 										</Row>

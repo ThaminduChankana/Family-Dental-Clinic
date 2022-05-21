@@ -18,7 +18,8 @@ export default function SingleSchedule({ match, history }) {
 	const [addedBy, setAddedBy] = useState();
 
 	const dispatch = useDispatch();
-
+    const admin_Login = useSelector((state) => state.admin_Login);
+    const { adminInfo } = admin_Login;
 	const ScheduleHandlingUpdate = useSelector((state) => state.ScheduleHandlingUpdate);
 	const { loading, error } = ScheduleHandlingUpdate;
 
@@ -67,7 +68,7 @@ export default function SingleSchedule({ match, history }) {
 
 		history.push("/schedule-Handling-View");
 	};
-
+if (adminInfo) {
 	return (
 		<div className="ScheduleBackgroundUpdate">
 			{" "}
@@ -190,5 +191,13 @@ export default function SingleSchedule({ match, history }) {
 			</MainScreen>
 		</div>
 	);
+} else {
+	return (
+		<div className="denied">
+			<MainScreen />
+			<br></br>
+		</div>
+	);
+}
 
 }
