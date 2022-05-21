@@ -16,6 +16,7 @@ import {
 	COMMON_SCHEDULE_LIST_REQUEST,
 } from "../constants/scheduleHandlingConstants";
 import axios from "axios";
+import swal from "sweetalert";
 
 export const listScheduleHandling = () => async (dispatch, getState) => {
 	try {
@@ -78,7 +79,17 @@ export const createScheduleHandlingAction =
 				type: SCHEDULE_CREATE_SUCCESS,
 				payload: data,		
 			});
-			alert("Doctor Schedule Create Successful !!!");
+			swal({
+				title: "Success !!!",
+				text: "Doctor Schedule successfully created.",
+				icon: "success",
+				timer: 2000,
+				button: false,
+			});
+
+			setTimeout(function () {
+				window.location.href = "/schedule-Handling-View";
+			}, 2000);
 		} catch (error) {
 			const message = error.response && error.response.data.message ? error.response.data.message : error.message;
 			dispatch({
@@ -118,7 +129,17 @@ export const updateScheduleHandlingAction =
 				type: SCHEDULE_UPDATE_SUCCESS,
 				payload: data,
 			});
-			alert("Doctor Schedule Updated Successful !!!");
+			swal({
+				title: "Success !!!",
+				text: "Doctor Schedule successfully updated.",
+				icon: "success",
+				timer: 2000,
+				button: false,
+			});
+
+			setTimeout(function () {
+				window.location.href = "/schedule-Handling-View";
+			}, 2000);
 		} catch (error) {
 			const message = error.response && error.response.data.message ? error.response.data.message : error.message;
 			dispatch({
