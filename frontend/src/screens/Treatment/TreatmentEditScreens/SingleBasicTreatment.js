@@ -9,7 +9,7 @@ import { authHeader } from "../../../actions/doctorActions";
 import TreatmentNavBar from "../TreatmentDashBoard/TreatmentNavBar";
 import MainScreen from "../../../components/MainScreen";
 import swal from "sweetalert";
-
+import "./treatmentUpdate.css";
 export default function SingleBasicTreatment({ match, history }) {
 	const [nic, setNic] = useState();
 	const [cost, setCost] = useState();
@@ -60,14 +60,11 @@ export default function SingleBasicTreatment({ match, history }) {
 	};
 	useEffect(() => {
 		const fetching = async () => {
-			const { data } = await axios.get(
-				`http://localhost:5000/user/doctor/treatment/basic_treatment/get/${match.params.id}`,
-				{
-					headers: authHeader(),
-					"Access-Control-Allow-Origin": "*",
-					"Access-Control-Allow-Credentials": true,
-				}
-			);
+			const { data } = await axios.get(`/user/doctor/treatment/basic_treatment/get/${match.params.id}`, {
+				headers: authHeader(),
+				"Access-Control-Allow-Origin": "*",
+				"Access-Control-Allow-Credentials": true,
+			});
 
 			setNic(data.nic);
 			setCost(data.cost);
@@ -88,7 +85,7 @@ export default function SingleBasicTreatment({ match, history }) {
 	};
 	if (doctorInfo) {
 		return (
-			<div>
+			<div className="basicUpdate">
 				<MainScreen title="DOCTOR EDIT - BASIC TREATMENT">
 					<TreatmentNavBar />
 					<Card

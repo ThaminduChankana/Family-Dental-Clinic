@@ -4,6 +4,7 @@ import { Card, Button } from "react-bootstrap";
 import { useReactToPrint } from "react-to-print";
 import { useSelector } from "react-redux";
 import MainScreen from "../../../components/MainScreen";
+import "./treatment.css";
 
 import { TreatmentReport } from "./TreatmentReport";
 const TreatmentPrint = () => {
@@ -16,7 +17,7 @@ const TreatmentPrint = () => {
 
 	if (doctorInfo) {
 		return (
-			<div style={{ minHeight: 700 }}>
+			<div style={{ minHeight: 700 }} className="treatmentReport">
 				<MainScreen title="">
 					<br></br>
 					<TreatmentNavBar />

@@ -59,7 +59,7 @@ export default function FillingView({ search }) {
 	}, [dispatch, history, doctorInfo, successUpdate, successDelete]);
 	if (doctorInfo) {
 		return (
-			<div style={{ minHeight: 700 }}>
+			<div style={{ minHeight: 700, backgroundColor: "#a4dded" }}>
 				<MainScreen title={`Welcome Back ${doctorInfo && doctorInfo.name}..`}>
 					<TreatmentNavBar />
 					<br />

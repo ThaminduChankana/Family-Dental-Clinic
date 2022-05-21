@@ -9,6 +9,7 @@ import { authHeader } from "../../../actions/doctorActions";
 import TreatmentNavBar from "../TreatmentDashBoard/TreatmentNavBar";
 import MainScreen from "../../../components/MainScreen";
 import swal from "sweetalert";
+import "./treatmentUpdate.css";
 
 export default function SingleOrthodontic({ match, history }) {
 	const [nic, setNic] = useState();
@@ -61,12 +62,9 @@ export default function SingleOrthodontic({ match, history }) {
 
 	useEffect(() => {
 		const fetching = async () => {
-			const { data } = await axios.get(
-				`http://localhost:5000/user/doctor/treatment/orthodontic/get/${match.params.id}`,
-				{
-					headers: authHeader(),
-				}
-			);
+			const { data } = await axios.get(`/user/doctor/treatment/orthodontic/get/${match.params.id}`, {
+				headers: authHeader(),
+			});
 
 			setNic(data.nic);
 			setFirstVisit(data.firstVisit);
@@ -99,7 +97,7 @@ export default function SingleOrthodontic({ match, history }) {
 
 	if (doctorInfo) {
 		return (
-			<div>
+			<div className="orthodonticUpdate">
 				<MainScreen title="DOCTOR EDIT - ORTHODONTIC">
 					<TreatmentNavBar />
 

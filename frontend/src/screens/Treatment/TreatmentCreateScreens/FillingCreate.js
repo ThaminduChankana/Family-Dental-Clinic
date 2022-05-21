@@ -6,6 +6,7 @@ import Loading from "../../../components/Loading";
 import ErrorMessage from "../../../components/ErrorMessage";
 import TreatmentNavBar from "../TreatmentDashBoard/TreatmentNavBar";
 import MainScreen from "../../../components/MainScreen";
+import "./treatmentCreate.css";
 
 export default function FillingCreate({ history }) {
 	const [nic, setNic] = useState("");
@@ -63,7 +64,7 @@ export default function FillingCreate({ history }) {
 	useEffect(() => {}, []);
 	if (doctorInfo) {
 		return (
-			<div>
+			<div className="fillingCreate">
 				<MainScreen title="DOCTOR CREATE - FILLING TREATMENT">
 					<TreatmentNavBar />
 
@@ -119,7 +120,6 @@ export default function FillingCreate({ history }) {
 										style={{ height: "35px", width: "100%", borderRadius: 5, borderColor: "#808080", borderWidth: 0.5 }}
 										onChange={(e) => setFillingMaterial(e.target.value)}
 									>
-										<option value="Filling Material">Filling Material</option>
 										<option value="Gold">Gold</option>
 										<option value="Porcelain">Porcelain</option>
 										<option value="Silver Amalgam">Silver Amalgam</option>
@@ -133,7 +133,6 @@ export default function FillingCreate({ history }) {
 										style={{ height: "35px", width: "100%", borderRadius: 5, borderColor: "#808080", borderWidth: 0.5 }}
 										onChange={(e) => setFillingType(e.target.value)}
 									>
-										<option value="Filling Type">Filling Type</option>
 										<option value="Direct">Direct</option>
 										<option value="Indirect">Indirect</option>
 									</select>

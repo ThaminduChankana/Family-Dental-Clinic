@@ -30,7 +30,7 @@ export const listOrthodontics = () => async (dispatch, getState) => {
 				Authorization: `Bearer ${doctorInfo.token}`,
 			},
 		};
-		const { data } = await axios.get(`http://localhost:5000/user/doctor/treatment/orthodontic/get`, config);
+		const { data } = await axios.get(`/user/doctor/treatment/orthodontic/get`, config);
 
 		dispatch({
 			type: ORTHODONTIC_LIST_SUCCESS,
@@ -62,7 +62,7 @@ export const createOrthodonticAction =
 				},
 			};
 			const { data } = await axios.post(
-				`http://localhost:5000/user/doctor/treatment/orthodontic/create`,
+				`/user/doctor/treatment/orthodontic/create`,
 				{
 					nic,
 					firstVisit,
@@ -117,7 +117,7 @@ export const updateOrthodonticAction =
 			};
 
 			const { data } = await axios.put(
-				`http://localhost:5000/user/doctor/treatment/orthodontic/get/${id}`,
+				`/user/doctor/treatment/orthodontic/get/${id}`,
 				{
 					nic,
 					fullCost,
@@ -170,7 +170,7 @@ export const deleteOrthodonticAction = (id) => async (dispatch, getState) => {
 			},
 		};
 
-		const { data } = await axios.delete(`http://localhost:5000/user/doctor/treatment/orthodontic/get/${id}`, config);
+		const { data } = await axios.delete(`/user/doctor/treatment/orthodontic/get/${id}`, config);
 
 		dispatch({
 			type: ORTHODONTIC_DELETE_SUCCESS,

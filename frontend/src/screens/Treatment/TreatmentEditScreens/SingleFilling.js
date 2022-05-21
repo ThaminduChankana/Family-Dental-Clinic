@@ -9,6 +9,7 @@ import { authHeader } from "../../../actions/doctorActions";
 import TreatmentNavBar from "../TreatmentDashBoard/TreatmentNavBar";
 import MainScreen from "../../../components/MainScreen";
 import swal from "sweetalert";
+import "./treatmentUpdate.css";
 
 export default function SingleFilling({ match, history }) {
 	const [nic, setNic] = useState();
@@ -63,7 +64,7 @@ export default function SingleFilling({ match, history }) {
 
 	useEffect(() => {
 		const fetching = async () => {
-			const { data } = await axios.get(`http://localhost:5000/user/doctor/treatment/filling/get/${match.params.id}`, {
+			const { data } = await axios.get(`/user/doctor/treatment/filling/get/${match.params.id}`, {
 				headers: authHeader(),
 			});
 
@@ -112,7 +113,7 @@ export default function SingleFilling({ match, history }) {
 	};
 	if (doctorInfo) {
 		return (
-			<div>
+			<div className="fillingUpdate">
 				<MainScreen title="DOCTOR EDIT - FILLING TREATMENT">
 					<TreatmentNavBar />
 

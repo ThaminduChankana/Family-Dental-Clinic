@@ -31,7 +31,7 @@ export const listBasicTreatments = () => async (dispatch, getState) => {
 			},
 		};
 
-		const { data } = await axios.get(`http://localhost:5000/user/doctor/treatment/basic_treatment/get`, config);
+		const { data } = await axios.get(`/user/doctor/treatment/basic_treatment/get`, config);
 
 		dispatch({
 			type: BASICTREATMENT_LIST_SUCCESS,
@@ -63,7 +63,7 @@ export const createBasicTreatmentAction =
 				},
 			};
 			const { data } = await axios.post(
-				`http://localhost:5000/user/doctor/treatment/basic_treatment/create`,
+				`/user/doctor/treatment/basic_treatment/create`,
 				{
 					nic,
 					cost,
@@ -118,7 +118,7 @@ export const updateBasicTreatmentAction =
 			};
 
 			const { data } = await axios.put(
-				`http://localhost:5000/user/doctor/treatment/basic_treatment/get/${id}`,
+				`/user/doctor/treatment/basic_treatment/get/${id}`,
 				{
 					nic,
 					cost,
@@ -171,10 +171,7 @@ export const deleteBasicTreatmentAction = (id) => async (dispatch, getState) => 
 			},
 		};
 
-		const { data } = await axios.delete(
-			`http://localhost:5000/user/doctor/treatment/basic_treatment/get/${id}`,
-			config
-		);
+		const { data } = await axios.delete(`/user/doctor/treatment/basic_treatment/get/${id}`, config);
 
 		dispatch({
 			type: BASICTREATMENT_DELETE_SUCCESS,

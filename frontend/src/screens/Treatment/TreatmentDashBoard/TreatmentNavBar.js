@@ -12,7 +12,7 @@ export default function TreatmentNavBar() {
 					bg="primary"
 					variant="light"
 					className="m-auto"
-					style={{ borderRadius: 40, borderColor: "#808080", borderWidth: 0.5, height: 50 }}
+					style={{ borderRadius: 40, borderColor: "#808080", borderWidth: 0.5, height: 50, width: "90%" }}
 				>
 					<Container>
 						<Nav className="me-auto">

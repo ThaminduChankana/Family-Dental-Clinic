@@ -30,7 +30,7 @@ export const listFillings = () => async (dispatch, getState) => {
 				Authorization: `Bearer ${doctorInfo.token}`,
 			},
 		};
-		const { data } = await axios.get(`http://localhost:5000/user/doctor/treatment/filling/get`, config);
+		const { data } = await axios.get(`/user/doctor/treatment/filling/get`, config);
 
 		dispatch({
 			type: FILLING_LIST_SUCCESS,
@@ -63,7 +63,7 @@ export const createFillingAction =
 				},
 			};
 			const { data } = await axios.post(
-				`http://localhost:5000/user/doctor/treatment/filling/create`,
+				`/user/doctor/treatment/filling/create`,
 				{
 					nic,
 					cost,
@@ -120,7 +120,7 @@ export const updateFillingAction =
 			};
 
 			const { data } = await axios.put(
-				`http://localhost:5000/user/doctor/treatment/filling/get/${id}`,
+				`/user/doctor/treatment/filling/get/${id}`,
 				{
 					nic,
 					cost,
@@ -175,7 +175,7 @@ export const deleteFillingAction = (id) => async (dispatch, getState) => {
 			},
 		};
 
-		const { data } = await axios.delete(`http://localhost:5000/user/doctor/treatment/filling/get/${id}`, config);
+		const { data } = await axios.delete(`/user/doctor/treatment/filling/get/${id}`, config);
 
 		dispatch({
 			type: FILLING_DELETE_SUCCESS,

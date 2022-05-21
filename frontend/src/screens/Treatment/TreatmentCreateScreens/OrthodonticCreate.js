@@ -6,6 +6,7 @@ import Loading from "../../../components/Loading";
 import ErrorMessage from "../../../components/ErrorMessage";
 import TreatmentNavBar from "../TreatmentDashBoard/TreatmentNavBar";
 import MainScreen from "../../../components/MainScreen";
+import "./treatmentCreate.css";
 
 export default function OrthodonticCreate({ history }) {
 	const [nic, setNic] = useState("");
@@ -47,7 +48,7 @@ export default function OrthodonticCreate({ history }) {
 	useEffect(() => {}, []);
 	if (doctorInfo) {
 		return (
-			<div>
+			<div className="orthodonticCreate">
 				<MainScreen title="DOCTOR CREATE - ORTHODONTIC">
 					<TreatmentNavBar />
 
