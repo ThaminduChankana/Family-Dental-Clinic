@@ -1,4 +1,6 @@
 import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "react-datepicker/dist/react-datepicker.css";
 import { BrowserRouter, Route } from "react-router-dom";
 import React from "react";
 import { useState } from "react";
@@ -38,6 +40,8 @@ import OrthodonticCreate from "./screens/Treatment/TreatmentCreateScreens/Orthod
 import SingleBasicTreatment from "./screens/Treatment/TreatmentEditScreens/SingleBasicTreatment";
 import SingleFilling from "./screens/Treatment/TreatmentEditScreens/SingleFilling";
 import SingleOrthodontic from "./screens/Treatment/TreatmentEditScreens/SingleOrthodontic";
+import AppointmentRootContainer from "./screens/appointmentManagement/RootContainer";
+
 import TreatmentPrint from "./screens/Reports/TreatmentReports/TreatmentPrint";
 import Footer from "./components/footer/footer";
 import DoctorArticles from "./screens/Blogs/DoctorArticles";
@@ -89,6 +93,7 @@ const App = () => {
 				<Route path="/basicTreatment/:id" component={SingleBasicTreatment} exact />
 				<Route path="/filling/:id" component={SingleFilling} exact />
 				<Route path="/orthodontic/:id" component={SingleOrthodontic} exact />
+				<Route path='/appointments' component={AppointmentRootContainer} />
 				<Route path="/treatment-report" component={TreatmentPrint} exact />
 				<Route path="/doctor-articles" component={() => <DoctorArticles search={search} />} exact />
 				<Route path="/doctor-create-article" component={CreateArticle} exact />

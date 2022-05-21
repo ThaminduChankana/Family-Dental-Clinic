@@ -30,6 +30,7 @@ import {
 	patientUpdateByIdReducer,
 	patientDeleteReducer,
 } from "./reducers/patientReducers";
+
 import {
 	basicTreatmentListReducer,
 	basicTreatmentCreateReducer,
@@ -64,6 +65,9 @@ import {
 	inventoryUpdateReducer,
 	inventoryDeleteReducer,
 } from "./reducers/InventoryReducer";
+
+import appointmentReducer from "./reducers/appointmentReducer";
+
 
 const reducer = combineReducers({
 	admin_Login: adminLoginReducer,
@@ -103,6 +107,7 @@ const reducer = combineReducers({
 	orthodonticCreate: orthodonticCreateReducer,
 	orthodonticUpdate: orthodonticUpdateReducer,
 	orthodonticDelete: orthodonticDeleteReducer,
+	appointments:  appointmentReducer,
 	blogList: blogListReducer,
 	blogListforUsers: blogListForUsersReducer,
 	blogCreate: blogCreateReducer,

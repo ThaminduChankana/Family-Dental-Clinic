@@ -29,7 +29,15 @@ const {
 	UpdateMedicalHistory,
 	DeleteMedicalHistory,
 } = require("../controllers/medicalHistoryController");
-// schedule handling route
+
+const { 
+    getAppointments, 
+    createAppointment, 
+    updateAppointment, 
+    deleteAppointment, 
+    getAppointmentById 
+} = require("../controllers/appointmentController");
+
 const {
 	getScheduleHandling,
 	getScheduleHandlingId,
@@ -67,7 +75,7 @@ router.route("/view").get(protect, getAdminProfile);
 //Routes for Doctor account operations admin end
 router.route("/doctor/register").post(protect, registerDoctor);
 router.route("/doctor/profile/view/:_id").get(protect, getDoctorProfileById).delete(protect, deleteDoctorProfileById);
-router.route("/doctor/profile/edit/:_id").put(protect, updateDoctorProfileById);
+router.route("/doctor/profile/edit/:_id").put(protect, updateDoctorProfileById)
 router.route("/doctors").get(protect, getDoctors);
 
 //Routes for Patient account operations admin end
@@ -119,6 +127,13 @@ router
 	.put(protect, UpdateScheduleHandling)
 	.delete(protect, DeleteScheduleHandling);
 
+
+// Routes for appointment management
+router.route("/appointment/:id").get(protect, getAppointmentById);
+router.route("/appointment/").get(protect, getAppointments);
+router.route("/appointment/").post(protect, createAppointment);
+router.route("/appointment/:id").put(protect, updateAppointment);
+router.route("/appointment/:id").delete(protect, deleteAppointment);
 //Routes for Blogs
 router.route("/blog/report").get(protect, getBlogCount);
 

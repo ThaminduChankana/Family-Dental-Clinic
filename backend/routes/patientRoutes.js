@@ -25,6 +25,12 @@ const {
 
 const { getMedicalHistoryById } = require("../controllers/medicalHistoryController");
 const { protect } = require("../middlewares/authPatientMiddleware");
+const { 
+	createAppointment, 
+	getAppointments, 
+	deleteAppointment,
+	updateAppointment 
+} = require("../controllers/appointmentController");
 const router = express.Router();
 
 // Routes for Patient account operations
@@ -50,4 +56,11 @@ router.route("/question/update/:id").put(protect, updateQuestion);
 router.route("/question/view").get(protect, getQuestion);
 router.route("/question/view/:id").get(protect, getQuestionById);
 router.route("/question/delete/:id").delete(protect, deleteQuestion);
+
+// Routes for appointment management
+router.route("/appointment/").get(protect, getAppointments);
+router.route("/appointment/").post(protect, createAppointment);
+router.route("/appointment/:id").put(protect, updateAppointment);
+router.route("/appointment/:id").delete(protect, deleteAppointment);
+
 module.exports = router;
