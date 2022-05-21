@@ -53,6 +53,8 @@ const {
 	getQuestionForAdmin,
 } = require("../controllers/questionController");
 
+const { getBlogCount } = require("../controllers/blogController");
+
 const { protect } = require("../middlewares/authAdminMiddleware");
 const { post } = require("./doctorRoutes");
 const router = express.Router();
@@ -118,5 +120,8 @@ router
 	.get(protect, getScheduleHandlingId)
 	.put(protect, UpdateScheduleHandling)
 	.delete(protect, DeleteScheduleHandling);
+
+//Routes for Blogs
+router.route("/blog/report").get(protect, getBlogCount);
 
 module.exports = router;

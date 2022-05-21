@@ -84,7 +84,7 @@ const AdminOperationPage = ({ history }) => {
 								</div>
 								<br></br>
 								<div>
-									<Link to="/">
+									<Link to="/admin-blog-report">
 										<Button size="lg" className="landingbutton">
 											Doctor Blogs Report
 										</Button>

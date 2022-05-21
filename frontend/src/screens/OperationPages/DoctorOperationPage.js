@@ -79,7 +79,7 @@ const DoctorOperationPage = ({ history }) => {
 								</div>
 								<br></br>
 								<div>
-									<a href="/">
+									<a href="/doctor-articles">
 										<Button size="lg" style={{ width: 350, height: 75 }}>
 											Doctor's Blog Management
 										</Button>
