@@ -36,7 +36,8 @@ const MakeAppointmentView = () => {
   };
 
   const handleOnCancel = () => {
-
+    history.goBack();
+  }
   return (
     <Col>
       <Row>
@@ -72,6 +73,6 @@ const MakeAppointmentView = () => {
       </Row>
     </Col>
   );
-}
+};
 
 export default MakeAppointmentView;
