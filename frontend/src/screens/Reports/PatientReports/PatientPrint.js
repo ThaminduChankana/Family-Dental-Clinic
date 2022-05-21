@@ -7,6 +7,7 @@ import { PatientReport } from "./PatientReport";
 import "./patientReport.css";
 const PatientPrint = () => {
 	const componentRef = useRef();
+
 	const handlePrint = useReactToPrint({
 		content: () => componentRef.current,
 	});

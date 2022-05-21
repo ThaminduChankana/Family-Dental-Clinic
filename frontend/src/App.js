@@ -39,6 +39,11 @@ import SingleFilling from "./screens/Treatment/TreatmentEditScreens/SingleFillin
 import SingleOrthodontic from "./screens/Treatment/TreatmentEditScreens/SingleOrthodontic";
 import TreatmentPrint from "./screens/Reports/TreatmentReports/TreatmentPrint";
 import Footer from "./components/footer/footer";
+import ScheduleHandlingCreate from "./screens/schedule/ScheduleHandlingCreate";
+import ScheduleHandlingView from "./screens/schedule/ScheduleHandlingView";
+import SingleSchedule from "./screens/schedule/SingleSchedule";
+import DoctorSchedulePrint from "./screens/Reports/ScheduleReport/DoctorSchedulePrint"
+import CommonSchedules from "./screens/schedule/CommonSchedules"
 
 const App = () => {
 	const [search, setSearch] = useState("");
@@ -81,6 +86,11 @@ const App = () => {
 				<Route path="/filling/:id" component={SingleFilling} exact />
 				<Route path="/orthodontic/:id" component={SingleOrthodontic} exact />
 				<Route path="/treatment-report" component={TreatmentPrint} exact />
+				<Route path="/schedule-Handling-Create" component={ScheduleHandlingCreate} exact />
+				<Route path="/schedule-Handling-View" component={() => <ScheduleHandlingView search={search} />} exact />
+				<Route path="/scheduleHandling/:id" component={SingleSchedule} exact />
+				<Route path="/schedule-Report" component={DoctorSchedulePrint} exact />
+				<Route path="/schedules" component={() => <CommonSchedules search={search} />} exact />
 			</main>
 			<Footer />
 		</BrowserRouter>

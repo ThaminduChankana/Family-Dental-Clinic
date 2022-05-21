@@ -50,6 +50,13 @@ import {
 	orthodonticUpdateReducer,
 	orthodonticDeleteReducer,
 } from "./reducers/orthodonticReducer";
+import {
+	ScheduleHandlingListReducer,
+	ScheduleHandlingCreateReducer,
+	ScheduleHandlingUpdateReducer,
+	ScheduleHandlingDeleteReducer,
+	ScheduleListForUsersReducer,
+} from "./reducers/scheduleHandlingReducer";
 
 import {
 	inventoryListReducer,
@@ -96,6 +103,11 @@ const reducer = combineReducers({
 	orthodonticCreate: orthodonticCreateReducer,
 	orthodonticUpdate: orthodonticUpdateReducer,
 	orthodonticDelete: orthodonticDeleteReducer,
+	ScheduleHandlingList: ScheduleHandlingListReducer,
+	ScheduleHandlingCreate: ScheduleHandlingCreateReducer,
+	ScheduleHandlingUpdate: ScheduleHandlingUpdateReducer,
+	ScheduleHandlingDelete: ScheduleHandlingDeleteReducer,
+	ScheduleListforUsers: ScheduleListForUsersReducer,
 });
 
 const adminInfoFromStorage = localStorage.getItem("adminInfo") ? JSON.parse(localStorage.getItem("adminInfo")) : null;

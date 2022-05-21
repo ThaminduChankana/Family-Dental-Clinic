@@ -62,7 +62,7 @@ function BasicTreatmentView({ search }) {
 								borderWidth: 1.0,
 								borderColor: "rgb(0,0,0,0.5)",
 							}}
-							key={basic._id}
+							key={basic._id}   
 						>
 							<Card.Header style={{ display: "flex" }}>
 								<span

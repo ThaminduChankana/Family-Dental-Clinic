@@ -27,6 +27,10 @@ const scheduleHandlingSchema = mongoose.Schema({
 		type: String,
 		required: true,
 	},
+	year: {
+            default: new Date().getFullYear(),
+            type: String,
+     },
 });
 
 const scheduleHandling = mongoose.model("schedules", scheduleHandlingSchema);
