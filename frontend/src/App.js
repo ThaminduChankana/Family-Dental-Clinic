@@ -39,6 +39,12 @@ import SingleBasicTreatment from "./screens/Treatment/TreatmentEditScreens/Singl
 import SingleFilling from "./screens/Treatment/TreatmentEditScreens/SingleFilling";
 import SingleOrthodontic from "./screens/Treatment/TreatmentEditScreens/SingleOrthodontic";
 import TreatmentPrint from "./screens/Reports/TreatmentReports/TreatmentPrint";
+import MedicalHistory from "./screens/MedicalHistory/MedicalHistory";
+import MedicalHistoryCreate from "./screens/MedicalHistory/MedicalHistoryCreate";
+import SingleMedicalHistory from "./screens/MedicalHistory/SingleMedicalHistory";
+import MedicalHistoryListDoctor from "./screens/MedicalHistory/MedicalHistoryListDoctor";
+import SingleMedicalHistoryPatient from "./screens/MedicalHistory/SingleMedicalHistoryPatient";
+import MedicalHistoryPrint from "./screens/Reports/MedicalHistoryReports/MedicalHistoryPrint";
 import Footer from "./components/footer/footer";
 import DoctorArticles from "./screens/Blogs/DoctorArticles";
 import CreateArticle from "./screens/Blogs/CreateArticle";
@@ -90,6 +96,16 @@ const App = () => {
 				<Route path="/filling/:id" component={SingleFilling} exact />
 				<Route path="/orthodontic/:id" component={SingleOrthodontic} exact />
 				<Route path="/treatment-report" component={TreatmentPrint} exact />
+				<Route path="/admin-medical-history" component={() => <MedicalHistory search={search} />} exact />
+				<Route path="/admin-single-medical-history/:id" component={SingleMedicalHistory} exact />
+				<Route path="/admin-create-medical-history" component={MedicalHistoryCreate} exact />
+				<Route
+					path="/doctor-view-medical-history"
+					component={() => <MedicalHistoryListDoctor search={search} />}
+					exact
+				/>
+				<Route path="/patient-single-medical-history" component={SingleMedicalHistoryPatient} exact />
+				<Route path="/medical_history/report" component={MedicalHistoryPrint} exact />
 				<Route path="/doctor-articles" component={() => <DoctorArticles search={search} />} exact />
 				<Route path="/doctor-create-article" component={CreateArticle} exact />
 				<Route path="/doctor-single-article/:id" component={SingleArticle} exact />
