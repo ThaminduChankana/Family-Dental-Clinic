@@ -43,6 +43,12 @@ function Header({ setSearch }) {
 					>
 						Contact Us
 					</a>
+					<a
+						style={{ textDecoration: "none", color: "#0d5875", fontSize: "20px", marginLeft: "35px" }}
+						href="/schedule"
+					>
+						Schedule
+					</a>
 				</div>
 				<div className="search">
 					<Form inline>
@@ -69,6 +75,69 @@ function Header({ setSearch }) {
 							Login
 						</Button>
 					</Link>
+				)}
+				{adminInfo ? (
+					<Link to="/admin">
+						<Button
+							style={{
+								padding: "8px",
+								fontSize: "15px",
+								fontFamily: `"Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+									Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+								width: "200px",
+								backgroundColor: "#1ca9c9",
+								fontWeight: 700,
+							}}
+							variant="primary"
+							className="logoutBtn"
+						>
+							Activity Menu
+						</Button>
+					</Link>
+				) : (
+					<></>
+				)}
+				{patientInfo ? (
+					<Link to="/patient">
+						<Button
+							style={{
+								padding: "8px",
+								fontSize: "15px",
+								fontFamily: `"Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+									Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+								width: "200px",
+								backgroundColor: "#1ca9c9",
+								fontWeight: 700,
+							}}
+							variant="primary"
+							className="logoutBtn"
+						>
+							Activity Menu
+						</Button>
+					</Link>
+				) : (
+					<></>
+				)}
+				{doctorInfo ? (
+					<Link to="/doctor">
+						<Button
+							style={{
+								padding: "8px",
+								fontSize: "15px",
+								fontFamily: `"Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+									Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+								width: "200px",
+								backgroundColor: "#1ca9c9",
+								fontWeight: 700,
+							}}
+							variant="primary"
+							className="logoutBtn"
+						>
+							Activity Menu
+						</Button>
+					</Link>
+				) : (
+					<></>
 				)}
 			</div>
 			<br />
