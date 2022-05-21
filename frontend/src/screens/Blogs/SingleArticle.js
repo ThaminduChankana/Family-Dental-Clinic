@@ -22,7 +22,7 @@ function SingleBlog({ match, history }) {
 	const { loading, error } = blogUpdate;
 
 	const blogDelete = useSelector((state) => state.blogDelete);
-	const { loading: loadingDelete, error: errorDelete, success: successDelete } = blogDelete;
+	const { loading: loadingDelete, error: errorDelete } = blogDelete;
 
 	const deleteHandler = (id) => {
 		swal({
