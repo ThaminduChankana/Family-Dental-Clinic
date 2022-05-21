@@ -12,7 +12,7 @@ export default function TreatmentNavBar() {
 					bg="primary"
 					variant="light"
 					className="m-auto"
-					style={{ width: "70%", borderRadius: 40, borderColor: "#808080", borderWidth: 0.5 }}
+					style={{ width: "50%", borderRadius: 40, borderColor: "#808080", borderWidth: 0.5, height: 50 }}
 				>
 					<Container>
 						<Nav className="me-auto">
@@ -29,7 +29,7 @@ export default function TreatmentNavBar() {
 								Basic Treatment &emsp;
 							</Nav.Link>
 							<Nav.Link style={{ fontSize: 25, color: "white" }} href="/treatment-report">
-								Report Generation &emsp;
+								Report Generation
 							</Nav.Link>
 						</Nav>
 					</Container>

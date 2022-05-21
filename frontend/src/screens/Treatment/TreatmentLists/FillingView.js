@@ -81,16 +81,28 @@ export default function FillingView({ search }) {
 						<Accordion>
 							<Card
 								style={{
-									margin: 10,
-									left: "30%",
-									width: "40%",
+									marginLeft: "20%",
 									borderRadius: 25,
 									borderWidth: 1.0,
 									borderColor: "rgb(0,0,0,0.5)",
+									marginTop: 20,
+									paddingInline: 10,
+									background: "rgb(235, 235, 235)",
+									width: "60%",
 								}}
 								key={filling._id}
 							>
-								<Card.Header style={{ display: "flex" }}>
+								<Card.Header
+									style={{
+										display: "flex",
+										paddingInline: 10,
+										borderRadius: 25,
+										marginTop: 10,
+										marginBottom: 10,
+										borderColor: "black",
+										background: "rgba(255, 255, 255)",
+									}}
+								>
 									<span
 										style={{
 											color: "black",
