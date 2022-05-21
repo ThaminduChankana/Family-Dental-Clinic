@@ -64,9 +64,6 @@ const MedicalHistory = ({ search }) => {
 
 	useEffect(() => {
 		dispatch(listMedicalHistories());
-		if (!adminInfo) {
-			history.push("/access-denied");
-		}
 	}, [dispatch, successCreate, history, adminInfo, successUpdate, successDelete]);
 
 	if (adminInfo) {

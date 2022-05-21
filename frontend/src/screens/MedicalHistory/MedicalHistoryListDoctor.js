@@ -23,7 +23,7 @@ const MedicalHistoryListDoctor = ({ search }) => {
 	useEffect(() => {
 		dispatch(listMedicalHistoriesforDoctor());
 		if (!doctorInfo) {
-			history.push("/");
+			history.push("/access-denied");
 		}
 	}, [dispatch, history, doctorInfo]);
 
