@@ -14,6 +14,7 @@ import {
 	ADMIN_UPDATE_SUCCESS,
 } from "../constants/adminConstants";
 import axios from "axios";
+import swal from "sweetalert";
 
 export const adminLogin = (nic, password) => async (dispatch) => {
 	try {
@@ -28,7 +29,16 @@ export const adminLogin = (nic, password) => async (dispatch) => {
 		const { data } = await axios.post("/user/admin/login", { nic, password, isAdmin: true }, config);
 
 		dispatch({ type: ADMIN_LOGIN_SUCCESS, payload: data });
-		window.location.href = "/admin";
+		swal({
+			title: "Success !!!",
+			text: "Admin Log In Successful.",
+			icon: "success",
+			timer: 2000,
+			button: false,
+		});
+		setTimeout(function () {
+			window.location.href = "/admin";
+		}, 2000);
 		localStorage.setItem("adminInfo", JSON.stringify(data));
 	} catch (error) {
 		dispatch({
@@ -82,7 +92,13 @@ export const adminRegister =
 			);
 
 			dispatch({ type: ADMIN_REGISTER_SUCCESS, payload: data });
-			alert("Admin Registration Successful !!!");
+			swal({
+				title: "Success !!!",
+				text: "Admin Registration Successful.",
+				icon: "success",
+				timer: 2000,
+				button: false,
+			});
 
 			setTimeout(function () {
 				window.location.href = "/admin";
@@ -147,7 +163,13 @@ export const adminUpdateProfile = (admin) => async (dispatch, getState) => {
 		const { data } = await axios.put("/user/admin/edit", admin, config);
 
 		dispatch({ type: ADMIN_UPDATE_SUCCESS, payload: data });
-		alert("Admin Account Update Successful !!!");
+		swal({
+			title: "Success !!!",
+			text: "Admin Account Update Successful.",
+			icon: "success",
+			timer: 2000,
+			button: false,
+		});
 		dispatch({ type: ADMIN_LOGIN_SUCCESS, payload: data });
 		setTimeout(function () {
 			window.location.href = "/admin-view";

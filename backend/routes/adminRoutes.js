@@ -28,6 +28,7 @@ const {
 	getMedicalHistoryById,
 	UpdateMedicalHistory,
 	DeleteMedicalHistory,
+	getMedicalHistoryCount,
 } = require("../controllers/medicalHistoryController");
 // schedule handling route
 const {
@@ -52,6 +53,8 @@ const {
 	deleteQuestion,
 	getQuestionForAdmin,
 } = require("../controllers/questionController");
+
+const { getBlogCount } = require("../controllers/blogController");
 
 const { protect } = require("../middlewares/authAdminMiddleware");
 const { post } = require("./doctorRoutes");
@@ -91,6 +94,7 @@ router
 //Routes for medical history management admin end
 router.route("/medical_history").get(protect, getMedicalHistory);
 router.route("/medical_history/create").post(protect, createMedicalHistory);
+router.route("/medical_history/report").get(protect, getMedicalHistoryCount);
 router
 	.route("/medical_history/:id")
 	.get(protect, getMedicalHistoryById)
@@ -119,5 +123,8 @@ router
 	.delete(protect, DeleteScheduleHandling);
 router.route("/schedule/create").post(protect, CreateScheduleHandling);
 router.route("/schedule/count").get(protect, getScheduleCount);
+
+//Routes for Blogs
+router.route("/blog/report").get(protect, getBlogCount);
 
 module.exports = router;

@@ -6,7 +6,7 @@ const getFillings = asyncHandler(async (req, res) => {
 	res.json(fillings);
 });
 const getFillingCount = asyncHandler(async (req, res) => {
-	const fillings = await Filling.find();
+	const fillings = await Filling.find({ year: new Date().getFullYear() });
 	var i = fillings.length;
 	var loopData = {};
 	var loopData = new Object();
@@ -19,17 +19,7 @@ const getFillingCount = asyncHandler(async (req, res) => {
 const createFilling = asyncHandler(async (req, res) => {
 	const { nic, cost, fillingMaterial, fillingType, anestheticStatus, date, checkup, procedure, remark } = req.body;
 
-	if (
-		!nic ||
-		!cost ||
-		!fillingMaterial ||
-		!fillingType ||
-		!anestheticStatus ||
-		!date ||
-		!checkup ||
-		!procedure ||
-		!remark
-	) {
+	if (!nic || !cost || !fillingMaterial || !fillingType || !anestheticStatus || !date || !checkup || !procedure) {
 		res.status(400);
 		throw new Error("Please Fill all the feilds");
 	} else {

@@ -1,5 +1,5 @@
 import { Button, Card } from "react-bootstrap";
-import MainScreen from "../../components/MainScreen";
+import MainScreen from "../../../components/MainScreen";
 import "./LoginSelector.css";
 
 const LoginSelectorPage = () => {
