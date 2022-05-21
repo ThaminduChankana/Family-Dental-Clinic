@@ -328,8 +328,8 @@ const PatientRegisterScreen = () => {
 											borderColor: "black",
 											borderRadius: 250,
 											background: "white",
-											width: "52%",
-											height: "25%",
+											width: "300px",
+											height: "300px",
 										}}
 									/>
 								</Col>
