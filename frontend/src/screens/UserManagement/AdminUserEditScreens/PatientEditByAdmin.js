@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { patientUpdateProfileById } from "../../../actions/patientActions";
 import ErrorMessage from "../../../components/ErrorMessage";
 import Loading from "../../../components/Loading";
-import ReactMarkdown from "react-markdown";
 import { authHeader } from "../../../actions/adminActions";
 
 const PatientEditByAdmin = ({ match, history }) => {
@@ -16,6 +15,8 @@ const PatientEditByAdmin = ({ match, history }) => {
 	const [nic, setNic] = useState("");
 	const [telephone, setTelephone] = useState("");
 	const [address, setAddress] = useState("");
+	const [email, setEmail] = useState("");
+	const [referringDoctor, setReferringDoctor] = useState("");
 	const [dataEntry, setDataEntry] = useState("");
 	const [password, setPassword] = useState("");
 	const [confirmpassword, setConfirmPassword] = useState("");
@@ -61,7 +62,7 @@ const PatientEditByAdmin = ({ match, history }) => {
 			setMessage("Passwords do not match");
 		} else {
 			dispatch(
-			  patientUpdateProfileById(
+				patientUpdateProfileById(
 					match.params.id,
 					name,
 					dob,
@@ -69,6 +70,8 @@ const PatientEditByAdmin = ({ match, history }) => {
 					nic,
 					telephone,
 					address,
+					email,
+					referringDoctor,
 					dataEntry,
 					password,
 					message,
@@ -76,7 +79,6 @@ const PatientEditByAdmin = ({ match, history }) => {
 					regDate
 				)
 			);
-			setMessage("Update Successful");
 		}
 	};
 
@@ -92,6 +94,8 @@ const PatientEditByAdmin = ({ match, history }) => {
 				setNic(data.nic);
 				setTelephone(data.telephone);
 				setAddress(data.address);
+				setEmail(data.email);
+				setReferringDoctor(data.referringDoctor);
 				setDataEntry(data.dataEntry);
 				setPic(data.pic);
 				setRegDate(data.regDate);
@@ -100,132 +104,212 @@ const PatientEditByAdmin = ({ match, history }) => {
 			fetching();
 		}
 	}, [match.params.id, adminInfo]);
-
-	return (
-		<MainScreen title="ADMIN EDIT PATIENT PROFILE">
-			<div className="loginContainer">
-				<Row className="PatientProfileContainer">
-					<Col md={6}>
-						{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
-						{message && <ErrorMessage variant="danger">{message}</ErrorMessage>}
-						{loading && <Loading />}
-						<Form onSubmit={submitHandler}>
-							<Form.Group controlId="patientName">
-								<Form.Label>Name</Form.Label>
-								<Form.Control
-									type="name"
-									value={name}
-									placeholder="Enter name"
-									onChange={(e) => setName(e.target.value)}
-								/>
-							</Form.Group>
-							<Form.Group controlId="patientDob">
-								<Form.Label>Date Of Birth</Form.Label>
-								<Form.Control type="date" value={dob} onChange={(e) => setDob(e.target.value)} />
-							</Form.Group>
-							<div className="form-group">
-								<label name="patientGender">Gender</label>
-								<select
-									className="form-control"
-									id="patientGender"
-									value={gender}
-									onChange={(e) => setGender(e.target.value)}
-								>
-									<option>Select Gender</option>
-									<option value={gender.Male}>Male</option>
-									<option value={gender.Female}>Female</option>
-								</select>
-							</div>
-							<Form.Group controlId="patientFormBasicNic">
-								<Form.Label>NIC Number</Form.Label>
-								<Form.Control
-									type="text"
-									value={nic}
-									placeholder="Enter NIC"
-									onChange={(e) => setNic(e.target.value)}
-								/>
-							</Form.Group>
-							<Form.Group controlId="patientFormBasicTelephone">
-								<Form.Label>Telephone</Form.Label>
-								<Form.Control
-									type="text"
-									value={telephone}
-									placeholder="Enter Telephone Number"
-									onChange={(e) => setTelephone(e.target.value)}
-								/>
-							</Form.Group>
-							<Form.Group controlId="patientFormBasicAddress">
-								<Form.Label>Address</Form.Label>
-								<Form.Control
-									type="textArea"
-									value={address}
-									placeholder="Enter Address"
-									onChange={(e) => setAddress(e.target.value)}
-								/>
-							</Form.Group>
-							<Form.Group controlId="formBasicPassword">
-								<Form.Label>Password</Form.Label>
-								<Form.Control
-									type="password"
-									value={password}
-									placeholder="Password"
-									onChange={(e) => setPassword(e.target.value)}
-								/>
-							</Form.Group>
-							<Form.Group controlId="confirmPassword">
-								<Form.Label>Confirm Password</Form.Label>
-								<Form.Control
-									type="password"
-									value={confirmpassword}
-									placeholder="Confirm Password"
-									onChange={(e) => setConfirmPassword(e.target.value)}
-								/>
-							</Form.Group>
-							{picMessage && <ErrorMessage variant="danger">{picMessage}</ErrorMessage>}
-							<Form.Group controlId="pic">
-								<Form.Label>Profile Picture</Form.Label>
-								<Form.File
-									onChange={(e) => postDetails(e.target.files[0])}
-									id="custom-file"
-									type="image/png"
-									label="Upload Profile Picture"
-									custom
-								/>
-							</Form.Group>
-							<Form.Group controlId="patientRegDate">
-								<Form.Label>Registration Date</Form.Label>
-								<Form.Control type="date" value={regDate} onChange={(e) => setRegDate(e.target.value)} />
-							</Form.Group>
-							<Form.Group controlId="patientFormBasicDataEntryBy">
-								<Form.Label>Data Entry By</Form.Label>
-								<Form.Control
-									type="text"
-									value={dataEntry}
-									placeholder="Enter Data Entering Person Name"
-									onChange={(e) => setDataEntry(e.target.value)}
-								/>
-							</Form.Group>
-							<Button variant="primary" type="submit">
-								Update
-							</Button>
-
-							&emsp;
-						</Form>
-						&emsp;
-					</Col>
-					<Col
+	if (adminInfo) {
+		return (
+			<div className="patientEditBg">
+				<MainScreen title="ADMIN EDIT - PATIENT PROFILE">
+					<Button
 						style={{
-							display: "flex",
-							alignItems: "center",
-							justifyContent: "center",
+							float: "left",
+							marginTop: 5,
+							fontSize: 15,
+						}}
+						href="/admin-patients"
+					>
+						{" "}
+						Back to Patients List
+					</Button>
+					<br></br>
+					<br></br>
+					<Card
+						style={{
+							borderRadius: 45,
+							borderWidth: 2.0,
+							marginTop: 20,
+							paddingInline: 10,
+							background: "rgba(231, 238, 238, 0.8)",
 						}}
 					>
-						<img src={pic} alt={name} className="profilePic" />
-					</Col>
-				</Row>
+						<div className="loginContainer">
+							<div>
+								{error && <ErrorMessage variant="success">{error}</ErrorMessage>}
+								{message && <ErrorMessage variant="success">{message}</ErrorMessage>}
+								{loading && <Loading />}
+							</div>
+							<Row className="PatientProfileContainer">
+								<Col md={6}>
+									<Form onSubmit={submitHandler}>
+										<Form.Group controlId="patientName">
+											<Form.Label>Name</Form.Label>
+											<Form.Control
+												type="name"
+												value={name}
+												placeholder="Enter name"
+												onChange={(e) => setName(e.target.value)}
+												required
+											/>
+										</Form.Group>
+										<Form.Group controlId="patientDob">
+											<Form.Label>Date Of Birth</Form.Label>
+											<Form.Control type="date" value={dob} onChange={(e) => setDob(e.target.value)} required />
+										</Form.Group>
+										<div className="form-group">
+											<label name="patientGender">Gender</label>
+											<select
+												className="form-control"
+												id="patientGender"
+												value={gender}
+												onChange={(e) => setGender(e.target.value)}
+												required
+											>
+												<option>Select Gender</option>
+												<option value={gender.Male}>Male</option>
+												<option value={gender.Female}>Female</option>
+											</select>
+										</div>
+										<Form.Group controlId="patientFormBasicNic">
+											<Form.Label>NIC Number</Form.Label>
+											<Form.Control
+												type="text"
+												value={nic}
+												placeholder="Enter NIC"
+												onChange={(e) => setNic(e.target.value)}
+												required
+											/>
+										</Form.Group>
+										<Form.Group controlId="patientFormBasicTelephone">
+											<Form.Label>Telephone</Form.Label>
+											<Form.Control
+												type="text"
+												value={telephone}
+												placeholder="Enter Telephone Number"
+												onChange={(e) => setTelephone(e.target.value)}
+												required
+											/>
+										</Form.Group>
+										<Form.Group controlId="patientFormBasicAddress">
+											<Form.Label>Address</Form.Label>
+											<Form.Control
+												type="textArea"
+												value={address}
+												placeholder="Enter Address"
+												onChange={(e) => setAddress(e.target.value)}
+												required
+											/>
+										</Form.Group>
+										<Form.Group controlId="patientFormBasicEmail">
+											<Form.Label>Email</Form.Label>
+											<Form.Control
+												type="email"
+												value={email}
+												placeholder="Enter Email Address"
+												onChange={(e) => setEmail(e.target.value)}
+												required
+											/>
+										</Form.Group>
+										<Form.Group controlId="formBasicPassword">
+											<Form.Label>Password</Form.Label>
+											<Form.Control
+												type="password"
+												value={password}
+												placeholder="Password"
+												onChange={(e) => setPassword(e.target.value)}
+											/>
+										</Form.Group>
+										<Form.Group controlId="confirmPassword">
+											<Form.Label>Confirm Password</Form.Label>
+											<Form.Control
+												type="password"
+												value={confirmpassword}
+												placeholder="Confirm Password"
+												onChange={(e) => setConfirmPassword(e.target.value)}
+											/>
+										</Form.Group>
+										{picMessage && <ErrorMessage variant="danger">{picMessage}</ErrorMessage>}
+										<Form.Group controlId="pic">
+											<Form.Label>Profile Picture</Form.Label>
+											<Form.File
+												onChange={(e) => postDetails(e.target.files[0])}
+												id="custom-file"
+												type="image/png"
+												label="Upload Profile Picture"
+												custom
+											/>
+										</Form.Group>
+										<Form.Group controlId="patientRegDate">
+											<Form.Label>Registration Date</Form.Label>
+											<Form.Control type="date" value={regDate} onChange={(e) => setRegDate(e.target.value)} required />
+										</Form.Group>
+										<Form.Group controlId="patientRefDoc">
+											<Form.Label>Referring Doctor</Form.Label>
+											<Form.Control
+												type="text"
+												value={referringDoctor}
+												placeholder="Enter Referring Doctor's Name"
+												onChange={(e) => setReferringDoctor(e.target.value)}
+												required
+											/>
+										</Form.Group>
+										<Form.Group controlId="patientFormBasicDataEntryBy">
+											<Form.Label>Data Entry By</Form.Label>
+											<Form.Control
+												type="text"
+												value={dataEntry}
+												placeholder="Enter Data Entering Person Name"
+												onChange={(e) => setDataEntry(e.target.value)}
+												required
+											/>
+										</Form.Group>
+										<br></br>
+										<Button
+											variant="danger"
+											type="submit"
+											style={{
+												fontSize: 15,
+											}}
+										>
+											Update
+										</Button>
+										&emsp;
+									</Form>
+									&emsp;
+								</Col>
+								<Col
+									style={{
+										display: "flex",
+										alignItems: "center",
+										justifyContent: "center",
+									}}
+								>
+									<img
+										src={pic}
+										alt={name}
+										className="profilePic"
+										style={{
+											boxShadow: "7px 7px 20px ",
+											borderColor: "black",
+											borderRadius: 250,
+											background: "white",
+											width: "51%",
+											height: "24%",
+										}}
+									/>
+								</Col>
+							</Row>
+						</div>
+					</Card>
+					<br></br>
+				</MainScreen>
 			</div>
-		</MainScreen>
-	);
+		);
+	} else {
+		return (
+			<div className="denied">
+				<MainScreen />
+				<br></br>
+			</div>
+		);
+	}
 };
 
 export default PatientEditByAdmin;

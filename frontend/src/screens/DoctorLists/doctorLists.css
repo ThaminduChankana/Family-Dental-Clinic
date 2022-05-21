@@ -1,0 +1,9 @@
+.doctorPatientList {
+	background: rgb(39, 191, 211);
+	background-repeat: no-repeat;
+}
+.denied {
+	background: url("../../Images/accessDenied.jpg");
+	background-position: center;
+	background-size: cover;
+}

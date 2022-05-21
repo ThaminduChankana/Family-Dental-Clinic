@@ -5,8 +5,18 @@ const getFillings = asyncHandler(async (req, res) => {
 	const fillings = await Filling.find();
 	res.json(fillings);
 });
+const getFillingCount = asyncHandler(async (req, res) => {
+	const fillings = await Filling.find();
+	var i = fillings.length;
+	var loopData = {};
+	var loopData = new Object();
+	var loopData = {
+		filling: i,
+	};
+	res.json(loopData);
+});
 
-const CreateFilling = asyncHandler(async (req, res) => {
+const createFilling = asyncHandler(async (req, res) => {
 	const { nic, cost, fillingMaterial, fillingType, anestheticStatus, date, checkup, procedure, remark } = req.body;
 
 	if (
@@ -51,7 +61,7 @@ const getFillingtById = asyncHandler(async (req, res) => {
 	}
 });
 
-const UpdateFilling = asyncHandler(async (req, res) => {
+const updateFilling = asyncHandler(async (req, res) => {
 	const { nic, cost, fillingMaterial, fillingType, anestheticStatus, date, checkup, procedure, remark } = req.body;
 
 	const filling = await Filling.findById(req.params.id);
@@ -75,7 +85,7 @@ const UpdateFilling = asyncHandler(async (req, res) => {
 	}
 });
 
-const DeleteFilling = asyncHandler(async (req, res) => {
+const deleteFilling = asyncHandler(async (req, res) => {
 	const filling = await Filling.findById(req.params.id);
 
 	if (filling) {
@@ -89,8 +99,9 @@ const DeleteFilling = asyncHandler(async (req, res) => {
 
 module.exports = {
 	getFillings,
-	CreateFilling,
+	createFilling,
 	getFillingtById,
-	UpdateFilling,
-	DeleteFilling,
+	updateFilling,
+	deleteFilling,
+	getFillingCount,
 };

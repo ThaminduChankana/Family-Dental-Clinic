@@ -5,7 +5,6 @@ const {} = require("../routes/patientRoutes");
 const generateToken = require("../utils/generateToken");
 
 const registerDoctor = asyncHandler(async (req, res) => {
-	//Name, dob,gender,nic,telephone,address,sldareg,licenceno,currenthospital,password,pic,dataentry,reg date
 	const {
 		name,
 		dob,
@@ -13,6 +12,7 @@ const registerDoctor = asyncHandler(async (req, res) => {
 		nic,
 		telephone,
 		address,
+		email,
 		sldaReg,
 		licenceNo,
 		currentHospital,
@@ -35,6 +35,7 @@ const registerDoctor = asyncHandler(async (req, res) => {
 		nic,
 		telephone,
 		address,
+		email,
 		sldaReg,
 		licenceNo,
 		currentHospital,
@@ -54,6 +55,7 @@ const registerDoctor = asyncHandler(async (req, res) => {
 			nic: doctor.nic,
 			telephone: doctor.telephone,
 			address: doctor.address,
+			email: doctor.email,
 			sldaReg: doctor.sldaReg,
 			licenceNo: doctor.licenceNo,
 			currentHospital: doctor.currentHospital,
@@ -81,6 +83,7 @@ const authDoctor = asyncHandler(async (req, res) => {
 			nic: doctor.nic,
 			telephone: doctor.telephone,
 			address: doctor.address,
+			email: doctor.email,
 			sldaReg: doctor.sldaReg,
 			licenceNo: doctor.licenceNo,
 			currentHospital: doctor.currentHospital,
@@ -128,6 +131,7 @@ const updateDoctorProfile = asyncHandler(async (req, res) => {
 		doctor.nic = req.body.nic || doctor.nic;
 		doctor.telephone = req.body.telephone || doctor.telephone;
 		doctor.address = req.body.address || doctor.address;
+		doctor.email = req.body.email || doctor.email;
 		doctor.sldaReg = req.body.sldaReg || doctor.sldaReg;
 		doctor.licenceNo = req.body.licenceNo || doctor.licenceNo;
 		doctor.currentHospital = req.body.currentHospital || doctor.currentHospital;
@@ -148,6 +152,7 @@ const updateDoctorProfile = asyncHandler(async (req, res) => {
 			nic: updatedDoctor.nic,
 			telephone: updatedDoctor.telephone,
 			address: updatedDoctor.address,
+			email: updatedDoctor.email,
 			sldaReg: updatedDoctor.sldaReg,
 			licenceNo: updatedDoctor.licenceNo,
 			currentHospital: updatedDoctor.currentHospital,
@@ -172,6 +177,7 @@ const updateDoctorProfileById = asyncHandler(async (req, res) => {
 		doctor.nic = req.body.nic || doctor.nic;
 		doctor.telephone = req.body.telephone || doctor.telephone;
 		doctor.address = req.body.address || doctor.address;
+		doctor.email = req.body.email || doctor.email;
 		doctor.sldaReg = req.body.sldaReg || doctor.sldaReg;
 		doctor.licenceNo = req.body.licenceNo || doctor.licenceNo;
 		doctor.currentHospital = req.body.currentHospital || doctor.currentHospital;
@@ -192,6 +198,7 @@ const updateDoctorProfileById = asyncHandler(async (req, res) => {
 			nic: updatedDoctor.nic,
 			telephone: updatedDoctor.telephone,
 			address: updatedDoctor.address,
+			email: updatedDoctor.email,
 			sldaReg: updatedDoctor.sldaReg,
 			licenceNo: updatedDoctor.licenceNo,
 			currentHospital: updatedDoctor.currentHospital,

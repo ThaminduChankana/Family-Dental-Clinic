@@ -1,6 +1,7 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
+
 import {
 	adminLoginReducer,
 	adminRegisterReducer,
@@ -45,10 +46,45 @@ import {
 	patientViewReducer,
 	patientUpdateReducer,
 	patientListReducer,
+	patientListForDoctorReducer,
 	patientViewByIdReducer,
 	patientUpdateByIdReducer,
 	patientDeleteReducer,
 } from "./reducers/patientReducers";
+import {
+	basicTreatmentListReducer,
+	basicTreatmentCreateReducer,
+	basicTreatmentUpdateReducer,
+	basicTreatmentDeleteReducer,
+} from "./reducers/basicTreatmentReducer";
+
+import {
+	fillingListReducer,
+	fillingCreateReducer,
+	fillingUpdateReducer,
+	fillingDeleteReducer,
+} from "./reducers/fillingReducer";
+
+import {
+	orthodonticListReducer,
+	orthodonticCreateReducer,
+	orthodonticUpdateReducer,
+	orthodonticDeleteReducer,
+} from "./reducers/orthodonticReducer";
+import {
+	blogCreateReducer,
+	blogDeleteReducer,
+	blogListReducer,
+	blogListForUsersReducer,
+	blogUpdateReducer,
+} from "./reducers/blogsReducers";
+
+import {
+	inventoryListReducer,
+	inventoryCreateReducer,
+	inventoryUpdateReducer,
+	inventoryDeleteReducer,
+} from "./reducers/InventoryReducer";
 
 const reducer = combineReducers({
 	admin_Login: adminLoginReducer,
@@ -68,6 +104,7 @@ const reducer = combineReducers({
 	patientView: patientViewReducer,
 	patientUpdate: patientUpdateReducer,
 	patientList: patientListReducer,
+	patientListForDoctor: patientListForDoctorReducer,
 	patientDelete: patientDeleteReducer,
 	patientViewById: patientViewByIdReducer,
 	patientUpdateById: patientUpdateByIdReducer,
@@ -86,6 +123,28 @@ const reducer = combineReducers({
 	UpdateQuestionforAdmin: UpdateQuestionforAdminReducer,
 	deleteQuestionforAdmin: deleteQuestionforAdminReducer,
 	getFeedbackCommonReviewPage: getFeedbackCommonReviewPageReducer,
+	inventoryList: inventoryListReducer,
+	inventoryCreate: inventoryCreateReducer,
+	inventoryUpdate: inventoryUpdateReducer,
+	inventoryDelete: inventoryDeleteReducer,
+	basicTreatmentList: basicTreatmentListReducer,
+	basicTreatmentCreate: basicTreatmentCreateReducer,
+	basicTreatmentUpdate: basicTreatmentUpdateReducer,
+	basicTreatmentDelete: basicTreatmentDeleteReducer,
+	fillingList: fillingListReducer,
+	fillingCreate: fillingCreateReducer,
+	fillingUpdate: fillingUpdateReducer,
+	fillingDelete: fillingDeleteReducer,
+	orthodonticList: orthodonticListReducer,
+	orthodonticCreate: orthodonticCreateReducer,
+	orthodonticUpdate: orthodonticUpdateReducer,
+	orthodonticDelete: orthodonticDeleteReducer,
+	blogList: blogListReducer,
+	blogListforUsers: blogListForUsersReducer,
+	blogCreate: blogCreateReducer,
+	blogUpdate: blogUpdateReducer,
+	blogDelete: blogDeleteReducer,
+
 });
 
 const adminInfoFromStorage = localStorage.getItem("adminInfo") ? JSON.parse(localStorage.getItem("adminInfo")) : null;
