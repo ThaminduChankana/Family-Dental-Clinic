@@ -1,0 +1,15 @@
+.basicUpdate {
+	background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../../Images/basic-treatment-update.jpg");
+	background-position: center;
+	background-size: cover;
+}
+.orthodonticUpdate {
+	background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../../Images/Orthodontic-update.jpg");
+	background-position: center;
+	background-size: cover;
+}
+.fillingUpdate {
+	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url("../../../Images/filling-update.jpg");
+	background-position: center;
+	background-size: cover;
+}
