@@ -8,7 +8,6 @@ import ErrorMessage from "../../components/ErrorMessage";
 import ReactMarkdown from "react-markdown";
 import axios from "axios";
 import swal from "sweetalert";
-import DoctorArticles from "./DoctorArticles";
 
 function SingleBlog({ match, history }) {
 	const [title, setTitle] = useState();
