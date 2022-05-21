@@ -1,0 +1,21 @@
+.medicalHistoryBg {
+	background: url("../../Images/mh_report.jpg");
+	background-position: center;
+	background-size: cover;
+}
+.medicalHistory-create-edit-Bg {
+	background: url("../../Images/mh_create_edit.jpg");
+	background-position: center;
+	background-size: cover;
+}
+.medicalHistory-report-bg {
+	background: url("../../Images/mh_create_edit.jpg");
+	background-position: center;
+	background-size: cover;
+}
+
+.denied {
+	background: url("../../Images/accessDenied.jpg");
+	background-position: center;
+	background-size: cover;
+}
