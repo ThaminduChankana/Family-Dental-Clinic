@@ -43,6 +43,12 @@ function Header({ setSearch }) {
 					>
 						Contact Us
 					</a>
+					<a
+						style={{ textDecoration: "none", color: "#0d5875", fontSize: "20px", marginLeft: "35px" }}
+						href="/schedule"
+					>
+						Schedule
+					</a>
 				</div>
 				<div className="search">
 					<Form inline>
