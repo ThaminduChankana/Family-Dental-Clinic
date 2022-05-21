@@ -65,6 +65,15 @@ import {
 	inventoryDeleteReducer,
 } from "./reducers/InventoryReducer";
 
+import {
+	medicalHistoryCreateReducer,
+	medicalHistoryDeleteReducer,
+	medicalHistoryListReducer,
+	medicalHistoryUpdateReducer,
+	medicalHistoryListDoctorReducer,
+	patientViewMedicalHistoryReducer,
+} from "./reducers/medicalHistoryReducer";
+
 const reducer = combineReducers({
 	admin_Login: adminLoginReducer,
 	adminRegistration: adminRegisterReducer,
@@ -103,6 +112,12 @@ const reducer = combineReducers({
 	orthodonticCreate: orthodonticCreateReducer,
 	orthodonticUpdate: orthodonticUpdateReducer,
 	orthodonticDelete: orthodonticDeleteReducer,
+	medicalHistoryList: medicalHistoryListReducer,
+	medicalHistoryCreate: medicalHistoryCreateReducer,
+	medicalHistoryUpdate: medicalHistoryUpdateReducer,
+	medicalHistoryDelete: medicalHistoryDeleteReducer,
+	medicalHistoryListDoctor: medicalHistoryListDoctorReducer,
+	patientViewMedicalHistory: patientViewMedicalHistoryReducer,
 	blogList: blogListReducer,
 	blogListforUsers: blogListForUsersReducer,
 	blogCreate: blogCreateReducer,
