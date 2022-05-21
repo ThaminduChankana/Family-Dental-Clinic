@@ -6,7 +6,6 @@ import Loading from "../../components/Loading";
 import { updateInventoryAction } from "../../actions/InventoryAction";
 import { authHeader } from "../../actions/adminActions";
 
-
 export default function InventoryUpdate({match,history}){
     const [productName, setProductName] = useState("");
 	const [quantity, setQuantity] = useState("");
@@ -16,16 +15,6 @@ export default function InventoryUpdate({match,history}){
 
 	const inventoryUpdate = useSelector((state) => state.inventoryUpdate);
 	const { loading } = inventoryUpdate;
-
-    // const InventoryDeleta = useSelector((state) => state.InventoryDeleta);
-	// const { loading: loadingDelete, error: errorDelete } = InventoryDeleta;
-
-    // const deleteHandler = (id) => {
-    //     if(window.confirm("Are You Sure ?")) {
-    //         dispatch(deleteInventoryAction(id));
-    //     }
-    //     history.push("/inventory-update");
-    // };
     useEffect (() => {
         const fetching = async () => {
             const {data} = await axios.get (
@@ -43,7 +32,7 @@ console.log(data);
         };
 
         fetching();
-    }, [match.params.id, productName]);
+    }, [match.params.id]);
 
     const updateHandler = (e) => {
         e.preventDefault();
@@ -54,17 +43,14 @@ console.log(data);
     };
 
     return (
-        <div>
-            <Card.Header>
-				<h3 style={{ color: "darkgray" }}>Update Inventory Details</h3>
+        <div  className="inventoryUpdate" style={{marginTop:"0px", marginBottom:"0px"}}>
+           <Card.Header style={{ backgroundColor: "#cfcfcf" }}>
+				<h3 style={{ color: "#4f4f4f" }}>Update Inventory Details</h3>
 			</Card.Header>
 			<Card style={{ margin: 50, left: "30%", width: "40%" }}>
 				<div>
 					<Card.Body>
                         <form onSubmit={updateHandler}>
-                            {/* {loadingDelete && <Loading />}
-                            {error && <ErrorMessage variant="danger"> {error}</ErrorMessage>}
-                            {errorDelete && <ErrorMessage variant="danger">{errorDelete} </ErrorMessage>} */}
 
                             <Form.Group controlId="productName">
 								<Form.Label>Product Name</Form.Label>
@@ -100,11 +86,7 @@ console.log(data);
     							<Button type="submit" variant="primary">
     								Update
     							</Button>
-                                {/* <Button type="submit" variant="primary" onClick={() => deleteHandler(match.params.id)}>
-    								Delete
-    							</Button> */}
                         </form>
-
                     </Card.Body>
                 </div>
             </Card>

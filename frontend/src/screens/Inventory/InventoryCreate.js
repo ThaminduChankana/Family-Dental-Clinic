@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { createInventoryAction } from "../../actions/InventoryAction";
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
+import "./inventory.css";
 
 export default function InventoryCreate({ history }) {
 	const [productName, setProductName] = useState("");
@@ -36,12 +37,13 @@ export default function InventoryCreate({ history }) {
 
 	useEffect(() => {}, []);
 	return (
-		<div>
-			<Card.Header>
-				<h3 style={{ color: "darkgray" }}>Add Inventory</h3>
+	
+		<div  className="inventoryCreate" style={{marginTop:"0px", marginBottom:"0px"}}>
+			<Card.Header style={{ backgroundColor: "#cfcfcf" }}>
+				<h3 style={{ color: "#4f4f4f" }}>Add Inventory</h3>
 			</Card.Header>
 			<Card style={{ margin: 50, left: "30%", width: "40%" }}>
-				<div>
+				<div >
 					<Card.Body>
 						<Form onSubmit={submitHandler}>
 							{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
@@ -76,7 +78,6 @@ export default function InventoryCreate({ history }) {
 									onChange={(e) => setDescription(e.target.value)}
 								/>
 							</Form.Group>
-
 							{loading && <Loading size={50} />}
 							<Button type="submit" variant="primary">
 								Save

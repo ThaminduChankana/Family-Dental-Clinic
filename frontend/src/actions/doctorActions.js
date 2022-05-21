@@ -26,6 +26,7 @@ import {
 	DOCTOR_UPDATE_BY_ID_SUCCESS,
 } from "../constants/doctorConstants";
 import axios from "axios";
+import swal from "sweetalert";
 
 export const doctorLogin = (nic, password) => async (dispatch) => {
 	try {
@@ -40,7 +41,16 @@ export const doctorLogin = (nic, password) => async (dispatch) => {
 		const { data } = await axios.post("/user/doctor/login", { nic, password, isAdmin: false }, config);
 
 		dispatch({ type: DOCTOR_LOGIN_SUCCESS, payload: data });
-		window.location.href = "/doctor";
+		swal({
+			title: "Success !!!",
+			text: "Doctor Log In Successful.",
+			icon: "success",
+			timer: 2000,
+			button: false,
+		});
+		setTimeout(function () {
+			window.location.href = "/doctor";
+		}, 2000);
 		localStorage.setItem("doctorInfo", JSON.stringify(data));
 	} catch (error) {
 		dispatch({
@@ -114,7 +124,13 @@ export const doctorRegister =
 			);
 
 			dispatch({ type: DOCTOR_REGISTER_SUCCESS, payload: data });
-			alert("Doctor Registration Successful !!!");
+			swal({
+				title: "Success !!!",
+				text: "Doctor Registration Successful.",
+				icon: "success",
+				timer: 2000,
+				button: false,
+			});
 			setTimeout(function () {
 				window.location.href = "/admin-doctors";
 			}, 2000);
@@ -181,7 +197,13 @@ export const doctorUpdateProfile = (doctor) => async (dispatch, getState) => {
 		const { data } = await axios.put("/user/doctor/edit", doctor, config);
 
 		dispatch({ type: DOCTOR_UPDATE_SUCCESS, payload: data });
-		alert("Doctor Account Update Successful !!!");
+		swal({
+			title: "Success !!!",
+			text: "Doctor Account Update Successful.",
+			icon: "success",
+			timer: 2000,
+			button: false,
+		});
 		setTimeout(function () {
 			window.location.href = "/doctor-view";
 		}, 2000);
@@ -316,7 +338,6 @@ export const doctorViewProfileById =
 				config
 			);
 
-			console.log("Hit", config);
 			dispatch({
 				type: DOCTOR_VIEW_BY_ID_SUCCESS,
 				payload: data,
@@ -392,9 +413,16 @@ export const doctorUpdateProfileById =
 				type: DOCTOR_UPDATE_BY_ID_SUCCESS,
 				payload: data,
 			});
+			swal({
+				title: "Success !!!",
+				text: "Doctor Account Update Successful.",
+				icon: "success",
+				timer: 2000,
+				button: false,
+			});
 			setTimeout(function () {
 				window.location.href = "/admin-doctors";
-			}, 1000);
+			}, 2000);
 		} catch (error) {
 			const message = "Doctor Update Failed !!!";
 			dispatch({

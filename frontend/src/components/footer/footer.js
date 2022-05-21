@@ -32,7 +32,7 @@ function Footer() {
 							<li>REVEIWS</li>
 							<li>Q & A</li>
 							<li>TERMS & CONDITIONS</li>
-							<li>SERVICES</li>
+							<li><a href="../../screens/StaticPages/Services.js">SERVICES</a></li>
 						</ui>
 					</div>
 					{/* Column4 */}

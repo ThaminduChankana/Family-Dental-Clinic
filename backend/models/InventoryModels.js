@@ -12,6 +12,14 @@ const inventorySchema = mongoose.Schema({
 	description: {
 		type: String,
 	},
+
+	year: {
+
+		default: new Date().getFullYear(),
+
+		type: String,
+
+	},
 });
 
 const Inventory = mongoose.model("Inventory", inventorySchema);

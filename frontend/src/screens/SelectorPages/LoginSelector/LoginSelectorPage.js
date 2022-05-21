@@ -1,6 +1,5 @@
-import { useEffect } from "react";
-import { Container, Row, Button, Card } from "react-bootstrap";
-import MainScreen from "../../components/MainScreen";
+import { Button, Card } from "react-bootstrap";
+import MainScreen from "../../../components/MainScreen";
 import "./LoginSelector.css";
 
 const LoginSelectorPage = () => {

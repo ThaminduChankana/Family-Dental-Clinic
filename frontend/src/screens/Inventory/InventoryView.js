@@ -6,11 +6,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteInventoryAction, listInventory } from "../../actions/InventoryAction";
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
+import { blue } from "@material-ui/core/colors";
 
-export default function InventoryView() {
+export default function InventoryView({search}) {
 	const dispatch = useDispatch();
+    
 	const admin_Login = useSelector((state) => state.admin_Login);
 	const { adminInfo } = admin_Login;
+
 	const inventoryList = useSelector((state) => state.inventoryList);
 	const { loading, inventory, error } = inventoryList;
 
@@ -36,39 +39,45 @@ export default function InventoryView() {
 
     
   return (
-     <div>
-         <Card.Header>
-           
-             <h3 style={{color: "darkgray"}}>INVENTORY CONTROL</h3>
-             {/* <div class="align-right">
-                 <div className="right-side">
-                    <Button style={{left:"200%", marginLeft: 1400}} href={`/inventory-create`} >Add Product</Button>
-                 </div>
-              <div className="left-side">
-                    <Button style={{left:"200%", marginLeft: 1000}} href={``} >Generate Report</Button>
-              </div>
-             </div> */}
-         </Card.Header>
-
+    <div  className="inventoryView" style={{marginTop:"0px", marginBottom:"0px"}}>
+        <Card.Header style={{ backgroundColor: "#cfcfcf" }}>
+            <h3 style={{color: "#4f4f4f"}}>INVENTORY CONTROL</h3> 
+        </Card.Header>
+        
+        <div class="container" style={{ width:"280px", float: "right", marginTop:"10px"}}>
+                      <div class="row">
+                           <div class="col-xs-2" >
+                               <Button href={`/inventory-create`} style={{marginRight:"15px"}}>Add Product</Button>
+                           </div>
+                           <div class="col-xs-4">
+                               <Button href={`/inventory-report`} >Generate Report</Button>
+                           </div>
+                      </div>
+                  </div>
+<br></br>
         <div style={{padding:"2rem" }} >
             {errorDelete && <ErrorMessage variant="danger">{errorDelete}</ErrorMessage>}
             {loadingDelete && <Loading/>}
             {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
             {loading && <Loading/>}
-            {inventory?.map((product) => (
-                <Grid item xs={12} sm={6} md={3} key={inventory.indexOf(product)} style={{ display:"inline-flex",width: "50rem" }}>
-                    <Card style={{width: "20rem", height: "22rem", margin: 25, left:"10%"}} key="0">
+            {inventory
+            ?.reverse()
+            .filter((filteredB) => filteredB.productName.includes(search))
+            .map((product) => (
+                <Grid item xs={12} sm={6} md={3} key={inventory.indexOf(product)} style={{ display:"inline-flex",width: "50rem", borderRadius:"35px" }}>
+                    <Card style={{width: "20rem", height: "22rem", margin: 25, left:"10%", borderRadius:"35px"}} key="0">
                         <Card.Header>
-                            <h2>Product Name: {product.productName}</h2>
+                            <h2> {product.productName}</h2>
                         </Card.Header>
                         <Card.Body>
                         <h5>{product.description}</h5>
                             <h5>Quantity: {product.quantity}</h5>
-                            
-                            <Button href={`/inventory-update/${product._id}`}>Edit</Button>
-                            <Button variant="danger" className="mx-2" onClick={() => deleteHandler(product._id)}>
+                            <div style={{float:"right"}}>
+                            <Button href={`/inventory-update/${product._id}`} style={{borderRadius:"20px", paddingRight:"5px", paddingLeft:"5px", width:"60px"}}>Edit</Button>
+                            <Button variant="danger" className="mx-2" onClick={() => deleteHandler(product._id)} style={{borderRadius:"20px", paddingRight:"5px", paddingLeft:"5px", width:"60px"}}>
                                 Delete
                             </Button>
+                            </div>
                         </Card.Body>
                     </Card>
                 </Grid>
@@ -76,4 +85,4 @@ export default function InventoryView() {
         </div>
     </div>
   )
-}
+};
