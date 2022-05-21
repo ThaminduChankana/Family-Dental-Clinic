@@ -19,6 +19,7 @@ import {
 	MEDICALHISTORY_VIEW_PATIENT_SUCCESS,
 	MEDICALHISTORY_VIEW_PATIENT_FAIL,
 } from "../constants/medicalHistoryConstants";
+import swal from "sweetalert";
 
 export const listMedicalHistories = () => async (dispatch, getState) => {
 	try {
@@ -104,6 +105,13 @@ export const createMedicalHistoryAction =
 				type: MEDICALHISTORY_CREATE_SUCCESS,
 				payload: data,
 			});
+			swal({
+				title: "Success !!!",
+				text: "Medical History Created Successfully.",
+				icon: "success",
+				timer: 2000,
+				button: false,
+			});
 		} catch (error) {
 			const message = error.response && error.response.data.message ? error.response.data.message : error.message;
 			dispatch({
@@ -166,6 +174,13 @@ export const updateMedicalHistoryAction =
 			dispatch({
 				type: MEDICALHISTORY_UPDATE_SUCCESS,
 				payload: data,
+			});
+			swal({
+				title: "Success !!!",
+				text: "Medical History Updated Successfully.",
+				icon: "success",
+				timer: 2000,
+				button: false,
 			});
 		} catch (error) {
 			const message = error.response && error.response.data.message ? error.response.data.message : error.message;
