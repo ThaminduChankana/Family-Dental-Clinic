@@ -61,14 +61,24 @@ export default function FillingView({ search }) {
 		return (
 			<div style={{ minHeight: 700, backgroundColor: "#a4dded" }}>
 				<MainScreen title={`Welcome Back ${doctorInfo && doctorInfo.name}..`}>
-					<TreatmentNavBar />
 					<br />
-					<Link to="/treatment-filling-create">
-						<Button style={{ marginLeft: 1000, marginBottom: 6 }} size="lg">
-							New Filling
-						</Button>
-					</Link>
-					<h1>Filling Treatment List</h1>
+					<TreatmentNavBar />
+					<br></br>
+					<br></br>
+					<br></br>
+					<Row>
+						<Col>
+							<h1 style={{ marginLeft: 10 }}>Filling Treatment List</h1>
+						</Col>
+						<Col>
+							<Link to="/treatment-filling-create">
+								<Button style={{ float: "right", marginRight: 10 }} size="lg">
+									+ Create New Filling
+								</Button>
+							</Link>
+						</Col>
+					</Row>
+					<br />
 					{errorDelete && <ErrorMessage variant="danger">{errorDelete}</ErrorMessage>}
 					{loadingDelete && <Loading />}
 					{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}

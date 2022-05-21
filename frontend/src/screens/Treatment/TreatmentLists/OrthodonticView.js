@@ -61,14 +61,24 @@ function OrthodonticView({ search }) {
 		return (
 			<div style={{ minHeight: 700, backgroundColor: "#a4dded" }}>
 				<MainScreen title={`Welcome Back ${doctorInfo && doctorInfo.name}..`}>
-					<TreatmentNavBar />
 					<br />
-					<Link to="/treatment-orthodontic-create">
-						<Button style={{ marginLeft: 950, marginBottom: 6 }} size="lg">
-							New Orthodontic
-						</Button>
-					</Link>
-					<h1>Orthodontic Treatment List</h1>
+					<TreatmentNavBar />
+					<br></br>
+					<br></br>
+					<br></br>
+					<Row>
+						<Col>
+							<h1 style={{ marginLeft: 10 }}>Orthodontic Treatment List</h1>
+						</Col>
+						<Col>
+							<Link to="/treatment-orthodontic-create">
+								<Button style={{ float: "right", marginRight: 10 }} size="lg">
+									+ Create New Orthodontic
+								</Button>
+							</Link>
+						</Col>
+					</Row>
+					<br />
 					{errorDelete && <ErrorMessage variant="danger">{errorDelete}</ErrorMessage>}
 					{loadingDelete && <Loading />}
 					{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}

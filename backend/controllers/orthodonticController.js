@@ -7,7 +7,7 @@ const getOrthodontics = asyncHandler(async (req, res) => {
 });
 
 const getOrthodonticCount = asyncHandler(async (req, res) => {
-	const orthodontic = await Orthodontic.find();
+	const orthodontic = await Orthodontic.find({ year: new Date().getFullYear() });
 	var i = orthodontic.length;
 	var loopData = {};
 	var loopData = new Object();

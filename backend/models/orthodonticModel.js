@@ -28,6 +28,10 @@ const orthodonticSchema = mongoose.Schema(
 		remark: {
 			type: String,
 		},
+		year: {
+			default: new Date().getFullYear(),
+			type: String,
+		},
 	},
 	{
 		timestamps: true,

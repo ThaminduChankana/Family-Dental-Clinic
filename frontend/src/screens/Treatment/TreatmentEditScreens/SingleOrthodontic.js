@@ -98,7 +98,8 @@ export default function SingleOrthodontic({ match, history }) {
 	if (doctorInfo) {
 		return (
 			<div className="orthodonticUpdate">
-				<MainScreen title="DOCTOR EDIT - ORTHODONTIC">
+				<MainScreen title="DOCTOR EDIT - ORTHODONTICS">
+					<br></br>
 					<TreatmentNavBar />
 
 					<Card
@@ -112,6 +113,7 @@ export default function SingleOrthodontic({ match, history }) {
 						}}
 					>
 						<Card.Body>
+							<br></br>
 							<Form onSubmit={updateHandler}>
 								{loadingDelete && <Loading />}
 								{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
@@ -190,11 +192,11 @@ export default function SingleOrthodontic({ match, history }) {
 									/>
 								</Form.Group>
 								{loading && <Loading size={50} />}
-								<Button style={{ width: "20%" }} type="submit" variant="primary">
+								<Button style={{ fontSize: 15, marginTop: 10 }} type="submit" variant="primary">
 									Submit
 								</Button>
 								<Button
-									style={{ width: "20%" }}
+									style={{ fontSize: 15, marginTop: 10 }}
 									className="mx-2"
 									variant="danger"
 									onClick={() => deleteHandler(match.params.id)}
@@ -203,6 +205,7 @@ export default function SingleOrthodontic({ match, history }) {
 								</Button>
 							</Form>
 						</Card.Body>
+						<br></br>
 					</Card>
 				</MainScreen>
 			</div>

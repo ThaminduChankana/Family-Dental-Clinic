@@ -87,6 +87,7 @@ export default function SingleBasicTreatment({ match, history }) {
 		return (
 			<div className="basicUpdate">
 				<MainScreen title="DOCTOR EDIT - BASIC TREATMENT">
+					<br />
 					<TreatmentNavBar />
 					<Card
 						style={{
@@ -99,6 +100,7 @@ export default function SingleBasicTreatment({ match, history }) {
 						}}
 					>
 						<Card.Body>
+							<br></br>
 							<Form onSubmit={updateHandler}>
 								{loadingDelete && <Loading />}
 								{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
@@ -173,11 +175,11 @@ export default function SingleBasicTreatment({ match, history }) {
 								</Form.Group>
 
 								{loading && <Loading size={50} />}
-								<Button style={{ width: "15%" }} type="submit" variant="primary">
+								<Button style={{ fontSize: 15, marginTop: 10 }} type="submit" variant="primary">
 									Submit
 								</Button>
 								<Button
-									style={{ width: "15%" }}
+									style={{ fontSize: 15, marginTop: 10 }}
 									className="mx-2"
 									variant="danger"
 									onClick={() => deleteHandler(match.params.id)}
@@ -186,6 +188,7 @@ export default function SingleBasicTreatment({ match, history }) {
 								</Button>
 							</Form>
 						</Card.Body>
+						<br></br>
 					</Card>
 				</MainScreen>
 			</div>

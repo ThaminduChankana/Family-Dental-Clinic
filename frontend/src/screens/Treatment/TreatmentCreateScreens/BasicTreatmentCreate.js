@@ -58,6 +58,7 @@ export default function BasicTreatmentCreate({ history }) {
 		return (
 			<div className="basicCreate">
 				<MainScreen title="DOCTOR CREATE - BASIC TREATMENT">
+					<br></br>
 					<TreatmentNavBar />
 					<Card
 						style={{
@@ -70,6 +71,7 @@ export default function BasicTreatmentCreate({ history }) {
 						}}
 					>
 						<Card.Body>
+							<br></br>
 							<Form onSubmit={submitHandler}>
 								{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
 								<Form.Group controlId="nic">
@@ -150,23 +152,30 @@ export default function BasicTreatmentCreate({ history }) {
 									/>
 								</Form.Group>
 								{loading && <Loading size={50} />}
-								<Button style={{ width: "15%" }} type="submit" variant="primary">
+								<Button style={{ fontSize: 15, marginTop: 10 }} type="submit" variant="primary">
 									Submit
 								</Button>
-								<Button style={{ width: "15%" }} className="mx-2" onClick={resetHandler} variant="danger">
+								<Button
+									style={{ fontSize: 15, marginTop: 10 }}
+									className="mx-2"
+									onClick={resetHandler}
+									variant="danger"
+								>
 									Reset
 								</Button>
 								<Button
 									variant="info"
 									onClick={demoHandler}
 									style={{
-										width: "15%",
+										fontSize: 15,
+										marginTop: 10,
 									}}
 								>
 									Demo
 								</Button>
 							</Form>
 						</Card.Body>
+						<br></br>
 					</Card>
 				</MainScreen>
 			</div>

@@ -6,7 +6,7 @@ const getFillings = asyncHandler(async (req, res) => {
 	res.json(fillings);
 });
 const getFillingCount = asyncHandler(async (req, res) => {
-	const fillings = await Filling.find();
+	const fillings = await Filling.find({ year: new Date().getFullYear() });
 	var i = fillings.length;
 	var loopData = {};
 	var loopData = new Object();

@@ -58,7 +58,8 @@ export default function OrthodonticCreate({ history }) {
 	if (doctorInfo) {
 		return (
 			<div className="orthodonticCreate">
-				<MainScreen title="DOCTOR CREATE - ORTHODONTIC">
+				<MainScreen title="DOCTOR CREATE - ORTHODONTICS">
+					<br></br>
 					<TreatmentNavBar />
 
 					<Card
@@ -72,6 +73,7 @@ export default function OrthodonticCreate({ history }) {
 						}}
 					>
 						<Card.Body>
+							<br></br>
 							<Form onSubmit={submitHandler}>
 								{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
 								<Form.Group controlId="nic">
@@ -84,7 +86,6 @@ export default function OrthodonticCreate({ history }) {
 										required
 									/>
 								</Form.Group>
-
 								<Form.Group controlId="firstVisit">
 									<Form.Label>First Visit Date</Form.Label>
 									<Form.Control
@@ -95,7 +96,6 @@ export default function OrthodonticCreate({ history }) {
 										required
 									/>
 								</Form.Group>
-
 								<Form.Group controlId="fullCost">
 									<Form.Label>Full Cost</Form.Label>
 									<Form.Control
@@ -148,23 +148,43 @@ export default function OrthodonticCreate({ history }) {
 									/>
 								</Form.Group>
 								{loading && <Loading size={50} />}
-								<Button style={{ width: "15%" }} type="submit" variant="primary">
+								<br></br>
+								<Button
+									style={{
+										fontSize: 15,
+										marginTop: 10,
+									}}
+									type="submit"
+									variant="primary"
+								>
 									Submit
 								</Button>
-								<Button style={{ width: "15%" }} className="mx-2" onClick={resetHandler} variant="danger">
+
+								<Button
+									style={{
+										fontSize: 15,
+										marginTop: 10,
+									}}
+									className="mx-2"
+									onClick={resetHandler}
+									variant="danger"
+								>
 									Reset
 								</Button>
+
 								<Button
+									style={{
+										fontSize: 15,
+										marginTop: 10,
+									}}
 									variant="info"
 									onClick={demoHandler}
-									style={{
-										width: "15%",
-									}}
 								>
 									Demo
 								</Button>
 							</Form>
 						</Card.Body>
+						<br></br>
 					</Card>
 				</MainScreen>
 			</div>

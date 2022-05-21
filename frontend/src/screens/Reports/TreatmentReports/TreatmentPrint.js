@@ -20,6 +20,7 @@ const TreatmentPrint = () => {
 			<div style={{ minHeight: 700 }} className="treatmentReport">
 				<MainScreen title="">
 					<br></br>
+					<br />
 					<TreatmentNavBar />
 					<Card
 						style={{

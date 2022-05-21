@@ -115,6 +115,7 @@ export default function SingleFilling({ match, history }) {
 		return (
 			<div className="fillingUpdate">
 				<MainScreen title="DOCTOR EDIT - FILLING TREATMENT">
+					<br></br>
 					<TreatmentNavBar />
 
 					<Card
@@ -128,6 +129,7 @@ export default function SingleFilling({ match, history }) {
 						}}
 					>
 						<Card.Body>
+							<br></br>
 							<Form onSubmit={updateHandler}>
 								{loadingDelete && <Loading />}
 								{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
@@ -222,11 +224,11 @@ export default function SingleFilling({ match, history }) {
 									/>
 								</Form.Group>
 								{loading && <Loading size={50} />}
-								<Button style={{ width: "15%" }} type="submit" variant="primary">
+								<Button style={{ fontSize: 15, marginTop: 10 }} type="submit" variant="primary">
 									Submit
 								</Button>
 								<Button
-									style={{ width: "15%" }}
+									style={{ fontSize: 15, marginTop: 10 }}
 									className="mx-2"
 									variant="danger"
 									onClick={() => deleteHandler(match.params.id)}
@@ -235,6 +237,7 @@ export default function SingleFilling({ match, history }) {
 								</Button>
 							</Form>
 						</Card.Body>
+						<br></br>
 					</Card>
 				</MainScreen>
 			</div>

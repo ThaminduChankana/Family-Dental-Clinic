@@ -60,14 +60,24 @@ function BasicTreatmentView({ search }) {
 		return (
 			<div style={{ minHeight: 700, backgroundColor: "#a4dded" }}>
 				<MainScreen title={`Welcome Back ${doctorInfo && doctorInfo.name}..`}>
+					<br></br>
 					<TreatmentNavBar />
+					<br></br>
+					<br></br>
+					<br></br>
+					<Row>
+						<Col>
+							<h1 style={{ marginLeft: 10 }}>Basic Treatment List</h1>
+						</Col>
+						<Col>
+							<Link to="/treatment-basicTreatment-create">
+								<Button style={{ float: "right", marginRight: 10 }} size="lg">
+									+ Create New Basic Treatment
+								</Button>
+							</Link>
+						</Col>
+					</Row>
 					<br />
-					<Link to="/treatment-basicTreatment-create">
-						<Button style={{ marginLeft: 920, marginBottom: 6 }} size="lg">
-							New Basic Treatment
-						</Button>
-					</Link>
-					<h1>Basic Treatment List</h1>
 					{errorDelete && <ErrorMessage variant="danger">{errorDelete}</ErrorMessage>}
 					{loadingDelete && <Loading />}
 					{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
