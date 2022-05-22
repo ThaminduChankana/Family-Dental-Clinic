@@ -12,6 +12,7 @@
 		"axios": "^0.24.0",
 		"chart.js": "^3.7.1",
 		"concurrently": "^7.0.0",
+		"emailjs-com": "^3.2.0",
 		"markdown": "^0.5.0",
 		"prettier": "^2.5.1",
 		"query-string": "^7.1.1",
@@ -30,6 +31,8 @@
 		"react-to-print": "^2.14.7",
 		"redux": "^4.1.2",
 		"redux-thunk": "^2.4.1",
+		"semantic-ui-css": "^2.4.1",
+		"semantic-ui-react": "^2.1.2",
 		"sweetalert": "^2.1.2",
 		"web-vitals": "^1.1.2"
 	},

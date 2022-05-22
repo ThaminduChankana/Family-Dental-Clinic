@@ -249,8 +249,8 @@ const AdminEditScreen = () => {
 											borderColor: "black",
 											borderRadius: 250,
 											background: "white",
-											width: "50%",
-											height: "30%",
+											width: "300px",
+											height: "300px",
 										}}
 									/>
 								</Col>
