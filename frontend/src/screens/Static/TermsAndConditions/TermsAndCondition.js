@@ -19,7 +19,7 @@ function TermsAndCondtions() {
 					}}
 				>
 					<div
-						style={{							
+						style={{
 							marginLeft: "5%",
 							marginRight: "5%",
 							marginTop: 60,

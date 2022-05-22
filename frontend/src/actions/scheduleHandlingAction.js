@@ -33,7 +33,7 @@ export const listScheduleHandling = () => async (dispatch, getState) => {
 			},
 		};
 
-		const { data } = await axios.get(`http://localhost:5000/user/admin/schedule/get`, config);
+		const { data } = await axios.get(`user/admin/schedule/get`, config);
 
 		dispatch({
 			type: SCHEDULE_LIST_SUCCESS,
@@ -66,7 +66,7 @@ export const createScheduleHandlingAction =
 			};
 
 			const { data } = await axios.post(
-				`http://localhost:5000/user/admin/schedule/create`,
+				`user/admin/schedule/create`,
 				{
 					nic,
 					name,
@@ -120,7 +120,7 @@ export const updateScheduleHandlingAction =
 			};
 
 			const { data } = await axios.put(
-				`http://localhost:5000/user/admin/schedule/get/${id}`,
+				`user/admin/schedule/get/${id}`,
 				{
 					nic,
 					name,
@@ -172,7 +172,7 @@ export const deleteScheduleHandlingAction = (id) => async (dispatch, getState) =
 			},
 		};
 
-		const { data } = await axios.delete(`http://localhost:5000/user/admin/schedule/get/${id}`, config);
+		const { data } = await axios.delete(`user/admin/schedule/get/${id}`, config);
 
 		dispatch({
 			type: SCHEDULE_DELETE_SUCCESS,
@@ -193,7 +193,7 @@ export const listScheduleHandlingForUsers = () => async (dispatch, getState) => 
 			type: COMMON_SCHEDULE_LIST_REQUEST,
 		});
 
-		const { data } = await axios.get(`http://localhost:5000/user/schedules`);
+		const { data } = await axios.get(`user/schedules`);
 
 		dispatch({
 			type: COMMON_SCHEDULE_LIST_SUCCESS,
