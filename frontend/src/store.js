@@ -51,6 +51,13 @@ import {
 	orthodonticDeleteReducer,
 } from "./reducers/orthodonticReducer";
 import {
+	ScheduleHandlingListReducer,
+	ScheduleHandlingCreateReducer,
+	ScheduleHandlingUpdateReducer,
+	ScheduleHandlingDeleteReducer,
+	ScheduleListForUsersReducer,
+} from "./reducers/scheduleHandlingReducer";
+import {
 	blogCreateReducer,
 	blogDeleteReducer,
 	blogListReducer,
@@ -112,6 +119,11 @@ const reducer = combineReducers({
 	orthodonticCreate: orthodonticCreateReducer,
 	orthodonticUpdate: orthodonticUpdateReducer,
 	orthodonticDelete: orthodonticDeleteReducer,
+	ScheduleHandlingList: ScheduleHandlingListReducer,
+	ScheduleHandlingCreate: ScheduleHandlingCreateReducer,
+	ScheduleHandlingUpdate: ScheduleHandlingUpdateReducer,
+	ScheduleHandlingDelete: ScheduleHandlingDeleteReducer,
+	ScheduleListforUsers: ScheduleListForUsersReducer,
 	medicalHistoryList: medicalHistoryListReducer,
 	medicalHistoryCreate: medicalHistoryCreateReducer,
 	medicalHistoryUpdate: medicalHistoryUpdateReducer,

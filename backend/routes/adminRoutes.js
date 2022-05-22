@@ -37,6 +37,7 @@ const {
 	CreateScheduleHandling,
 	UpdateScheduleHandling,
 	DeleteScheduleHandling,
+	getScheduleCount,
 } = require("../controllers/scheduleHandlingController");
 
 const {
@@ -120,6 +121,8 @@ router
 	.get(protect, getScheduleHandlingId)
 	.put(protect, UpdateScheduleHandling)
 	.delete(protect, DeleteScheduleHandling);
+router.route("/schedule/create").post(protect, CreateScheduleHandling);
+router.route("/schedule/count").get(protect, getScheduleCount);
 
 //Routes for Blogs
 router.route("/blog/report").get(protect, getBlogCount);
