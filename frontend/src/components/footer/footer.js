@@ -25,7 +25,7 @@ function Footer() {
 							<br></br>
 							<a href="/articles">DOCTORS BLOG</a>
 							<br></br>
-							<a href="/home">SCHEDULE</a>
+							<a href="/schedules">SCHEDULE</a>
 						</li>
 					</div>
 					{/* Column3 */}
@@ -36,9 +36,9 @@ function Footer() {
 							<br></br>
 							<a href="/home">Q & A</a>
 							<br></br>
-							<a href="/home">TERMS & CONDITIONS</a>
+							<a href="/TermsAndCondtions">TERMS & CONDITIONS</a>
 							<br></br>
-							<a href="/home">SERVICES</a>
+							<a href="/inquiries">SERVICES</a>
 						</li>
 					</div>
 					{/* Column4 */}
