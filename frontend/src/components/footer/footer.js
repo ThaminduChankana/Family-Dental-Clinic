@@ -21,11 +21,11 @@ function Footer() {
 						<li className="list-unstyled">
 							<a href="/">HOME</a>
 							<br></br>
-							<a href="/home">ABOUT US</a>
+							<a href="/aboutus">ABOUT US</a>
 							<br></br>
 							<a href="/articles">DOCTORS BLOG</a>
 							<br></br>
-							<a href="/home">SCHEDULE</a>
+							<a href="/schedules">SCHEDULE</a>
 						</li>
 					</div>
 					{/* Column3 */}
@@ -38,7 +38,7 @@ function Footer() {
 							<br></br>
 							<a href="/TermsAndCondtions">TERMS & CONDITIONS</a>
 							<br></br>
-							<a href="/home">SERVICES</a>
+							<a href="/inquiries">SERVICES</a>
 						</li>
 					</div>
 					{/* Column4 */}
