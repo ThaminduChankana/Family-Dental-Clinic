@@ -46,11 +46,11 @@ import MedicalHistoryListDoctor from "./screens/MedicalHistory/MedicalHistoryLis
 import SingleMedicalHistoryPatient from "./screens/MedicalHistory/SingleMedicalHistoryPatient";
 import MedicalHistoryPrint from "./screens/Reports/MedicalHistoryReports/MedicalHistoryPrint";
 import Footer from "./components/footer/footer";
-import ScheduleHandlingCreate from "./screens/schedule/ScheduleHandlingCreate";
-import ScheduleHandlingView from "./screens/schedule/ScheduleHandlingView";
-import SingleSchedule from "./screens/schedule/SingleSchedule";
+import ScheduleHandlingCreate from "./screens/Schedule/ScheduleHandlingCreate";
+import ScheduleHandlingView from "./screens/Schedule/ScheduleHandlingView";
+import SingleSchedule from "./screens/Schedule/SingleSchedule";
 import DoctorSchedulePrint from "./screens/Reports/ScheduleReport/DoctorSchedulePrint";
-import CommonSchedules from "./screens/schedule/CommonSchedules";
+import CommonSchedules from "./screens/Schedule/CommonSchedules";
 import DoctorArticles from "./screens/Blogs/DoctorArticles";
 import CreateArticle from "./screens/Blogs/CreateArticle";
 import SingleArticle from "./screens/Blogs/SingleArticle";
