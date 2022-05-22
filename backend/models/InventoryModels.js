@@ -6,11 +6,19 @@ const inventorySchema = mongoose.Schema({
 		required: true,
 	},
 	quantity: {
-		type: String,
+		type: Number,
 		required: true,
 	},
 	description: {
 		type: String,
+	},
+
+	year: {
+
+		default: new Date().getFullYear(),
+
+		type: String,
+
 	},
 });
 
