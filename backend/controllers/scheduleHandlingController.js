@@ -1,8 +1,8 @@
-const scheduleHandling = require("../models/scheduleHandlingModel");
+const ScheduleHandling = require("../models/scheduleHandlingModel");
 const asyncHandler = require("express-async-handler");
 
 const getScheduleHandling = asyncHandler(async (req, res) => {
-	const schedule = await scheduleHandling.find();
+	const schedule = await ScheduleHandling.find();
 	res.json(schedule);
 });
 const CreateScheduleHandling = asyncHandler(async (req, res) => {
@@ -11,7 +11,7 @@ const CreateScheduleHandling = asyncHandler(async (req, res) => {
 		res.status(400);
 		throw new Error("Please fill the forms");
 	} else {
-		const schedule = new scheduleHandling({
+		const schedule = new ScheduleHandling({
 			nic,
 			name,
 			date,
@@ -25,7 +25,7 @@ const CreateScheduleHandling = asyncHandler(async (req, res) => {
 	}
 });
 const getScheduleHandlingId = asyncHandler(async (req, res) => {
-	const scheduleHandling = await scheduleHandling.findById(res.params.id);
+	const scheduleHandling = await ScheduleHandling.findById(req.params.id);
 
 	if (scheduleHandling) {
 		res.json(scheduleHandling);
@@ -37,7 +37,7 @@ const getScheduleHandlingId = asyncHandler(async (req, res) => {
 const UpdateScheduleHandling = asyncHandler(async (req, res) => {
 	const { nic, name, date, time, description, addedBy } = req.body;
 
-	const schedule = await scheduleHandling.findById(req.params.id);
+	const schedule = await ScheduleHandling.findById(req.params.id);
 	if (schedule) {
 		schedule.nic = nic;
 		schedule.name = name;
@@ -54,7 +54,7 @@ const UpdateScheduleHandling = asyncHandler(async (req, res) => {
 	}
 });
 const DeleteScheduleHandling = asyncHandler(async (req, res) => {
-	const schedule = await scheduleHandling.findById(req.params.id);
+	const schedule = await ScheduleHandling.findById(req.params.id);
 
 	if (schedule) {
 		await schedule.remove();
@@ -64,10 +64,45 @@ const DeleteScheduleHandling = asyncHandler(async (req, res) => {
 		throw new Error("Schedule Remove Failed");
 	}
 });
+
+const getScheduleCount = asyncHandler(async (req, res) => {
+	const schedule = await ScheduleHandling.find({ year: new Date().getFullYear() });
+	var i = 0;
+	var a = 0,
+		b = 0,
+		c = 0,
+		d = 0,
+		e = 0;
+	var loopData = {};
+	var loopData = new Object();
+	while (i < schedule.length) {
+		if (schedule[i].nic === "723467893V") {
+			a = a + 1;
+		} else if (schedule[i].nic === "723490452V") {
+			b = b + 1;
+		} else if (schedule[i].nic === "719273847V") {
+			c = c + 1;
+		} else if (schedule[i].nic === "762938641V") {
+			d = d + 1;
+		} else if (schedule[i].nic === "770954352V") {
+			e = e + 1;
+		}
+		i++;
+	}
+	var loopData = {
+		dr_sanjeewa: a,
+		dr_susith: b,
+		dr_sunil: c,
+		dr_namal: d,
+		dr_jagath: e,
+	};
+	res.json(loopData);
+});
 module.exports = {
 	getScheduleHandling,
 	CreateScheduleHandling,
 	getScheduleHandlingId,
 	UpdateScheduleHandling,
 	DeleteScheduleHandling,
+	getScheduleCount,
 };
