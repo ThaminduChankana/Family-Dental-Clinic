@@ -135,7 +135,6 @@ const App = () => {
 				<Route path="/aboutus" component={AboutUs} exact />
 				<Route path="/services" component={Services} exact />
 				<Route path="/TermsAndCondtions" component={TermsAndCondtions} exact />
-
 			</main>
 			<Footer />
 		</BrowserRouter>
