@@ -46,6 +46,11 @@ import MedicalHistoryListDoctor from "./screens/MedicalHistory/MedicalHistoryLis
 import SingleMedicalHistoryPatient from "./screens/MedicalHistory/SingleMedicalHistoryPatient";
 import MedicalHistoryPrint from "./screens/Reports/MedicalHistoryReports/MedicalHistoryPrint";
 import Footer from "./components/footer/footer";
+import ScheduleHandlingCreate from "./screens/schedule/ScheduleHandlingCreate";
+import ScheduleHandlingView from "./screens/schedule/ScheduleHandlingView";
+import SingleSchedule from "./screens/schedule/SingleSchedule";
+import DoctorSchedulePrint from "./screens/Reports/ScheduleReport/DoctorSchedulePrint";
+import CommonSchedules from "./screens/schedule/CommonSchedules";
 import DoctorArticles from "./screens/Blogs/DoctorArticles";
 import CreateArticle from "./screens/Blogs/CreateArticle";
 import SingleArticle from "./screens/Blogs/SingleArticle";
@@ -54,6 +59,7 @@ import BlogPrint from "./screens/Reports/BlogReports/BlogPrint";
 import AccessDenied from "./components/AccessDenied";
 import HomePage from "./screens/Static/Home/HomePage";
 import AboutUs from "./screens/Static/AboutUs/AboutUs";
+import TermsAndCondtions from "./screens/Static/TermsAndConditions/TermsAndCondition";
 import Inquiries from "./screens/Static/Inquiries/Inquiries";
 
 const App = () => {
@@ -101,6 +107,11 @@ const App = () => {
 				<Route path="/filling/:id" component={SingleFilling} exact />
 				<Route path="/orthodontic/:id" component={SingleOrthodontic} exact />
 				<Route path="/treatment-report" component={TreatmentPrint} exact />
+				<Route path="/schedule-Handling-Create" component={ScheduleHandlingCreate} exact />
+				<Route path="/schedule-Handling-View" component={() => <ScheduleHandlingView search={search} />} exact />
+				<Route path="/scheduleHandling/:id" component={SingleSchedule} exact />
+				<Route path="/schedule-Report" component={DoctorSchedulePrint} exact />
+				<Route path="/schedules" component={() => <CommonSchedules search={search} />} exact />
 				<Route path="/admin-medical-history" component={() => <MedicalHistory search={search} />} exact />
 				<Route path="/admin-single-medical-history/:id" component={SingleMedicalHistory} exact />
 				<Route path="/admin-create-medical-history" component={MedicalHistoryCreate} exact />
@@ -117,6 +128,7 @@ const App = () => {
 				<Route path="/articles" component={() => <CommonBlogs search={search} />} exact />
 				<Route path="/admin-blog-report" component={BlogPrint} exact />
 				<Route path="/aboutus" component={AboutUs} exact />
+				<Route path="/TermsAndCondtions" component={TermsAndCondtions} exact />
 			</main>
 			<Footer />
 		</BrowserRouter>

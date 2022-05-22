@@ -1,0 +1,24 @@
+.ScheduleBackgroundCreate {
+	background: url("../../Images/ScheduleBackgroundCreate.png");
+	background-position: center;
+	background-size: cover;
+}
+div.Sheader {
+	text-align: center;
+}
+.ScheduleBackgroundView {
+	background-color: darkturquoise;
+	background-size: cover;
+}
+.ScheduleCreatebutton {
+	cursor: pointer;
+	font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji",
+		"Segoe UI Symbol", "Android Emoji", EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue",
+		"Noto Sans", sans-serif;
+	right: 100;
+}
+.ScheduleBackgroundUpdate {
+	background: url("../../Images/ScheduleBackgroundUpdate.png");
+	background-position: center;
+	background-size: cover;
+}
