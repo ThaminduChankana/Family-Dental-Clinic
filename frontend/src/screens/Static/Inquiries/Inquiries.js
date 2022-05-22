@@ -112,7 +112,8 @@ const Inquiries = () => {
 										label="Telephone"
 										name="user_phone"
 										placeholder="Enter Your Telephone Number"
-										required maxLength={10}
+										required
+										maxLength={10}
 										icon="phone"
 									/>
 

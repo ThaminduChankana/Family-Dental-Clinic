@@ -28,6 +28,8 @@ import PatientPrint from "./screens/Reports/PatientReports/PatientPrint";
 import PatientEditByAdmin from "./screens/UserManagement/AdminUserEditScreens/PatientEditByAdmin";
 import InventoryCreate from "./screens/Inventory/InventoryCreate";
 import InventoryView from "./screens/Inventory/InventoryView";
+import InventoryUpdate from "./screens/Inventory/InventoryUpdate";
+import InventoryPrint from "./screens/Reports/InventoryReports/InventoryPrint";
 import TreatmentNavBar from "./screens/Treatment/TreatmentDashBoard/TreatmentNavBar";
 import BasicTreatmentView from "./screens/Treatment/TreatmentLists/BasicTreatmentView";
 import FillingView from "./screens/Treatment/TreatmentLists/FillingView";
@@ -59,6 +61,7 @@ import BlogPrint from "./screens/Reports/BlogReports/BlogPrint";
 import AccessDenied from "./components/AccessDenied";
 import HomePage from "./screens/Static/Home/HomePage";
 import AboutUs from "./screens/Static/AboutUs/AboutUs";
+import Services from "./screens/Static/Services/Services";
 import TermsAndCondtions from "./screens/Static/TermsAndConditions/TermsAndCondition";
 import Inquiries from "./screens/Static/Inquiries/Inquiries";
 
@@ -93,9 +96,11 @@ const App = () => {
 				<Route path="/doctor-patients" component={() => <PatientListForDoctor search={search} />} exact />
 				<Route path="/admin-doctor-edit/:id" component={DoctorEditByAdmin} exact />
 				<Route path="/admin-patient-edit/:id" component={PatientEditByAdmin} exact />
+				<Route path="/inventory-view" component={() => <InventoryView search={search} />} exact />
+				<Route path="/inventory-update/:id" component={InventoryUpdate} exact />
 				<Route path="/admin-patient-report" component={PatientPrint} exact />
 				<Route path="/inventory-create" component={InventoryCreate} exact></Route>
-				<Route path="/inventory-view" component={InventoryView} exact></Route>
+				<Route path="/inventory-report" component={InventoryPrint} exact></Route>
 				<Route path="/treatment-navbar" component={TreatmentNavBar} exact />
 				<Route path="/treatment-basicTreatment-view" component={() => <BasicTreatmentView search={search} />} exact />
 				<Route path="/treatment-filling-view" component={() => <FillingView search={search} />} exact />
@@ -128,6 +133,7 @@ const App = () => {
 				<Route path="/articles" component={() => <CommonBlogs search={search} />} exact />
 				<Route path="/admin-blog-report" component={BlogPrint} exact />
 				<Route path="/aboutus" component={AboutUs} exact />
+				<Route path="/services" component={Services} exact />
 				<Route path="/TermsAndCondtions" component={TermsAndCondtions} exact />
 			</main>
 			<Footer />
