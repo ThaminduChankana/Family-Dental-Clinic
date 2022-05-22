@@ -19,13 +19,13 @@ function Footer() {
 					<div className="col">
 						<h4>QUICK LINKS</h4>
 						<li className="list-unstyled">
-							<a href="/home">HOME</a>
+							<a href="/">HOME</a>
 							<br></br>
-							<a href="/home">ABOUT US</a>
+							<a href="/aboutus">ABOUT US</a>
 							<br></br>
 							<a href="/articles">DOCTORS BLOG</a>
 							<br></br>
-							<a href="/home">SCHEDULE</a>
+							<a href="/schedules">SCHEDULE</a>
 						</li>
 					</div>
 					{/* Column3 */}
@@ -36,7 +36,7 @@ function Footer() {
 							<br></br>
 							<a href="/home">Q & A</a>
 							<br></br>
-							<a href="/home">TERMS & CONDITIONS</a>
+							<a href="/TermsAndCondtions">TERMS & CONDITIONS</a>
 							<br></br>
 							<a href="/services">SERVICES</a>
 						</li>
