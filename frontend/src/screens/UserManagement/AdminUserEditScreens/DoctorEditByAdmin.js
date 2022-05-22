@@ -192,7 +192,7 @@ const DoctorEditByAdmin = ({ match, history }) => {
 												value={telephone}
 												placeholder="Enter Telephone Number"
 												onChange={(e) => setTelephone(e.target.value)}
-												required
+												required maxLength={10}
 											/>
 										</Form.Group>
 										<Form.Group controlId="patientFormBasicAddress">

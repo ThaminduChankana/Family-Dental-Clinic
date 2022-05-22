@@ -164,6 +164,7 @@ const AdminRegisterScreen = () => {
 												placeholder="Enter Telephone Number"
 												onChange={(e) => setTelephone(e.target.value)}
 												required
+												maxLength={10}
 											/>
 										</Form.Group>
 										<Form.Group controlId="adminFormBasicAddress">
