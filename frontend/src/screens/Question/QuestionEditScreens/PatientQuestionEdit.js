@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Button, Card, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { authHeader } from "../../../actions/adminActions";
+import { authHeader } from "../../../actions/patientActions";
 import Loading from "../../../components/Loading";
 import ErrorMessage from "../../../components/ErrorMessage";
 import { updateQuestionAction } from "../../../actions/questionActions";

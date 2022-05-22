@@ -35,69 +35,68 @@ export default function QuestionCreate({ history }) {
 	};
 	useEffect(() => {}, []);
 	return (
-		<div>
-			<div class="topicDiv" style={{ marginLeft: 580, marginTop: 50, fontFamily: "monospace", color: "#4e4e4f" }}>
-				<h1>ASK A QUESTION</h1>
-			</div>
-			<Card style={{ margin: 50, left: "30%", width: "40%", marginTop: 50 }}>
-				<Card.Header>
-					<Card.Body>
-						<Form onSubmit={submitHandler}>
-							{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
-							<Form.Group controlId="name">
-								<Form.Label>Name</Form.Label>
-								<Form.Control
-									type="name"
-									value={name}
-									placeholder="Enter your Name"
-									onChange={(e) => setName(e.target.value)}
-								/>
-							</Form.Group>
+		<Card style={{ margin: 50, left: "30%", width: "40%", marginTop: 50 }}>
+			<Card.Header>Ask Question</Card.Header>
+			<Card.Header>
+				<Card.Body>
+					<Form onSubmit={submitHandler}>
+						{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
+						<Form.Group controlId="name">
+							<Form.Label>Name</Form.Label>
+							<Form.Control
+								type="name"
+								value={name}
+								placeholder="Enter your Name"
+								required
+								onChange={(e) => setName(e.target.value)}
+							/>
+						</Form.Group>
 
-							<Form.Group controlId="email">
-								<Form.Label>Email</Form.Label>
-								<Form.Control
-									type="email"
-									value={email}
-									placeholder="Enter your Email"
-									onChange={(e) => setEmail(e.target.value)}
-								/>
-							</Form.Group>
+						<Form.Group controlId="email">
+							<Form.Label>Email</Form.Label>
+							<Form.Control
+								type="email"
+								value={email}
+								placeholder="Enter your Email"
+								required
+								onChange={(e) => setEmail(e.target.value)}
+							/>
+						</Form.Group>
 
-							<Form.Group controlId="question_type">
-								<Form.Label>Question type</Form.Label>
+						<Form.Group controlId="question_type">
+							<Form.Label>Question type</Form.Label>
 
-								<select
-									style={{ height: "35px", width: "100%", borderRadius: 5, borderColor: "#dfdfe1", borderWidth: 0.5 }}
-									onChange={(e) => setQuestion_type(e.target.value)}
-								>
-									<option></option>
-									<option value="General Dentistry FAQs">General Dentistry FAQs</option>
-									<option value="Appointments FAQs">Appointments FAQs</option>
-								</select>
-							</Form.Group>
+							<select
+								style={{ height: "35px", width: "100%", borderRadius: 5, borderColor: "#dfdfe1", borderWidth: 0.5 }}
+								onChange={(e) => setQuestion_type(e.target.value)}
+							>
+								<option>Select Question Type</option>
+								<option value="General Dentistry FAQs">General Dentistry FAQs</option>
+								<option value="Appointments FAQs">Appointments FAQs</option>
+							</select>
+						</Form.Group>
 
-							<Form.Group controlId="question_description">
-								<Form.Label>Question Description</Form.Label>
-								<Form.Control
-									as="textarea"
-									type="question_description"
-									value={question_description}
-									placeholder="Enter your Question Description"
-									onChange={(e) => setQuestion_description(e.target.value)}
-								/>
-							</Form.Group>
-							{loading && <Loading size={50} />}
-							<Button type="submit" variant="primary" style={{ marginTop: 16 }}>
-								Submit
-							</Button>
-							<Button className="mx-2" onClick={resetHandler} variant="danger" style={{ marginTop: 16 }}>
-								Reset
-							</Button>
-						</Form>
-					</Card.Body>
-				</Card.Header>
-			</Card>
-		</div>
+						<Form.Group controlId="question_description">
+							<Form.Label>Question Description</Form.Label>
+							<Form.Control
+								as="textarea"
+								type="question_description"
+								value={question_description}
+								placeholder="Enter your Question Description"
+								required
+								onChange={(e) => setQuestion_description(e.target.value)}
+							/>
+						</Form.Group>
+						{loading && <Loading size={50} />}
+						<Button type="submit" variant="primary" style={{ marginTop: 16 }}>
+							Submit
+						</Button>
+						<Button className="mx-2" onClick={resetHandler} variant="danger" style={{ marginTop: 16 }}>
+							Reset
+						</Button>
+					</Form>
+				</Card.Body>
+			</Card.Header>
+		</Card>
 	);
 }

@@ -18,6 +18,35 @@ const getQuestionforPatient = asyncHandler(async (req, res) => {
 	res.json(question);
 });
 
+const getQuestionCount = asyncHandler(async (req, res) => {
+	const question = await Question.find({ year: new Date().getFullYear() });
+	var i = 0;
+	var a = 0,
+		b = 0,
+		c = "";
+	var loopData = {};
+	var loopData = new Object();
+	while (i < question.length) {
+		if (question[i].question_type === "Appointments FAQs") {
+			a = a + 1;
+		} else if (question[i].question_type === "General Dentistry FAQs") {
+			b = b + 1;
+		}
+		i++;
+	}
+	if (a > b) {
+		c = "Appointments FAQs";
+	} else {
+		c = "General Dentistry FAQs";
+	}
+	var loopData = {
+		appointments_faq: a,
+		general_dentistry_faq: b,
+		max: c,
+	};
+	res.json(loopData);
+});
+
 const createQuestion = asyncHandler(async (req, res) => {
 	const { name, email, question_type, question_description } = req.body;
 
@@ -106,4 +135,5 @@ module.exports = {
 	UpdateQuestionforAdmin,
 	getQuestionForAdmin,
 	getQuestionforPatient,
+	getQuestionCount,
 };

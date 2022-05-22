@@ -34,6 +34,7 @@ import {
 	createQuestionReducer,
 	deleteQuestionforAdminReducer,
 	deleteQuestionReducer,
+	getQuestionCommonQAPageReducer,
 	getQuestionForAdminReducer,
 	getQuestionReducer,
 	UpdateQuestionforAdminReducer,
@@ -144,7 +145,7 @@ const reducer = combineReducers({
 	blogCreate: blogCreateReducer,
 	blogUpdate: blogUpdateReducer,
 	blogDelete: blogDeleteReducer,
-
+	getQuestionCommonQAPage: getQuestionCommonQAPageReducer,
 });
 
 const adminInfoFromStorage = localStorage.getItem("adminInfo") ? JSON.parse(localStorage.getItem("adminInfo")) : null;

@@ -1,5 +1,9 @@
 import axios from "axios";
+import { COMMONFEEDBACK_GET_SUCCESS } from "../constants/feedbackConstantnts";
 import {
+	COMMONQUESTION_GET_FAIL,
+	COMMONQUESTION_GET_REQUEST,
+	COMMONQUESTION_GET_SUCCESS,
 	QUESTION_CREATE_FAIL,
 	QUESTION_CREATE_REQUEST,
 	QUESTION_CREATE_SUCCESS,
@@ -50,6 +54,27 @@ export const getQuestionAction = () => async (dispatch, getState) => {
 		const message = error.response && error.response.data.message ? error.response.data.message : error.message;
 		dispatch({
 			type: QUESTION_GET_FAIL,
+			payload: message,
+		});
+	}
+};
+
+export const getQuestionCommonQAPageAction = () => async (dispatch) => {
+	try {
+		dispatch({
+			type: COMMONQUESTION_GET_REQUEST,
+		});
+
+		const { data } = await axios.get(`http://localhost:5000/user/question`);
+
+		dispatch({
+			type: COMMONQUESTION_GET_SUCCESS,
+			payload: data,
+		});
+	} catch (error) {
+		const message = error.response && error.response.data.message ? error.response.data.message : error.message;
+		dispatch({
+			type: COMMONQUESTION_GET_FAIL,
 			payload: message,
 		});
 	}

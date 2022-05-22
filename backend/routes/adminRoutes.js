@@ -50,23 +50,10 @@ const {
 	UpdateQuestionforAdmin,
 	deleteQuestion,
 	getQuestionForAdmin,
+	getQuestionCount,
 } = require("../controllers/questionController");
 
 const { getBlogCount } = require("../controllers/blogController");
-
-const {
-	UpdateFeedbackforAdmin,
-	deleteFeedback,
-	getFeedbackById,
-	getFeedbackforAdmin,
-} = require("../controllers/feedbackController");
-
-const {
-	getQuestionById,
-	UpdateQuestionforAdmin,
-	deleteQuestion,
-	getQuestionForAdmin,
-} = require("../controllers/questionController");
 
 const { protect } = require("../middlewares/authAdminMiddleware");
 const { post } = require("./doctorRoutes");
@@ -123,7 +110,7 @@ router.route("/question/update/:id").put(protect, UpdateQuestionforAdmin);
 router.route("/question/view").get(protect, getQuestionForAdmin);
 router.route("/question/view/:id").get(protect, getQuestionById);
 router.route("/question/delete/:id").put(protect, deleteQuestion);
-
+router.route("/question/report").get(protect, getQuestionCount);
 
 //Routes for Schedule handling
 router.route("/schedule/get").get(protect, getScheduleHandling);
@@ -136,6 +123,5 @@ router
 
 //Routes for Blogs
 router.route("/blog/report").get(protect, getBlogCount);
-
 
 module.exports = router;

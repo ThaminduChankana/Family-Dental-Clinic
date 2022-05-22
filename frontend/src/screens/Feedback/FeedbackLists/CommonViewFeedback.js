@@ -6,7 +6,7 @@ import Loading from "../../../components/Loading";
 import ErrorMessage from "../../../components/ErrorMessage";
 import { getFeedbackCommonReviewPageAction } from "../../../actions/feedbackAction";
 
-export default function CommonViewFeedback() {
+export default function CommonViewFeedback({ search }) {
 	const dispatch = useDispatch();
 
 	const getFeedbackCommonReviewPage = useSelector((state) => state.getFeedbackCommonReviewPage);
@@ -25,20 +25,30 @@ export default function CommonViewFeedback() {
 			<div style={{ padding: "2rem" }}>
 				{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
 				{loading && <Loading />}
-				{feedbacks?.map((feedback) => (
-					<Grid item xs={12} sm={6} md={3} key={feedbacks.indexOf(feedback)}>
-						<Card style={{ width: "20rem", height: "22rem", margin: 25, left: "10%" }} key="0">
-							<Card.Header>
-								<h2> Patient name : {feedback.name}</h2>
-							</Card.Header>
-							<Card.Body>
-								<h5>Patient Emai : {feedback.patient_email}</h5>
-								<h5>Review Description : {feedback.review_description}</h5>
-								<h5>Rating Count: {feedback.rating_count}</h5>
-							</Card.Body>
-						</Card>
-					</Grid>
-				))}
+				{feedbacks
+					?.reverse()
+					.filter((filteredB) => filteredB.patient_email.includes(search))
+					.map((feedback) => (
+						<Grid
+							item
+							xs={12}
+							sm={6}
+							md={3}
+							key={feedbacks.indexOf(feedback)}
+							style={{ display: "inline-flex", width: "500px", borderRadius: "35px" }}
+						>
+							<Card style={{ width: "20rem", height: "40rem", margin: 25}} key="0">
+								<Card.Header>
+									<h2> Patient name : {feedback.name}</h2>
+								</Card.Header>
+								<Card.Body>
+									<h5>Patient Emai : {feedback.patient_email}</h5>
+									<h5>Review Description : {feedback.review_description}</h5>
+									<h5>Rating Count: {feedback.rating_count}</h5>
+								</Card.Body>
+							</Card>
+						</Grid>
+					))}
 			</div>
 		</div>
 	);

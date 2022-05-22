@@ -1,4 +1,7 @@
 import {
+	COMMONQUESTION_GET_FAIL,
+	COMMONQUESTION_GET_REQUEST,
+	COMMONQUESTION_GET_SUCCESS,
 	QUESTION_CREATE_FAIL,
 	QUESTION_CREATE_REQUEST,
 	QUESTION_CREATE_SUCCESS,
@@ -29,6 +32,20 @@ export const getQuestionReducer = (state = { questions: [] }, action) => {
 		case QUESTION_GET_SUCCESS:
 			return { loading: false, questions: action.payload };
 		case QUESTION_GET_FAIL:
+			return { loading: false, error: action.payload };
+
+		default:
+			return state;
+	}
+};
+
+export const getQuestionCommonQAPageReducer = (state = { questions: [] }, action) => {
+	switch (action.type) {
+		case COMMONQUESTION_GET_REQUEST:
+			return { loading: true };
+		case COMMONQUESTION_GET_SUCCESS:
+			return { loading: false, questions: action.payload };
+		case COMMONQUESTION_GET_FAIL:
 			return { loading: false, error: action.payload };
 
 		default:

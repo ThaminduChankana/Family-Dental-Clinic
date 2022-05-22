@@ -14,7 +14,7 @@ const getFeedback = asyncHandler(async (req, res) => {
 });
 
 const getFeedbackforPatient = asyncHandler(async (req, res) => {
-	const feedback = await Feedback.find({ patient: req.patient._id });
+	const feedback = await Feedback.find({ patient: req.patient._id, isAdmin: true });
 
 	console.log(feedback);
 	res.json(feedback);

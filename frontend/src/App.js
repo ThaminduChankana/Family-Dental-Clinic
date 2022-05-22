@@ -57,7 +57,8 @@ import SingleArticle from "./screens/Blogs/SingleArticle";
 import CommonBlogs from "./screens/Blogs/CommonBlogs";
 import BlogPrint from "./screens/Reports/BlogReports/BlogPrint";
 import AccessDenied from "./components/AccessDenied";
-
+import CommonViewQuestion from "./screens/Question/QuestionLists/CommonViewQuestion";
+import QuestionPrint from "./screens/Reports/QuestionReports/QuestionPrint";
 
 const App = () => {
 	const [search, setSearch] = useState("");
@@ -90,14 +91,14 @@ const App = () => {
 				<Route path="/admin-patient-edit/:id" component={PatientEditByAdmin} exact />
 				<Route path="/feedback-create" component={FeedbackCreate} exact />
 				<Route path="/question-create" component={QuestionCreate} exact />
-				<Route path="/feedback-adminview" component={FeedbackViewforAdmin} exact />
-				<Route path="/question-adminview" component={QuestionViewforAdmin} exact />
+				<Route path="/feedback-adminview" component={() => <FeedbackViewforAdmin search={search} />} exact />
+				<Route path="/question-adminview" component={() => <QuestionViewforAdmin search={search} />} exact />
 				<Route path="/feedback-update-patient/:id" component={PatientFeedbackEdit} exact />
 				<Route path="/question-update-patient/:id" component={PaitentQuestionEdit} exact />
 				<Route path="/feedback-update-admin/:id" component={SingleFeedback} exact />
-				<Route path="/feedback-view-patient" component={FeedbackViewforPatient} exact />
-				<Route path="/common-view-feedback" component={CommonViewFeedback} exact />
-				<Route path="/question-view-patient" component={QuestionViewforPatient} exact />
+				<Route path="/feedback-view-patient" component={() => <FeedbackViewforPatient search={search} />} exact />
+				<Route path="/common-view-feedback" component={() => <CommonViewFeedback search={search} />} exact />
+				<Route path="/question-view-patient" component={() => <QuestionViewforPatient search={search} />} exact />
 				<Route path="/question-update-admin/:id" component={AdminQuestionEdit} exact />
 				<Route path="/admin-patient-report" component={PatientPrint} exact />
 				<Route path="/inventory-create" component={InventoryCreate} exact></Route>
@@ -118,7 +119,8 @@ const App = () => {
 				<Route path="/doctor-single-article/:id" component={SingleArticle} exact />
 				<Route path="/articles" component={() => <CommonBlogs search={search} />} exact />
 				<Route path="/admin-blog-report" component={BlogPrint} exact />
-
+				<Route path="/common-view-question" component={() => <CommonViewQuestion search={search} />} exact />
+				<Route path="/question-report" component={QuestionPrint} exact />
 			</main>
 			<Footer />
 		</BrowserRouter>
