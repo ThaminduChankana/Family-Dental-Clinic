@@ -4,11 +4,10 @@ import "./TermsAndCondtion.css";
 import MainScreen from "../../../components/MainScreen";
 function TermsAndCondtions() {
 	return (
-		<div class="TermsAndCondtionBackground">
+		<div className="TermsAndCondtionBackground">
 			<br></br>
 			<MainScreen title="Terms & Conditions">
 				<br></br>
-
 				<br></br>
 				<Card
 					style={{
@@ -17,16 +16,10 @@ function TermsAndCondtions() {
 						marginBottom: 90,
 						paddingInline: 10,
 						background: "#f6f6f6f0",
-						marginLeft: "15%",
-						marginRight: "15%",
 					}}
 				>
 					<div
-						style={{
-							borderWidth: 2.0,
-							borderRadius: 20,
-							marginBottom: 90,
-							background: "#f6f6f6f0",
+						style={{							
 							marginLeft: "5%",
 							marginRight: "5%",
 							marginTop: 60,
@@ -34,6 +27,7 @@ function TermsAndCondtions() {
 					>
 						<br></br>
 						<h2> FAMILY DENTAL CLINIC TERMS & CONDITIONS</h2>
+						<br></br>
 						<ul>
 							<li
 								style={{
