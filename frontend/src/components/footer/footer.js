@@ -21,7 +21,7 @@ function Footer() {
 						<li className="list-unstyled">
 							<a href="/">HOME</a>
 							<br></br>
-							<a href="/home">ABOUT US</a>
+							<a href="/aboutus">ABOUT US</a>
 							<br></br>
 							<a href="/articles">DOCTORS BLOG</a>
 							<br></br>
