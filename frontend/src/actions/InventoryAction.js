@@ -13,6 +13,7 @@ import {
 	INVENTORY_DELETE_FAIL,
 } from "../constants/InventoryConstants";
 import axios from "axios";
+import swal from "sweetalert";
 
 export const listInventory = () => async (dispatch, getState) => {
 	try {
@@ -72,7 +73,17 @@ export const createInventoryAction = (productName, quantity, description) => asy
 			},
 			config
 		);
+		swal({
+			title: "Success !!!",
+			text: "Inventory successfully created.",
+			icon: "success",
+			timer: 2000,
+			button: false,
+		});
 
+		setTimeout(function () {
+			window.location.href = "/inventory-view";
+		}, 2000);
 		dispatch({
 			type: INVENTORY_CREATE_SUCCESS,
 			payload: data,
@@ -111,7 +122,17 @@ export const updateInventoryAction = (id, productName, quantity, description) =>
 			},
 			config
 		);
+		swal({
+			title: "Success !!!",
+			text: "Inventory successfully updated.",
+			icon: "success",
+			timer: 2000,
+			button: false,
+		});
 
+		setTimeout(function () {
+			window.location.href = "/inventory-view";
+		}, 2000);
 		dispatch({
 			type: INVENTORY_UPDATE_SUCCESS,
 			payload: data,

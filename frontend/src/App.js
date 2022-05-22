@@ -56,6 +56,7 @@ import BlogPrint from "./screens/Reports/BlogReports/BlogPrint";
 import AccessDenied from "./components/AccessDenied";
 import HomePage from "./screens/Static/Home/HomePage";
 import AboutUs from "./screens/Static/AboutUs/AboutUs";
+import Services from "./screens/Static/Services/Services";
 
 const App = () => {
 	const [search, setSearch] = useState("");
@@ -119,6 +120,7 @@ const App = () => {
 				<Route path="/articles" component={() => <CommonBlogs search={search} />} exact />
 				<Route path="/admin-blog-report" component={BlogPrint} exact />
 				<Route path="/aboutus" component={AboutUs} exact />
+				<Route path="/services" component={Services} exact />
 			</main>
 			<Footer />
 		</BrowserRouter>

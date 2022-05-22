@@ -38,7 +38,7 @@ function Footer() {
 							<br></br>
 							<a href="/home">TERMS & CONDITIONS</a>
 							<br></br>
-							<a href="/home">SERVICES</a>
+							<a href="/services">SERVICES</a>
 						</li>
 					</div>
 					{/* Column4 */}

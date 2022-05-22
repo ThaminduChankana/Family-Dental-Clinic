@@ -3,6 +3,7 @@ import {Card, Button} from "react-bootstrap";
 import {useReactToPrint} from "react-to-print";
 import { useSelector } from "react-redux";
 import {InventoryReport} from "./InventoryReport";
+import MainScreen from "../../../components/MainScreen";
 
 const InventoryPrint = () => {
     const componentRef = useRef();
@@ -13,6 +14,7 @@ const InventoryPrint = () => {
 	const admin_Login = useSelector((state) => state.admin_Login);
 	const { adminInfo } = admin_Login;
 
+	if(adminInfo){
 	return (
 		<div style={{ minHeight: 700 }}>
 			<br />
@@ -43,6 +45,13 @@ const InventoryPrint = () => {
 			
 		</div>
 	);
-};
-
+		} else{
+				return (
+					<div className="denied">
+						<MainScreen />
+						<br></br>
+					</div>
+				);
+}
+}
 export default InventoryPrint;

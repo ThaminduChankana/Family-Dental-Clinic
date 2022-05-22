@@ -43,6 +43,7 @@ function Header({ setSearch }) {
 					>
 						Contact Us
 					</a>
+					
 				</div>
 				<div className="search">
 					<Form inline>
