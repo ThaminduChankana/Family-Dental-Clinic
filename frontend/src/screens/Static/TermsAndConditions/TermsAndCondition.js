@@ -1,14 +1,14 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import "./TermsAndCondtion.css";
-
+import MainScreen from "../../../components/MainScreen";
 function TermsAndCondtions() {
-    return (
-			<div class="TermsAndCondtionBackground">
+	return (
+		<div class="TermsAndCondtionBackground">
+			<br></br>
+			<MainScreen title="Terms & Conditions">
 				<br></br>
-				<br></br>
-				<h3 style={{ marginLeft: "35%", fontSize: "50px" }}>Terms And Conditions</h3>
-				<br></br>
+
 				<br></br>
 				<Card
 					style={{
@@ -250,7 +250,8 @@ function TermsAndCondtions() {
 				</Card>
 				<br></br>
 				<br></br>
-			</div>
-		);
+			</MainScreen>
+		</div>
+	);
 }
 export default TermsAndCondtions;

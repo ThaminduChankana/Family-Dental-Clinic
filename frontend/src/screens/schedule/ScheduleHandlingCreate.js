@@ -5,7 +5,7 @@ import { createScheduleHandlingAction } from "../../actions/scheduleHandlingActi
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 import MainScreen from "../../components/MainScreen";
-import "./scheduleHandling.css"
+import "./scheduleHandling.css";
 
 export default function ScheduleHandlingCreate({ history }) {
 	const [nic, setNic] = useState("");
@@ -16,8 +16,8 @@ export default function ScheduleHandlingCreate({ history }) {
 	const [addedBy, setAddedBy] = useState("");
 
 	const dispatch = useDispatch();
-    const admin_Login = useSelector((state) => state.admin_Login);
-    const { adminInfo } = admin_Login;
+	const admin_Login = useSelector((state) => state.admin_Login);
+	const { adminInfo } = admin_Login;
 	const ScheduleHandlingCreate = useSelector((state) => state.ScheduleHandlingCreate);
 	const { loading, error, scheduleHandling } = ScheduleHandlingCreate;
 
@@ -41,16 +41,16 @@ export default function ScheduleHandlingCreate({ history }) {
 		resetHandler();
 		history.push("/schedule-Handling-View");
 	};
-const demoHandler = async (e) => {
-	e.preventDefault();
-	setNic("770954352V");
-	setName("Dr Jagath Gamage");
-	setTime("11.30-14.30");
-	setDate("2022-06-05");
-	setDescription("Orthodontic Channelling");
-	setAddedBy("admin 1");
-};
-	useEffect(() => { }, []);
+	const demoHandler = async (e) => {
+		e.preventDefault();
+		setNic("770954352V");
+		setName("Dr Jagath Gamage");
+		setTime("11.30-14.30");
+		setDate("2022-06-05");
+		setDescription("Orthodontic Channelling");
+		setAddedBy("admin 1");
+	};
+	useEffect(() => {}, []);
 	if (adminInfo) {
 		return (
 			<div className="ScheduleBackgroundCreate">
@@ -184,11 +184,8 @@ const demoHandler = async (e) => {
 								<Button className="mx-2" onClick={resetHandler} variant="danger">
 									Reset
 								</Button>
-								<Button
-									variant="info"
-									onClick={demoHandler}
-								>
-								Demo
+								<Button variant="info" onClick={demoHandler}>
+									Demo
 								</Button>
 							</Form>
 							<br></br>
@@ -207,4 +204,4 @@ const demoHandler = async (e) => {
 			</div>
 		);
 	}
-};
+}

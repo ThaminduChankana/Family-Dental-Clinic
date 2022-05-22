@@ -1,4 +1,3 @@
-
 import { Accordion, Card, Row, Col } from "react-bootstrap";
 import MainScreen from "../../components/MainScreen";
 //import { Link,useHistory } from "react-router-dom";
@@ -10,19 +9,20 @@ import ErrorMessage from "../../components/ErrorMessage";
 import "./scheduleHandling.css";
 
 export default function CommonSchedules({ search }) {
-    const dispatch = useDispatch();
-   const scheduleListforUsers = useSelector((state) => state.ScheduleListforUsers);
-    const { loading, schedules, error } = scheduleListforUsers;
-	
+	const dispatch = useDispatch();
+	const scheduleListforUsers = useSelector((state) => state.ScheduleListforUsers);
+	const { loading, schedules, error } = scheduleListforUsers;
+
 	useEffect(() => {
-        dispatch(listScheduleHandlingForUsers());
-    }, [dispatch]);
+		dispatch(listScheduleHandlingForUsers());
+	}, [dispatch]);
 	return (
 		<div className="ScheduleBackgroundView">
 			<MainScreen>
+				<br></br>
+				<br></br>
 				<h1>Doctor's Schedule List</h1>
 
-				
 				{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
 				{loading && <Loading />}
 				<br></br>
@@ -104,6 +104,7 @@ export default function CommonSchedules({ search }) {
 						</Accordion>
 					))}
 			</MainScreen>
+			<br></br>
 		</div>
 	);
 }

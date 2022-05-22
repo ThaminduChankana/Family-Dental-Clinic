@@ -1,12 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { getBlogs, getBlogById } = require("../controllers/blogController");
-const {
-	getScheduleHandling,
-	getScheduleHandlingId,
-
-} = require("../controllers/scheduleHandlingController");
-
+const { getScheduleHandling, getScheduleHandlingId } = require("../controllers/scheduleHandlingController");
 
 // Routes for Users to get blog articles
 router.route("/blogs").get(getBlogs);

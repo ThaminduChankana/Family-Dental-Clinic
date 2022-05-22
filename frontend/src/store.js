@@ -51,7 +51,6 @@ import {
 	orthodonticDeleteReducer,
 } from "./reducers/orthodonticReducer";
 import {
-
 	ScheduleHandlingListReducer,
 	ScheduleHandlingCreateReducer,
 	ScheduleHandlingUpdateReducer,
@@ -65,7 +64,6 @@ import {
 	blogListForUsersReducer,
 	blogUpdateReducer,
 } from "./reducers/blogsReducers";
-
 
 import {
 	inventoryListReducer,

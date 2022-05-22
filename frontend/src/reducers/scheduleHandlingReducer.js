@@ -84,4 +84,3 @@ export const ScheduleListForUsersReducer = (state = { schedules: [] }, action) =
 			return state;
 	}
 };
-
