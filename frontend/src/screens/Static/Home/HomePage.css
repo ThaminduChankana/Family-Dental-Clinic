@@ -1,0 +1,14 @@
+.home-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 10;
+	box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+	object-fit: contain;
+}
+
+.homebg {
+	background: url("https://cdn.pixabay.com/photo/2016/09/13/19/31/texture-1668079__340.jpg");
+	background-size: cover;
+	background-position: center;
+}

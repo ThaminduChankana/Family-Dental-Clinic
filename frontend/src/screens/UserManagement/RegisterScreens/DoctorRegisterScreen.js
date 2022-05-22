@@ -355,8 +355,8 @@ const DoctorRegisterScreen = () => {
 											borderColor: "black",
 											borderRadius: 250,
 											background: "white",
-											width: "50%",
-											height: "21%",
+											width: "300px",
+											height: "300px",
 										}}
 									/>
 								</Col>

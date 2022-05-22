@@ -71,7 +71,7 @@ const DoctorOperationPage = ({ history }) => {
 										</Button>
 									</a>
 									&emsp;
-									<a href="/">
+									<a href="/doctor-view-medical-history">
 										<Button size="lg" style={{ width: 350, height: 75 }}>
 											Patient Medical History Management
 										</Button>
@@ -79,7 +79,7 @@ const DoctorOperationPage = ({ history }) => {
 								</div>
 								<br></br>
 								<div>
-									<a href="/">
+									<a href="/doctor-articles">
 										<Button size="lg" style={{ width: 350, height: 75 }}>
 											Doctor's Blog Management
 										</Button>

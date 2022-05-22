@@ -288,8 +288,8 @@ const PatientEditScreen = () => {
 											borderColor: "black",
 											borderRadius: 250,
 											background: "white",
-											width: "51%",
-											height: "24%",
+											width: "300px",
+											height: "300px",
 										}}
 									/>
 								</Col>

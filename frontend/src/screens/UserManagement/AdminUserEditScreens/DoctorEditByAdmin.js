@@ -309,19 +309,21 @@ const DoctorEditByAdmin = ({ match, history }) => {
 										justifyContent: "center",
 									}}
 								>
-									<img
-										src={pic}
-										alt={name}
-										className="profilePic"
-										style={{
-											boxShadow: "7px 7px 20px ",
-											borderColor: "black",
-											borderRadius: 250,
-											background: "white",
-											width: "51%",
-											height: "21%",
-										}}
-									/>
+									<div>
+										<img
+											src={pic}
+											alt={name}
+											className="profilePic"
+											style={{
+												boxShadow: "7px 7px 20px ",
+												borderColor: "black",
+												borderRadius: 250,
+												background: "white",
+												width: "300px",
+												height: "300px",
+											}}
+										/>
+									</div>
 								</Col>
 							</Row>
 						</div>

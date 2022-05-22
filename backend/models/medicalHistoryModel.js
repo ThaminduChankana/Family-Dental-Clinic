@@ -11,18 +11,23 @@ const medicalHistorySchema = mongoose.Schema({
 	},
 	previousDentalhistory: {
 		type: String,
+		required: true,
 	},
 	dentalConcerns: {
 		type: String,
+		required: true,
 	},
 	medicalConcerns: {
 		type: String,
+		required: true,
 	},
 	currentMedications: {
 		type: String,
+		required: true,
 	},
 	otherDiseases: {
 		type: String,
+		required: true,
 	},
 	vaccinations: {
 		type: String,
@@ -30,11 +35,18 @@ const medicalHistorySchema = mongoose.Schema({
 	},
 	covidDiagnose: {
 		type: String,
+		required: true,
 	},
 	fluSymptoms: {
 		type: String,
+		required: true,
 	},
 	covidConfirmation: {
+		type: String,
+		required: true,
+	},
+	year: {
+		default: new Date().getFullYear(),
 		type: String,
 	},
 });

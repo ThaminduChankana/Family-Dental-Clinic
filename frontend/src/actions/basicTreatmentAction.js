@@ -13,6 +13,7 @@ import {
 	BASICTREATMENT_DELETE_FAIL,
 } from "../constants/basicTreatmentConstants";
 import axios from "axios";
+import swal from "sweetalert";
 
 export const listBasicTreatments = () => async (dispatch, getState) => {
 	try {
@@ -30,7 +31,7 @@ export const listBasicTreatments = () => async (dispatch, getState) => {
 			},
 		};
 
-		const { data } = await axios.get(`http://localhost:5000/user/doctor/treatment/basic_treatment/get`, config);
+		const { data } = await axios.get(`/user/doctor/treatment/basic_treatment/get`, config);
 
 		dispatch({
 			type: BASICTREATMENT_LIST_SUCCESS,
@@ -62,7 +63,7 @@ export const createBasicTreatmentAction =
 				},
 			};
 			const { data } = await axios.post(
-				`http://localhost:5000/user/doctor/treatment/basic_treatment/create`,
+				`/user/doctor/treatment/basic_treatment/create`,
 				{
 					nic,
 					cost,
@@ -75,6 +76,17 @@ export const createBasicTreatmentAction =
 				config
 			);
 
+			swal({
+				title: "Success !!!",
+				text: "Basic Treatment successfully created.",
+				icon: "success",
+				timer: 2000,
+				button: false,
+			});
+
+			setTimeout(function () {
+				window.location.href = "/treatment-basicTreatment-view";
+			}, 2000);
 			dispatch({
 				type: BASICTREATMENT_CREATE_SUCCESS,
 				payload: data,
@@ -106,7 +118,7 @@ export const updateBasicTreatmentAction =
 			};
 
 			const { data } = await axios.put(
-				`http://localhost:5000/user/doctor/treatment/basic_treatment/get/${id}`,
+				`/user/doctor/treatment/basic_treatment/get/${id}`,
 				{
 					nic,
 					cost,
@@ -119,6 +131,17 @@ export const updateBasicTreatmentAction =
 				config
 			);
 
+			swal({
+				title: "Success !!!",
+				text: "Basic Treatment successfully updated.",
+				icon: "success",
+				timer: 2000,
+				button: false,
+			});
+
+			setTimeout(function () {
+				window.location.href = "/treatment-basicTreatment-view";
+			}, 2000);
 			dispatch({
 				type: BASICTREATMENT_UPDATE_SUCCESS,
 				payload: data,
@@ -148,10 +171,7 @@ export const deleteBasicTreatmentAction = (id) => async (dispatch, getState) => 
 			},
 		};
 
-		const { data } = await axios.delete(
-			`http://localhost:5000/user/doctor/treatment/basic_treatment/get/${id}`,
-			config
-		);
+		const { data } = await axios.delete(`/user/doctor/treatment/basic_treatment/get/${id}`, config);
 
 		dispatch({
 			type: BASICTREATMENT_DELETE_SUCCESS,
