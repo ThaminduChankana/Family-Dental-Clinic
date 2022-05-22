@@ -2,9 +2,10 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import "./services.css";
 
+
 function Services() {
 	return (
-	
+<div><br></br><br></br>
 				<Card
 					style={{
 						borderWidth: 3,
@@ -13,6 +14,7 @@ function Services() {
 						paddingInline: 5,
 						marginLeft: "3%",
 						marginRight: "3%",
+                       
 					}}
 				>
 					<Card.Body>
@@ -95,7 +97,8 @@ function Services() {
        </div>
 				</Card.Body>
 				</Card>
-		
+                <br></br><br></br>
+                </div>
 	);
 }
 
