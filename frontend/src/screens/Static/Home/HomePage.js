@@ -58,29 +58,45 @@ function HomePage() {
 				</div>
 				<br></br>
 				<br></br>
-				<Row>
+				<Row style={{ marginLeft: 17 }}>
 					<Col>
-						<Card style={{ width: "20rem", borderRadius: 10 }}>
+						<Card style={{ width: "23rem", borderRadius: 10 }}>
 							<Card.Img
+								className="image"
 								variant="top"
-								style={{ height: 200, width: 300, alignSelf: "center", marginLeft: 2, marginRight: 2, marginTop: 6 }}
+								style={{
+									marginTop: 20,
+									height: 200,
+									width: 300,
+									alignSelf: "center",
+									marginLeft: 2,
+									marginRight: 2,
+								}}
 								src="https://media.istockphoto.com/photos/3d-render-of-tooth-calendar-and-dental-diagnostic-instruments-over-picture-id1225834953?k=20&m=1225834953&s=612x612&w=0&h=Kxr4sd4pVmu8T_9bcUtq1zkVZ3F3vaku_XPG5mBAoys="
 							/>
 							<Card.Body>
 								<Card.Title>Doctor’s Schedule</Card.Title>
 								<Card.Text>
 									Go to Doctor’s Schedule and find your specialist doctor today. Aim to provide the best dental clinic
-									service.
+									service. We provide you the best dental clinic service.
 								</Card.Text>
 							</Card.Body>
 						</Card>
 					</Col>
 
 					<Col>
-						<Card style={{ width: "20rem", borderRadius: 10 }}>
+						<Card style={{ width: "23rem", borderRadius: 10 }}>
 							<Card.Img
+								className="image"
 								variant="top"
-								style={{ height: 200, width: 300, alignSelf: "center", marginLeft: 2, marginRight: 2, marginTop: 6 }}
+								style={{
+									marginTop: 20,
+									height: 200,
+									width: 300,
+									alignSelf: "center",
+									marginLeft: 2,
+									marginRight: 2,
+								}}
 								src="https://media.istockphoto.com/photos/dentist-appointment-picture-id505498068?k=20&m=505498068&s=612x612&w=0&h=MmaB7vyztl0jmLX8SHS16xu0qaZIJXh3vd4lk7US5zk="
 							/>
 							<Card.Body>
@@ -92,10 +108,18 @@ function HomePage() {
 						</Card>
 					</Col>
 					<Col>
-						<Card style={{ width: "20rem", borderRadius: 10 }}>
+						<Card style={{ width: "23rem", borderRadius: 10 }}>
 							<Card.Img
+								className="image"
 								variant="top"
-								style={{ height: 200, width: 300, alignSelf: "center", marginLeft: 2, marginRight: 2, marginTop: 6 }}
+								style={{
+									marginTop: 20,
+									height: 200,
+									width: 300,
+									alignSelf: "center",
+									marginLeft: 2,
+									marginRight: 2,
+								}}
 								src="https://media.istockphoto.com/photos/dentist-and-her-assistant-performing-dental-drilling-on-young-woman-picture-id936750238?k=20&m=936750238&s=612x612&w=0&h=tg9hBPrrjyJnDNb1ezLb28GLoaAJh10K8wzWKiBzFZ0="
 							/>
 							<Card.Body>
@@ -110,12 +134,13 @@ function HomePage() {
 				</Row>
 				<br></br>
 				<br></br>
-				<Row>
+				<Row style={{ marginLeft: 17 }}>
 					<Col>
-						<Card style={{ width: "20rem", borderRadius: 10 }}>
+						<Card style={{ width: "23rem", borderRadius: 10 }}>
 							<Card.Img
+								className="image"
 								variant="top"
-								style={{ height: 200, width: 300, alignSelf: "center", marginLeft: 2, marginRight: 2, marginTop: 6 }}
+								style={{ height: 200, width: 300, alignSelf: "center", marginLeft: 2, marginRight: 2, marginTop: 20 }}
 								src="https://media.istockphoto.com/photos/dentist-showing-a-patient-her-xray-picture-id654945798?k=20&m=654945798&s=612x612&w=0&h=MU8fUumxflXUhzRbo9Kj_0B4KadXrx6GVIL-YDBPcVM="
 							/>
 							<Card.Body>
@@ -128,10 +153,18 @@ function HomePage() {
 						</Card>
 					</Col>
 					<Col>
-						<Card style={{ width: "20rem", borderRadius: 10 }}>
+						<Card style={{ width: "23rem", borderRadius: 10 }}>
 							<Card.Img
+								className="image"
 								variant="top"
-								style={{ height: 200, width: 300, alignSelf: "center", marginLeft: 2, marginRight: 2, marginTop: 6 }}
+								style={{
+									marginTop: 20,
+									height: 200,
+									width: 300,
+									alignSelf: "center",
+									marginLeft: 2,
+									marginRight: 2,
+								}}
 								src="https://media.istockphoto.com/photos/little-girl-learning-how-to-brush-her-teeth-at-dentists-office-picture-id878852372?k=20&m=878852372&s=612x612&w=0&h=xZGNeI4ZWVpPf-DyMSHO9TwCbN83rlXUdI02MyZW7i4="
 							/>
 							<Card.Body>
@@ -144,10 +177,18 @@ function HomePage() {
 						</Card>
 					</Col>
 					<Col>
-						<Card style={{ width: "20rem", borderRadius: 10 }}>
+						<Card style={{ width: "23rem", borderRadius: 10 }}>
 							<Card.Img
+								className="image"
 								variant="top"
-								style={{ height: 200, width: 300, alignSelf: "center", marginLeft: 2, marginRight: 2, marginTop: 6 }}
+								style={{
+									marginTop: 20,
+									height: 200,
+									width: 300,
+									alignSelf: "center",
+									marginLeft: 2,
+									marginRight: 2,
+								}}
 								src="https://media.istockphoto.com/photos/portrait-of-two-young-dentists-showing-thumbs-up-in-their-consulting-picture-id1371010290?k=20&m=1371010290&s=612x612&w=0&h=ifiqMqVIfsoPUtI4yk9yHQURHf705E0i4-9bSUziCqM="
 							/>
 							<Card.Body>
@@ -160,6 +201,7 @@ function HomePage() {
 						</Card>
 					</Col>
 				</Row>
+				<br></br>
 				<br></br>
 			</MainScreen>
 		</div>
