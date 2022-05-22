@@ -83,7 +83,19 @@ export default function InventoryUpdate({match,history}){
         return (
             <div  className="inventoryUpdate" style={{marginTop:"0px", marginBottom:"0px"}}>
                <MainScreen title="ADMIN UPDATE - INVENTORY">
-        			<Card style={{ margin: 50, left: "30%", width: "40%" ,boxShadow:"10px 10px 5px #888888",borderRadius:"20px", left: "15%", width: "60%"}}>
+				   
+			   <Button
+						style={{
+							float: "left",
+							marginTop: 5,
+							fontSize: 15,
+						}}
+						href="/inventory-view"
+					>
+						{" "}
+						Back to Inventory Page
+					</Button><br></br>
+        			<Card style={{ margin: 50, left: "15%", right:"15%",boxShadow:"10px 10px 5px #888888",borderRadius:"20px", width: "60%"}}>
         				<div>
         					<Card.Body>
                                 <Form onSubmit={updateHandler}>

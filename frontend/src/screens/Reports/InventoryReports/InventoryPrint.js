@@ -16,15 +16,28 @@ const InventoryPrint = () => {
 
 	if(adminInfo){
 	return (
+		<MainScreen>
 		<div style={{ minHeight: 700 }}>
 			<br />
 			<br />
-		
+		<Button
+						style={{
+							float: "left",
+							marginTop: 5,
+							fontSize: 15,
+						}}
+						href="/inventory-view"
+					>
+						{" "}
+						Back to Inventory Page
+					</Button>
+					<br></br><br></br>
 			<Card
 				style={{
 					margin: 50,
-					marginLeft: "25%",
-					width: "50%",
+					marginLeft: "10%",
+					marginRight: "10%",
+					width: "80%",
 					padding: 40,
 					borderRadius: 20,
 					borderColor: "#808080",
@@ -34,8 +47,9 @@ const InventoryPrint = () => {
 				
 			>
 				<InventoryReport ref={componentRef} />
+				<br></br>
 				<Button
-					style={{ marginLeft: 780, left: "70%", positon: "center", width: "15%" }}
+					style={{ marginLeft: "80%", width: "20%", height: "20%", fontSize:15}}
 					onClick={handlePrint}
 					variant="primary"
 				>
@@ -44,6 +58,7 @@ const InventoryPrint = () => {
 			</Card>
 			
 		</div>
+		</MainScreen>
 	);
 		} else{
 				return (

@@ -50,6 +50,19 @@ export default function InventoryCreate({ history }) {
 			return (
 				<div  className="inventoryCreate" style={{marginTop:"0px", marginBottom:"0px"}}>
 					<MainScreen title="ADMIN CREATE - INVENTORY">
+						
+					<Button
+						style={{
+							float: "left",
+							marginTop: 5,
+							fontSize: 15,
+						}}
+						href="/inventory-view"
+					>
+						{" "}
+						Back to Inventory Page
+					</Button>
+					<br></br>
 						<Card style={{ margin: 50, left: "15%", width: "60%",boxShadow:"10px 10px 5px #888888",borderRadius:"20px" }}>
 							<div >
 								<Card.Body>
