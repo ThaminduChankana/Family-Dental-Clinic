@@ -25,6 +25,7 @@ const MedicalHistoryPrint = () => {
 						style={{
 							marginLeft: 80,
 							marginBottem: 6,
+							fontSize: 15,
 						}}
 						href="/admin-medical-history"
 					>

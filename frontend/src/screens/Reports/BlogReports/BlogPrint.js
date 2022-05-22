@@ -20,6 +20,18 @@ const BlogPrint = () => {
 				<MainScreen>
 					<div style={{ minHeight: 700 }}>
 						<br></br>
+						<Button
+							style={{
+								marginLeft: 80,
+								marginBottem: 6,
+								fontSize: 15,
+							}}
+							href="/admin"
+						>
+							{" "}
+							Back to Admin Operation page
+						</Button>
+						<br></br>
 						<Card
 							style={{
 								margin: 50,
