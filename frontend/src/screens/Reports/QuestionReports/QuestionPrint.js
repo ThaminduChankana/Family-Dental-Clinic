@@ -10,7 +10,7 @@ const QuestionPrint = () => {
 	});
 
 	return (
-		<div style={{ minHeight: 700 }}>
+		<div style={{ minHeight: 700 }} className="questionreport">
 			<br />
 			<br />
 
@@ -28,7 +28,7 @@ const QuestionPrint = () => {
 			>
 				<QuestionReport ref={componentRef} />
 				<Button
-					style={{ marginLeft: 780, left: "70%", positon: "center", width: "15%" }}
+					style={{ marginLeft: 780, left: "70%", positon: "center", width: "20%" }}
 					onClick={handlePrint}
 					variant="primary"
 				>

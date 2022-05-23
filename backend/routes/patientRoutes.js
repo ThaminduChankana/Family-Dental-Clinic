@@ -22,7 +22,7 @@ const {
 	getQuestionById,
 	deleteQuestion,
 	getQuestionforPatient,
-    getQuestion,
+	getQuestion,
 } = require("../controllers/questionController");
 
 const { getMedicalHistoryById } = require("../controllers/medicalHistoryController");

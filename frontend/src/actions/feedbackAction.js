@@ -25,6 +25,7 @@ import {
 	FEEDBACK_UPDATE_SUCCESS,
 } from "../constants/feedbackConstantnts";
 import axios from "axios";
+import swal from "sweetalert";
 
 export const getFeedbackAction = () => async (dispatch, getState) => {
 	try {
@@ -111,6 +112,18 @@ export const createFeedbackAction =
 				config
 			);
 
+			swal({
+				title: "Success !!!",
+				text: "Feedback successfully created.",
+				icon: "success",
+				timer: 2000,
+				button: false,
+			});
+
+			setTimeout(function () {
+				window.location.href = "/feedback-view-patient";
+			}, 2000);
+
 			dispatch({
 				type: FEEDBACK_CREATE_SUCCESS,
 				payload: data,
@@ -154,6 +167,18 @@ export const updateFeedbackAction =
 				},
 				config
 			);
+
+			swal({
+				title: "Success !!!",
+				text: "Feedback successfully Updated.",
+				icon: "success",
+				timer: 2000,
+				button: false,
+			});
+
+			setTimeout(function () {
+				window.location.href = "/feedback-view-patient";
+			}, 2000);
 
 			dispatch({
 				type: FEEDBACK_UPDATE_SUCCESS,
@@ -258,6 +283,18 @@ export const UpdateFeedbackforAdminAction = (id, isAdmin) => async (dispatch, ge
 			},
 			config
 		);
+
+		swal({
+			title: "Success !!!",
+			text: "Feedback updated successfully.",
+			icon: "success",
+			timer: 2000,
+			button: false,
+		});
+
+		setTimeout(function () {
+			window.location.href = "/feedback-adminview";
+		}, 2000);
 
 		dispatch({
 			type: FEEDBACK_UPDATEFORADMIN_SUCCESS,

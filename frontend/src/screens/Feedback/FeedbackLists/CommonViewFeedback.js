@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Loading from "../../../components/Loading";
 import ErrorMessage from "../../../components/ErrorMessage";
 import { getFeedbackCommonReviewPageAction } from "../../../actions/feedbackAction";
+import "./feedbackList.css";
+import MainScreen from "../../../components/MainScreen";
 
 export default function CommonViewFeedback({ search }) {
 	const dispatch = useDispatch();
@@ -17,39 +19,56 @@ export default function CommonViewFeedback({ search }) {
 		dispatch(getFeedbackCommonReviewPageAction());
 	}, [dispatch]);
 	return (
-		<div>
-			<Card.Header>
-				<h3 style={{ color: "darkgray" }}>Feedback</h3>
-				<div class="align-right"></div>
-			</Card.Header>
-			<div style={{ padding: "2rem" }}>
-				{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
-				{loading && <Loading />}
-				{feedbacks
-					?.reverse()
-					.filter((filteredB) => filteredB.patient_email.includes(search))
-					.map((feedback) => (
-						<Grid
-							item
-							xs={12}
-							sm={6}
-							md={3}
-							key={feedbacks.indexOf(feedback)}
-							style={{ display: "inline-flex", width: "500px", borderRadius: "35px" }}
-						>
-							<Card style={{ width: "20rem", height: "40rem", margin: 25}} key="0">
-								<Card.Header>
-									<h2> Patient name : {feedback.name}</h2>
-								</Card.Header>
-								<Card.Body>
-									<h5>Patient Emai : {feedback.patient_email}</h5>
-									<h5>Review Description : {feedback.review_description}</h5>
-									<h5>Rating Count: {feedback.rating_count}</h5>
-								</Card.Body>
-							</Card>
-						</Grid>
-					))}
-			</div>
+		<div className="commonViewFeedback">
+			<MainScreen title="Feedback">
+				<div style={{ padding: "1rem" }}>
+					{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
+					{loading && <Loading />}
+					{feedbacks
+						?.reverse()
+						.filter((filteredB) => filteredB.patient_email.includes(search))
+						.map((feedback) => (
+							<Grid
+								item
+								xs={12}
+								sm={9}
+								md={4}
+								key={feedbacks.indexOf(feedback)}
+								style={{
+									display: "inline-flex",
+									width: "600px",
+									borderRadius: 25,
+								}}
+							>
+								<Card
+									style={{
+										width: "30rem",
+										margin: 20,
+										borderRadius: 25,
+									}}
+									key="0"
+								>
+									<Card.Header
+										className="commonfbHead"
+										style={{
+											textAlign: "center",
+											borderWidth: 1.0,
+											borderTopRightRadius: 25,
+											borderTopLeftRadius: 25,
+										}}
+									>
+										<h2>{feedback.name}</h2>
+									</Card.Header>
+									<Card.Body>
+										<h5>{feedback.review_description}</h5>
+										<h5> {feedback.patient_email}</h5>
+										<h5>Rating Count: {feedback.rating_count}</h5>
+									</Card.Body>
+								</Card>
+							</Grid>
+						))}
+				</div>
+			</MainScreen>
 		</div>
 	);
 }

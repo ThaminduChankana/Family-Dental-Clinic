@@ -53,7 +53,6 @@ export const getFeedbackCommonReviewPageReducer = (state = { feedbacks: [] }, ac
 	}
 };
 
-
 export const createFeedbackReducer = (state = {}, action) => {
 	switch (action.type) {
 		case FEEDBACK_CREATE_REQUEST:

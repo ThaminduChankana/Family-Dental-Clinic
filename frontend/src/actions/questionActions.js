@@ -1,4 +1,5 @@
 import axios from "axios";
+import swal from "sweetalert";
 import { COMMONFEEDBACK_GET_SUCCESS } from "../constants/feedbackConstantnts";
 import {
 	COMMONQUESTION_GET_FAIL,
@@ -110,6 +111,18 @@ export const createQuestionAction =
 				config
 			);
 
+			swal({
+				title: "Success !!!",
+				text: "Question Created successfully",
+				icon: "success",
+				timer: 2000,
+				button: false,
+			});
+
+			setTimeout(function () {
+				window.location.href = "/question-view-patient";
+			}, 2000);
+
 			dispatch({
 				type: QUESTION_CREATE_SUCCESS,
 				payload: data,
@@ -153,6 +166,18 @@ export const updateQuestionAction =
 				},
 				config
 			);
+
+			swal({
+				title: "Success !!!",
+				text: "Question Updated successfully",
+				icon: "success",
+				timer: 2000,
+				button: false,
+			});
+
+			setTimeout(function () {
+				window.location.href = "/question-view-patient";
+			}, 2000);
 
 			dispatch({
 				type: QUESTION_UPDATE_SUCCESS,
@@ -260,6 +285,18 @@ export const UpdateQuestionforAdminAction = (id, isAdmin, answer) => async (disp
 			},
 			config
 		);
+
+		swal({
+			title: "Success !!!",
+			text: "Question updated successfully.",
+			icon: "success",
+			timer: 2000,
+			button: false,
+		});
+
+		setTimeout(function () {
+			window.location.href = "/question-adminview";
+		}, 2000);
 
 		dispatch({
 			type: QUESTION_UPDATEFORADMIN_SUCCESS,

@@ -35,9 +35,9 @@ const questionSchema = new mongoose.Schema(
 			ref: "patient",
 		},
 		year: {
-            default: new Date().getFullYear(),
-            type: String,
-        },
+			default: new Date().getFullYear(),
+			type: String,
+		},
 	},
 	{
 		timestamps: true,
