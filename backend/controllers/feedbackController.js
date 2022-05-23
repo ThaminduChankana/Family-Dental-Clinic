@@ -13,6 +13,13 @@ const getFeedback = asyncHandler(async (req, res) => {
 	res.json(feedback);
 });
 
+const getFeedbackforPatient = asyncHandler(async (req, res) => {
+	const feedback = await Feedback.find({ patient: req.patient._id, isAdmin: true });
+
+	console.log(feedback);
+	res.json(feedback);
+});
+
 const createFeedback = asyncHandler(async (req, res) => {
 	const { name, patient_email, review_description, rating_count } = req.body;
 
@@ -25,6 +32,7 @@ const createFeedback = asyncHandler(async (req, res) => {
 			patient_email,
 			review_description,
 			rating_count,
+			patient: req.patient._id,
 		});
 
 		const createdFeedback = await feedback.save();
@@ -98,4 +106,5 @@ module.exports = {
 	deleteFeedback,
 	UpdateFeedbackforAdmin,
 	getFeedbackforAdmin,
+	getFeedbackforPatient,
 };

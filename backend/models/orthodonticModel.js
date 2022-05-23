@@ -24,9 +24,12 @@ const orthodonticSchema = mongoose.Schema(
 		},
 		followUpVisits: {
 			type: String,
-			required: true,
 		},
 		remark: {
+			type: String,
+		},
+		year: {
+			default: new Date().getFullYear(),
 			type: String,
 		},
 	},

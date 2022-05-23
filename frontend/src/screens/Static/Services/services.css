@@ -1,0 +1,108 @@
+/* resetting browser stuff */
+* {
+	box-sizing: border-box;
+}
+
+/* styling our main content */
+.hero {
+	min-height: 1100px;
+	text-align: center;
+	background-image: url("../../../Images/services2.png");
+	background-size: cover;
+}
+.hero-content {
+	color: #fff;
+	padding-top: 130px;
+}
+.hero-content h1 {
+	font-size: 100px;
+	margin: 0;
+}
+.hero-content p {
+	font-size: 50px;
+}
+.hero-content a {
+	display: inline-block;
+	color: #fff;
+	border: 3px solid #fff;
+	border-radius: 3px;
+	padding: 15px 30px;
+	margin-right: 20px;
+	text-decoration: none;
+	font-size: 28px;
+}
+
+/* basic site sections */
+.site-section {
+	padding-bottom: 50px;
+	padding-top: 50px;
+}
+.site-section-secondary {
+	background: #efefef;
+}
+.site-section-inside {
+	width: 90%;
+	max-width: 1200px;
+	margin: 0 auto;
+	text-align: center;
+}
+.section-header {
+	text-align: center;
+	margin-bottom: 30px;
+}
+.section-header h2 {
+	font-size: 30px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	font-weight: 300;
+	color: #777;
+}
+
+/* feature boxes */
+.feature-box {
+	display: inline-block;
+	width: 33%;
+	padding: 20px 30px;
+}
+.feature-box img {
+	margin-bottom: 12px;
+	width: 80px;
+}
+.feature-box h5 {
+	font-size: 20px;
+	color: #999;
+	text-transform: uppercase;
+	font-weight: 300;
+	letter-spacing: 2px;
+	margin: 0;
+}
+
+/* testimonial boxes */
+.testimonial-box {
+	display: inline-block;
+	width: 33%;
+	padding: 20px 30px;
+}
+.testimonial-content {
+	background: #fff;
+	padding: 15px;
+	border-radius: 4px;
+	margin-bottom: 15px;
+}
+/*.testimonial-author {
+}*/
+.testimonial-author img {
+	float: left;
+	width: 80px;
+	border-radius: 50%;
+	margin-right: 15px;
+	vertical-align: middle;
+}
+.testimonial-author h5 {
+	font-size: 18px;
+	margin: 0;
+	padding-top: 15px;
+}
+.testimonial-author span {
+	font-size: 14px;
+}

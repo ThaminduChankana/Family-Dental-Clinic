@@ -13,6 +13,7 @@ import {
 	ORTHODONTIC_DELETE_FAIL,
 } from "../constants/orthodonticConstants";
 import axios from "axios";
+import swal from "sweetalert";
 
 export const listOrthodontics = () => async (dispatch, getState) => {
 	try {
@@ -29,7 +30,7 @@ export const listOrthodontics = () => async (dispatch, getState) => {
 				Authorization: `Bearer ${doctorInfo.token}`,
 			},
 		};
-		const { data } = await axios.get(`http://localhost:5000/user/doctor/treatment/orthodontic/get`, config);
+		const { data } = await axios.get(`/user/doctor/treatment/orthodontic/get`, config);
 
 		dispatch({
 			type: ORTHODONTIC_LIST_SUCCESS,
@@ -61,7 +62,7 @@ export const createOrthodonticAction =
 				},
 			};
 			const { data } = await axios.post(
-				`http://localhost:5000/user/doctor/treatment/orthodontic/create`,
+				`/user/doctor/treatment/orthodontic/create`,
 				{
 					nic,
 					firstVisit,
@@ -73,6 +74,17 @@ export const createOrthodonticAction =
 				},
 				config
 			);
+			swal({
+				title: "Success !!!",
+				text: "Orthodontic successfully created.",
+				icon: "success",
+				timer: 2000,
+				button: false,
+			});
+
+			setTimeout(function () {
+				window.location.href = "/treatment-orthodontic-view";
+			}, 2000);
 
 			dispatch({
 				type: ORTHODONTIC_CREATE_SUCCESS,
@@ -105,7 +117,7 @@ export const updateOrthodonticAction =
 			};
 
 			const { data } = await axios.put(
-				`http://localhost:5000/user/doctor/treatment/orthodontic/get/${id}`,
+				`/user/doctor/treatment/orthodontic/get/${id}`,
 				{
 					nic,
 					fullCost,
@@ -117,6 +129,17 @@ export const updateOrthodonticAction =
 				},
 				config
 			);
+			swal({
+				title: "Success !!!",
+				text: "Orthodontic successfully updated.",
+				icon: "success",
+				timer: 2000,
+				button: false,
+			});
+
+			setTimeout(function () {
+				window.location.href = "/treatment-orthodontic-view";
+			}, 2000);
 
 			dispatch({
 				type: ORTHODONTIC_UPDATE_SUCCESS,
@@ -147,7 +170,7 @@ export const deleteOrthodonticAction = (id) => async (dispatch, getState) => {
 			},
 		};
 
-		const { data } = await axios.delete(`http://localhost:5000/user/doctor/treatment/orthodontic/get/${id}`, config);
+		const { data } = await axios.delete(`/user/doctor/treatment/orthodontic/get/${id}`, config);
 
 		dispatch({
 			type: ORTHODONTIC_DELETE_SUCCESS,

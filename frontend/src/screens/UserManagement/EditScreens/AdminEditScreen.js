@@ -149,6 +149,7 @@ const AdminEditScreen = () => {
 												placeholder="Enter Telephone Number"
 												onChange={(e) => setTelephone(e.target.value)}
 												required
+												maxLength={10}
 											/>
 										</Form.Group>
 										<Form.Group controlId="adminFormBasicAddress">
@@ -249,8 +250,8 @@ const AdminEditScreen = () => {
 											borderColor: "black",
 											borderRadius: 250,
 											background: "white",
-											width: "50%",
-											height: "30%",
+											width: "300px",
+											height: "300px",
 										}}
 									/>
 								</Col>

@@ -22,23 +22,35 @@ function Header({ setSearch }) {
 			</div>
 			<div className="rightSide">
 				<div className="links">
-					<a style={{ textDecoration: "none", color: "#0d5875", fontSize: "20px", marginLeft: "35px" }} href="/home">
+					<a style={{ textDecoration: "none", color: "#0d5875", fontSize: "20px", marginLeft: "35px" }} href="/">
 						Home
 					</a>
 					<a style={{ textDecoration: "none", color: "#0d5875", fontSize: "20px", marginLeft: "35px" }} href="/aboutus">
 						About Us
 					</a>
-					<a style={{ textDecoration: "none", color: "#0d5875", fontSize: "20px", marginLeft: "35px" }} href="/blogs">
+					<a
+						style={{ textDecoration: "none", color: "#0d5875", fontSize: "20px", marginLeft: "35px" }}
+						href="/articles"
+					>
 						Blogs
 					</a>
-					<a style={{ textDecoration: "none", color: "#0d5875", fontSize: "20px", marginLeft: "35px" }} href="/reviews">
+					<a
+						style={{ textDecoration: "none", color: "#0d5875", fontSize: "20px", marginLeft: "35px" }}
+						href="/common-view-feedback"
+					>
 						Reviews
 					</a>
 					<a
 						style={{ textDecoration: "none", color: "#0d5875", fontSize: "20px", marginLeft: "35px" }}
-						href="/contactus"
+						href="/inquiries"
 					>
 						Contact Us
+					</a>
+					<a
+						style={{ textDecoration: "none", color: "#0d5875", fontSize: "20px", marginLeft: "35px" }}
+						href="/schedules"
+					>
+						Schedule
 					</a>
 				</div>
 				<div className="search">
@@ -49,7 +61,7 @@ function Header({ setSearch }) {
 				{adminInfo || patientInfo || doctorInfo ? (
 					<></>
 				) : (
-					<Link to="/">
+					<Link to="/login-select">
 						<Button
 							style={{
 								padding: "8px",
@@ -66,6 +78,69 @@ function Header({ setSearch }) {
 							Login
 						</Button>
 					</Link>
+				)}
+				{adminInfo ? (
+					<Link to="/admin">
+						<Button
+							style={{
+								padding: "8px",
+								fontSize: "15px",
+								fontFamily: `"Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+									Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+								width: "200px",
+								backgroundColor: "#1ca9c9",
+								fontWeight: 700,
+							}}
+							variant="primary"
+							className="logoutBtn"
+						>
+							Activity Menu
+						</Button>
+					</Link>
+				) : (
+					<></>
+				)}
+				{patientInfo ? (
+					<Link to="/patient">
+						<Button
+							style={{
+								padding: "8px",
+								fontSize: "15px",
+								fontFamily: `"Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+									Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+								width: "200px",
+								backgroundColor: "#1ca9c9",
+								fontWeight: 700,
+							}}
+							variant="primary"
+							className="logoutBtn"
+						>
+							Activity Menu
+						</Button>
+					</Link>
+				) : (
+					<></>
+				)}
+				{doctorInfo ? (
+					<Link to="/doctor">
+						<Button
+							style={{
+								padding: "8px",
+								fontSize: "15px",
+								fontFamily: `"Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+									Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+								width: "200px",
+								backgroundColor: "#1ca9c9",
+								fontWeight: 700,
+							}}
+							variant="primary"
+							className="logoutBtn"
+						>
+							Activity Menu
+						</Button>
+					</Link>
+				) : (
+					<></>
 				)}
 			</div>
 			<br />

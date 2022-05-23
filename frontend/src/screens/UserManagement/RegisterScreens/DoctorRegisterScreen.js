@@ -209,6 +209,7 @@ const DoctorRegisterScreen = () => {
 												placeholder="Enter Telephone Number"
 												onChange={(e) => setTelephone(e.target.value)}
 												required
+												maxLength={10}
 											/>
 										</Form.Group>
 										<Form.Group controlId="doctorFormBasicAddress">
@@ -355,8 +356,8 @@ const DoctorRegisterScreen = () => {
 											borderColor: "black",
 											borderRadius: 250,
 											background: "white",
-											width: "50%",
-											height: "21%",
+											width: "300px",
+											height: "300px",
 										}}
 									/>
 								</Col>
