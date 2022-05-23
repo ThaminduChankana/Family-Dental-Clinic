@@ -127,6 +127,7 @@ function CreateBlog({ history }) {
 										value={title}
 										placeholder="Enter the Article Title"
 										onChange={(e) => setTitle(e.target.value)}
+										required
 									/>
 								</Form.Group>
 
@@ -138,6 +139,7 @@ function CreateBlog({ history }) {
 										placeholder="Enter the Article Description"
 										rows={10}
 										onChange={(e) => setDescription(e.target.value)}
+										required
 									/>
 								</Form.Group>
 								{description && (
