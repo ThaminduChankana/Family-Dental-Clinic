@@ -21,6 +21,7 @@ const {
 	getInventoryById,
 	UpdateInventory,
 	DeleteInventory,
+	getInventoryCount,
 } = require("../controllers/InventoryController");
 const {
 	getMedicalHistory,
@@ -84,6 +85,7 @@ router.route("/patients/count").get(protect, getPatientCount);
 
 //Routes for Inventory control operations
 router.route("/inventory/get").get(protect, getInventory);
+router.route("/inventory/report").get(protect, getInventoryCount);
 router.route("/inventory/create").post(protect, CreateInventory);
 router
 	.route("/inventory/get/:id")
