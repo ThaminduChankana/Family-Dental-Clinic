@@ -58,7 +58,7 @@ function SingleMedicalHistory({ match, history }) {
 			.catch((err) => {
 				swal({
 					title: "Error!",
-					text: "Couldn't Delete Account",
+					text: "Couldn't Delete Medical History",
 					type: "error",
 				});
 			});
