@@ -99,6 +99,7 @@ const Inquiries = () => {
 										id="form-input-control-email"
 										control={Input}
 										label="Email"
+										type="email"
 										name="user_email"
 										placeholder="Enter Your Email"
 										required
@@ -112,6 +113,7 @@ const Inquiries = () => {
 										name="user_phone"
 										placeholder="Enter Your Telephone Number"
 										required
+										maxLength={10}
 										icon="phone"
 									/>
 
