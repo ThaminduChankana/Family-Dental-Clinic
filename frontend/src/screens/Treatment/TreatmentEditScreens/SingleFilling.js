@@ -80,7 +80,7 @@ export default function SingleFilling({ match, history }) {
 		};
 
 		fetching();
-	}, [match.params.id, date]);
+	}, [match.params.id]);
 
 	const updateHandler = (e) => {
 		e.preventDefault();

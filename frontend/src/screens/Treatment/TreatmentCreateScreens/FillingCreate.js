@@ -39,7 +39,7 @@ export default function FillingCreate({ history }) {
 	};
 	const demoHandler = async (e) => {
 		e.preventDefault();
-		setNic("997193245V");
+		setNic("196875612V");
 		setCost("5000.00");
 		setAnestheticStatus("No need of anesthetic");
 		setCheckup("No problem in x-ray");

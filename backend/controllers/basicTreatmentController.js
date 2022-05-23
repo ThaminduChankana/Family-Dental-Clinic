@@ -26,7 +26,7 @@ const getBasicTreatmentCount = asyncHandler(async (req, res) => {
 			c = c + 1;
 		} else if (basicTreatments[i].treatmentType === "Oral heigene") {
 			d = d + 1;
-		} else if (basicTreatments[i].treatmentType === "Full mouth scaling") {
+		} else if (basicTreatments[i].treatmentType === "Full Mouth Scaling") {
 			e = e + 1;
 		}
 		i++;

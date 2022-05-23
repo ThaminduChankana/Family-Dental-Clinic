@@ -76,7 +76,7 @@ export default function SingleBasicTreatment({ match, history }) {
 		};
 
 		fetching();
-	}, [match.params.id, date]);
+	}, [match.params.id]);
 
 	const updateHandler = (e) => {
 		e.preventDefault();
