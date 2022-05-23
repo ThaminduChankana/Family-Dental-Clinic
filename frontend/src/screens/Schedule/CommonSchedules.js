@@ -1,4 +1,4 @@
-import { Accordion, Card, Row, Col } from "react-bootstrap";
+import { Accordion, Card, Row, Col,Button } from "react-bootstrap";
 import MainScreen from "../../components/MainScreen";
 //import { Link,useHistory } from "react-router-dom";
 import { useEffect } from "react";
@@ -22,7 +22,16 @@ export default function CommonSchedules({ search }) {
 				<br></br>
 				<br></br>
 				<h1>Doctor's Schedule List</h1>
-
+				<Button
+					style={{
+						fontSize: 15,
+						marginLeft: 900,
+					}}
+					href="/patient-login"
+				>
+					{" "}
+					Book An Appointment
+				</Button>
 				{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
 				{loading && <Loading />}
 				<br></br>
