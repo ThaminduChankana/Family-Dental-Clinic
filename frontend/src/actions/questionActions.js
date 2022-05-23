@@ -1,6 +1,5 @@
 import axios from "axios";
 import swal from "sweetalert";
-import { COMMONFEEDBACK_GET_SUCCESS } from "../constants/feedbackConstantnts";
 import {
 	COMMONQUESTION_GET_FAIL,
 	COMMONQUESTION_GET_REQUEST,

@@ -1,4 +1,4 @@
-import { Accordion, Card, Row, Col,Button } from "react-bootstrap";
+import { Accordion, Card, Row, Col, Button } from "react-bootstrap";
 import MainScreen from "../../components/MainScreen";
 //import { Link,useHistory } from "react-router-dom";
 import { useEffect } from "react";

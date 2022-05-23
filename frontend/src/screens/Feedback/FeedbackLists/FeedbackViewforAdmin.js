@@ -85,7 +85,7 @@ export default function FeedbackViewforAdmin({ search }) {
 						?.reverse()
 						.filter((filteredB) => filteredB.patient_email.includes(search))
 						.map((feedback) => (
-							<Accordion>
+							<Accordion key={feedback._id}>
 								<Card style={{ margin: 10, left: "25%", width: "50%", borderRadius: 25 }} key={feedback._id}>
 									<Card.Header style={{ display: "flex" }}>
 										<span
