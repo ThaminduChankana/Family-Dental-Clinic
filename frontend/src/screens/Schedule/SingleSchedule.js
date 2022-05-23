@@ -10,12 +10,12 @@ import "./scheduleHandling.css";
 import MainScreen from "../../components/MainScreen";
 
 export default function SingleSchedule({ match, history }) {
-	const [nic, setNic] = useState();
-	const [name, setName] = useState();
-	const [time, setTime] = useState();
+	const [nic, setNic] = useState("");
+	const [name, setName] = useState("");
+	const [time, setTime] = useState("");
 	const [date, setDate] = useState("");
-	const [description, setDescription] = useState();
-	const [addedBy, setAddedBy] = useState();
+	const [description, setDescription] = useState("");
+	const [addedBy, setAddedBy] = useState("");
 
 	const dispatch = useDispatch();
 	const admin_Login = useSelector((state) => state.admin_Login);
@@ -109,7 +109,7 @@ export default function SingleSchedule({ match, history }) {
 								background: "white",
 							}}
 						>
-							<div class="Sheader">
+							<div className="Sheader">
 								{" "}
 								<h3>Update Doctor's Schedule</h3>
 							</div>

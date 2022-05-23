@@ -91,7 +91,7 @@ export default function ScheduleHandlingCreate({ history }) {
 								background: "white",
 							}}
 						>
-							<div class="Sheader">
+							<div className="Sheader">
 								{" "}
 								<h3>Create a New Doctor's schedule</h3>
 							</div>
