@@ -57,6 +57,13 @@ const PatientOperationPage = ({ history }) => {
 								</a>
 								<br></br>
 								<br></br>
+								<a href="/patient-single-medical-history">
+									<Button size="lg" style={{ width: 350, height: 75 }}>
+										Feedback Management
+									</Button>
+								</a>
+								<br></br>
+								<br></br>
 								<br></br>
 							</div>
 						</Card>
