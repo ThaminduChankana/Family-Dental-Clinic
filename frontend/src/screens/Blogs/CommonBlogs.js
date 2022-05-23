@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { Accordion, Badge, Button, Card, Col } from "react-bootstrap";
+import { Accordion, Badge, Card, Col } from "react-bootstrap";
 import MainScreen from "../../components/MainScreen";
-import { Link, useHistory } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
 import { listBlogsForUsers } from "../../actions/blogsActions";
@@ -23,7 +22,7 @@ const CommonBlogs = ({ search }) => {
 
 	useEffect(() => {
 		dispatch(listBlogsForUsers());
-	}, dispatch);
+	}, [dispatch]);
 
 	return (
 		<div className="commonArticles">
@@ -85,6 +84,7 @@ const CommonBlogs = ({ search }) => {
 									</Col>
 									<Col>
 										<img
+											alt="blogimg"
 											src={blog.image}
 											style={{
 												borderRadius: 10,
@@ -106,7 +106,12 @@ const CommonBlogs = ({ search }) => {
 											variant="top"
 											src="https://media.istockphoto.com/photos/daily-oral-hygiene-teeth-and-toothbrush-on-a-blue-background-picture-id1307187783?b=1&k=20&m=1307187783&s=170667a&w=0&h=LVgOH_YH6mCHzj3k2p8O6auTo-5Hn4ydjojEHuTRQo4="
 										></Card.Img>
-										<img src={blog.image} style={{ paddingLeft: 100, width: 900, height: 300 }} variant="top" />
+										<img
+											alt="blogimg"
+											src={blog.image}
+											style={{ paddingLeft: 100, width: 900, height: 300 }}
+											variant="top"
+										/>
 										<h4>
 											<Badge varient="success">View Count: {num} </Badge>
 										</h4>

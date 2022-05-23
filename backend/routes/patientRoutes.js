@@ -25,7 +25,7 @@ const {
 	getQuestion,
 } = require("../controllers/questionController");
 
-const { getMedicalHistoryById } = require("../controllers/medicalHistoryController");
+const { getMedicalHistoryForEachPatient } = require("../controllers/medicalHistoryController");
 const { protect } = require("../middlewares/authPatientMiddleware");
 const router = express.Router();
 
@@ -37,7 +37,7 @@ router.route("/edit").put(protect, updatePatientProfile);
 router.route("/delete").delete(protect, deletePatientProfile);
 
 //Routes for patient to get medical history
-router.route("/medical_history/:id").get(protect, getMedicalHistoryById);
+router.route("/medical_history/:id").get(protect, getMedicalHistoryForEachPatient);
 
 //Routes for feedback operations
 router.route("/feedback/create").post(protect, createFeedback);

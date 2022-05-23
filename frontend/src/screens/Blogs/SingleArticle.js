@@ -8,14 +8,13 @@ import ErrorMessage from "../../components/ErrorMessage";
 import ReactMarkdown from "react-markdown";
 import axios from "axios";
 import swal from "sweetalert";
-import DoctorArticles from "./DoctorArticles";
 
 function SingleBlog({ match, history }) {
-	const [title, setTitle] = useState();
-	const [description, setDescription] = useState();
-	const [image, setImage] = useState();
+	const [title, setTitle] = useState("");
+	const [description, setDescription] = useState("");
+	const [image, setImage] = useState("");
 	const [date, setDate] = useState("");
-	const [imageMessage, setImageMessage] = useState();
+	const [imageMessage, setImageMessage] = useState("");
 
 	const dispatch = useDispatch();
 
@@ -23,7 +22,7 @@ function SingleBlog({ match, history }) {
 	const { loading, error } = blogUpdate;
 
 	const blogDelete = useSelector((state) => state.blogDelete);
-	const { loading: loadingDelete, error: errorDelete, success: successDelete } = blogDelete;
+	const { loading: loadingDelete, error: errorDelete } = blogDelete;
 
 	const deleteHandler = (id) => {
 		swal({

@@ -21,6 +21,7 @@ const {
 	getInventoryById,
 	UpdateInventory,
 	DeleteInventory,
+	getInventoryCount,
 } = require("../controllers/InventoryController");
 const {
 	getMedicalHistory,
@@ -28,6 +29,7 @@ const {
 	getMedicalHistoryById,
 	UpdateMedicalHistory,
 	DeleteMedicalHistory,
+	getMedicalHistoryCount,
 } = require("../controllers/medicalHistoryController");
 // schedule handling route
 const {
@@ -36,6 +38,7 @@ const {
 	CreateScheduleHandling,
 	UpdateScheduleHandling,
 	DeleteScheduleHandling,
+	getScheduleCount,
 } = require("../controllers/scheduleHandlingController");
 
 const {
@@ -83,6 +86,7 @@ router.route("/patients/count").get(protect, getPatientCount);
 
 //Routes for Inventory control operations
 router.route("/inventory/get").get(protect, getInventory);
+router.route("/inventory/report").get(protect, getInventoryCount);
 router.route("/inventory/create").post(protect, CreateInventory);
 router
 	.route("/inventory/get/:id")
@@ -93,6 +97,7 @@ router
 //Routes for medical history management admin end
 router.route("/medical_history").get(protect, getMedicalHistory);
 router.route("/medical_history/create").post(protect, createMedicalHistory);
+router.route("/medical_history/report").get(protect, getMedicalHistoryCount);
 router
 	.route("/medical_history/:id")
 	.get(protect, getMedicalHistoryById)
@@ -120,6 +125,8 @@ router
 	.get(protect, getScheduleHandlingId)
 	.put(protect, UpdateScheduleHandling)
 	.delete(protect, DeleteScheduleHandling);
+router.route("/schedule/create").post(protect, CreateScheduleHandling);
+router.route("/schedule/count").get(protect, getScheduleCount);
 
 //Routes for Blogs
 router.route("/blog/report").get(protect, getBlogCount);

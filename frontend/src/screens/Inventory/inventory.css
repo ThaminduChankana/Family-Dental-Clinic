@@ -1,0 +1,17 @@
+.inventoryCreate {
+	/* background: url("../../Images/inventory1.png");
+	background-position: center;
+	background-size: cover; */
+	background: #aec6cf;
+	background-repeat: no-repeat;
+}
+
+.inventoryUpdate {
+	background: #aec6cf;
+	background-repeat: no-repeat;
+}
+
+.inventoryView {
+	background: #aec6cf;
+	background-repeat: no-repeat;
+}
