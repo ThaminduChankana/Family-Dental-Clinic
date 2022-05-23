@@ -12,17 +12,17 @@ import "./MedicalHistory.css";
 import swal from "sweetalert";
 
 function SingleMedicalHistory({ match, history }) {
-	const [nic, setNic] = useState();
-	const [pname, setPname] = useState();
-	const [previousDentalhistory, setPreviousDentalhistory] = useState();
-	const [dentalConcerns, setDentalConcerns] = useState();
-	const [medicalConcerns, setMedicalConcerns] = useState();
-	const [currentMedications, setCurrentMedications] = useState();
-	const [otherDiseases, setOtherDiseases] = useState();
-	const [vaccinations, setVaccinations] = useState();
-	const [covidDiagnose, setCovidDiagnose] = useState();
-	const [fluSymptoms, setFluSymptoms] = useState();
-	const [covidConfirmation, setCovidConfirmation] = useState();
+	const [nic, setNic] = useState("");
+	const [pname, setPname] = useState("");
+	const [previousDentalhistory, setPreviousDentalhistory] = useState("");
+	const [dentalConcerns, setDentalConcerns] = useState("");
+	const [medicalConcerns, setMedicalConcerns] = useState("");
+	const [currentMedications, setCurrentMedications] = useState("");
+	const [otherDiseases, setOtherDiseases] = useState("");
+	const [vaccinations, setVaccinations] = useState("");
+	const [covidDiagnose, setCovidDiagnose] = useState("");
+	const [fluSymptoms, setFluSymptoms] = useState("");
+	const [covidConfirmation, setCovidConfirmation] = useState("");
 
 	const dispatch = useDispatch();
 
@@ -58,7 +58,7 @@ function SingleMedicalHistory({ match, history }) {
 			.catch((err) => {
 				swal({
 					title: "Error!",
-					text: "Couldn't Delete Account",
+					text: "Couldn't Delete Medical History",
 					type: "error",
 				});
 			});
@@ -202,6 +202,7 @@ function SingleMedicalHistory({ match, history }) {
 										value={nic}
 										placeholder="Enter the NIC"
 										onChange={(e) => setNic(e.target.value)}
+										required
 									/>
 								</Form.Group>
 
@@ -212,6 +213,7 @@ function SingleMedicalHistory({ match, history }) {
 										value={pname}
 										placeholder="Enter the Patient Name"
 										onChange={(e) => setPname(e.target.value)}
+										required
 									/>
 								</Form.Group>
 
@@ -225,6 +227,7 @@ function SingleMedicalHistory({ match, history }) {
 										placeholder="Enter the previous dental history"
 										rows={4}
 										onChange={(e) => setPreviousDentalhistory(e.target.value)}
+										required
 									/>
 								</Form.Group>
 								<h6>
@@ -238,6 +241,7 @@ function SingleMedicalHistory({ match, history }) {
 										placeholder="Enter the dental concerns"
 										rows={4}
 										onChange={(e) => setDentalConcerns(e.target.value)}
+										required
 									/>
 								</Form.Group>
 
@@ -264,6 +268,7 @@ function SingleMedicalHistory({ match, history }) {
 										placeholder="Enter the Current Medications"
 										rows={4}
 										onChange={(e) => setCurrentMedications(e.target.value)}
+										required
 									/>
 								</Form.Group>
 								<h6>
@@ -277,6 +282,7 @@ function SingleMedicalHistory({ match, history }) {
 										placeholder="Enter the allergies or diseases"
 										rows={4}
 										onChange={(e) => setOtherDiseases(e.target.value)}
+										required
 									/>
 								</Form.Group>
 								<h6>
@@ -289,6 +295,7 @@ function SingleMedicalHistory({ match, history }) {
 										value={vaccinations}
 										placeholder="Enter number of vaccinations"
 										onChange={(e) => setVaccinations(e.target.value)}
+										required
 									/>
 								</Form.Group>
 
@@ -301,6 +308,7 @@ function SingleMedicalHistory({ match, history }) {
 										value={covidDiagnose}
 										placeholder="Enter yes or no"
 										onChange={(e) => setCovidDiagnose(e.target.value)}
+										required
 									/>
 								</Form.Group>
 
@@ -311,6 +319,7 @@ function SingleMedicalHistory({ match, history }) {
 										value={fluSymptoms}
 										placeholder="Enter yes or no"
 										onChange={(e) => setFluSymptoms(e.target.value)}
+										required
 									/>
 								</Form.Group>
 
@@ -321,6 +330,7 @@ function SingleMedicalHistory({ match, history }) {
 										value={covidConfirmation}
 										placeholder="Enter yes or no"
 										onChange={(e) => setCovidConfirmation(e.target.value)}
+										required
 									/>
 								</Form.Group>
 								<br />

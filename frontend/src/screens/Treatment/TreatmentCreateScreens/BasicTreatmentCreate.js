@@ -46,7 +46,7 @@ export default function BasicTreatmentCreate({ history }) {
 	};
 	const demoHandler = async (e) => {
 		e.preventDefault();
-		setNic("997193245V");
+		setNic("196875612V");
 		setCost("8000.00");
 		setCheckup("No matter in the x-ray");
 		setProcedure("Need to remove dead tissues around 2-4");
@@ -106,7 +106,7 @@ export default function BasicTreatmentCreate({ history }) {
 										<option value="Dentures">Dentures</option>
 										<option value="Extraction">Extraction</option>
 										<option value="Oral heigene">Oral heigene</option>
-										<option value="Full mouth scaling ">Full mouth scaling </option>
+										<option value="Full Mouth Scaling ">Full mouth scaling </option>
 									</select>
 								</Form.Group>
 								<Form.Group controlId="date">

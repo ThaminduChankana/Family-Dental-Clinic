@@ -86,7 +86,7 @@ function BasicTreatmentView({ search }) {
 						?.reverse()
 						.filter((filteredB) => filteredB.nic.includes(search))
 						.map((basic) => (
-							<Accordion>
+							<Accordion key={basic._id}>
 								<Card
 									style={{
 										borderRadius: 25,
