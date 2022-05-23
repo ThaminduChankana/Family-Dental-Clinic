@@ -123,7 +123,6 @@ export const patientRegister =
 
 			dispatch({ type: PATIENT_LOGIN_SUCCESS, payload: data });
 
-			localStorage.setItem("patientInfo", JSON.stringify(data));
 		} catch (error) {
 			dispatch({
 				type: PATIENT_REGISTER_FAIL,
