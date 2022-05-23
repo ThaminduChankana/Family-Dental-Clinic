@@ -27,11 +27,8 @@ export default function CommonViewQuestion({ search }) {
 						?.reverse()
 						.filter((filteredB) => filteredB.email.includes(search))
 						.map((question) => (
-							<Accordion>
-								<Card
-									style={{ margin: 10, left: "20%", width: "60%", borderRadius: 12, borderRadius: 25 }}
-									key={question._id}
-								>
+							<Accordion key={question._id}>
+								<Card style={{ margin: 10, left: "20%", width: "60%", borderRadius: 25 }} key={question._id}>
 									<Card.Header style={{ display: "flex" }}>
 										<span
 											style={{

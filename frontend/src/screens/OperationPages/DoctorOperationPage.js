@@ -48,25 +48,17 @@ const DoctorOperationPage = ({ history }) => {
 										</Button>
 									</a>
 								</div>
-
-								<div className="buttonContainer">
+								<br></br>
+								<div>
 									<a href="/treatment-orthodontic-view">
 										<Button size="lg" className="landingbutton">
 											Patient Diagnosis Management
 										</Button>
 									</a>
-								</div>
-								<br></br>
-								<div>
+									&emsp;
 									<a href="/">
 										<Button size="lg" style={{ width: 350, height: 75 }}>
 											Appointment Management
-										</Button>
-									</a>
-									&emsp;
-									<a href="/doctor-view-medical-history">
-										<Button size="lg" style={{ width: 350, height: 75 }}>
-											Patient Medical History Management
 										</Button>
 									</a>
 								</div>
@@ -77,7 +69,14 @@ const DoctorOperationPage = ({ history }) => {
 											Doctor's Blog Management
 										</Button>
 									</a>
+									&emsp;
+									<a href="/doctor-view-medical-history">
+										<Button size="lg" style={{ width: 350, height: 75 }}>
+											Patient Medical History Management
+										</Button>
+									</a>
 								</div>
+								<br></br>
 							</div>
 							<br></br>
 							<br></br>

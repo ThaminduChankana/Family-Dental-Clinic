@@ -66,7 +66,7 @@ const PatientOperationPage = ({ history }) => {
 								<br></br>
 								<a href="/question-create">
 									<Button size="lg" style={{ width: 350, height: 75 }}>
-										Feedback Management
+										Q&A Management
 									</Button>
 								</a>
 								<br></br>
