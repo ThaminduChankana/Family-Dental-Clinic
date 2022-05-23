@@ -11,12 +11,12 @@ import MainScreen from "../../../components/MainScreen";
 import swal from "sweetalert";
 import "./treatmentUpdate.css";
 export default function SingleBasicTreatment({ match, history }) {
-	const [nic, setNic] = useState();
-	const [cost, setCost] = useState();
-	const [treatmentType, setTreatmentType] = useState();
+	const [nic, setNic] = useState("");
+	const [cost, setCost] = useState("");
+	const [treatmentType, setTreatmentType] = useState("");
 	const [date, setDate] = useState("");
-	const [checkup, setCheckup] = useState();
-	const [procedure, setProcedure] = useState();
+	const [checkup, setCheckup] = useState("");
+	const [procedure, setProcedure] = useState("");
 	const [remark, setRemark] = useState("");
 
 	const dispatch = useDispatch();

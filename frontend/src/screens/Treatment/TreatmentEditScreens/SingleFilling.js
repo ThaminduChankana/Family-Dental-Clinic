@@ -12,14 +12,14 @@ import swal from "sweetalert";
 import "./treatmentUpdate.css";
 
 export default function SingleFilling({ match, history }) {
-	const [nic, setNic] = useState();
-	const [cost, setCost] = useState();
-	const [fillingMaterial, setFillingMaterial] = useState();
+	const [nic, setNic] = useState("");
+	const [cost, setCost] = useState("");
+	const [fillingMaterial, setFillingMaterial] = useState("");
 	const [fillingType, setFillingType] = useState("");
-	const [anestheticStatus, setAnestheticStatus] = useState();
+	const [anestheticStatus, setAnestheticStatus] = useState("");
 	const [date, setDate] = useState("");
-	const [checkup, setCheckup] = useState();
-	const [procedure, setProcedure] = useState();
+	const [checkup, setCheckup] = useState("");
+	const [procedure, setProcedure] = useState("");
 	const [remark, setRemark] = useState("");
 
 	const dispatch = useDispatch();
