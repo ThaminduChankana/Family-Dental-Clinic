@@ -114,7 +114,7 @@ router.route("/feedback/view/:id").get(protect, getFeedbackById);
 router.route("/question/update/:id").put(protect, UpdateQuestionforAdmin);
 router.route("/question/view").get(protect, getQuestionForAdmin);
 router.route("/question/view/:id").get(protect, getQuestionById);
-router.route("/question/delete/:id").put(protect, deleteQuestion);
+router.route("/question/delete/:id").delete(protect, deleteQuestion);
 router.route("/question/report").get(protect, getQuestionCount);
 
 //Routes for Schedule handling
