@@ -34,7 +34,10 @@ function Header({ setSearch }) {
 					>
 						Blogs
 					</a>
-					<a style={{ textDecoration: "none", color: "#0d5875", fontSize: "20px", marginLeft: "35px" }} href="/reviews">
+					<a
+						style={{ textDecoration: "none", color: "#0d5875", fontSize: "20px", marginLeft: "35px" }}
+						href="/common-view-feedback"
+					>
 						Reviews
 					</a>
 					<a

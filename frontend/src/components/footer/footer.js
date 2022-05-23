@@ -32,9 +32,9 @@ function Footer() {
 					<div className="col">
 						<h4>POPULAR LINKS</h4>
 						<li className="list-unstyled">
-							<a href="/home">REVEIWS</a>
+							<a href="/common-view-feedback">REVEIWS</a>
 							<br></br>
-							<a href="/home">Q & A</a>
+							<a href="/common-view-question">Q & A</a>
 							<br></br>
 							<a href="/TermsAndCondtions">TERMS & CONDITIONS</a>
 							<br></br>

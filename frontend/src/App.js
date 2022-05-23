@@ -26,6 +26,17 @@ import PatientListForDoctor from "./screens/DoctorLists/patientList";
 import DoctorEditByAdmin from "./screens/UserManagement/AdminUserEditScreens/DoctorEditByAdmin";
 import PatientPrint from "./screens/Reports/PatientReports/PatientPrint";
 import PatientEditByAdmin from "./screens/UserManagement/AdminUserEditScreens/PatientEditByAdmin";
+import FeedbackCreate from "./screens/Feedback/FeedbackCreateSreens/FeedbackCreate";
+import QuestionCreate from "./screens/Question/QuestionCreateScreens/QuestionCreate";
+import FeedbackViewforAdmin from "./screens/Feedback/FeedbackLists/FeedbackViewforAdmin";
+import QuestionViewforAdmin from "./screens/Question/QuestionLists/QuestionViewforAdmin";
+import PatientFeedbackEdit from "./screens/Feedback/FeedbackEditScreens/PatientFeedbackEdit";
+import PaitentQuestionEdit from "./screens/Question/QuestionEditScreens/PatientQuestionEdit";
+import SingleFeedback from "./screens/Feedback/FeedbackEditScreens/SingleFeedback";
+import FeedbackViewforPatient from "./screens/Feedback/FeedbackLists/FeedbackViewForPatient";
+import CommonViewFeedback from "./screens/Feedback/FeedbackLists/CommonViewFeedback";
+import QuestionViewforPatient from "./screens/Question/QuestionLists/QuestionViewforPatient";
+import AdminQuestionEdit from "./screens/Question/QuestionEditScreens/AdminQuestionEdit";
 import InventoryCreate from "./screens/Inventory/InventoryCreate";
 import InventoryView from "./screens/Inventory/InventoryView";
 import InventoryUpdate from "./screens/Inventory/InventoryUpdate";
@@ -59,6 +70,8 @@ import SingleArticle from "./screens/Blogs/SingleArticle";
 import CommonBlogs from "./screens/Blogs/CommonBlogs";
 import BlogPrint from "./screens/Reports/BlogReports/BlogPrint";
 import AccessDenied from "./components/AccessDenied";
+import CommonViewQuestion from "./screens/Question/QuestionLists/CommonViewQuestion";
+import QuestionPrint from "./screens/Reports/QuestionReports/QuestionPrint";
 import HomePage from "./screens/Static/Home/HomePage";
 import AboutUs from "./screens/Static/AboutUs/AboutUs";
 import Services from "./screens/Static/Services/Services";
@@ -96,6 +109,17 @@ const App = () => {
 				<Route path="/doctor-patients" component={() => <PatientListForDoctor search={search} />} exact />
 				<Route path="/admin-doctor-edit/:id" component={DoctorEditByAdmin} exact />
 				<Route path="/admin-patient-edit/:id" component={PatientEditByAdmin} exact />
+				<Route path="/feedback-create" component={FeedbackCreate} exact />
+				<Route path="/question-create" component={QuestionCreate} exact />
+				<Route path="/feedback-adminview" component={() => <FeedbackViewforAdmin search={search} />} exact />
+				<Route path="/question-adminview" component={() => <QuestionViewforAdmin search={search} />} exact />
+				<Route path="/feedback-update-patient/:id" component={PatientFeedbackEdit} exact />
+				<Route path="/question-update-patient/:id" component={PaitentQuestionEdit} exact />
+				<Route path="/feedback-update-admin/:id" component={SingleFeedback} exact />
+				<Route path="/feedback-view-patient" component={() => <FeedbackViewforPatient search={search} />} exact />
+				<Route path="/common-view-feedback" component={() => <CommonViewFeedback search={search} />} exact />
+				<Route path="/question-view-patient" component={() => <QuestionViewforPatient search={search} />} exact />
+				<Route path="/question-update-admin/:id" component={AdminQuestionEdit} exact />
 				<Route path="/inventory-view" component={() => <InventoryView search={search} />} exact />
 				<Route path="/inventory-update/:id" component={InventoryUpdate} exact />
 				<Route path="/admin-patient-report" component={PatientPrint} exact />
@@ -132,6 +156,8 @@ const App = () => {
 				<Route path="/doctor-single-article/:id" component={SingleArticle} exact />
 				<Route path="/articles" component={() => <CommonBlogs search={search} />} exact />
 				<Route path="/admin-blog-report" component={BlogPrint} exact />
+				<Route path="/common-view-question" component={() => <CommonViewQuestion search={search} />} exact />
+				<Route path="/question-report" component={QuestionPrint} exact />
 				<Route path="/aboutus" component={AboutUs} exact />
 				<Route path="/services" component={Services} exact />
 				<Route path="/TermsAndCondtions" component={TermsAndCondtions} exact />
