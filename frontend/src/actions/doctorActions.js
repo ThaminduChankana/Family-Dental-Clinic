@@ -135,11 +135,6 @@ export const doctorRegister =
 				window.location.href = "/admin-doctors";
 			}, 2000);
 
-			localStorage.setItem("doctorInfo", JSON.stringify(data));
-
-			dispatch({ type: DOCTOR_LOGIN_SUCCESS, payload: data });
-
-			localStorage.setItem("doctorInfo", JSON.stringify(data));
 		} catch (error) {
 			dispatch({
 				type: DOCTOR_REGISTER_FAIL,
