@@ -16,7 +16,6 @@ const feedbackSchema = new mongoose.Schema(
 		patient_email: {
 			type: String,
 			required: true,
-			unique: true,
 		},
 
 		review_description: {
@@ -26,6 +25,11 @@ const feedbackSchema = new mongoose.Schema(
 		rating_count: {
 			type: String,
 			required: true,
+		},
+		patient: {
+			type: mongoose.Schema.Types.ObjectId,
+			required: true,
+			ref: "patient",
 		},
 	},
 	{

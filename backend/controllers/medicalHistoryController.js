@@ -1,10 +1,53 @@
 const MedicalHistory = require("../models/medicalHistoryModel");
-
+const Patient = require("../models/patientModel");
 const asyncHandler = require("express-async-handler");
 
 const getMedicalHistory = asyncHandler(async (req, res) => {
 	const medicalHistory = await MedicalHistory.find();
 	res.json(medicalHistory);
+});
+
+const getMedicalHistoryForEachPatient = asyncHandler(async (req, res) => {
+	const patient = await Patient.findById(req.params.id);
+
+	const medicalHistory = await MedicalHistory.findOne({ nic: patient.nic });
+
+	res.json(medicalHistory);
+});
+
+const getMedicalHistoryCount = asyncHandler(async (req, res) => {
+	const medicalHistory = await MedicalHistory.find({ year: new Date().getFullYear() });
+	var i = 0;
+	var a = 0,
+		b = 0,
+		c = 0,
+		d = "";
+	var loopData = {};
+	var loopData = new Object();
+	while (i < medicalHistory.length) {
+		if (medicalHistory[i].medicalConcerns === "High blood pressure") {
+			a = a + 1;
+		} else if (medicalHistory[i].medicalConcerns === "Heart disease") {
+			b = b + 1;
+		} else if (medicalHistory[i].medicalConcerns === "Diabetes") {
+			c = c + 1;
+		}
+		i++;
+	}
+	if (a > b && a > c) {
+		d = "High blood pressure";
+	} else if (b > a && b > c) {
+		d = "Heart disease";
+	} else if (c > a && c > b) {
+		d = "Diabetes";
+	}
+	var loopData = {
+		high_blood_pressure: a,
+		heart_disease: b,
+		diabetes: c,
+		max: d,
+	};
+	res.json(loopData);
 });
 
 const createMedicalHistory = asyncHandler(async (req, res) => {
@@ -123,4 +166,6 @@ module.exports = {
 	getMedicalHistoryById,
 	UpdateMedicalHistory,
 	DeleteMedicalHistory,
+	getMedicalHistoryForEachPatient,
+	getMedicalHistoryCount,
 };

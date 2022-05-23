@@ -7,7 +7,7 @@ const getOrthodontics = asyncHandler(async (req, res) => {
 });
 
 const getOrthodonticCount = asyncHandler(async (req, res) => {
-	const orthodontic = await Orthodontic.find();
+	const orthodontic = await Orthodontic.find({ year: new Date().getFullYear() });
 	var i = orthodontic.length;
 	var loopData = {};
 	var loopData = new Object();
@@ -20,7 +20,7 @@ const getOrthodonticCount = asyncHandler(async (req, res) => {
 const createOrthodontic = asyncHandler(async (req, res) => {
 	const { nic, firstVisit, fullCost, paid, facialExamination, followUpVisits, remark } = req.body;
 
-	if (!nic || !firstVisit || !fullCost || !paid || !facialExamination || !followUpVisits || !remark) {
+	if (!nic || !firstVisit || !fullCost || !paid || !facialExamination) {
 		res.status(400);
 		throw new Error("Please Fill all the feilds");
 	} else {

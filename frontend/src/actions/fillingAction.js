@@ -13,6 +13,7 @@ import {
 	FILLING_DELETE_FAIL,
 } from "../constants/fillingConstants";
 import axios from "axios";
+import swal from "sweetalert";
 
 export const listFillings = () => async (dispatch, getState) => {
 	try {
@@ -29,7 +30,7 @@ export const listFillings = () => async (dispatch, getState) => {
 				Authorization: `Bearer ${doctorInfo.token}`,
 			},
 		};
-		const { data } = await axios.get(`http://localhost:5000/user/doctor/treatment/filling/get`, config);
+		const { data } = await axios.get(`/user/doctor/treatment/filling/get`, config);
 
 		dispatch({
 			type: FILLING_LIST_SUCCESS,
@@ -62,7 +63,7 @@ export const createFillingAction =
 				},
 			};
 			const { data } = await axios.post(
-				`http://localhost:5000/user/doctor/treatment/filling/create`,
+				`/user/doctor/treatment/filling/create`,
 				{
 					nic,
 					cost,
@@ -76,7 +77,17 @@ export const createFillingAction =
 				},
 				config
 			);
+			swal({
+				title: "Success !!!",
+				text: "Filling successfully created.",
+				icon: "success",
+				timer: 2000,
+				button: false,
+			});
 
+			setTimeout(function () {
+				window.location.href = "/treatment-filling-view";
+			}, 2000);
 			dispatch({
 				type: FILLING_CREATE_SUCCESS,
 				payload: data,
@@ -109,7 +120,7 @@ export const updateFillingAction =
 			};
 
 			const { data } = await axios.put(
-				`http://localhost:5000/user/doctor/treatment/filling/get/${id}`,
+				`/user/doctor/treatment/filling/get/${id}`,
 				{
 					nic,
 					cost,
@@ -123,6 +134,17 @@ export const updateFillingAction =
 				},
 				config
 			);
+			swal({
+				title: "Success !!!",
+				text: "Filling successfully updated.",
+				icon: "success",
+				timer: 2000,
+				button: false,
+			});
+
+			setTimeout(function () {
+				window.location.href = "/treatment-filling-view";
+			}, 2000);
 
 			dispatch({
 				type: FILLING_UPDATE_SUCCESS,
@@ -153,7 +175,7 @@ export const deleteFillingAction = (id) => async (dispatch, getState) => {
 			},
 		};
 
-		const { data } = await axios.delete(`http://localhost:5000/user/doctor/treatment/filling/get/${id}`, config);
+		const { data } = await axios.delete(`/user/doctor/treatment/filling/get/${id}`, config);
 
 		dispatch({
 			type: FILLING_DELETE_SUCCESS,

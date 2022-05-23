@@ -33,12 +33,6 @@ const PatientRegisterScreen = () => {
 	const admin_Login = useSelector((state) => state.admin_Login);
 	const { adminInfo } = admin_Login;
 
-	/*useEffect(() => {
-		if (patientInfo) {
-			history.push("/patient-login");
-		}
-	}, [history, patientInfo]);*/
-
 	const submitHandler = async (e) => {
 		e.preventDefault();
 
@@ -202,6 +196,7 @@ const PatientRegisterScreen = () => {
 												placeholder="Enter Telephone Number"
 												onChange={(e) => setTelephone(e.target.value)}
 												required
+												maxLength={10}
 											/>
 										</Form.Group>
 										<Form.Group controlId="patientFormBasicAddress">
@@ -328,8 +323,8 @@ const PatientRegisterScreen = () => {
 											borderColor: "black",
 											borderRadius: 250,
 											background: "white",
-											width: "52%",
-											height: "25%",
+											width: "300px",
+											height: "300px",
 										}}
 									/>
 								</Col>

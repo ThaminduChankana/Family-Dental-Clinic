@@ -20,6 +20,28 @@ import {
 } from "./reducers/doctorReducers";
 
 import {
+	createFeedbackReducer,
+	deleteFeedbackforAdminReducer,
+	deleteFeedbackReducer,
+	getFeedbackCommonReviewPageReducer,
+	getFeedbackforAdminReducer,
+	getFeedbackReducer,
+	UpdateFeedbackforAdminReducer,
+	updateFeedbackReducer,
+} from "./reducers/feedbackReducer";
+
+import {
+	createQuestionReducer,
+	deleteQuestionforAdminReducer,
+	deleteQuestionReducer,
+	getQuestionCommonQAPageReducer,
+	getQuestionForAdminReducer,
+	getQuestionReducer,
+	UpdateQuestionforAdminReducer,
+	updateQuestionReducer,
+} from "./reducers/questionReducer";
+
+import {
 	patientLoginReducer,
 	patientRegisterReducer,
 	patientViewReducer,
@@ -50,6 +72,20 @@ import {
 	orthodonticUpdateReducer,
 	orthodonticDeleteReducer,
 } from "./reducers/orthodonticReducer";
+import {
+	ScheduleHandlingListReducer,
+	ScheduleHandlingCreateReducer,
+	ScheduleHandlingUpdateReducer,
+	ScheduleHandlingDeleteReducer,
+	ScheduleListForUsersReducer,
+} from "./reducers/scheduleHandlingReducer";
+import {
+	blogCreateReducer,
+	blogDeleteReducer,
+	blogListReducer,
+	blogListForUsersReducer,
+	blogUpdateReducer,
+} from "./reducers/blogsReducers";
 
 import {
 	inventoryListReducer,
@@ -57,6 +93,15 @@ import {
 	inventoryUpdateReducer,
 	inventoryDeleteReducer,
 } from "./reducers/InventoryReducer";
+
+import {
+	medicalHistoryCreateReducer,
+	medicalHistoryDeleteReducer,
+	medicalHistoryListReducer,
+	medicalHistoryUpdateReducer,
+	medicalHistoryListDoctorReducer,
+	patientViewMedicalHistoryReducer,
+} from "./reducers/medicalHistoryReducer";
 
 const reducer = combineReducers({
 	admin_Login: adminLoginReducer,
@@ -80,6 +125,21 @@ const reducer = combineReducers({
 	patientDelete: patientDeleteReducer,
 	patientViewById: patientViewByIdReducer,
 	patientUpdateById: patientUpdateByIdReducer,
+	getFeedback: getFeedbackReducer,
+	createFeedback: createFeedbackReducer,
+	updateFeedback: updateFeedbackReducer,
+	deleteFeedback: deleteFeedbackReducer,
+	getFeedbackforAdmin: getFeedbackforAdminReducer,
+	UpdateFeedbackforAdmin: UpdateFeedbackforAdminReducer,
+	deleteFeedbackforAdmin: deleteFeedbackforAdminReducer,
+	getQuestion: getQuestionReducer,
+	createQuestion: createQuestionReducer,
+	updateQuestion: updateQuestionReducer,
+	deleteQuestion: deleteQuestionReducer,
+	getQuestionForAdmin: getQuestionForAdminReducer,
+	UpdateQuestionforAdmin: UpdateQuestionforAdminReducer,
+	deleteQuestionforAdmin: deleteQuestionforAdminReducer,
+	getFeedbackCommonReviewPage: getFeedbackCommonReviewPageReducer,
 	inventoryList: inventoryListReducer,
 	inventoryCreate: inventoryCreateReducer,
 	inventoryUpdate: inventoryUpdateReducer,
@@ -96,6 +156,23 @@ const reducer = combineReducers({
 	orthodonticCreate: orthodonticCreateReducer,
 	orthodonticUpdate: orthodonticUpdateReducer,
 	orthodonticDelete: orthodonticDeleteReducer,
+	ScheduleHandlingList: ScheduleHandlingListReducer,
+	ScheduleHandlingCreate: ScheduleHandlingCreateReducer,
+	ScheduleHandlingUpdate: ScheduleHandlingUpdateReducer,
+	ScheduleHandlingDelete: ScheduleHandlingDeleteReducer,
+	ScheduleListforUsers: ScheduleListForUsersReducer,
+	medicalHistoryList: medicalHistoryListReducer,
+	medicalHistoryCreate: medicalHistoryCreateReducer,
+	medicalHistoryUpdate: medicalHistoryUpdateReducer,
+	medicalHistoryDelete: medicalHistoryDeleteReducer,
+	medicalHistoryListDoctor: medicalHistoryListDoctorReducer,
+	patientViewMedicalHistory: patientViewMedicalHistoryReducer,
+	blogList: blogListReducer,
+	blogListforUsers: blogListForUsersReducer,
+	blogCreate: blogCreateReducer,
+	blogUpdate: blogUpdateReducer,
+	blogDelete: blogDeleteReducer,
+	getQuestionCommonQAPage: getQuestionCommonQAPageReducer,
 });
 
 const adminInfoFromStorage = localStorage.getItem("adminInfo") ? JSON.parse(localStorage.getItem("adminInfo")) : null;

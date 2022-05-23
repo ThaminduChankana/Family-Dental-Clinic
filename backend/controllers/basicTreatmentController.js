@@ -26,7 +26,7 @@ const getBasicTreatmentCount = asyncHandler(async (req, res) => {
 			c = c + 1;
 		} else if (basicTreatments[i].treatmentType === "Oral heigene") {
 			d = d + 1;
-		} else if (basicTreatments[i].treatmentType === "Full mouth scaling") {
+		} else if (basicTreatments[i].treatmentType === "Full Mouth Scaling") {
 			e = e + 1;
 		}
 		i++;
@@ -44,7 +44,7 @@ const getBasicTreatmentCount = asyncHandler(async (req, res) => {
 const createBasicTreatment = asyncHandler(async (req, res) => {
 	const { nic, cost, treatmentType, date, checkup, procedure, remark } = req.body;
 
-	if (!nic || !cost || !treatmentType || !date || !checkup || !procedure || !remark) {
+	if (!nic || !cost || !treatmentType || !date || !checkup || !procedure) {
 		res.status(400);
 		throw new Error("Please Fill all the feilds");
 	} else {

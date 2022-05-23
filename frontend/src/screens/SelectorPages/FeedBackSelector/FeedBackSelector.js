@@ -39,13 +39,13 @@ const FeedbackSelectorPage = () => {
 								<br></br>
 								<br></br>
 
-								<a href="/">
+								<a href="/feedback-adminview">
 									<Button size="lg" className="landingbutton">
 										Feedback Management
 									</Button>
 								</a>
 
-								<a href="/">
+								<a href="/question-adminview">
 									<Button size="lg" className="landingbutton">
 										Q & A Management
 									</Button>

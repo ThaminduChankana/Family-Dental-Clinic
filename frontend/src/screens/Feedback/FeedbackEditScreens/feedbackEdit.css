@@ -1,0 +1,11 @@
+.editFeedbackPatient {
+	background: url("../../../Images/bgfeedbacksix.jpg");
+	background-position: center;
+	background-size: cover;
+}
+
+.editFeedbackAdmin {
+	background: url("../../../Images/bgfeedbackthree.jpg");
+	background-position: center;
+	background-size: cover;
+}

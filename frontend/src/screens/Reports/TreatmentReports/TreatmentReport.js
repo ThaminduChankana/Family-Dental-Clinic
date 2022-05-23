@@ -14,7 +14,7 @@ export const TreatmentReport = React.forwardRef((props, ref) => {
 
 	useEffect(() => {
 		const fetchingBasicTreatments = async () => {
-			const { data } = await axios.get(`http://localhost:5000/user/doctor/treatment/basic_treatment/get/report`, {
+			const { data } = await axios.get(`/user/doctor/treatment/basic_treatment/get/report`, {
 				headers: authHeader(),
 				"Access-Control-Allow-Origin": "*",
 				"Access-Control-Allow-Credentials": true,
@@ -26,7 +26,7 @@ export const TreatmentReport = React.forwardRef((props, ref) => {
 			setFullMouthScaling(data.full_mouth_scaling);
 		};
 		const fetchingFillings = async () => {
-			const { data } = await axios.get(`http://localhost:5000/user/doctor/treatment/filling/get/report`, {
+			const { data } = await axios.get(`/user/doctor/treatment/filling/get/report`, {
 				headers: authHeader(),
 				"Access-Control-Allow-Origin": "*",
 				"Access-Control-Allow-Credentials": true,
@@ -34,7 +34,7 @@ export const TreatmentReport = React.forwardRef((props, ref) => {
 			setFillings(data.filling);
 		};
 		const fetchingOrthodontics = async () => {
-			const { data } = await axios.get(`http://localhost:5000/user/doctor/treatment/orthodontic/get/report`, {
+			const { data } = await axios.get(`/user/doctor/treatment/orthodontic/get/report`, {
 				headers: authHeader(),
 				"Access-Control-Allow-Origin": "*",
 				"Access-Control-Allow-Credentials": true,
