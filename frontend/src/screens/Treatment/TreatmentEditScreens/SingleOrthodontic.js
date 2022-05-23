@@ -12,12 +12,12 @@ import swal from "sweetalert";
 import "./treatmentUpdate.css";
 
 export default function SingleOrthodontic({ match, history }) {
-	const [nic, setNic] = useState();
-	const [firstVisit, setFirstVisit] = useState();
+	const [nic, setNic] = useState("");
+	const [firstVisit, setFirstVisit] = useState("");
 	const [fullCost, setFullCost] = useState("");
-	const [paid, setPaid] = useState();
-	const [facialExamination, setFacialExamination] = useState();
-	const [followUpVisits, setFollowUpVisits] = useState();
+	const [paid, setPaid] = useState("");
+	const [facialExamination, setFacialExamination] = useState("");
+	const [followUpVisits, setFollowUpVisits] = useState("");
 	const [remark, setRemark] = useState("");
 
 	const dispatch = useDispatch();

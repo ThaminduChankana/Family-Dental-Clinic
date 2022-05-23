@@ -46,10 +46,10 @@ export default function OrthodonticCreate({ history }) {
 	};
 	const demoHandler = async (e) => {
 		e.preventDefault();
-		setNic("997193245V");
+		setNic("196875612V");
 		setFullCost("65000.00");
 		setPaid("20000.00");
-		setFacialExamination("Need to correct the gap between fron teeth");
+		setFacialExamination("Need to correct the gap between front teeth");
 		setFollowUpVisits("Not yet");
 		setRemark("No");
 	};

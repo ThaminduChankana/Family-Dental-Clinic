@@ -87,7 +87,7 @@ export default function FillingView({ search }) {
 						?.reverse()
 						.filter((filtered) => filtered.nic.includes(search))
 						.map((filling) => (
-							<Accordion>
+							<Accordion key={filling._id}>
 								<Card
 									style={{
 										borderRadius: 25,
