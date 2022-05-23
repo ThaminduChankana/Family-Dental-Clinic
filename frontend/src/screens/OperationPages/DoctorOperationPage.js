@@ -42,7 +42,7 @@ const DoctorOperationPage = ({ history }) => {
 										</Button>
 									</a>
 									&emsp;
-									<a href="/">
+									<a href="/schedules">
 										<Button size="lg" style={{ width: 350, height: 75 }}>
 											Doctor's Schedule Management
 										</Button>
