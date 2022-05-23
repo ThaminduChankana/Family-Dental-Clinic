@@ -12,17 +12,17 @@ import "./MedicalHistory.css";
 import swal from "sweetalert";
 
 function SingleMedicalHistory({ match, history }) {
-	const [nic, setNic] = useState();
-	const [pname, setPname] = useState();
-	const [previousDentalhistory, setPreviousDentalhistory] = useState();
-	const [dentalConcerns, setDentalConcerns] = useState();
-	const [medicalConcerns, setMedicalConcerns] = useState();
-	const [currentMedications, setCurrentMedications] = useState();
-	const [otherDiseases, setOtherDiseases] = useState();
-	const [vaccinations, setVaccinations] = useState();
-	const [covidDiagnose, setCovidDiagnose] = useState();
-	const [fluSymptoms, setFluSymptoms] = useState();
-	const [covidConfirmation, setCovidConfirmation] = useState();
+	const [nic, setNic] = useState("");
+	const [pname, setPname] = useState("");
+	const [previousDentalhistory, setPreviousDentalhistory] = useState("");
+	const [dentalConcerns, setDentalConcerns] = useState("");
+	const [medicalConcerns, setMedicalConcerns] = useState("");
+	const [currentMedications, setCurrentMedications] = useState("");
+	const [otherDiseases, setOtherDiseases] = useState("");
+	const [vaccinations, setVaccinations] = useState("");
+	const [covidDiagnose, setCovidDiagnose] = useState("");
+	const [fluSymptoms, setFluSymptoms] = useState("");
+	const [covidConfirmation, setCovidConfirmation] = useState("");
 
 	const dispatch = useDispatch();
 
