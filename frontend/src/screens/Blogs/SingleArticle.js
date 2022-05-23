@@ -10,11 +10,11 @@ import axios from "axios";
 import swal from "sweetalert";
 
 function SingleBlog({ match, history }) {
-	const [title, setTitle] = useState();
-	const [description, setDescription] = useState();
-	const [image, setImage] = useState();
+	const [title, setTitle] = useState("");
+	const [description, setDescription] = useState("");
+	const [image, setImage] = useState("");
 	const [date, setDate] = useState("");
-	const [imageMessage, setImageMessage] = useState();
+	const [imageMessage, setImageMessage] = useState("");
 
 	const dispatch = useDispatch();
 
