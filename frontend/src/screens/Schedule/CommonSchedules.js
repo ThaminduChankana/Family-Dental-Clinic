@@ -1,4 +1,4 @@
-import { Accordion, Card, Row, Col, Button } from "react-bootstrap";
+import { Accordion, Card, Row, Col } from "react-bootstrap";
 import MainScreen from "../../components/MainScreen";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
