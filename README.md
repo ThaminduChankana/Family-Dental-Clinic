@@ -43,4 +43,19 @@ also connect to Express.js functions that power our application by sending XML H
 MongoDB database, those functions used MongoDB's Node.js drivers, either via callbacks or 
 promises. We utilized the Visual Studio Code editor to develop and debug our web application, it 
 was redesigned and optimized for this purpose. We utilized Postman to drive the backend before 
-constructing the front end. Postman is an API developer collaboration platform. [6
+constructing the front end. Postman is an API developer collaboration platform.
+
+SOFTWARE:
+
+● Microsoft Vs Code
+● Postman 
+● MongoDB
+
+TECHNOLOGY:
+
+● Technology: MERN Stack
+● Node.js 
+● Express 
+● Bootstrap
+
+
