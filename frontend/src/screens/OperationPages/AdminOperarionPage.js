@@ -97,11 +97,6 @@ const AdminOperationPage = ({ history }) => {
 								</div>
 								<br></br>
 								<div>
-									<Link to="/ ">
-										<Button size="lg" className="landingbutton">
-											Appointment Management
-										</Button>
-									</Link>
 									<Link to="/schedule-Handling-View">
 										<Button size="lg" className="landingbutton">
 											Doctor's Schedule Management

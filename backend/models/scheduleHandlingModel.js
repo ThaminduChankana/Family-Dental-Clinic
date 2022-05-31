@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
 const scheduleHandlingSchema = mongoose.Schema({
-	// nic
 	nic: {
 		type: String,
 		required: true,

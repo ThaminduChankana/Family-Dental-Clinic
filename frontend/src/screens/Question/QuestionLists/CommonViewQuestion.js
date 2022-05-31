@@ -13,7 +13,6 @@ export default function CommonViewQuestion({ search }) {
 	const getQuestionCommonQAPage = useSelector((state) => state.getQuestionCommonQAPage);
 	const { loading, questions, error } = getQuestionCommonQAPage;
 
-	console.log(questions);
 	useEffect(() => {
 		dispatch(getQuestionCommonQAPageAction());
 	}, [dispatch]);

@@ -31,7 +31,6 @@ const {
 	DeleteMedicalHistory,
 	getMedicalHistoryCount,
 } = require("../controllers/medicalHistoryController");
-// schedule handling route
 const {
 	getScheduleHandling,
 	getScheduleHandlingId,

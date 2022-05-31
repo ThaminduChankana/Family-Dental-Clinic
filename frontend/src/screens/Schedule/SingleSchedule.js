@@ -23,9 +23,6 @@ export default function SingleSchedule({ match, history }) {
 	const ScheduleHandlingUpdate = useSelector((state) => state.ScheduleHandlingUpdate);
 	const { loading, error } = ScheduleHandlingUpdate;
 
-	// const ScheduleHandlingDelete = useSelector((state) => state.ScheduleHandlingDelete);
-	// const { loading: loadingDelete, error: errorDelete } = ScheduleHandlingDelete;
-
 	const deleteHandler = (id) => {
 		if (window.confirm("Are you sure?")) {
 			dispatch(deleteScheduleHandlingAction(id));
@@ -35,7 +32,7 @@ export default function SingleSchedule({ match, history }) {
 
 	useEffect(() => {
 		const fetching = async () => {
-			const { data } = await axios.get(`http://localhost:5000/user/admin/schedule/get/${match.params.id}`, {
+			const { data } = await axios.get(`/user/admin/schedule/get/${match.params.id}`, {
 				headers: authHeader(),
 			});
 
@@ -45,21 +42,10 @@ export default function SingleSchedule({ match, history }) {
 			setDate(data.date);
 			setDescription(data.description);
 			setAddedBy(data.addedBy);
-			console.log(data);
 		};
 
 		fetching();
 	}, [match.params.id]);
-
-	// const resetHandler = () => {
-	// 	setNic("");
-	// 	setCost("");
-	// 	setTreatmentType("");
-	// 	setDate("");
-	// 	setCheckup("");
-	// 	setProcedure("");
-	// 	setRemark("");
-	// };
 
 	const updateHandler = (e) => {
 		e.preventDefault();

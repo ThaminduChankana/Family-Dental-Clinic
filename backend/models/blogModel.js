@@ -13,7 +13,6 @@ const BlogSchema = mongoose.Schema(
 		image: {
 			type: String,
 			required: true,
-			//default: "https://www.americandentalclinic.com/wp-content/uploads/2022/04/shutterstock_1893722440.jpg",
 		},
 		doctor: {
 			type: mongoose.Schema.Types.ObjectId,

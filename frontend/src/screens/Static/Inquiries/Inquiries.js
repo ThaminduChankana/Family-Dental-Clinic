@@ -15,14 +15,12 @@ const Inquiries = () => {
 		e.preventDefault();
 		emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID).then(
 			(result) => {
-				console.log(result.text);
 				Swal({
 					icon: "success",
 					title: "Message Sent Successfully",
 				});
 			},
 			(error) => {
-				console.log(error.text);
 				Swal({
 					icon: "error",
 					title: "Oops, something went wrong",

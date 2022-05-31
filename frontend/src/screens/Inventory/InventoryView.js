@@ -71,14 +71,7 @@ export default function InventoryView({ search }) {
 						<Button href="/inventory-report">Inventory Report</Button>
 					</ButtonGroup>
 					<div className="container" style={{ width: "280px", float: "right", marginTop: "10px" }}>
-						<div className="row">
-							{/* <div className="col-xs-2" >
-                               <Button href={`/inventory-create`} style={{marginRight:"15px", boxShadow:"5px 5px 2px #888888",padding:"8px"}}>Add Product</Button>
-                            </div>
-                            <div className="col-xs-4">
-                               <Button href={`/inventory-report`} style={{boxShadow:"5px 5px 2px #888888",padding:"8px"}} >Generate Report</Button>
-                            </div> */}
-						</div>
+						<div className="row"></div>
 					</div>
 					<br></br>
 

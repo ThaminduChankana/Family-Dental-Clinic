@@ -12,7 +12,7 @@ export const DoctorScheduleReport = React.forwardRef((props, ref) => {
 
 	useEffect(() => {
 		const fetchingScheduleHandling = async () => {
-			const { data } = await axios.get(`http://localhost:5000/user/admin/schedule/count`, {
+			const { data } = await axios.get(`/user/admin/schedule/count`, {
 				headers: authHeader(),
 				"Access-Control-Allow-Origin": "*",
 				"Access-Control-Allow-Credentials": true,

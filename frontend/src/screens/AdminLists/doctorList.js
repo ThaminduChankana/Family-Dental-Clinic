@@ -27,7 +27,6 @@ const DoctorListForAdmin = ({ search }) => {
 	const history = useHistory();
 
 	useEffect(() => {
-		//Function or React hook that is fired off whenever a component is rendered, as soon as pages are rendered the api is called
 		dispatch(doctorsList());
 		if (!adminInfo) {
 			history.push("/access-denied");
@@ -134,7 +133,6 @@ const DoctorListForAdmin = ({ search }) => {
 												}}
 											>
 												<span
-													// onClick={() => ModelShow(note)}
 													style={{
 														color: "black",
 														textDecoration: "none",

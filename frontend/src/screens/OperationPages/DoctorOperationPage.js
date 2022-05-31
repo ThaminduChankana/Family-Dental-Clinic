@@ -55,12 +55,6 @@ const DoctorOperationPage = ({ history }) => {
 											Patient Diagnosis Management
 										</Button>
 									</a>
-									&emsp;
-									<a href="/">
-										<Button size="lg" style={{ width: 350, height: 75 }}>
-											Appointment Management
-										</Button>
-									</a>
 								</div>
 								<br></br>
 								<div>

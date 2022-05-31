@@ -122,7 +122,6 @@ export const patientRegister =
 			}, 2000);
 
 			dispatch({ type: PATIENT_LOGIN_SUCCESS, payload: data });
-
 		} catch (error) {
 			dispatch({
 				type: PATIENT_REGISTER_FAIL,
@@ -376,7 +375,6 @@ export const patientUpdateProfileById =
 		regDate
 	) =>
 	async (dispatch, getState) => {
-		console.log(getState());
 		try {
 			dispatch({
 				type: PATIENT_UPDATE_BY_ID_REQUEST,

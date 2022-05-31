@@ -56,7 +56,7 @@ export default function InventoryUpdate({ match, history }) {
 
 	useEffect(() => {
 		const fetching = async () => {
-			const { data } = await axios.get(`http://localhost:5000/user/admin/inventory/get/${match.params.id}`, {
+			const { data } = await axios.get(`/user/admin/inventory/get/${match.params.id}`, {
 				headers: authHeader(),
 				"Access-Control-Allow-Origin": "*",
 				"Access-Control-Allow-Credentials": true,
@@ -142,9 +142,7 @@ export default function InventoryUpdate({ match, history }) {
 										/>
 									</Form.Group>
 									{loading && <Loading size={50} />}
-									{/* <Button type="submit" variant="primary">
-            								Update
-            							</Button> */}
+
 									<Button
 										style={{ fontSize: 15, marginTop: 10, boxShadow: "5px 5px 2px #888888" }}
 										type="submit"

@@ -22,9 +22,7 @@ export default function BasicTreatmentCreate({ history }) {
 	const { doctorInfo } = doctor_Login;
 
 	const basicTreatmentCreate = useSelector((state) => state.basicTreatmentCreate);
-	const { loading, error, basicTreatment } = basicTreatmentCreate;
-
-	console.log(basicTreatment);
+	const { loading, error } = basicTreatmentCreate;
 
 	const resetHandler = () => {
 		setNic("");
@@ -39,7 +37,6 @@ export default function BasicTreatmentCreate({ history }) {
 	const submitHandler = (e) => {
 		e.preventDefault();
 
-		// if (!nic || !cost || !treatmentType || !date || !checkup || !procedure || !remark) return;
 		dispatch(createBasicTreatmentAction(nic, cost, treatmentType, date, checkup, procedure, remark));
 
 		resetHandler();

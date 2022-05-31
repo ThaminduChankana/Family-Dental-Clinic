@@ -51,7 +51,6 @@ export default function FeedbackViewforPatient({ search }) {
 				});
 			});
 	};
-	console.log(feedbacks);
 
 	const history = useHistory();
 	useEffect(() => {
@@ -84,7 +83,7 @@ export default function FeedbackViewforPatient({ search }) {
 						?.reverse()
 						.filter((filteredB) => filteredB.rating_count.includes(search))
 						.map((feedback) => (
-							<Accordion>
+							<Accordion key={feedback._id}>
 								<Card style={{ margin: 10, left: "26%", width: "50%", borderRadius: 25 }} key={feedback._id}>
 									<Card.Header style={{ display: "flex" }}>
 										<span
@@ -120,12 +119,20 @@ export default function FeedbackViewforPatient({ search }) {
 										</div>
 									</Card.Header>
 									<Accordion.Collapse eventKey="0">
-										<Card.Body>
+										<Card.Body style={{ padding: 35 }}>
 											<Row>
 												<Col md={20}>
-													<h5>Name: {feedback.name}</h5>
-													<h5>Review Description : {feedback.review_description}</h5>
-													<h5>Rating Count: {feedback.rating_count}</h5>
+													<h5>
+														<b>Name :- </b> <br></br>&emsp;{feedback.name}
+													</h5>
+													<br></br>
+													<h5>
+														<b>Review Description :- </b> <br></br> &emsp;{feedback.review_description}
+													</h5>
+													<br></br>
+													<h5>
+														<b>Rating Count :- </b> {feedback.rating_count} / 5
+													</h5>
 												</Col>
 											</Row>
 										</Card.Body>

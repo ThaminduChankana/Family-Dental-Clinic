@@ -40,8 +40,6 @@ function SingleMedicalHistoryPatient() {
 				setCovidDiagnose(data.covidDiagnose);
 				setFluSymptoms(data.fluSymptoms);
 				setCovidConfirmation(data.covidConfirmation);
-
-				console.log(data);
 			};
 
 			fetching();

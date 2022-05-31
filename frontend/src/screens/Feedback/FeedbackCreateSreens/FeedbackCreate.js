@@ -19,9 +19,7 @@ export default function FeedbackCreate({ history }) {
 	const { patientInfo } = patient_Login;
 
 	const createFeedback = useSelector((state) => state.createFeedback);
-	const { loading, error, feedback } = createFeedback;
-
-	console.log(feedback);
+	const { loading, error } = createFeedback;
 
 	const resetHandler = () => {
 		setName("");

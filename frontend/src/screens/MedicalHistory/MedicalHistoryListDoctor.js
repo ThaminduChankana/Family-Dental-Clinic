@@ -16,8 +16,6 @@ const MedicalHistoryListDoctor = ({ search }) => {
 	const doctor_Login = useSelector((state) => state.doctor_Login);
 	const { doctorInfo } = doctor_Login;
 
-	console.log(medicalHistories);
-
 	const history = useHistory();
 
 	useEffect(() => {
