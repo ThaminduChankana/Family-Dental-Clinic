@@ -3,7 +3,6 @@ import { Container, Row } from "react-bootstrap";
 import "./MainScreen.css";
 
 const MainScreen = ({ title, children }) => {
-	//see if we are provided with a title or children
 	return (
 		<div className="mainback">
 			<Container>

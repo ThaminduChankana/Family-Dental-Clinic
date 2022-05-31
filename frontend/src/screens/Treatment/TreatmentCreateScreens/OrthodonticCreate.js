@@ -22,9 +22,7 @@ export default function OrthodonticCreate({ history }) {
 	const { doctorInfo } = doctor_Login;
 
 	const orthodonticCreate = useSelector((state) => state.orthodonticCreate);
-	const { loading, error, orthodontic } = orthodonticCreate;
-
-	console.log(orthodontic);
+	const { loading, error } = orthodonticCreate;
 
 	const resetHandler = () => {
 		setNic("");
@@ -39,7 +37,6 @@ export default function OrthodonticCreate({ history }) {
 	const submitHandler = (e) => {
 		e.preventDefault();
 
-		//if (!nic || !firstVisit || !fullCost || !paid || !facialExamination || !followUpVisits || !remark) return;
 		dispatch(createOrthodonticAction(nic, firstVisit, fullCost, paid, facialExamination, followUpVisits, remark));
 
 		resetHandler();

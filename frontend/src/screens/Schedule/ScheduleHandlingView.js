@@ -1,7 +1,6 @@
 import { useHistory } from "react-router-dom";
 import { Accordion, Card, Button, Row, Col, ButtonGroup } from "react-bootstrap";
 import MainScreen from "../../components/MainScreen";
-//import { Link,useHistory } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteScheduleHandlingAction, listScheduleHandling } from "../../actions/scheduleHandlingAction";
@@ -23,7 +22,6 @@ export default function ScheduleHandlingView({ search }) {
 
 	const ScheduleHandlingDelete = useSelector((state) => state.ScheduleHandlingDelete);
 	const { loading: loadingDelete, error: errorDelete, success: successDelete } = ScheduleHandlingDelete;
-	console.log(schedules);
 
 	const deleteHandler = (id) => {
 		swal({
@@ -111,7 +109,6 @@ export default function ScheduleHandlingView({ search }) {
 										}}
 									>
 										<span
-											// onClick={() => ModelShow(note)}
 											style={{
 												color: "black",
 												textDecoration: "none",
@@ -164,11 +161,6 @@ export default function ScheduleHandlingView({ search }) {
 													<br></br>
 												</Col>
 											</Row>
-											{/* <blockquote className="blockquote mb-0">
-										<Card.Footer className="text-muted">
-											Created on -<cite title="Source Title"> {schedule.createdAt.substring(0, 10)}</cite>
-										</Card.Footer>
-									</blockquote> */}
 										</Card.Body>
 									</Accordion.Collapse>
 								</Card>

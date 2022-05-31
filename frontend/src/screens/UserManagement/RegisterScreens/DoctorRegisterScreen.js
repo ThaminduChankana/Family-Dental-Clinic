@@ -22,23 +22,16 @@ const DoctorRegisterScreen = () => {
 	const [pic, setPic] = useState("https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg");
 	const [password, setPassword] = useState("");
 	const [confirmpassword, setConfirmPassword] = useState("");
-	const [message, setMessage] = useState(null); //msg if the user enters a wrong password
+	const [message, setMessage] = useState(null);
 	const [picMessage, setPicMessage] = useState(null);
 	const [regDate, setRegDate] = useState("");
 
 	const dispatch = useDispatch();
 	const doctorRegistration = useSelector((state) => state.doctorRegistration);
-	const { loading, error, doctorInfo } = doctorRegistration;
-	console.log(doctorInfo);
+	const { loading, error } = doctorRegistration;
 
 	const admin_Login = useSelector((state) => state.admin_Login);
 	const { adminInfo } = admin_Login;
-
-	/*useEffect(() => {
-		if (doctorInfo) {
-			history.push("/doctor-login");
-		}
-	}, [history, doctorInfo]);*/
 
 	const submitHandler = async (e) => {
 		e.preventDefault();

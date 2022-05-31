@@ -96,7 +96,7 @@ export default function QuestionViewforAdmin({ search }) {
 						?.reverse()
 						.filter((filteredB) => filteredB.email.includes(search))
 						.map((question) => (
-							<Accordion>
+							<Accordion key={question._id}>
 								<Card
 									style={{
 										margin: 10,

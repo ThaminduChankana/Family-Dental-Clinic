@@ -95,7 +95,6 @@ export const deleteQuestionReducer = (state = {}, action) => {
 	}
 };
 
-/*Admin*/
 export const getQuestionForAdminReducer = (state = { questions: [] }, action) => {
 	switch (action.type) {
 		case QUESTION_GETFORADMIN_REQUEST:

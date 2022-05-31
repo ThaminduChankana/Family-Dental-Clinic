@@ -25,7 +25,7 @@ export default function AdminQuestionEdit({ match, history }) {
 
 	useEffect(() => {
 		const fetching = async () => {
-			const { data } = await axios.get(`http://localhost:5000/user/admin/question/view/${match.params.id}`, {
+			const { data } = await axios.get(`/user/admin/question/view/${match.params.id}`, {
 				headers: authHeader(),
 				"Access-Control-Allow-Origin": "*",
 				"Access-Control-Allow-Credentials": true,
@@ -93,14 +93,18 @@ export default function AdminQuestionEdit({ match, history }) {
 								{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
 								{errorDelete && <ErrorMessage variant="danger">{errorDelete}</ErrorMessage>}
 								<Form.Group controlId="isname">
-									<Form.Label>Visibility</Form.Label>
-									<Form.Control
-										type="isAdmin"
-										value={isAdmin}
-										placeholder="Enter Visibility"
-										onChange={(e) => setAdmin(e.target.value)}
-										style={{ background: "#f8f8ff" }}
-									/>
+									<div className="form-group">
+										<label className="QuestionVisibility">Visibility</label>
+										<select
+											className="form-control"
+											value={isAdmin}
+											onChange={(e) => setAdmin(e.target.value)}
+											required
+										>
+											<option value="true">True</option>
+											<option value="false">False</option>
+										</select>
+									</div>
 								</Form.Group>
 
 								<Form.Group controlId="answer">

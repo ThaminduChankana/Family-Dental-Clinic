@@ -32,7 +32,7 @@ export const listInventory = () => async (dispatch, getState) => {
 			},
 		};
 
-		const { data } = await axios.get(`http://localhost:5000/user/admin/inventory/get`, config);
+		const { data } = await axios.get(`/user/admin/inventory/get`, config);
 
 		dispatch({
 			type: INVENTORY_LIST_SUCCESS,
@@ -65,7 +65,7 @@ export const createInventoryAction = (productName, quantity, description) => asy
 		};
 
 		const { data } = await axios.post(
-			`http://localhost:5000/user/admin/inventory/create`,
+			`/user/admin/inventory/create`,
 			{
 				productName,
 				quantity,
@@ -114,7 +114,7 @@ export const updateInventoryAction = (id, productName, quantity, description) =>
 			},
 		};
 		const { data } = await axios.put(
-			`http://localhost:5000/user/admin/inventory/get/${id}`,
+			`/user/admin/inventory/get/${id}`,
 			{
 				productName,
 				quantity,
@@ -162,7 +162,7 @@ export const deleteInventoryAction = (id) => async (dispatch, getState) => {
 			},
 		};
 
-		const { data } = await axios.delete(`http://localhost:5000/user/admin/inventory/get/${id}`, config);
+		const { data } = await axios.delete(`/user/admin/inventory/get/${id}`, config);
 
 		dispatch({
 			type: INVENTORY_DELETE_SUCCESS,

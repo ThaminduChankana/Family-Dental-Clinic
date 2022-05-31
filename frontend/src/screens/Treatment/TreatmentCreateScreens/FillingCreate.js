@@ -24,9 +24,7 @@ export default function FillingCreate({ history }) {
 	const { doctorInfo } = doctor_Login;
 
 	const fillingCreate = useSelector((state) => state.fillingCreate);
-	const { loading, error, filling } = fillingCreate;
-
-	console.log(filling);
+	const { loading, error } = fillingCreate;
 
 	const resetHandler = () => {
 		setNic("");
@@ -50,18 +48,6 @@ export default function FillingCreate({ history }) {
 	const submitHandler = (e) => {
 		e.preventDefault();
 
-		// if (
-		// 	!nic ||
-		// 	!cost ||
-		// 	!anestheticStatus ||
-		// 	!fillingMaterial ||
-		// 	!fillingType ||
-		// 	!date ||
-		// 	!checkup ||
-		// 	!procedure ||
-		// 	!remark
-		// )
-		// 	return;
 		dispatch(
 			createFillingAction(nic, cost, anestheticStatus, fillingMaterial, fillingType, date, checkup, procedure, remark)
 		);

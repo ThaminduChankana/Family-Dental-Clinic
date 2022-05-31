@@ -19,9 +19,7 @@ export default function ScheduleHandlingCreate({ history }) {
 	const admin_Login = useSelector((state) => state.admin_Login);
 	const { adminInfo } = admin_Login;
 	const ScheduleHandlingCreate = useSelector((state) => state.ScheduleHandlingCreate);
-	const { loading, error, scheduleHandling } = ScheduleHandlingCreate;
-
-	console.log(scheduleHandling);
+	const { loading, error } = ScheduleHandlingCreate;
 
 	const resetHandler = () => {
 		setNic("");
@@ -130,16 +128,6 @@ export default function ScheduleHandlingCreate({ history }) {
 										required
 									/>
 								</Form.Group>
-
-								{/* <Form.Group controlId="time">
-							<Form.Label>time</Form.Label>
-							<Form.Control
-								type="time"
-								value={time}
-								placeholder="Enter the time Type"
-								onChange={(e) => setTime(e.target.value)}
-							/>
-						</Form.Group> */}
 
 								<Form.Group controlId="time">
 									<Form.Label>Time</Form.Label>

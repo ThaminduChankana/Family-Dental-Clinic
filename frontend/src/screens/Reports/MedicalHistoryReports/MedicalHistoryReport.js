@@ -11,7 +11,7 @@ export const MedicalHistoryReport = React.forwardRef((props, ref) => {
 
 	useEffect(() => {
 		const fetchingMedicalHistories = async () => {
-			const { data } = await axios.get(`http://localhost:5000/user/admin/medical_history/report`, {
+			const { data } = await axios.get(`/user/admin/medical_history/report`, {
 				headers: authHeader(),
 			});
 

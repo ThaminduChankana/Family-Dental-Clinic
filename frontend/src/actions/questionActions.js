@@ -44,7 +44,7 @@ export const getQuestionAction = () => async (dispatch, getState) => {
 			},
 		};
 
-		const { data } = await axios.get(`http://localhost:5000/user/patient/question/view`, config);
+		const { data } = await axios.get(`/user/patient/question/view`, config);
 
 		dispatch({
 			type: QUESTION_GET_SUCCESS,
@@ -65,7 +65,7 @@ export const getQuestionCommonQAPageAction = () => async (dispatch) => {
 			type: COMMONQUESTION_GET_REQUEST,
 		});
 
-		const { data } = await axios.get(`http://localhost:5000/user/question`);
+		const { data } = await axios.get(`/user/question`);
 
 		dispatch({
 			type: COMMONQUESTION_GET_SUCCESS,
@@ -98,9 +98,8 @@ export const createQuestionAction =
 				},
 			};
 
-			// Remove the config
 			const { data } = await axios.post(
-				`http://localhost:5000/user/patient/question/create`,
+				`/user/patient/question/create`,
 				{
 					name,
 					email,
@@ -155,7 +154,7 @@ export const updateQuestionAction =
 
 			// eslint-disable-next-line no-undef
 			const { data } = await axios.put(
-				`http://localhost:5000/user/patient/question/update/${id}`,
+				`/user/patient/question/update/${id}`,
 				{
 					id,
 					name,
@@ -208,7 +207,7 @@ export const deleteQuestionAction = (id) => async (dispatch, getState) => {
 			},
 		};
 
-		const { data } = await axios.delete(`http://localhost:5000/user/patient/question/delete/${id}`, config);
+		const { data } = await axios.delete(`/user/patient/question/delete/${id}`, config);
 
 		dispatch({
 			type: QUESTION_DELETE_SUCCESS,
@@ -222,8 +221,6 @@ export const deleteQuestionAction = (id) => async (dispatch, getState) => {
 		});
 	}
 };
-
-/*Admin*/
 
 export const getQuestionForAdminAction = () => async (dispatch, getState) => {
 	try {
@@ -242,7 +239,7 @@ export const getQuestionForAdminAction = () => async (dispatch, getState) => {
 			},
 		};
 
-		const { data } = await axios.get(`http://localhost:5000/user/admin/question/view`, config);
+		const { data } = await axios.get(`/user/admin/question/view`, config);
 
 		dispatch({
 			type: QUESTION_GETFORADMIN_SUCCESS,
@@ -276,7 +273,7 @@ export const UpdateQuestionforAdminAction = (id, isAdmin, answer) => async (disp
 
 		// eslint-disable-next-line no-undef
 		const { data } = await axios.put(
-			`http://localhost:5000/user/admin/question/update/${id}`,
+			`/user/admin/question/update/${id}`,
 			{
 				id,
 				isAdmin,
@@ -327,7 +324,7 @@ export const deleteQuestionforAdminAction = (id) => async (dispatch, getState) =
 			},
 		};
 
-		const { data } = await axios.delete(`http://localhost:5000/user/admin/question/delete/${id}`, config);
+		const { data } = await axios.delete(`/user/admin/question/delete/${id}`, config);
 
 		dispatch({
 			type: QUESTION_DELETEFORADMIN_SUCCESS,

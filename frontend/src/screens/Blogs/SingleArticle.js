@@ -98,7 +98,6 @@ function SingleBlog({ match, history }) {
 			})
 				.then((res) => res.json())
 				.then((data) => {
-					console.log(data);
 					setImage(data.url.toString());
 				})
 				.catch((err) => {

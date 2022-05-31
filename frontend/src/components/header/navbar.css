@@ -18,7 +18,7 @@ button:hover {
 }
 
 .Navbar .leftSide {
-	flex: 20%;
+	flex: 15%;
 }
 
 .Navbar .rightSide {
@@ -28,13 +28,6 @@ button:hover {
 	align-items: center;
 }
 
-/* .links{
-    text-decoration: none;
-    color: darkgray;
-    font-size: 20px;
-    margin-left: 35px;
-  }  */
-
 .Navbar.rightSide.a:hover {
 	color: darkgray;
 }
@@ -43,31 +36,6 @@ button:hover {
 	border-radius: 100px;
 	padding: 10px;
 	padding-left: 15px;
-	width: 325px;
+	width: 300px;
 	border-style: hidden;
 }
-
-/* .search button{
-    border-radius: 100px;
-    padding: 9px;
-    width: 80px;
-    border-style: hidden;
-} */
-
-/*.rightSide input{
-    width: 220px;
-    height: 35px;
-    border: none;
-    border-radius: 30px;
-    font-size: 16px;
-    padding-left: 15px;
-    color: black;
-  }
-  
-  .rightSide button{
-  height: 32px;
-  width: 70px;
-  font-size: 16px;
-  border-radius:30px ;
-  background-color:#E0FFFF ;
-  }*/

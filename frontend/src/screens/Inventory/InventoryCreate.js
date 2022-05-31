@@ -17,9 +17,7 @@ export default function InventoryCreate({ history }) {
 	const { adminInfo } = admin_Login;
 
 	const inventoryCreate = useSelector((state) => state.inventoryCreate);
-	const { loading, error, inventory } = inventoryCreate;
-
-	console.log(inventory);
+	const { loading, error } = inventoryCreate;
 
 	const resetHandler = () => {
 		setProductName("");
@@ -35,7 +33,6 @@ export default function InventoryCreate({ history }) {
 
 		resetHandler();
 		history.push("/inventory-view");
-		// alert("Successfully Created.");
 	};
 
 	const demoHandler = async (e) => {

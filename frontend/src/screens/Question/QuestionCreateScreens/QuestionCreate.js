@@ -18,9 +18,7 @@ export default function QuestionCreate({ history }) {
 	const { patientInfo } = patient_Login;
 
 	const createQuestion = useSelector((state) => state.createQuestion);
-	const { loading, error, question } = createQuestion;
-
-	console.log(question);
+	const { loading, error } = createQuestion;
 
 	const resetHandler = () => {
 		setName("");

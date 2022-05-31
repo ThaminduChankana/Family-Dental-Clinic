@@ -63,8 +63,6 @@ const DoctorArticles = ({ search }) => {
 			});
 	};
 
-	console.log(blogs);
-
 	const history = useHistory();
 
 	useEffect(() => {

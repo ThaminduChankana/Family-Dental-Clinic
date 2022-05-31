@@ -43,13 +43,6 @@ const PatientOperationPage = ({ history }) => {
 								</a>
 								<br></br>
 								<br></br>
-								<a href="/">
-									<Button size="lg" style={{ width: 350, height: 75 }}>
-										Appointment Management
-									</Button>
-								</a>
-								<br></br>
-								<br></br>
 								<a href="/patient-single-medical-history">
 									<Button size="lg" style={{ width: 350, height: 75 }}>
 										Medical History Management
@@ -57,14 +50,14 @@ const PatientOperationPage = ({ history }) => {
 								</a>
 								<br></br>
 								<br></br>
-								<a href="/feedback-create">
+								<a href="/feedback-view-patient">
 									<Button size="lg" style={{ width: 350, height: 75 }}>
 										Feedback Management
 									</Button>
 								</a>
 								<br></br>
 								<br></br>
-								<a href="/question-create">
+								<a href="/question-view-patient">
 									<Button size="lg" style={{ width: 350, height: 75 }}>
 										Q&A Management
 									</Button>
