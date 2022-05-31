@@ -28,7 +28,7 @@ const QuestionPrint = () => {
 			>
 				<QuestionReport ref={componentRef} />
 				<Button
-					style={{ marginLeft: 780, left: "70%", positon: "center", width: "20%" }}
+					style={{ marginLeft: 600, left: "50%", positon: "center", width: "20%" }}
 					onClick={handlePrint}
 					variant="primary"
 				>

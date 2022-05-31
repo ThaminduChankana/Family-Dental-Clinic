@@ -14,11 +14,9 @@ const inventorySchema = mongoose.Schema({
 	},
 
 	year: {
-
 		default: new Date().getFullYear(),
 
 		type: String,
-
 	},
 });
 
