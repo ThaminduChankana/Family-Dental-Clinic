@@ -7,8 +7,6 @@ import { patientRegister } from "../../../actions/patientActions";
 import MainScreen from "../../../components/MainScreen";
 import "./RegisterScreen.css";
 
-//name, dob, gender, nic, telephone, address, password, pic, dataEntry, regDate;
-
 const PatientRegisterScreen = () => {
 	const [name, setName] = useState("");
 	const [dob, setDob] = useState("");

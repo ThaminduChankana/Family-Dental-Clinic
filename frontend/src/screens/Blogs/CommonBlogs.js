@@ -18,8 +18,6 @@ const CommonBlogs = ({ search }) => {
 	const blogListforUsers = useSelector((state) => state.blogListforUsers);
 	const { loading, blogs, error } = blogListforUsers;
 
-	console.log(blogs);
-
 	useEffect(() => {
 		dispatch(listBlogsForUsers());
 	}, [dispatch]);

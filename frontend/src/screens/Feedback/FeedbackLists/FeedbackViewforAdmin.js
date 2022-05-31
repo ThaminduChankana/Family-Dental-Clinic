@@ -51,7 +51,6 @@ export default function FeedbackViewforAdmin({ search }) {
 				});
 			});
 	};
-	console.log(feedbacks);
 
 	const history = useHistory();
 	useEffect(() => {

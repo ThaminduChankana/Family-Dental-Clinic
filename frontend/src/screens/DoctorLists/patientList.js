@@ -17,11 +17,9 @@ const PatientListForDoctor = ({ search }) => {
 	const doctor_Login = useSelector((state) => state.doctor_Login);
 	const { doctorInfo } = doctor_Login;
 
-	console.log(patients);
 	const history = useHistory();
 
 	useEffect(() => {
-		//Function or React hook that is fired off whenever a component is rendered, as soon as pages are rendered the api is called
 		dispatch(patientsListForDoctor());
 		if (!doctorInfo) {
 			history.push("/access-denied");

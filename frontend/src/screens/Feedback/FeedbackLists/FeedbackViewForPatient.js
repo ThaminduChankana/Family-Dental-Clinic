@@ -51,7 +51,6 @@ export default function FeedbackViewforPatient({ search }) {
 				});
 			});
 	};
-	console.log(feedbacks);
 
 	const history = useHistory();
 	useEffect(() => {

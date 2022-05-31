@@ -14,7 +14,6 @@ export default function CommonViewFeedback({ search }) {
 	const getFeedbackCommonReviewPage = useSelector((state) => state.getFeedbackCommonReviewPage);
 	const { loading, feedbacks, error } = getFeedbackCommonReviewPage;
 
-	console.log(feedbacks);
 	useEffect(() => {
 		dispatch(getFeedbackCommonReviewPageAction());
 	}, [dispatch]);

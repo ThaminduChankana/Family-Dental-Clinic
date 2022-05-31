@@ -24,7 +24,7 @@ import swal from "sweetalert";
 export const listMedicalHistories = () => async (dispatch, getState) => {
 	try {
 		dispatch({
-			type: MEDICALHISTORY_LIST_REQUEST, //--this going to set the loading-true
+			type: MEDICALHISTORY_LIST_REQUEST,
 		});
 
 		const {
@@ -225,7 +225,7 @@ export const deleteMedicalHistoryAction = (id) => async (dispatch, getState) => 
 export const listMedicalHistoriesforDoctor = () => async (dispatch, getState) => {
 	try {
 		dispatch({
-			type: MEDICALHISTORY_LIST_DOCTOR_REQUEST, //--this going to set the loading-true
+			type: MEDICALHISTORY_LIST_DOCTOR_REQUEST,
 		});
 
 		const {

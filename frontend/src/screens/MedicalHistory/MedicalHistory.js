@@ -58,8 +58,6 @@ const MedicalHistory = ({ search }) => {
 			});
 	};
 
-	console.log(medicalHistories);
-
 	const history = useHistory();
 
 	useEffect(() => {

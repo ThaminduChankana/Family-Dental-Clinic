@@ -3,7 +3,6 @@ const bcrypt = require("bcryptjs");
 
 const feedbackSchema = new mongoose.Schema(
 	{
-		//name, patient_email, review_description, rating_count,
 		name: {
 			type: String,
 			required: true,

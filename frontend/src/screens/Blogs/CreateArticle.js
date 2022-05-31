@@ -27,9 +27,7 @@ function CreateBlog({ history }) {
 
 	const blogCreate = useSelector((state) => state.blogCreate);
 	const [imageMessage, setImageMessage] = useState(null);
-	const { loading, error, blog } = blogCreate;
-
-	console.log(blog);
+	const { loading, error } = blogCreate;
 
 	const postDetails = (images) => {
 		if (images === "https://www.americandentalclinic.com/wp-content/uploads/2022/04/shutterstock_1893722440.jpg") {
@@ -47,7 +45,6 @@ function CreateBlog({ history }) {
 			})
 				.then((res) => res.json())
 				.then((data) => {
-					console.log(data);
 					setImage(data.url.toString());
 				})
 				.catch((err) => {

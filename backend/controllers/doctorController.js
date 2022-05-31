@@ -114,7 +114,6 @@ const getDoctorProfile = asyncHandler(async (req, res) => {
 
 const getDoctorProfileById = asyncHandler(async (req, res) => {
 	const doctor = await Doctor.findById(req.params._id);
-	console.log(doctor);
 	if (doctor) {
 		res.json(doctor);
 	} else {

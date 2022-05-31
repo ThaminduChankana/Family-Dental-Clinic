@@ -66,8 +66,6 @@ export const getFeedbackCommonReviewPageAction = () => async (dispatch) => {
 		});
 
 		const { data } = await axios.get(`/user/feedback`);
-		console.log("data");
-		console.log(data);
 
 		dispatch({
 			type: COMMONFEEDBACK_GET_SUCCESS,
@@ -224,8 +222,6 @@ export const deleteFeedbackAction = (id) => async (dispatch, getState) => {
 		});
 	}
 };
-
-/*Admin*/
 
 export const getFeedbackforAdminAction = () => async (dispatch, getState) => {
 	try {

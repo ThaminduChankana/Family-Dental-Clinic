@@ -24,11 +24,9 @@ const PatientListForAdmin = ({ search }) => {
 	const patientDelete = useSelector((state) => state.patientDelete);
 	const { success: successDelete } = patientDelete;
 
-	console.log(patients);
 	const history = useHistory();
 
 	useEffect(() => {
-		//Function or React hook that is fired off whenever a component is rendered, as soon as pages are rendered the api is called
 		dispatch(patientsList());
 		if (!adminInfo) {
 			history.push("/access-denied");

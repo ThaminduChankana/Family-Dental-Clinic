@@ -3,7 +3,6 @@ const bcrypt = require("bcryptjs");
 
 const adminSchema = mongoose.Schema(
 	{
-		//name, dob, nic,telephone,address,previousRef,password,pic,dataEntry
 		name: {
 			type: String,
 			required: true,
@@ -45,7 +44,7 @@ const adminSchema = mongoose.Schema(
 		pic: {
 			type: String,
 			required: true,
-			default: "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg", //default image which apply in the user
+			default: "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg",
 		},
 	},
 	{

@@ -95,7 +95,6 @@ export const deleteFeedbackReducer = (state = {}, action) => {
 	}
 };
 
-/*Admin*/
 export const getFeedbackforAdminReducer = (state = { feedbacks: [] }, action) => {
 	switch (action.type) {
 		case FEEDBACK_GETFORADMIN_REQUEST:

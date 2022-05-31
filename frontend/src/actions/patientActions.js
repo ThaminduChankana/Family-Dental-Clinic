@@ -375,7 +375,6 @@ export const patientUpdateProfileById =
 		regDate
 	) =>
 	async (dispatch, getState) => {
-		console.log(getState());
 		try {
 			dispatch({
 				type: PATIENT_UPDATE_BY_ID_REQUEST,

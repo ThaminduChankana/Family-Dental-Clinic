@@ -50,7 +50,6 @@ function BasicTreatmentView({ search }) {
 				});
 			});
 	};
-	console.log(basicTreatments);
 
 	const history = useHistory();
 	useEffect(() => {

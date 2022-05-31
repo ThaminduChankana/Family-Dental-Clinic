@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 const questionSchema = new mongoose.Schema(
 	{
-		//name, email, question_type, question_description, answer
 		name: {
 			type: String,
 			required: true,

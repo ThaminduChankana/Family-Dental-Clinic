@@ -29,9 +29,7 @@ function MedicalHistoryCreate({ history }) {
 
 	const { adminInfo } = admin_Login;
 
-	const { loading, error, medicalHistory } = medicalHistoryCreate;
-
-	console.log(medicalHistory);
+	const { loading, error } = medicalHistoryCreate;
 
 	const resetHandler = () => {
 		setNic("");

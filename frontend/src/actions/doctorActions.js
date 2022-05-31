@@ -143,7 +143,6 @@ export const doctorRegister =
 	};
 
 export const doctorViewProfile = (doctor) => async (dispatch, getState) => {
-	console.log(getState());
 	try {
 		dispatch({ type: DOCTOR_VIEW_REQUEST });
 
@@ -294,7 +293,6 @@ export const doctorViewProfileById =
 		regDate
 	) =>
 	async (dispatch, getState) => {
-		console.log(getState());
 		try {
 			dispatch({
 				type: DOCTOR_VIEW_BY_ID_REQUEST,
@@ -365,7 +363,6 @@ export const doctorUpdateProfileById =
 		regDate
 	) =>
 	async (dispatch, getState) => {
-		console.log(getState());
 		try {
 			dispatch({
 				type: DOCTOR_UPDATE_BY_ID_REQUEST,

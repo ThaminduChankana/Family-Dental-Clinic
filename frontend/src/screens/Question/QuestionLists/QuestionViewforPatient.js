@@ -51,7 +51,7 @@ export default function QuestionViewforPatient({ search }) {
 				});
 			});
 	};
-	console.log(questions);
+
 	const history = useHistory();
 	useEffect(() => {
 		if (!patientInfo) history.pushState("/");

@@ -142,9 +142,7 @@ export default function InventoryUpdate({ match, history }) {
 										/>
 									</Form.Group>
 									{loading && <Loading size={50} />}
-									{/* <Button type="submit" variant="primary">
-            								Update
-            							</Button> */}
+
 									<Button
 										style={{ fontSize: 15, marginTop: 10, boxShadow: "5px 5px 2px #888888" }}
 										type="submit"

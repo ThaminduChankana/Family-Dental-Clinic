@@ -8,13 +8,11 @@ const getQuestionForAdmin = asyncHandler(async (req, res) => {
 
 const getQuestion = asyncHandler(async (req, res) => {
 	const question = await Question.find({ isAdmin: true });
-	console.log(question);
 	res.json(question);
 });
 
 const getQuestionforPatient = asyncHandler(async (req, res) => {
 	const question = await Question.find({ patient: req.patient._id, isAdmin: true });
-	console.log(question);
 	res.json(question);
 });
 

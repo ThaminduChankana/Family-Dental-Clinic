@@ -5,7 +5,6 @@ const {} = require("../routes/doctorRoutes");
 const generateToken = require("../utils/generateToken");
 
 const registerPatient = asyncHandler(async (req, res) => {
-	//Name, dob,gender,nic,telephone,address,password,pic,dataentry,reg date
 	const { name, dob, gender, nic, telephone, address, email, password, pic, referringDoctor, dataEntry, regDate } =
 		req.body;
 

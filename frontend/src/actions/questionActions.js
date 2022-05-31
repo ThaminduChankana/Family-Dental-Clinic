@@ -98,7 +98,6 @@ export const createQuestionAction =
 				},
 			};
 
-			// Remove the config
 			const { data } = await axios.post(
 				`/user/patient/question/create`,
 				{
@@ -222,8 +221,6 @@ export const deleteQuestionAction = (id) => async (dispatch, getState) => {
 		});
 	}
 };
-
-/*Admin*/
 
 export const getQuestionForAdminAction = () => async (dispatch, getState) => {
 	try {
