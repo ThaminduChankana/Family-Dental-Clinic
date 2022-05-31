@@ -44,7 +44,7 @@ export const getFeedbackAction = () => async (dispatch, getState) => {
 			},
 		};
 
-		const { data } = await axios.get(`http://localhost:5000/user/patient/feedback/view`, config);
+		const { data } = await axios.get(`/user/patient/feedback/view`, config);
 
 		dispatch({
 			type: FEEDBACK_GET_SUCCESS,
@@ -65,7 +65,7 @@ export const getFeedbackCommonReviewPageAction = () => async (dispatch) => {
 			type: COMMONFEEDBACK_GET_REQUEST,
 		});
 
-		const { data } = await axios.get(`http://localhost:5000/user/feedback`);
+		const { data } = await axios.get(`/user/feedback`);
 		console.log("data");
 		console.log(data);
 
@@ -102,7 +102,7 @@ export const createFeedbackAction =
 
 			// Remove the config
 			const { data } = await axios.post(
-				`http://localhost:5000/user/patient/feedback/create`,
+				`/user/patient/feedback/create`,
 				{
 					name,
 					patient_email,
@@ -157,7 +157,7 @@ export const updateFeedbackAction =
 
 			// eslint-disable-next-line no-undef
 			const { data } = await axios.put(
-				`http://localhost:5000/user/patient/feedback/update/${id}`,
+				`/user/patient/feedback/update/${id}`,
 				{
 					id,
 					name,
@@ -210,7 +210,7 @@ export const deleteFeedbackAction = (id) => async (dispatch, getState) => {
 			},
 		};
 
-		const { data } = await axios.delete(`http://localhost:5000/user/patient/feedback/delete/${id}`, config);
+		const { data } = await axios.delete(`/user/patient/feedback/delete/${id}`, config);
 
 		dispatch({
 			type: FEEDBACK_DELETE_SUCCESS,
@@ -243,7 +243,7 @@ export const getFeedbackforAdminAction = () => async (dispatch, getState) => {
 			},
 		};
 
-		const { data } = await axios.get(`http://localhost:5000/user/admin/feedback/view`, config);
+		const { data } = await axios.get(`/user/admin/feedback/view`, config);
 
 		dispatch({
 			type: FEEDBACK_GETFORADMIN_SUCCESS,
@@ -277,7 +277,7 @@ export const UpdateFeedbackforAdminAction = (id, isAdmin) => async (dispatch, ge
 
 		// eslint-disable-next-line no-undef
 		const { data } = await axios.put(
-			`http://localhost:5000/user/admin/feedback/update/${id}`,
+			`/user/admin/feedback/update/${id}`,
 			{
 				isAdmin,
 			},
@@ -326,7 +326,7 @@ export const deleteFeedbackforAdminAction = (id) => async (dispatch, getState) =
 			},
 		};
 
-		const { data } = await axios.delete(`http://localhost:5000/user/admin/feedback/delete/${id}`, config);
+		const { data } = await axios.delete(`/user/admin/feedback/delete/${id}`, config);
 
 		dispatch({
 			type: FEEDBACK_DELETEFORADMIN_SUCCESS,

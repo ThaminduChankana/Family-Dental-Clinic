@@ -90,14 +90,12 @@ export default function SingleFeedback({ match, history }) {
 								{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
 								{errorDelete && <ErrorMessage variant="danger">{errorDelete}</ErrorMessage>}
 								<Form.Group controlId="name">
-									<Form.Label>Visibility</Form.Label>
-									<Form.Control
-										type="isAdmin"
-										value={isAdmin}
-										placeholder="Enter Visibility"
-										onChange={(e) => setAdmin(e.target.value)}
-										style={{ background: "#f8f8ff" }}
-									/>
+									<div className="form-group">
+										<input type="radio" name="visibility" value="true" onChange={(e) => setAdmin(e.target.value)} />
+										true
+										<input type="radio" name="visibility" value="false" onChange={(e) => setAdmin(e.target.value)} />
+										false
+									</div>
 								</Form.Group>
 
 								{loading && <Loading size={50} />}
