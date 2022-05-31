@@ -60,8 +60,10 @@ export default function CommonViewFeedback({ search }) {
 									</Card.Header>
 									<Card.Body>
 										<h5>{feedback.review_description}</h5>
-										<h5> {feedback.patient_email}</h5>
-										<h5>Rating Count: {feedback.rating_count}</h5>
+										<br></br>
+										<h5>
+											<b>Rating Count:- {feedback.rating_count} / 5</b>
+										</h5>
 									</Card.Body>
 								</Card>
 							</Grid>

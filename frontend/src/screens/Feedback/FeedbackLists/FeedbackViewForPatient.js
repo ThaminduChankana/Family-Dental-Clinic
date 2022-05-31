@@ -119,12 +119,20 @@ export default function FeedbackViewforPatient({ search }) {
 										</div>
 									</Card.Header>
 									<Accordion.Collapse eventKey="0">
-										<Card.Body>
+										<Card.Body style={{ padding: 35 }}>
 											<Row>
 												<Col md={20}>
-													<h5>Name: {feedback.name}</h5>
-													<h5>Review Description : {feedback.review_description}</h5>
-													<h5>Rating Count: {feedback.rating_count}</h5>
+													<h5>
+														<b>Name :- </b> <br></br>&emsp;{feedback.name}
+													</h5>
+													<br></br>
+													<h5>
+														<b>Review Description :- </b> <br></br> &emsp;{feedback.review_description}
+													</h5>
+													<br></br>
+													<h5>
+														<b>Rating Count :- </b> {feedback.rating_count} / 5
+													</h5>
 												</Col>
 											</Row>
 										</Card.Body>
