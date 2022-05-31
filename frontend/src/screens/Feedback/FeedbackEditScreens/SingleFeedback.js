@@ -23,7 +23,7 @@ export default function SingleFeedback({ match, history }) {
 
 	useEffect(() => {
 		const fetching = async () => {
-			const { data } = await axios.get(`http://localhost:5000/user/admin/feedback/view/${match.params.id}`, {
+			const { data } = await axios.get(`/user/admin/feedback/view/${match.params.id}`, {
 				headers: authHeader(),
 				"Access-Control-Allow-Origin": "*",
 				"Access-Control-Allow-Credentials": true,
@@ -91,10 +91,16 @@ export default function SingleFeedback({ match, history }) {
 								{errorDelete && <ErrorMessage variant="danger">{errorDelete}</ErrorMessage>}
 								<Form.Group controlId="name">
 									<div className="form-group">
-										<input type="radio" name="visibility" value="true" onChange={(e) => setAdmin(e.target.value)} />
-										true
-										<input type="radio" name="visibility" value="false" onChange={(e) => setAdmin(e.target.value)} />
-										false
+										<label className="feedbackVisibility">Visibility</label>
+										<select
+											className="form-control"
+											value={isAdmin}
+											onChange={(e) => setAdmin(e.target.value)}
+											required
+										>
+											<option value="true">True</option>
+											<option value="false">False</option>
+										</select>
 									</div>
 								</Form.Group>
 

@@ -16,7 +16,7 @@ export const QuestionReport = React.forwardRef((props, ref) => {
 
 	useEffect(() => {
 		const fetchingQuestions = async () => {
-			const { data } = await axios.get(`http://localhost:5000/user/admin/question/report`, {
+			const { data } = await axios.get(`/user/admin/question/report`, {
 				headers: authHeader(),
 				"Access-Control-Allow-Origin": "*",
 				"Access-Control-Allow-Credentials": true,

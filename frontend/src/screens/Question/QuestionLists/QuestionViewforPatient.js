@@ -83,7 +83,7 @@ export default function QuestionViewforPatient({ search }) {
 						?.reverse()
 						.filter((filteredB) => filteredB.question_type.includes(search))
 						.map((question) => (
-							<Accordion>
+							<Accordion key={question._id}>
 								<Card style={{ margin: 10, left: "25%", width: "50%", borderRadius: 25 }} key={question._id}>
 									<Card.Header style={{ display: "flex" }}>
 										<span

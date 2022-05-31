@@ -134,7 +134,6 @@ export const doctorRegister =
 			setTimeout(function () {
 				window.location.href = "/admin-doctors";
 			}, 2000);
-
 		} catch (error) {
 			dispatch({
 				type: DOCTOR_REGISTER_FAIL,

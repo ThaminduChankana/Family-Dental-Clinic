@@ -56,7 +56,7 @@ export default function InventoryUpdate({ match, history }) {
 
 	useEffect(() => {
 		const fetching = async () => {
-			const { data } = await axios.get(`http://localhost:5000/user/admin/inventory/get/${match.params.id}`, {
+			const { data } = await axios.get(`/user/admin/inventory/get/${match.params.id}`, {
 				headers: authHeader(),
 				"Access-Control-Allow-Origin": "*",
 				"Access-Control-Allow-Credentials": true,

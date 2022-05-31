@@ -84,7 +84,7 @@ export default function FeedbackViewforPatient({ search }) {
 						?.reverse()
 						.filter((filteredB) => filteredB.rating_count.includes(search))
 						.map((feedback) => (
-							<Accordion>
+							<Accordion key={feedback._id}>
 								<Card style={{ margin: 10, left: "26%", width: "50%", borderRadius: 25 }} key={feedback._id}>
 									<Card.Header style={{ display: "flex" }}>
 										<span

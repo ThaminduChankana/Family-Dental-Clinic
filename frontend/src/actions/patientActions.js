@@ -122,7 +122,6 @@ export const patientRegister =
 			}, 2000);
 
 			dispatch({ type: PATIENT_LOGIN_SUCCESS, payload: data });
-
 		} catch (error) {
 			dispatch({
 				type: PATIENT_REGISTER_FAIL,

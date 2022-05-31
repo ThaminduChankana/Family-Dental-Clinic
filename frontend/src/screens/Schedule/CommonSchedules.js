@@ -42,7 +42,7 @@ export default function CommonSchedules({ search }) {
 						(filteredB) => filteredB.nic.includes(search) || filteredB.name.toLowerCase().includes(search.toLowerCase())
 					)
 					.map((schedule) => (
-						<Accordion>
+						<Accordion key={schedule._id}>
 							<Card
 								style={{
 									margin: 10,

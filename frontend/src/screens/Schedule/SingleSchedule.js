@@ -35,7 +35,7 @@ export default function SingleSchedule({ match, history }) {
 
 	useEffect(() => {
 		const fetching = async () => {
-			const { data } = await axios.get(`http://localhost:5000/user/admin/schedule/get/${match.params.id}`, {
+			const { data } = await axios.get(`/user/admin/schedule/get/${match.params.id}`, {
 				headers: authHeader(),
 			});
 
