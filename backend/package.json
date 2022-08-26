@@ -27,7 +27,7 @@
 		"express": "^4.17.3",
 		"express-async-handler": "^1.2.0",
 		"jsonwebtoken": "^8.5.1",
-		"mongoose": "^6.2.3",
+		"mongoose": "^6.4.6",
 		"nodemon": "^2.0.15",
 		"prettier": "^2.5.1",
 		"query-string": "^7.1.1",
